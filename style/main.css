@@ -2,7 +2,7 @@
 * {
   padding: 0;
   margin: 0;
-  border: 0; }
+  box-sizing: border-box; }
 
 :focus, :active {
   outline: none; }
@@ -28,5 +28,146 @@ a:hover {
 
 ul li {
   list-style: none; }
+
+body {
+  background-color: #262534; }
+
+.home {
+  width: 100%;
+  height: 100vh;
+  padding: 0 100px; }
+  .home__header {
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .home__header-left .logo {
+      width: 127px;
+      height: 62px;
+      background-color: grey; }
+    .home__header-rigth {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      .home__header-rigth .header__nav {
+        margin-right: 70px;
+        display: flex;
+        column-gap: 25px; }
+        .home__header-rigth .header__nav a {
+          position: relative;
+          cursor: pointer;
+          font-family: 'Montserrat', sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: normal;
+          letter-spacing: normal;
+          color: #fff; }
+        .home__header-rigth .header__nav a:before {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          left: 0px;
+          bottom: -5px;
+          background: #FFF;
+          opacity: 0.1;
+          transition: all 0.3s; }
+        .home__header-rigth .header__nav a:hover:before {
+          height: 130%;
+          opacity: 0.3; }
+      .home__header-rigth .home__button-small {
+        width: 250px;
+        height: 46px;
+        border: none;
+        border-radius: 5px;
+        background: #F5A006;
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #fff;
+        transition: 0.5s; }
+        .home__header-rigth .home__button-small:hover {
+          background-color: transparent;
+          border: 1px solid #F5A006;
+          color: #F5A006;
+          transition: 0.5s; }
+  .home__main {
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .home__main-content .home__button-small {
+      width: 293px;
+      height: 46px;
+      border: none;
+      border-radius: 5px;
+      background: #F5A006;
+      font-family: 'Montserrat', sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #fff;
+      transition: 0.5s;
+      margin-bottom: 25px; }
+      .home__main-content .home__button-small:hover {
+        background-color: transparent;
+        border: 1px solid #F5A006;
+        color: #F5A006;
+        transition: 0.5s; }
+    .home__main-content .home__title {
+      font-family: 'Montserrat', sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 64px;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #fff; }
+      .home__main-content .home__title span {
+        color: #F5A006; }
+    .home__main-content .home__description {
+      width: 600px;
+      margin-top: 15px;
+      font-family: 'Montserrat', sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 36px;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #fff; }
+    .home__main-content .home__button {
+      width: 460px;
+      height: 100px;
+      border: none;
+      border-radius: 5px;
+      background: #F5A006;
+      font-family: 'Montserrat', sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #fff;
+      transition: 0.5s;
+      margin-top: 50px; }
+      .home__main-content .home__button:hover {
+        background-color: transparent;
+        border: 1px solid #F5A006;
+        color: #F5A006;
+        transition: 0.5s; }
+    .home__main-photo .home__photo {
+      width: 530px;
+      height: 440px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      background-color: blue; }
 
 /*# sourceMappingURL=main.css.map */
