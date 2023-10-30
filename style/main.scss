@@ -14,4 +14,129 @@
 
 // About Us Start
 
+.about-us {
+    height: 100%;
+    text-align: center;
+    margin: 120px 0;
+    padding: 0 100px;
+    @include display-center (center, center);
+    flex-direction: column;
+    background-color: $gray-color;
+
+    &__title {
+        @include font(#FFF, 48px, 700, normal, 0);
+        margin-bottom: 15px;    
+
+        &-slash {
+            color: $main-color;
+        }
+    }
+
+    &__subtitle {    
+        margin: 0 auto 80px auto;
+        max-width: 880px;
+        @include font(#FFF, 24px, 400,  124.4%, 0.6px);
+    }
+
+    &__video {
+        @include display-center (center, center);
+        column-gap: 50px;
+        height: 500px;
+
+        &--poster {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .about-us__video-mask {
+            position: relative;
+
+            &--small {
+                width: 390px;
+                height: 200px;
+
+                border-radius: 5px;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.4);
+                    border-radius: 5px;
+                    z-index: 2;
+                }
+            }
+
+            &--main {
+                height: 500px;
+                width: 800px;
+                border-radius: 5px;
+            }
+            
+            .about-us__video-poster {
+                position: absolute;
+                z-index: 1;
+                width: 100%;
+                height: 100%;
+                border-radius: 5px;
+            }
+
+            .about-us__video__play-btn {
+                @include display-center (center, center);
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                background-color: #fff;
+                z-index: 3;
+                cursor: pointer;
+
+                &--small {
+                    background-color: rgba(255, 255, 255, 0.7);
+                }
+
+                &--main {
+                    width: 125px;
+                    height: 125px;
+                }
+            }
+        }
+
+        &-left {
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 25px;
+            overflow-y: auto;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            .about-us__video-small {
+                width: 100%;
+                height: 100%;
+                border-radius: 5px;
+                background-color: #000;
+            }
+        }
+
+
+
+        &-main {
+            height: 500px;
+            width: 800px;
+            border-radius: 5px;
+            background-color: #000;
+        }
+    }
+}
+
 // About Us End
