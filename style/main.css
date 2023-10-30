@@ -178,8 +178,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  background-color: #262534; }
+  flex-direction: column; }
   .about-us__title {
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
@@ -217,15 +216,6 @@ body {
         width: 390px;
         height: 200px;
         border-radius: 5px; }
-        .about-us__video .about-us__video-mask--small::before {
-          content: "";
-          position: absolute;
-          display: block;
-          width: 100%;
-          height: 100%;
-          background-color: rgba(0, 0, 0, 0.4);
-          border-radius: 5px;
-          z-index: 2; }
       .about-us__video .about-us__video-mask--main {
         height: 500px;
         width: 800px;
@@ -250,6 +240,14 @@ body {
         background-color: #fff;
         z-index: 3;
         cursor: pointer; }
+        .about-us__video .about-us__video-mask .about-us__video__play-btn .about-us__video--icon-small {
+          width: 50px;
+          height: 50px; }
+        .about-us__video .about-us__video-mask .about-us__video__play-btn .about-us__video--icon-main {
+          width: 80px;
+          height: 80px; }
+        .about-us__video .about-us__video-mask .about-us__video__play-btn .about-us__video__pause-icon {
+          display: none; }
         .about-us__video .about-us__video-mask .about-us__video__play-btn--small {
           background-color: rgba(255, 255, 255, 0.7); }
         .about-us__video .about-us__video-mask .about-us__video__play-btn--main {
