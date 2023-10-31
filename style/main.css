@@ -336,7 +336,46 @@ body {
     font-size: 32px; }
   .wrap .home__main-photo .home__photo {
     width: 450px;
-    height: 350px; } }
+    height: 350px; }
+  .wrap .about-us__video {
+    height: auto;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    column-gap: 0px;
+    row-gap: 50px; }
+    .wrap .about-us__video-left {
+      width: 100%;
+      height: auto;
+      flex-direction: row;
+      row-gap: 0;
+      column-gap: 25px;
+      overflow-x: auto; }
+      .wrap .about-us__video-left .about-us__video-small {
+        width: 390px;
+        height: auto; }
+    .wrap .about-us__video-right {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto; }
+    .wrap .about-us__video .about-us__video-mask {
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .wrap .about-us__video .about-us__video-mask .about-us__video-main {
+        width: 100%;
+        height: auto; }
+      .wrap .about-us__video .about-us__video-mask .about-us__video-poster {
+        width: 100%;
+        height: 100%; } }
 @media screen and (max-width: 1200px) {
   .wrap .home {
     padding: 0 60px; }
@@ -360,7 +399,9 @@ body {
         font-size: 24px; }
     .wrap .home__main-photo .home__photo {
       width: 400px;
-      height: 300px; } }
+      height: 300px; }
+  .wrap .about-us {
+    padding: 0 60px; } }
 @media screen and (max-width: 1000px) {
   .wrap .home {
     padding: 0 60px; }
@@ -482,7 +523,21 @@ body {
     .wrap .home__popup-open {
       width: 100%;
       height: 100%;
-      transition: 1s; } }
+      transition: 1s; }
+  .wrap .about-us__video {
+    width: 100%; }
+    .wrap .about-us__video .about-us__video-mask .about-us__video__play-btn {
+      width: 70px;
+      height: 70px; }
+      .wrap .about-us__video .about-us__video-mask .about-us__video__play-btn .about-us__video--icon-small {
+        width: 65%;
+        height: 65%; }
+      .wrap .about-us__video .about-us__video-mask .about-us__video__play-btn .about-us__video--icon-main {
+        width: 70%;
+        height: 70%; }
+      .wrap .about-us__video .about-us__video-mask .about-us__video__play-btn--main {
+        width: 13vw;
+        height: 13vw; } }
 @media screen and (max-width: 600px) {
   .wrap .home__main-photo .home__photo {
     width: 330px;
@@ -543,7 +598,27 @@ body {
           width: 400px;
           position: static;
           z-index: 1;
-          opacity: 1; } }
+          opacity: 1; }
+  .wrap .about-us {
+    padding: 0 30px; }
+    .wrap .about-us__title {
+      font-size: 36px; }
+    .wrap .about-us__subtitle {
+      font-size: 20px;
+      letter-spacing: 0; }
+    .wrap .about-us__video {
+      row-gap: 30px; }
+      .wrap .about-us__video-left {
+        width: 100%; }
+        .wrap .about-us__video-left .about-us__video-small {
+          width: 320px;
+          height: auto; }
+      .wrap .about-us__video .about-us__video-mask .about-us__video__play-btn {
+        width: 70px;
+        height: 70px; }
+        .wrap .about-us__video .about-us__video-mask .about-us__video__play-btn--main {
+          width: 80px;
+          height: 80px; } }
 @media screen and (max-width: 450px) {
   .wrap .home__main-photo .home__photo {
     width: 70vw;
@@ -563,7 +638,22 @@ body {
     height: 60px;
     font-size: 20px; }
   .wrap .home__main-content .home__button-small {
-    width: 100%; } }
+    width: 100%; }
+  .wrap .about-us__subtitle {
+    font-size: 18px; }
+  .wrap .about-us__video {
+    row-gap: 30px; }
+    .wrap .about-us__video-left {
+      column-gap: 15px; }
+      .wrap .about-us__video-left .about-us__video-small {
+        width: 240px;
+        height: auto; }
+    .wrap .about-us__video .about-us__video-mask .about-us__video__play-btn {
+      width: 65px;
+      height: 65px; }
+      .wrap .about-us__video .about-us__video-mask .about-us__video__play-btn--main {
+        width: 80px;
+        height: 80px; } }
 @media screen and (max-height: 800px) {
   .wrap .home {
     max-height: 200vh; }
