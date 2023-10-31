@@ -202,12 +202,7 @@
     background-color: $grey-color;
 
     &__title {
-        @include font(#FFF, 48px, 700, normal, 0);
         margin-bottom: 15px;    
-
-        &-slash {
-            color: $main-color;
-        }
     }
 
     &__subtitle {    
@@ -319,9 +314,117 @@
  }
 }
 
-
-
 // About Us End
+
+
+
+// Benefits Start
+// Benefits Start
+
+
+
+// Сourse Start
+// Сourse Start
+
+
+
+// Certificate Start
+
+.certificate {
+	padding: 0 100px;
+	margin-bottom: 120px;
+
+	&__title {
+		text-align: center;
+		margin-bottom: 50px;
+	}
+
+	&__content {
+		@include display-center (space-between, center);
+
+		.certificate__form {
+			display: flex;
+			row-gap: 20px;
+			flex-direction: column;
+
+			&-group {
+				display: flex;
+				justify-content: flex-start;
+				flex-direction: column;
+
+				&-title {
+					margin-bottom: 5px;
+					@include font(#FFF, 20px, 400, normal, 0);
+				}
+
+				&-input {
+					appearance: none;
+
+					@include font(#FFF, 20px, 600, normal, 0);
+					padding: 0 20px;
+					width: 532px;
+					height: 80px;
+
+					color: #fff;
+					border-radius: 5px;
+					background: $dark-secondary-color;
+					border: none;
+
+
+					&::-webkit-outer-spin-button,
+					&::-webkit-inner-spin-button {
+						-webkit-appearance: none;
+						margin: 0;
+					}
+
+
+					&::placeholder {
+						@include font(#FFF, 20px, 600, normal, 0);
+					}
+				}
+			}
+
+			&-btn {
+				margin-top: 30px;
+				width: 532px;
+				height: 80px;
+				border-radius: 5px;
+				background: $main-color;
+				@include font(#FFF, 20px, 600, normal, 0);
+				transition: 0.5s;
+
+				&:hover {
+					background-color: transparent;
+					border: 1px solid $main-color;
+					color: $main-color;
+					transition: 0.5s;
+				}
+			}
+		}
+
+
+		.certificate__display {
+			position: relative;
+				&-name {
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					transform: translate(-50%, -120%);
+					@include font(#292929, 1.5em, 700, normal, 0);
+				}
+
+			&-img {
+				width: 670px;
+				height: 500px;
+			}
+		}
+	}
+}
+
+// Certificate Start
+
+
+
 
 .wrap-hidden {
 	width: 100%;
@@ -729,6 +832,10 @@
 		// Home start adaptation
 
 		.wrap {
+			.secondary-title {
+				font-size: 36px;
+			}
+
 			.home__main-photo {
 				.home__photo {
 					width: 330px;
@@ -786,10 +893,6 @@
 		// About Us Start
 		.about-us {
 			padding: 0 30px;
-
-			&__title {
-				font-size: 36px;
-			}
 
 			&__subtitle {
 				font-size: 20px;

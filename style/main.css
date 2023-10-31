@@ -32,6 +32,18 @@ ul li {
 body {
   background-color: #262534; }
 
+.secondary-title {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: normal;
+  letter-spacing: 0;
+  color: #FFF; }
+
+.title-slash {
+  color: #F5A006; }
+
 .wrap {
   width: 100%;
   min-height: auto;
@@ -207,16 +219,7 @@ body {
     flex-direction: column;
     background-color: #262534; }
     .wrap .about-us__title {
-      font-family: 'Montserrat', sans-serif;
-      font-style: normal;
-      font-weight: 700;
-      font-size: 48px;
-      line-height: normal;
-      letter-spacing: 0;
-      color: #FFF;
       margin-bottom: 15px; }
-      .wrap .about-us__title-slash {
-        color: #F5A006; }
     .wrap .about-us__subtitle {
       margin: 0 auto 80px auto;
       max-width: 880px;
@@ -298,6 +301,97 @@ body {
         width: 800px;
         border-radius: 5px;
         background-color: #000; }
+
+.certificate {
+  padding: 0 100px;
+  margin-bottom: 120px; }
+  .certificate__title {
+    text-align: center;
+    margin-bottom: 50px; }
+  .certificate__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .certificate__content .certificate__form {
+      display: flex;
+      row-gap: 20px;
+      flex-direction: column; }
+      .certificate__content .certificate__form-group {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column; }
+        .certificate__content .certificate__form-group-title {
+          margin-bottom: 5px;
+          font-family: 'Montserrat', sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: normal;
+          letter-spacing: 0;
+          color: #FFF; }
+        .certificate__content .certificate__form-group-input {
+          appearance: none;
+          font-family: 'Montserrat', sans-serif;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 20px;
+          line-height: normal;
+          letter-spacing: 0;
+          color: #FFF;
+          padding: 0 20px;
+          width: 532px;
+          height: 80px;
+          color: #fff;
+          border-radius: 5px;
+          background: #3F3D56;
+          border: none; }
+          .certificate__content .certificate__form-group-input::-webkit-outer-spin-button, .certificate__content .certificate__form-group-input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0; }
+          .certificate__content .certificate__form-group-input::placeholder {
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: normal;
+            letter-spacing: 0;
+            color: #FFF; }
+      .certificate__content .certificate__form-btn {
+        margin-top: 30px;
+        width: 532px;
+        height: 80px;
+        border-radius: 5px;
+        background: #F5A006;
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: normal;
+        letter-spacing: 0;
+        color: #FFF;
+        transition: 0.5s; }
+        .certificate__content .certificate__form-btn:hover {
+          background-color: transparent;
+          border: 1px solid #F5A006;
+          color: #F5A006;
+          transition: 0.5s; }
+    .certificate__content .certificate__display {
+      position: relative; }
+      .certificate__content .certificate__display-name {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -120%);
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.5em;
+        line-height: normal;
+        letter-spacing: 0;
+        color: #292929; }
+      .certificate__content .certificate__display-img {
+        width: 670px;
+        height: 500px; }
 
 .wrap-hidden {
   width: 100%;
@@ -539,6 +633,8 @@ body {
         width: 13vw;
         height: 13vw; } }
 @media screen and (max-width: 600px) {
+  .wrap .secondary-title {
+    font-size: 36px; }
   .wrap .home__main-photo .home__photo {
     width: 330px;
     height: 300px;
@@ -569,8 +665,6 @@ body {
       z-index: -1; }
   .wrap .about-us {
     padding: 0 30px; }
-    .wrap .about-us__title {
-      font-size: 36px; }
     .wrap .about-us__subtitle {
       font-size: 20px;
       letter-spacing: 0; }

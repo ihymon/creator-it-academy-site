@@ -3,5 +3,12 @@
 body {
 	background-color: $grey-color;
 }
+
+.secondary-title {
+	@include font(#FFF, 48px, 700, normal, 0);
+}
 	
+.title-slash {
+	color: $main-color;
+}
 	
