@@ -4,6 +4,12 @@
 @import "./base/mixin";
 @import "./base/base";
 
+.wrap {
+	width: 100%;
+	min-height: auto;
+	padding: 0 150px;
+	overflow-x: hidden;
+
 
 
 // Home Start 
@@ -11,14 +17,32 @@
 	width: 100%;
 	max-height: 100vh;
 	padding: 0 100px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	// overflow-x: hidden;
+
+
+	&__bg {
+		width: 200%;
+		height: 300%;	
+		background-image: url(../img/home/home__background.svg);
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+		position: absolute;
+		z-index: 0;
+	}
 
 	&__header {
 		width: 100%;
 		min-height: 15vh;
 		@include display-center(space-between, center);
+		z-index: 1;
 
 		&-left {
-			
 			.logo {
 				width: 127px;
 				height: 62px;
@@ -89,6 +113,7 @@
 		width: 100%;
 		min-height: 85vh;
 		@include display-center(space-between, center);
+		z-index: 1;
 
 		&-content {
 			padding-right: 20px;
@@ -158,6 +183,7 @@
 			}
 		}
 	}
+
 }
 
 // Home End 
@@ -173,7 +199,7 @@
     padding: 0 100px;
     @include display-center (center, center);
     flex-direction: column;
-    background-color: $gray-color;
+    background-color: $grey-color;
 
     &__title {
         @include font(#FFF, 48px, 700, normal, 0);
@@ -290,16 +316,23 @@
             background-color: #000;
         }
     }
+ }
 }
+
+
 
 // About Us End
 
+.wrap-hidden {
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
 
 @media screen and (max-width: 1800px) {
 	.wrap {
 		padding: 0;
 		// Home start adaptation
-	}
 
 		.home {
 			&__main {
@@ -321,6 +354,7 @@
 			}
 		  }
 		// Home finish adaptation
+	}
 }
 
 @media screen and (max-width: 1400px) {
@@ -377,6 +411,8 @@
 }
 
 @media screen and (max-width: 1200px) {
+		// Home start adaptation
+		.wrap {
 
 		.home {
 			padding: 0 60px;
@@ -421,15 +457,82 @@
 			}
 		  }
 		  // Home finish adaptation
+		}
 }
 
 @media screen and (max-width: 1000px) {
+		.wrap {
+
+		// Home start adaptation
+
 		.home {
 			padding: 0 60px;
+		&__bg {
+			width: 200%;
+			height: 280%;
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+			position: absolute;
+		}
 			&__header {
+				z-index: 4;
+
 				&-rigth {
 					display: none;
 				}
+
+				&-rigth--open {
+					width: 100%;
+					max-height: 100vh;
+					display: block;
+					@include display-center (center, center);
+					flex-direction: column;
+					position: absolute;
+					left: 0%;
+					top: 0%;
+					padding-top: 20%;
+
+					.header__nav{
+						z-index: 3;
+						@include display-center (center, center);
+						flex-direction: column;
+						gap: 20px;
+						margin-right: 0px !important;
+						margin-top: 30px;
+						animation-name: popup;
+						animation-duration: 1s;
+						animation-iteration-count: 1;
+	
+						@keyframes popup {
+							0% {
+								opacity: 0;
+								position: relative;
+								bottom: 50px;
+							}
+							50% {
+								opacity: 0;
+							}
+							100% {
+								opacity: 1;
+								position: relative;
+								bottom: 0px;
+							}
+						}
+						a {
+							font-size: 24px !important;
+						}
+
+					}
+					.home__button-small {
+						z-index: 4;
+						margin-top: 50px;
+						animation-name: popup;
+						animation-duration: 1s;
+						animation-iteration-count: 1;
+					}
+				}
+
 				.home__header-box--burger {
 					display: block;
 					width: 45px;
@@ -451,7 +554,8 @@
 	
 				.home__header-box--burger-open {
 					.burger__line--1 {
-						transform: rotate(45deg) translate(11px, 7px);
+						transform: rotate(-45deg) translate(-10px, 13px);
+						
 						transition: 0.4s;
 
 					}
@@ -463,7 +567,7 @@
 					}
 	
 					.burger__line--3 {
-						transform: rotate(-45deg) translate(13px, -11px);
+						transform: rotate(45deg) translate(-8px, -11px);
 						transition: 0.4s;
 
 					}
@@ -499,15 +603,59 @@
 					}
 				}
 			}
+
+			&__popup {
+				width: 100%;
+				height: 0%;
+				position: fixed;
+				background-color: $grey-color;
+				left: 0%;
+				top: 0%;
+				z-index: 2;
+				transition: 1s;
+				overflow-y: auto;
+			}
+
+			&__popup-open {
+				width: 100%;
+				height: 100%;	
+				transition: 1s;
+			}
+
 		  }
 		  // Home finish adaptation
+		}
 }
 
 
 @media screen and (max-width: 600px) {
+		// Home start adaptation
+
+		.wrap {
+			.home__main-photo {
+				.home__photo {
+					width: 330px;
+					height: 300px;
+					opacity: 0.3;
+				}
+			}
+		}
+
+		.wrap {
 		.home {
 			padding: 0 30px;
-
+			&__bg {
+				width: 300%;
+				height: 380%;	
+				position: absolute;
+				z-index: -1;
+			}
+		
+			&__header {
+				&-rigth--open {
+					padding-top: 45%;
+				}
+			}
 			&__main {
 				&-content {
 					.home__title {
@@ -532,44 +680,85 @@
 					position: absolute;
 					z-index: -1;
  
-					.home__photo {
-						width: 330px;
-						height: 300px;
-						opacity: 0.3;
-					}
 				}
 			}
 		  }
 		  // Home finish adaptation
+		}
 }
 
 @media screen and (max-width: 450px) {
+		// Home start adaptation
+		.wrap {
+
 		.home {
+			&__bg {
+				width: 300vw;
+				height: 300vh;	
+				position: absolute;
+				z-index: -1;
+			}
+			&__header {
+				&-rigth--open {
+					padding-top: 55%;
+				}
+			}
 			&__main {
 				&-content {
 					.home__button {
 						width: 100%;
 						height: 60px;
 						font-size: 20px;
-				}
+					}
+					.home__button-small {
+						width: 100%;
+					}
 			}
 		}
 	}
+  }
 }
 
 
 
 @media screen and (max-height: 500px) {
-	// Home Start 
+	// Home start adaptation
+ 
+	.wrap {
+
 	.home {
 		&__header {
 			padding-top: 20px;
+			&-rigth--open {
+				padding-top: 20%;
+
+				.header__nav{
+					z-index: 3;
+					@include display-center (center, center);
+					flex-direction: column;
+					gap: 20px;
+					margin-right: 0px !important;
+					margin-top: 30px;
+					a {
+						font-size: 24px !important;
+					}
+
+				}
+				.home__button-small {
+					width: 300px;
+					z-index: 3;
+					margin-top: 50px;
+					padding: 20px;
+					@include display-center (center, center);
+ 
+				}
+			}
 		}
 		&__main {
 			margin-top: 30px;
 		}
 	}
-	// Finish Start 
-
+	// Home finish adaptation
+  }
 
 }
