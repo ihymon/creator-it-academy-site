@@ -4,7 +4,7 @@
         $(this).toggleClass("home__header-box--burger-open");
         $(".home__header-rigth").toggleClass("home__header-rigth--open");
         $(".home__popup").toggleClass("home__popup-open");
-        $(".wrap").toggleClass("wrap-hidden");
+        $("body").toggleClass("wrap-hidden");
 
 
     });
