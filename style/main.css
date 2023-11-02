@@ -44,6 +44,22 @@ body {
 .title-slash {
   color: #F5A006; }
 
+.social-media-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #F5A006;
+  border-radius: 50%;
+  transition: .4s; }
+  .social-media-icon--telegram img {
+    transform: translateX(-5%); }
+  .social-media-icon:hover {
+    background-color: #3F3D56;
+    transition: .4s; }
+
 .wrap {
   width: 100%;
   min-height: auto;
@@ -211,7 +227,7 @@ body {
   .wrap .about-us {
     height: 100%;
     text-align: center;
-    margin: 120px 0;
+    margin: 140px 0;
     padding: 0 100px;
     display: flex;
     justify-content: center;
@@ -304,7 +320,7 @@ body {
 
 .certificate {
   padding: 0 100px;
-  margin-bottom: 120px; }
+  margin-bottom: 140px; }
   .certificate__title {
     text-align: center;
     margin-bottom: 50px; }
@@ -392,6 +408,106 @@ body {
       .certificate__content .certificate__display-img {
         width: 670px;
         height: 500px; }
+
+.reviews {
+  margin-bottom: 140px; }
+  .reviews .swiper-slide {
+    width: 100%;
+    padding: 0 100px; }
+  .reviews__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px; }
+    .reviews__content .reviews__text-content .reviews__title {
+      margin-bottom: 15px; }
+    .reviews__content .reviews__text-content .reviews__course {
+      display: inline-block;
+      margin-bottom: 15px;
+      padding: 13px 17px;
+      background-color: #F5A006;
+      border-radius: 5px; }
+      .reviews__content .reviews__text-content .reviews__course-name {
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: normal;
+        letter-spacing: 0;
+        color: #FFF; }
+    .reviews__content .reviews__text-content .reviews__description {
+      margin-bottom: 25px;
+      max-width: 730px;
+      font-family: 'Montserrat', sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: normal;
+      letter-spacing: 0;
+      color: #FFF; }
+    .reviews__content .reviews__text-content .reviews__people-name {
+      margin-bottom: 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: normal;
+      letter-spacing: 0;
+      color: #FFF; }
+    .reviews__content .reviews__text-content .reviews__social-media {
+      display: flex;
+      column-gap: 10px; }
+    .reviews__content .reviews__video {
+      position: relative; }
+      .reviews__content .reviews__video::before, .reviews__content .reviews__video::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.01); }
+      .reviews__content .reviews__video::before {
+        width: 120%;
+        height: 120%; }
+      .reviews__content .reviews__video::after {
+        width: 140%;
+        height: 140%; }
+      .reviews__content .reviews__video-poster {
+        position: absolute;
+        border-radius: 50%; }
+      .reviews__content .reviews__video-play-btn {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        cursor: pointer; }
+        .reviews__content .reviews__video-play-btn .reviews__video-play-btn-icon {
+          cursor: pointer; }
+        .reviews__content .reviews__video-play-btn .reviews__video-pause {
+          display: none; }
+      .reviews__content .reviews__video-user {
+        width: 400px;
+        height: 400px;
+        border-radius: 50%; }
+  .reviews__control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    column-gap: 42px; }
+    .reviews__control-prev, .reviews__control-next {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 46px;
+      height: 46px;
+      border-radius: 5px;
+      background-color: #F5A006;
+      cursor: pointer; }
+    .reviews__control-next .reviews__control-arrow--next {
+      transform: rotate(180deg); }
 
 .wrap-hidden {
   width: 100%;

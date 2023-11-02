@@ -95,3 +95,19 @@ setupVideoControls($("#video4PlayBtn"), $("#video4"), $("#video4Poster"), $("#vi
 
 
 // About Us End 
+
+
+
+// Reviews Start
+
+var swiper = new Swiper(".reviews", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    navigation: {
+        nextEl: ".reviews__control-next",
+        prevEl: ".reviews__control-prev",
+    },
+});
+
+// Reviews End
