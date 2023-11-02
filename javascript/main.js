@@ -1,4 +1,9 @@
 // Home Page Start
+    AOS.init();
+
+    // You can also pass an optional settings object
+    // below listed default settings
+
     $("#burger").click(function() {
         console.log("Button clicked");
         $(this).toggleClass("home__header-box--burger-open");

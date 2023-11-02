@@ -6,6 +6,8 @@
     <title>/Creator - Академія програмування і робототехніки</title>
     <link rel="stylesheet" href="./style/main.css">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js' integrity='sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 </head>
 <body>
     
@@ -71,15 +73,18 @@
 
 
     <!-- About Us Start -->
-        <section class="about-us">
-            <h2 class="about-us__title secondary-title">
+        <section class="about-us" >
+            <h2 class="about-us__title secondary-title" data-aos="fade-down" data-aos-once="true">
                 <span class="title-slash">/</span>Про нас
             </h2>
-            <p class="about-us__subtitle">
+            <p class="about-us__subtitle" data-aos="fade-left" data-aos-once="true" >
                 Creator, це що таке? Гурток? Школа? Академія? Це простір, де діти не лише вивчають такі глибинні науки як програмування і робототехніка, вони розвиваються всебічно. У нашій Академії горизонтальні відносини всіх її учасників, учнів, викладачів, керівників. Дитина, це людина, тільки з меншим досвідом життя і ми ділимось з нею цим досвідом.
             </p>
 
-            <div class="about-us__video">
+            <div class="about-us__video" 
+                data-aos="fade-right" 
+                data-aos-once="true">
+
                 <div class="about-us__video-left">
 
                     <div id="videoMask1" class="about-us__video-mask about-us__video-mask--small">
@@ -166,12 +171,12 @@
 
         <!-- Certificate Start -->
         <section class="certificate">
-            <h2 class="certificate__title secondary-title">
+            <h2 class="certificate__title secondary-title" data-aos="fade-down" data-aos-once="true">
                 <span class="title-slash">/</span>Курс для тебе
             </h2>
         
             <div class="certificate__content">
-                <div class="certificate__form">
+                <div class="certificate__form" data-aos="fade-right" data-aos-once="true">
                     <div class="certificate__form-group">
                         <span class="certificate__form-group-title">Імя</span>
                         <input class="certificate__form-group-input" id="userName" placeholder="Введіть ваше імя та прізвище" type="text">
@@ -192,7 +197,7 @@
                     </button>
                 </div>
         
-                <div class="certificate__display">
+                <div class="certificate__display" data-aos="fade-left" data-aos-once="true">
                     <p class="certificate__display-name" id="outputUserName">Ваше імя</p>
                     <img src="./img/certificate/certificate-img.jpg" alt="Your Certificate" class="certificate__display-img">
                 </div>
@@ -203,7 +208,8 @@
     </div>
 
 
-
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="./javascript/main.js"></script>
+    
 </body>
 </html>
