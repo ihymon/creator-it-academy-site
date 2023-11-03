@@ -1,9 +1,6 @@
 // Home Page Start
     AOS.init();
 
-    // You can also pass an optional settings object
-    // below listed default settings
-
     $("#burger").click(function() {
         console.log("Button clicked");
         $(this).toggleClass("home__header-box--burger-open");
@@ -36,8 +33,7 @@ function setupVideoControls(playBtn, video, poster, videoMask, playIcon, pauseIc
         if (!isVideoPlay) {
             clearTimeout(videoPlayTimerID);
 
-            // playBtn.find(".about-us__video__play-icon").hide();
-            // playBtn.find(".about-us__video__pause-icon").show();
+
             playBtn.find(playIcon).hide();
             playBtn.find(pauseIcon).show();
             $(".about-us__video-left__scroll").hide(200);
@@ -52,8 +48,6 @@ function setupVideoControls(playBtn, video, poster, videoMask, playIcon, pauseIc
             }
         } else {
             clearTimeout(videoPlayTimerID);
-            // playBtn.find(".about-us__video__play-icon").show();
-            // playBtn.find(".about-us__video__pause-icon").hide();
             playBtn.find(playIcon).show();
             playBtn.find(pauseIcon).hide();
             $(".about-us__video-left__scroll").show(200);
@@ -65,8 +59,6 @@ function setupVideoControls(playBtn, video, poster, videoMask, playIcon, pauseIc
         if (!isVideoStarted) {
             poster.hide();
             video[0].play();
-            // playBtn.find(".about-us__video__play-icon").hide();
-            // playBtn.find(".about-us__video__pause-icon").show();
             playBtn.find(playIcon).hide();
             playBtn.find(pauseIcon).show();
             isVideoStarted = true;
@@ -99,8 +91,6 @@ function setupVideoControls(playBtn, video, poster, videoMask, playIcon, pauseIc
             playBtn.hide(300);
         }, 3000);
 
-        // playBtn.find(".about-us__video__play-icon").hide();
-        // playBtn.find(".about-us__video__pause-icon").show();
         playBtn.find(playIcon).hide();
         playBtn.find(pauseIcon).show();
         isVideoPlay = true;
@@ -111,8 +101,6 @@ function setupVideoControls(playBtn, video, poster, videoMask, playIcon, pauseIc
     video.on("pause", () => {
         clearTimeout(videoPlayTimerID);
         playBtn.show(300);
-        // playBtn.find(".about-us__video__play-icon").show();
-        // playBtn.find(".about-us__video__pause-icon").hide();
         playBtn.find(playIcon).show();
         playBtn.find(pauseIcon).hide();
         isVideoPlay = false;
@@ -161,23 +149,3 @@ $("#aboutUsVideos").on("scroll", () => {
 })
 
 // About Us End 
-
-
-
-// Reviews Start
-
-var swiper = new Swiper(".reviews", {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    loop: true,
-    navigation: {
-        nextEl: ".reviews__control-next",
-        prevEl: ".reviews__control-prev",
-    },
-});
-
-
-setupVideoControls($("#reviewSlide1 .reviews__video-play-btn"), $("#reviewSlide1 .reviews__video-user"), $("#reviewSlide1 .reviews__video-poster"), $("#reviewSlide1 .reviews__content"), ".reviews__video-play", ".reviews__video-pause");
-setupVideoControls($("#reviewSlide2 .reviews__video-play-btn"), $("#reviewSlide2 .reviews__video-user"), $("#reviewSlide2 .reviews__video-poster"), $("#reviewSlide2 .reviews__content"), ".reviews__video-play", ".reviews__video-pause");
-
-// Reviews End
