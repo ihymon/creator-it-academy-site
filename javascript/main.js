@@ -21,7 +21,7 @@
 
 let currentPlayingVideo = null;
 
-function setupVideoControls(playBtn, video, poster, videoMask) {
+function setupVideoControls(playBtn, video, poster, videoMask, playIcon, pauseIcon) {
     let isVideoStarted = false;
     let isVideoPlay = false;
     let videoPlayTimerID;
@@ -36,8 +36,10 @@ function setupVideoControls(playBtn, video, poster, videoMask) {
         if (!isVideoPlay) {
             clearTimeout(videoPlayTimerID);
 
-            playBtn.find(".about-us__video__play-icon").hide();
-            playBtn.find(".about-us__video__pause-icon").show();
+            // playBtn.find(".about-us__video__play-icon").hide();
+            // playBtn.find(".about-us__video__pause-icon").show();
+            playBtn.find(playIcon).hide();
+            playBtn.find(pauseIcon).show();
             $(".about-us__video-left__scroll").hide(200);
             video[0].play();
             isVideoPlay = true;
@@ -50,8 +52,10 @@ function setupVideoControls(playBtn, video, poster, videoMask) {
             }
         } else {
             clearTimeout(videoPlayTimerID);
-            playBtn.find(".about-us__video__play-icon").show();
-            playBtn.find(".about-us__video__pause-icon").hide();
+            // playBtn.find(".about-us__video__play-icon").show();
+            // playBtn.find(".about-us__video__pause-icon").hide();
+            playBtn.find(playIcon).show();
+            playBtn.find(pauseIcon).hide();
             $(".about-us__video-left__scroll").show(200);
             video[0].pause();
             isVideoPlay = false;
@@ -61,8 +65,10 @@ function setupVideoControls(playBtn, video, poster, videoMask) {
         if (!isVideoStarted) {
             poster.hide();
             video[0].play();
-            playBtn.find(".about-us__video__play-icon").hide();
-            playBtn.find(".about-us__video__pause-icon").show();
+            // playBtn.find(".about-us__video__play-icon").hide();
+            // playBtn.find(".about-us__video__pause-icon").show();
+            playBtn.find(playIcon).hide();
+            playBtn.find(pauseIcon).show();
             isVideoStarted = true;
         }
     });
@@ -93,8 +99,10 @@ function setupVideoControls(playBtn, video, poster, videoMask) {
             playBtn.hide(300);
         }, 3000);
 
-        playBtn.find(".about-us__video__play-icon").hide();
-        playBtn.find(".about-us__video__pause-icon").show();
+        // playBtn.find(".about-us__video__play-icon").hide();
+        // playBtn.find(".about-us__video__pause-icon").show();
+        playBtn.find(playIcon).hide();
+        playBtn.find(pauseIcon).show();
         isVideoPlay = true;
         console.log("play was pressed");
     });
@@ -103,8 +111,10 @@ function setupVideoControls(playBtn, video, poster, videoMask) {
     video.on("pause", () => {
         clearTimeout(videoPlayTimerID);
         playBtn.show(300);
-        playBtn.find(".about-us__video__play-icon").show();
-        playBtn.find(".about-us__video__pause-icon").hide();
+        // playBtn.find(".about-us__video__play-icon").show();
+        // playBtn.find(".about-us__video__pause-icon").hide();
+        playBtn.find(playIcon).show();
+        playBtn.find(pauseIcon).hide();
         isVideoPlay = false;
 
         console.log("pause was pressed");
@@ -126,13 +136,15 @@ function stopAllVideo() {
     $("#video3").pause();
     $("#video4").pause();
     $("#mainVideo").pause();
+    $("#reviewSlide1").pause();
+    $("#reviewSlide2").pause();
 }
 
-setupVideoControls($("#mainVideoPlayBtn"), $("#mainVideo"), $("#mainPoster"), $("#mainVideoMask"));
-setupVideoControls($("#video1PlayBtn"), $("#video1"), $("#video1Poster"), $("#videoMask1"));
-setupVideoControls($("#video2PlayBtn"), $("#video2"), $("#video2Poster"), $("#videoMask2"));
-setupVideoControls($("#video3PlayBtn"), $("#video3"), $("#video3Poster"), $("#videoMask3"));
-setupVideoControls($("#video4PlayBtn"), $("#video4"), $("#video4Poster"), $("#videoMask4"));
+setupVideoControls($("#mainVideoPlayBtn"), $("#mainVideo"), $("#mainPoster"), $("#mainVideoMask"), ".about-us__video__play-icon", ".about-us__video__pause-icon");
+setupVideoControls($("#video1PlayBtn"), $("#video1"), $("#video1Poster"), $("#videoMask1"), ".about-us__video__play-icon", ".about-us__video__pause-icon");
+setupVideoControls($("#video2PlayBtn"), $("#video2"), $("#video2Poster"), $("#videoMask2"), ".about-us__video__play-icon", ".about-us__video__pause-icon");
+setupVideoControls($("#video3PlayBtn"), $("#video3"), $("#video3Poster"), $("#videoMask3"), ".about-us__video__play-icon", ".about-us__video__pause-icon");
+setupVideoControls($("#video4PlayBtn"), $("#video4"), $("#video4Poster"), $("#videoMask4"), ".about-us__video__play-icon", ".about-us__video__pause-icon");
 
 
 
@@ -163,5 +175,9 @@ var swiper = new Swiper(".reviews", {
         prevEl: ".reviews__control-prev",
     },
 });
+
+
+setupVideoControls($("#reviewSlide1 .reviews__video-play-btn"), $("#reviewSlide1 .reviews__video-user"), $("#reviewSlide1 .reviews__video-poster"), $("#reviewSlide1 .reviews__content"), ".reviews__video-play", ".reviews__video-pause");
+setupVideoControls($("#reviewSlide2 .reviews__video-play-btn"), $("#reviewSlide2 .reviews__video-user"), $("#reviewSlide2 .reviews__video-poster"), $("#reviewSlide2 .reviews__content"), ".reviews__video-play", ".reviews__video-pause");
 
 // Reviews End

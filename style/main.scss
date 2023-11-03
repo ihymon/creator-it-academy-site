@@ -512,6 +512,9 @@
 
 		.reviews__video {
 			position: relative;
+			background-color: #000;
+			border-radius: 50%;
+			@include display-center (center, center);
 
 
 			&::before, &::after {
@@ -542,6 +545,7 @@
 
 
 			&-play-btn {
+				@include display-center (center, center);
 				position: absolute;
 				left: 50%;
 				top: 50%;
@@ -581,6 +585,12 @@
 			border-radius: 5px;
 			background-color: $main-color;
 			cursor: pointer;
+			transition: .4s;
+
+			&:hover {
+				filter: brightness(0.7);
+				transition: .4s;
+			}
 		}
 
 

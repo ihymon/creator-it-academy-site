@@ -478,7 +478,12 @@ body {
       display: flex;
       column-gap: 10px; }
     .reviews__content .reviews__video {
-      position: relative; }
+      position: relative;
+      background-color: #000;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
       .reviews__content .reviews__video::before, .reviews__content .reviews__video::after {
         content: "";
         position: absolute;
@@ -497,6 +502,9 @@ body {
         position: absolute;
         border-radius: 50%; }
       .reviews__content .reviews__video-play-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         position: absolute;
         left: 50%;
         top: 50%;
@@ -525,7 +533,11 @@ body {
       height: 46px;
       border-radius: 5px;
       background-color: #F5A006;
-      cursor: pointer; }
+      cursor: pointer;
+      transition: .4s; }
+      .reviews__control-prev:hover, .reviews__control-next:hover {
+        filter: brightness(0.7);
+        transition: .4s; }
     .reviews__control-next .reviews__control-arrow--next {
       transform: rotate(180deg); }
 
