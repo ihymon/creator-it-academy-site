@@ -654,6 +654,22 @@
 		}
 
 		// About Us End
+
+		// Benefits Start
+		.benefits {
+			height: 200%;
+			&__box {
+				&-chart {
+					width: 200px;
+					height: 200px;					
+				}
+				&-subtitle{
+					@include font(#fff, 20px, 700, normal, normal);
+				}
+			}
+		}
+		// Benefits End
+
 	}
 }
 
@@ -711,6 +727,31 @@
 			padding: 0 60px;
 		}
 		// About Us End
+
+		// Benefits Start
+		.benefits {
+			&__box {
+				padding: 8% 100px;
+				background-size: 2500px auto;		
+				@include display-center (center, center);
+				display: grid;
+				grid-template-areas:
+					"top top"
+					"bottom bottom";
+				grid-template-rows: 1fr 1fr;
+				grid-gap: 100px;
+
+				&-chart {
+					width: 250px;
+					height: 250px;					
+				}
+				&-subtitle{
+					@include font(#fff, 24px, 700, normal, normal);
+				}
+				
+			}
+		}
+		// Benefits End
 		}
 }
 
@@ -910,6 +951,31 @@
 			}
 		}
 		// About Us End
+
+		// Benefits Start
+		.benefits {
+			&__box {
+				padding: 15% 60px;
+				background-size: 2500px auto;		
+				grid-gap: 50px;
+				margin-top: 30px;
+
+				&-chart {
+					width: 200px;
+					height: 200px;	
+					.chart__title {
+						@include font(#fff, 32px, 700, normal, normal);	
+						position: absolute;
+					}				
+				}
+
+				&-subtitle{
+					@include font(#fff, 20px, 700, normal, normal);
+				}
+				
+			}
+		}
+		// Benefits End
 	}
 }
 
@@ -1052,6 +1118,27 @@
 			}
 		}
 		// About Us End
+		// Benefits Start
+		.benefits {
+			&__title {
+				width: 100%;
+				text-align: center;
+				padding: 0 30px;
+			}
+
+			&__box {
+				padding: 15% 30px;
+				background-size: 4000px auto;		
+				display: flex;
+				flex-direction: column;
+			}
+			&__button {
+				width: 80%;
+				height: 70px;
+				font-size: 20px;
+			}
+		}
+		// Benefits End
 		}
 }
 
