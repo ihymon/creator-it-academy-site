@@ -72,16 +72,19 @@
 
 
     <!-- About Us Start -->
-        <section class="about-us">
-            <h2 class="about-us__title secondary-title">
+        <section class="about-us" >
+            <h2 class="about-us__title secondary-title" data-aos="fade-down" data-aos-once="true">
                 <span class="title-slash">/</span>Про нас
             </h2>
-            <p class="about-us__subtitle">
+            <p class="about-us__subtitle" data-aos="fade-left" data-aos-once="true" >
                 Creator, це що таке? Гурток? Школа? Академія? Це простір, де діти не лише вивчають такі глибинні науки як програмування і робототехніка, вони розвиваються всебічно. У нашій Академії горизонтальні відносини всіх її учасників, учнів, викладачів, керівників. Дитина, це людина, тільки з меншим досвідом життя і ми ділимось з нею цим досвідом.
             </p>
 
-            <div class="about-us__video">
-                <div class="about-us__video-left">
+            <div class="about-us__video" 
+                data-aos="fade-right" 
+                data-aos-once="true">
+
+                <div class="about-us__video-left" id="aboutUsVideos">
 
                     <div id="videoMask1" class="about-us__video-mask about-us__video-mask--small">
                         <img id="video1Poster" class="about-us__video-poster" src="./img/about-us/poster-2.jpg" alt="Poster">
@@ -137,6 +140,10 @@
                             <source src="./video/about-us/video-5.mp4" type="video/mp4">
                         </video>
                     </div>
+
+                    <div class="about-us__video-left__scroll">
+                        <img src="./img/about-us/arrow-bottom-icon.svg" alt="Scroll" class="about-us__video-left__scroll-arrow">
+                    </div>
                 </div>
 
                 <div id="mainVideoMask" class="about-us__video-right">
@@ -167,12 +174,12 @@
 
         <!-- Certificate Start -->
         <section class="certificate">
-            <h2 class="certificate__title secondary-title">
+            <h2 class="certificate__title secondary-title" data-aos="fade-down" data-aos-once="true">
                 <span class="title-slash">/</span>Курс для тебе
             </h2>
         
             <div class="certificate__content">
-                <div class="certificate__form">
+                <div class="certificate__form" data-aos="fade-right" data-aos-once="true">
                     <div class="certificate__form-group">
                         <span class="certificate__form-group-title">Імя</span>
                         <input class="certificate__form-group-input" id="userName" placeholder="Введіть ваше імя та прізвище" type="text">
@@ -193,7 +200,7 @@
                     </button>
                 </div>
         
-                <div class="certificate__display">
+                <div class="certificate__display" data-aos="fade-left" data-aos-once="true">
                     <p class="certificate__display-name" id="outputUserName">Ваше імя</p>
                     <img src="./img/certificate/certificate-img.jpg" alt="Your Certificate" class="certificate__display-img">
                 </div>
@@ -317,7 +324,8 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 
-
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="./javascript/main.js"></script>
+    
 </body>
 </html>
