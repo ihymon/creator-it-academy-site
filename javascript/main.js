@@ -97,3 +97,69 @@ setupVideoControls($("#video4PlayBtn"), $("#video4"), $("#video4Poster"), $("#vi
 
 
 // About Us End 
+
+// Benefits Start
+function chartAnimation(chartId, animatedNumberId, fromValue, toValue, time,data1, data2) {
+    const ctx = document.getElementById(chartId);
+    const targetElement = document.querySelector(`#${chartId}`);
+  
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          console.log("hello");
+          animateValue(animatedNumberId, fromValue, toValue, time);
+  
+          setTimeout(() => {
+            new Chart(ctx, {
+              type: 'doughnut',
+              data: {
+                datasets: [{
+                  data: [data1, data2],
+                  backgroundColor: ['#F5A006', 'rgba(0, 0, 0, 0.20)'],
+                  borderWidth: 0
+                }]
+              },
+              options: {
+                cutout: '80%',
+                plugins: {
+                  tooltip: {
+                    enabled: false
+                  },
+                }
+              }
+            });
+          }, 400);
+  
+          observer.disconnect();
+        }
+      });
+    });
+  
+    observer.observe(targetElement);
+  }
+
+chartAnimation('myChart1', 'animatedNumber', 600, 800, 1000, 70, 30);
+chartAnimation('myChart2', 'animatedNumber2', 0, 20, 1000, 90, 10);
+chartAnimation('myChart3', 'animatedNumber3', 0, 4, 1000, 75, 25);
+chartAnimation('myChart4', 'animatedNumber4', 0, 10, 1000, 55, 45);
+
+function animateValue(id, start, end, duration) {
+    const element = document.getElementById(id);
+    const range = end - start;
+    const increment = end > start ? 1 : -1;
+    const steps = Math.abs(range);
+    const stepTime = duration / steps;
+  
+    function update() {
+      start += increment;
+      element.innerText = start;
+      if (start !== end) {
+        setTimeout(update, stepTime);
+      }
+    }
+  
+    update();
+}
+    
+
+// Benefits End

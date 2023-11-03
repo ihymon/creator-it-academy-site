@@ -7,7 +7,6 @@
 .wrap {
 	width: 100%;
 	min-height: auto;
-	padding: 0 150px;
 	overflow-x: hidden;
 
 
@@ -16,13 +15,12 @@
 .home {
 	width: 100%;
 	max-height: 100vh;
-	padding: 0 100px;
+	padding: 0 200px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	position: relative;
-	// overflow-x: hidden;
 
 
 	&__bg {
@@ -196,7 +194,7 @@
     height: 100%;
     text-align: center;
     margin: 120px 0;
-    padding: 0 100px;
+    padding: 0 200px;
     @include display-center (center, center);
     flex-direction: column;
     background-color: $grey-color;
@@ -319,6 +317,69 @@
 
 
 // Benefits Start
+.benefits {
+	width: 100%;
+	height: 100%;
+	@include display-center (flex-start, center);
+	flex-direction: column;
+	padding: 200px 0;
+	position: relative;
+
+	&__box {
+		width: 100%;
+		height: 100%;
+		background-image: url(../img/benefits/benefits__bg.webp);
+		background-size: 100% auto;		
+		background-repeat: no-repeat;
+		@include display-center (space-between, center);
+		padding: 8% 200px;
+
+		&-cart{
+			@include display-center (center, center);
+			flex-direction: column;
+			gap: 25px
+		}
+
+		&-title {
+			@include font(#fff, 32px, 700, normal, normal);
+		}
+
+		&-chart {
+			width: 250px;
+			height: 250px;
+			@include display-center (center, center);
+			.chart__title {
+				@include font(#fff, 36px, 700, normal, normal);	
+				position: absolute;
+			}
+
+			
+		}
+
+		&-subtitle{
+			@include font(#fff, 24px, 700, normal, normal);
+		}
+	}
+	&__button {
+		width: 360px;
+		height: 80px;
+
+		border: none;
+		border-radius: 5px;
+		background: $main-color;	
+	
+		@include font(#fff, 24px, 600, normal, normal);
+		transition: 0.5s;
+		margin-top: 50px;
+
+		&:hover {
+			background-color: transparent;
+			border: 1px solid $main-color;
+			color: $main-color;
+			transition: 0.5s;
+		}
+	}
+}
 // Benefits Start
 
 
@@ -331,7 +392,7 @@
 // Certificate Start
 
 .certificate {
-	padding: 0 100px;
+	padding: 0 200px;
 	margin-bottom: 120px;
 
 	&__title {
@@ -438,6 +499,7 @@
 		// Home start adaptation
 
 		.home {
+			padding: 0 100px;
 			&__main {
 				&-content {
 					.home__title {
@@ -457,6 +519,30 @@
 			}
 		  }
 		// Home finish adaptation
+
+		// About-us start adaptation
+		.about-us {
+			padding: 0 100px;
+		}
+		// Sbout-us finish adaptation
+		
+
+		// Benefits start adaptation
+		.benefits {
+			&__box {
+				padding: 140px 100px;
+			}
+		}
+		// benefits finish adaptation
+
+
+		// Certificate start adaptation
+		.certificate {
+			padding: 0 100px;
+		}
+		// Certificate finish adaptation
+
+
 	}
 }
 
