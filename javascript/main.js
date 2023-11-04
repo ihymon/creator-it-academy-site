@@ -1,3 +1,40 @@
+// IsMobile Start
+const isMobile = {
+    Android: function () {
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function () {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function () {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function () {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function () {
+        return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function () {
+        return (
+            isMobile.Android() ||
+            isMobile.BlackBerry() ||
+            isMobile.iOS() ||
+            isMobile.Opera() ||
+            isMobile.Windows());
+    }
+};
+
+let openFromMobile = false;
+if(isMobile.any()) {
+    openFromMobile = true;
+} else {
+    openFromMobile = false;
+}
+
+// IsMobile End
+
+
 // Home Page Start
     AOS.init();
 
@@ -18,7 +55,7 @@
 
 let currentPlayingVideo = null;
 
-function setupVideoControls(playBtn, video, poster, videoMask, playIcon, pauseIcon) {
+function setupVideoControls(playBtn, video, poster, videoMask, playIcon, pauseIcon, isReviewVideo) {
     let isVideoStarted = false;
     let isVideoPlay = false;
     let videoPlayTimerID;
@@ -94,7 +131,7 @@ function setupVideoControls(playBtn, video, poster, videoMask, playIcon, pauseIc
         playBtn.find(playIcon).hide();
         playBtn.find(pauseIcon).show();
         isVideoPlay = true;
-        console.log("play was pressed");
+        // console.log("play was pressed");
     });
 
 
@@ -105,9 +142,19 @@ function setupVideoControls(playBtn, video, poster, videoMask, playIcon, pauseIc
         playBtn.find(pauseIcon).hide();
         isVideoPlay = false;
 
-        console.log("pause was pressed");
+        // console.log("pause was pressed");
     });
 
+
+
+    if(isReviewVideo) {
+        // reviewVideoClick(videoMask, playBtn);
+        videoMask.click(() => {
+            if(openFromMobile) {
+                playBtn.show(300);
+            }
+        })
+    }
 }
 
 function stopAllVideo() {
@@ -128,11 +175,11 @@ function stopAllVideo() {
     $("#reviewSlide2").pause();
 }
 
-setupVideoControls($("#mainVideoPlayBtn"), $("#mainVideo"), $("#mainPoster"), $("#mainVideoMask"), ".about-us__video__play-icon", ".about-us__video__pause-icon");
-setupVideoControls($("#video1PlayBtn"), $("#video1"), $("#video1Poster"), $("#videoMask1"), ".about-us__video__play-icon", ".about-us__video__pause-icon");
-setupVideoControls($("#video2PlayBtn"), $("#video2"), $("#video2Poster"), $("#videoMask2"), ".about-us__video__play-icon", ".about-us__video__pause-icon");
-setupVideoControls($("#video3PlayBtn"), $("#video3"), $("#video3Poster"), $("#videoMask3"), ".about-us__video__play-icon", ".about-us__video__pause-icon");
-setupVideoControls($("#video4PlayBtn"), $("#video4"), $("#video4Poster"), $("#videoMask4"), ".about-us__video__play-icon", ".about-us__video__pause-icon");
+setupVideoControls($("#mainVideoPlayBtn"), $("#mainVideo"), $("#mainPoster"), $("#mainVideoMask"), ".about-us__video__play-icon", ".about-us__video__pause-icon", false);
+setupVideoControls($("#video1PlayBtn"), $("#video1"), $("#video1Poster"), $("#videoMask1"), ".about-us__video__play-icon", ".about-us__video__pause-icon", false);
+setupVideoControls($("#video2PlayBtn"), $("#video2"), $("#video2Poster"), $("#videoMask2"), ".about-us__video__play-icon", ".about-us__video__pause-icon", false);
+setupVideoControls($("#video3PlayBtn"), $("#video3"), $("#video3Poster"), $("#videoMask3"), ".about-us__video__play-icon", ".about-us__video__pause-icon", false);
+setupVideoControls($("#video4PlayBtn"), $("#video4"), $("#video4Poster"), $("#videoMask4"), ".about-us__video__play-icon", ".about-us__video__pause-icon", false);
 
 
 
@@ -149,3 +196,33 @@ $("#aboutUsVideos").on("scroll", () => {
 })
 
 // About Us End 
+
+
+
+// Reviews Start
+
+var swiper = new Swiper(".reviews", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    navigation: {
+        nextEl: ".reviews__control-next",
+        prevEl: ".reviews__control-prev",
+    },
+});
+setupVideoControls($("#reviewSlide1 .reviews__video-play-btn"), $("#reviewSlide1 .reviews__video-user"), $("#reviewSlide1 .reviews__video-poster"), $("#reviewSlide1 .reviews__video"), ".reviews__video-play", ".reviews__video-pause", true);
+setupVideoControls($("#reviewSlide2 .reviews__video-play-btn"), $("#reviewSlide2 .reviews__video-user"), $("#reviewSlide2 .reviews__video-poster"), $("#reviewSlide2 .reviews__video"), ".reviews__video-play", ".reviews__video-pause", true);
+
+// function reviewVideoClick(reviewVideo, reviewPlayBtn) {
+//     reviewVideo.click(() => {
+//         if(openFromMobile) {
+//             reviewPlayBtn.show(300);
+//         }
+//     })
+// }
+
+
+// Reviews End
+
+
+
