@@ -73,7 +73,6 @@ function setupVideoControls(playBtn, video, poster, videoMask, playIcon, pauseIc
 
             playBtn.find(playIcon).hide();
             playBtn.find(pauseIcon).show();
-            $(".about-us__video-left__scroll").hide(200);
             video[0].play();
             isVideoPlay = true;
             currentPlayingVideo = video[0];
@@ -87,7 +86,6 @@ function setupVideoControls(playBtn, video, poster, videoMask, playIcon, pauseIc
             clearTimeout(videoPlayTimerID);
             playBtn.find(playIcon).show();
             playBtn.find(pauseIcon).hide();
-            $(".about-us__video-left__scroll").show(200);
             video[0].pause();
             isVideoPlay = false;
             currentPlayingVideo = null;
@@ -131,7 +129,6 @@ function setupVideoControls(playBtn, video, poster, videoMask, playIcon, pauseIc
         playBtn.find(playIcon).hide();
         playBtn.find(pauseIcon).show();
         isVideoPlay = true;
-        // console.log("play was pressed");
     });
 
 
@@ -141,14 +138,11 @@ function setupVideoControls(playBtn, video, poster, videoMask, playIcon, pauseIc
         playBtn.find(playIcon).show();
         playBtn.find(pauseIcon).hide();
         isVideoPlay = false;
-
-        // console.log("pause was pressed");
     });
 
 
 
     if(isReviewVideo) {
-        // reviewVideoClick(videoMask, playBtn);
         videoMask.click(() => {
             if(openFromMobile) {
                 playBtn.show(300);
@@ -182,19 +176,6 @@ setupVideoControls($("#video3PlayBtn"), $("#video3"), $("#video3Poster"), $("#vi
 setupVideoControls($("#video4PlayBtn"), $("#video4"), $("#video4Poster"), $("#videoMask4"), ".about-us__video__play-icon", ".about-us__video__pause-icon", false);
 
 
-
-// Actions when scrolling 
-$("#aboutUsVideos").on("scroll", () => {
-    const scrollTop = $("#aboutUsVideos").scrollTop();
-    const scrollLeft = $("#aboutUsVideos").scrollLeft();
-
-    if(scrollTop > 30 || scrollLeft > 30) {
-        $(".about-us__video-left__scroll").hide(200);
-    } else if(scrollTop <= 10 || scrollLeft > 10) {
-        $(".about-us__video-left__scroll").show(200);
-    }
-})
-
 // About Us End 
 
 
@@ -212,15 +193,6 @@ var swiper = new Swiper(".reviews", {
 });
 setupVideoControls($("#reviewSlide1 .reviews__video-play-btn"), $("#reviewSlide1 .reviews__video-user"), $("#reviewSlide1 .reviews__video-poster"), $("#reviewSlide1 .reviews__video"), ".reviews__video-play", ".reviews__video-pause", true);
 setupVideoControls($("#reviewSlide2 .reviews__video-play-btn"), $("#reviewSlide2 .reviews__video-user"), $("#reviewSlide2 .reviews__video-poster"), $("#reviewSlide2 .reviews__video"), ".reviews__video-play", ".reviews__video-pause", true);
-
-// function reviewVideoClick(reviewVideo, reviewPlayBtn) {
-//     reviewVideo.click(() => {
-//         if(openFromMobile) {
-//             reviewPlayBtn.show(300);
-//         }
-//     })
-// }
-
 
 // Reviews End
 
