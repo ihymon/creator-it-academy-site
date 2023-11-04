@@ -342,6 +342,69 @@
 
 
 // Benefits Start
+.benefits {
+	width: 100%;
+	height: 100%;
+	@include display-center (flex-start, center);
+	flex-direction: column;
+	padding: 200px 0;
+	position: relative;
+  
+	&__box {
+	  width: 100%;
+	  height: 100%;
+	  background-image: url(../img/benefits/benefits__bg.webp);
+	  background-size: 100% auto;    
+	  background-repeat: no-repeat;
+	  @include display-center (space-between, center);
+	  padding: 8% 200px;
+  
+	  &-cart{
+		@include display-center (center, center);
+		flex-direction: column;
+		gap: 25px
+	  }
+  
+	  &-title {
+		@include font(#fff, 32px, 700, normal, normal);
+	  }
+  
+	  &-chart {
+		width: 250px;
+		height: 250px;
+		@include display-center (center, center);
+		.chart__title {
+		  @include font(#fff, 36px, 700, normal, normal);  
+		  position: absolute;
+		}
+  
+		
+	  }
+  
+	  &-subtitle{
+		@include font(#fff, 24px, 700, normal, normal);
+	  }
+	}
+	&__button {
+	  width: 360px;
+	  height: 80px;
+  
+	  border: none;
+	  border-radius: 5px;
+	  background: $main-color;  
+	
+	  @include font(#fff, 24px, 600, normal, normal);
+	  transition: 0.5s;
+	  margin-top: 50px;
+  
+	  &:hover {
+		background-color: transparent;
+		border: 1px solid $main-color;
+		color: $main-color;
+		transition: 0.5s;
+	  }
+	}
+  }
 // Benefits End
 
 
@@ -671,8 +734,10 @@
 
 		// Benefits Start
 		.benefits {
-
-		}
+			&__box {
+			  padding: 140px 100px;
+			}
+		  }
 		// Benefits End
 
 
@@ -865,8 +930,17 @@
 
 		// Benefits Start
 		.benefits {
-
-		}
+			height: 200%;
+			&__box {
+			  &-chart {
+				width: 200px;
+				height: 200px;          
+			  }
+			  &-subtitle{
+				@include font(#fff, 20px, 700, normal, normal);
+			  }
+			}
+		  }
 		// Benefits End
 
 
@@ -1005,8 +1079,27 @@
 
 		// Benefits Start
 		.benefits {
-
-		}
+			&__box {
+			  padding: 8% 100px;
+			  background-size: 2500px auto;    
+			  @include display-center (center, center);
+			  display: grid;
+			  grid-template-areas:
+				"top top"
+				"bottom bottom";
+			  grid-template-rows: 1fr 1fr;
+			  grid-gap: 100px;
+	  
+			  &-chart {
+				width: 250px;
+				height: 250px;          
+			  }
+			  &-subtitle{
+				@include font(#fff, 24px, 700, normal, normal);
+			  }
+			  
+			}
+		  }
 		// Benefits End
 
 
@@ -1276,8 +1369,27 @@
 
 		// Benefits Start
 		.benefits {
-
-		}
+			&__box {
+			  padding: 15% 60px;
+			  background-size: 2500px auto;    
+			  grid-gap: 50px;
+			  margin-top: 30px;
+	  
+			  &-chart {
+				width: 200px;
+				height: 200px;  
+				.chart__title {
+				  @include font(#fff, 32px, 700, normal, normal);  
+				  position: absolute;
+				}        
+			  }
+	  
+			  &-subtitle{
+				@include font(#fff, 20px, 700, normal, normal);
+			  }
+			  
+			}
+		  }
 		// Benefits End
 
 
@@ -1507,8 +1619,24 @@
 
 		// Benefits Start
 		.benefits {
-
-		}
+			&__title {
+			  width: 100%;
+			  text-align: center;
+			  padding: 0 30px;
+			}
+	  
+			&__box {
+			  padding: 15% 30px;
+			  background-size: 4000px auto;    
+			  display: flex;
+			  flex-direction: column;
+			}
+			&__button {
+			  width: 80%;
+			  height: 70px;
+			  font-size: 20px;
+			}
+		  }
 		// Benefits End
 
 

@@ -334,6 +334,83 @@ body {
         border-radius: 5px;
         background-color: #000; }
 
+.benefits {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  padding: 200px 0;
+  position: relative; }
+  .benefits__box {
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/benefits/benefits__bg.webp);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8% 200px; }
+    .benefits__box-cart {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 25px; }
+    .benefits__box-title {
+      font-family: 'Montserrat', sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #fff; }
+    .benefits__box-chart {
+      width: 250px;
+      height: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .benefits__box-chart .chart__title {
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #fff;
+        position: absolute; }
+    .benefits__box-subtitle {
+      font-family: 'Montserrat', sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #fff; }
+  .benefits__button {
+    width: 360px;
+    height: 80px;
+    border: none;
+    border-radius: 5px;
+    background: #F5A006;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #fff;
+    transition: 0.5s;
+    margin-top: 50px; }
+    .benefits__button:hover {
+      background-color: transparent;
+      border: 1px solid #F5A006;
+      color: #F5A006;
+      transition: 0.5s; }
+
 .certificate {
   padding: 0 100px;
   margin-bottom: 140px; }
@@ -553,7 +630,9 @@ body {
       height: 80px; }
     .wrap .home__main-photo .home__photo {
       width: 500px;
-      height: 400px; } }
+      height: 400px; }
+    .wrap .benefits__box {
+      padding: 140px 100px; } }
 @media screen and (max-width: 1400px) {
   .wrap .home__header-left .logo {
     width: 120px;
@@ -629,6 +708,19 @@ body {
       .wrap .about-us__video .about-us__video-mask .about-us__video-poster {
         width: 100%;
         height: 100%; }
+  .wrap .benefits {
+    height: 200%; }
+    .wrap .benefits__box-chart {
+      width: 200px;
+      height: 200px; }
+    .wrap .benefits__box-subtitle {
+      font-family: 'Montserrat', sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #fff; }
   .wrap .reviews__content {
     display: flex;
     flex-direction: column-reverse;
@@ -668,6 +760,27 @@ body {
       height: 300px; }
   .wrap .about-us {
     padding: 0 60px; }
+  .wrap .benefits__box {
+    padding: 8% 100px;
+    background-size: 2500px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-areas: "top top" "bottom bottom";
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 100px; }
+    .wrap .benefits__box-chart {
+      width: 250px;
+      height: 250px; }
+    .wrap .benefits__box-subtitle {
+      font-family: 'Montserrat', sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #fff; }
   .wrap .reviews {
     padding: 0; }
     .wrap .reviews__content .reviews__text-content .reviews__description {
@@ -808,6 +921,31 @@ body {
       .wrap .about-us__video .about-us__video-mask .about-us__video__play-btn--main {
         width: 13vw;
         height: 13vw; }
+  .wrap .benefits__box {
+    padding: 15% 60px;
+    background-size: 2500px auto;
+    grid-gap: 50px;
+    margin-top: 30px; }
+    .wrap .benefits__box-chart {
+      width: 200px;
+      height: 200px; }
+      .wrap .benefits__box-chart .chart__title {
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #fff;
+        position: absolute; }
+    .wrap .benefits__box-subtitle {
+      font-family: 'Montserrat', sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #fff; }
   .wrap .reviews .swiper-slide {
     padding: 0 60px; }
   .wrap .reviews__content .reviews__text-content .reviews__description {
@@ -902,6 +1040,19 @@ body {
         .wrap .about-us__video .about-us__video-mask .about-us__video__play-btn--main {
           width: 80px;
           height: 80px; }
+  .wrap .benefits__title {
+    width: 100%;
+    text-align: center;
+    padding: 0 30px; }
+  .wrap .benefits__box {
+    padding: 15% 30px;
+    background-size: 4000px auto;
+    display: flex;
+    flex-direction: column; }
+  .wrap .benefits__button {
+    width: 80%;
+    height: 70px;
+    font-size: 20px; }
   .wrap .reviews .swiper-slide {
     padding: 0 30px; }
   .wrap .reviews__content .reviews__text-content .reviews__description {
