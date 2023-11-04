@@ -7,7 +7,6 @@
 .wrap {
 	width: 100%;
 	min-height: auto;
-	padding: 0 150px;
 	overflow-x: hidden;
 
 
@@ -394,14 +393,15 @@
 	  background: $main-color;  
 	
 	  @include font(#fff, 24px, 600, normal, normal);
-	  transition: 0.5s;
+	  transition: 0.5s !important;
 	  margin-top: 50px;
+	  
   
 	  &:hover {
 		background-color: transparent;
 		border: 1px solid $main-color;
 		color: $main-color;
-		transition: 0.5s;
+		transition: 0.5s !important;
 	  }
 	}
   }
@@ -410,6 +410,334 @@
 
 
 // Сourse Start
+.course {
+	width: 100%;
+	height: 100%;
+	padding: 0 200px;
+	margin-bottom: 120px;
+	@include display-center (flex-start, center);
+	flex-direction: column;
+
+	.course__filter-title {
+		width: 100%;
+		margin-top: 35px;
+		@include font(#fff, 32px, 700, 120%, normal);
+	}
+
+	&__box {
+		width: 100%;
+		@include display-center (space-between, flex-start);
+		padding: 20px 0;
+
+		&-filter {
+			column-gap: 200px;
+			
+			.filter__cart {
+				width: 338px;
+				height: auto;
+				flex-shrink: 0;
+				padding: 16px 20px 35px 20px;
+				border-radius: 5px;
+				background-color: $dark-secondary-color;
+				margin-bottom: 20px;
+				overflow: hidden;
+				&-box {
+					@include display-center (space-between, center);
+				}
+				
+
+				&-title {
+					@include font(#fff, 24px, 600, 120%, normal);
+				}
+
+				&-arrow {
+					width: 27px;
+					height: 31px;
+					background-image: url(../img/course/arrow.svg);
+					background-size: cover;
+					cursor: pointer;
+					transition: 0.5s;
+				}
+
+				&-arrow--open {
+					transform: rotate(180deg);
+					transition: 0.5s;
+				}
+
+				&-content {
+					margin-top: 25px
+				}
+
+				&-content--open {
+					animation-name: filter;
+					animation-duration: 0.5s;
+					animation-iteration-count: 1;
+					@keyframes filter {
+						0% {
+							opacity: 0;
+							position: relative;
+							top: 20px;
+						}
+						100% {
+							opacity: 1;
+							position: relative;
+							top: 0px;
+						}
+					
+					}
+				}
+				
+				&-input {
+					width: 100%;
+					height: 45px;
+
+					border: none;
+					outline: none;
+					background-color: transparent;
+
+					border: 1px solid $main-color;
+					border-radius: 2px;
+					padding: 0 15px;
+					@include font($main-color, 20px, 500, 120%, normal);
+
+					&::placeholder {
+						color: $main-color;
+					}
+				}
+
+				&-box2 {
+					min-height: 120px;
+					max-height: 170px;
+					overflow-y: auto;
+					display: flex;
+					flex-direction: column;
+					gap: 10px;
+					padding-bottom: 5px;
+
+					&::-webkit-scrollbar {
+						width: 10px;
+						border-radius: 5px;
+
+					  }
+					  
+					 &::-webkit-scrollbar-track {
+						background: transparent;
+					  }
+					  
+					  &::-webkit-scrollbar-thumb {
+						background: $main-color;
+						border-radius: 5px; 
+
+					  }
+					  
+	
+
+					.checkbox-container {
+						display: inline-block;
+						position: relative;
+						padding-left: 25px;
+						cursor: pointer;
+						-webkit-user-select: none;
+						-moz-user-select: none;
+						-ms-user-select: none;
+						user-select: none;
+						line-height: 16px;
+					  }
+					  .checkbox-container input {
+						position: absolute;
+						opacity: 0;
+						cursor: pointer;
+						height: 100%;
+						width: 100%;
+						left: 0;
+						top: 0;
+						z-index: 2;
+					  }
+					  .checkbox-container .checkmark{
+						position: relative;
+						cursor: pointer;
+					  }
+					  .checkbox-container .checkmark:before {
+						content: '';
+						position: absolute;
+						height: 16px;
+						width: 16px;
+						top: 0;
+						left: -25px;
+						background-color: transparent;
+						border: 1px solid $main-color;
+						border-radius: 2px;
+					  }
+					  .checkbox-container:hover input~.checkmark:before {
+						background-color: #ffffff;
+						border-color: rgba(0, 0, 0, 0.3);
+					  }
+					  .checkbox-container input:checked~.checkmark:before {
+						background-color: #fff;
+						border-color: #fff;
+					  }
+					  .checkbox-container .checkmark:after{
+						content: "";
+						position: absolute;
+						left: -18.9px;
+						top: 1.9px;
+						width: 4px;
+						height: 8px;
+						border: solid $main-color;
+						border-width: 0 2px 2px 0;
+						-webkit-transform: rotate(90deg) scale(0);
+						-ms-transform: rotate(90deg) scale(0);
+						transform: rotate(90deg) scale(0);
+						transition: 350ms;
+					  }
+					  .checkbox-container input:checked~.checkmark:after {
+						opacity: 1;
+						-webkit-transform: rotate(45deg) scale(1);
+						-ms-transform: rotate(45deg) scale(1);
+						transform: rotate(45deg) scale(1);
+					  }
+					
+					
+					
+					span {
+						margin-left: 5px;
+						@include font(#fff, 20px, 500, 120%, normal);
+						position: relative;
+						top: 1px;
+					}
+				}
+
+				
+				&-input-box {
+					@include display-center (space-between, center);
+					
+					p {
+						color: #fff;
+					}
+					.input-age {
+						width: 130px;
+						height: 34px;
+
+						border-radius: 2px;
+						background-color: transparent;
+						border: 1px solid #FFF;
+						@include display-center (center, center);
+						@include font(#fff, 20px, 500, 120%, normal);
+
+						text-align: center;
+						padding: 0 15px;
+						
+						&::-webkit-outer-spin-button,
+						&::-webkit-inner-spin-button {
+						-webkit-appearance: none;
+						margin: 0;
+						
+						}
+					}
+
+					.input-age-custom {
+						width: 300px;
+					}
+				}
+
+				.range_container {
+					width: 100%;
+					margin-top: 30px;
+					padding-bottom: 15px;
+					display: flex;
+					flex-direction: column;
+					.sliders_control {
+						position: relative;
+					}
+					  
+					  input[type=range]::-webkit-slider-thumb {
+						-webkit-appearance: none;
+						pointer-events: all;
+						width: 24px;
+						height: 24px;
+						background-color: $main-color;
+						border-radius: 50%;
+						cursor: pointer;
+						transition: 0.5s;
+					  }
+					  
+					  input[type=range]::-moz-range-thumb {
+						-webkit-appearance: none;
+						pointer-events: all;
+						width: 24px;
+						height: 24px;
+						background-color: #fff;
+						border-radius: 50%;
+						box-shadow: 0 0 0 1px #C6C6C6;
+						cursor: pointer;  
+						transition: 0.5s;
+
+					  }
+					  
+					  input[type=range]::-webkit-slider-thumb:hover {
+						background: #f7f7f7;
+						transition: 0.5s;
+
+					  }
+					  
+					  input[type=range]::-webkit-slider-thumb:active {
+						box-shadow: inset 0 0 3px #387bbe, 0 0 9px $main-color;
+						-webkit-box-shadow: inset 0 0 3px $main-color, 0 0 9px $main-color;
+						transition: 0.5s;
+
+					  }
+					  
+					  input[type="number"] {
+						color: #8a8383;
+						width: 50px;
+						height: 30px;
+						font-size: 20px;
+						border: none;
+						transition: 0.5s;
+
+					  }
+					  
+					  input[type=number]::-webkit-inner-spin-button, 
+					  input[type=number]::-webkit-outer-spin-button {  
+						 opacity: 1;
+					  }
+					  
+					  input[type="range"] {
+						-webkit-appearance: none; 
+						appearance: none;
+						height: 2px;
+						width: 100%;
+						position: absolute;
+						background-color: #fff;
+						pointer-events: none;
+					  }
+					  
+					  #fromSlider {
+						height: 0;
+						z-index: 1;
+					  }
+				  }
+			
+
+			}
+
+			.filter__cart--open {
+				height: auto; 
+			}
+
+		}
+		&-main {
+			display: flex;
+			gap: 30px;
+			.main__cart {
+				width: 450px;
+				height: 200px;
+				background-color: white;
+			}
+		}
+
+	}
+}
 // Сourse End
 
 
@@ -772,7 +1100,7 @@
 
 		// Сourse Start
 		.course {
-
+			padding: 0 100px;
 		}
 		// Сourse End
 
