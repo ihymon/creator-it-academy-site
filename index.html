@@ -234,17 +234,17 @@
                 <div class="certificate__form" data-aos="fade-right" data-aos-once="true">
                     <div class="certificate__form-group">
                         <span class="certificate__form-group-title">Імя</span>
-                        <input class="certificate__form-group-input" id="userName" placeholder="Введіть ваше імя та прізвище" type="text">
+                        <input class="certificate__form-group-input" id="userName" placeholder="Введіть ваше імя та прізвище" type="name" maxlength="30">
                     </div>
         
                     <div class="certificate__form-group">
                         <span class="certificate__form-group-title">Номер телефону</span>
-                        <input class="certificate__form-group-input" id="userPhoneNumber" placeholder="Введіть ваш номер телефону" type="tel">
+                        <input class="certificate__form-group-input" id="userPhoneNumber" placeholder="Введіть ваш номер телефону"  type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
                     </div>
         
                     <div class="certificate__form-group">
                         <span class="certificate__form-group-title">Вік</span>
-                        <input class="certificate__form-group-input" id="userAge" placeholder="Введіть скільки вам років" type="number">
+                        <input class="certificate__form-group-input" id="userAge" placeholder="Введіть скільки вам років" type="number" pattern="[0-9]*" />
                     </div>
 
                     <button class="certificate__form-btn">

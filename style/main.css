@@ -478,6 +478,7 @@ body {
         line-height: normal;
         letter-spacing: 0;
         color: #FFF;
+        border: none;
         transition: 0.5s; }
         .certificate__content .certificate__form-btn:hover {
           background-color: transparent;
@@ -494,10 +495,11 @@ body {
         font-family: 'Montserrat', sans-serif;
         font-style: normal;
         font-weight: 700;
-        font-size: 1.5em;
+        font-size: 22px;
         line-height: normal;
         letter-spacing: 0;
-        color: #292929; }
+        color: #292929;
+        white-space: nowrap; }
       .certificate__content .certificate__display-img {
         width: 670px;
         height: 500px; }
@@ -656,7 +658,7 @@ body {
       .wrap .certificate__content .certificate__form-btn {
         width: 532px; }
       .wrap .certificate__content .certificate__display-img {
-        width: 670px;
+        width: 640px;
         height: 500px; }
     .wrap .reviews .swiper-slide {
       padding: 0 100px; } }
@@ -748,6 +750,21 @@ body {
       line-height: normal;
       letter-spacing: normal;
       color: #fff; }
+  .wrap .certificate__content {
+    display: flex;
+    flex-direction: column-reverse;
+    row-gap: 80px; }
+    .wrap .certificate__content .certificate__form-group {
+      text-align: center; }
+      .wrap .certificate__content .certificate__form-group-input {
+        text-align: center; }
+    .wrap .certificate__content .certificate__display {
+      display: flex;
+      justify-content: center;
+      width: 100%; }
+      .wrap .certificate__content .certificate__display-img {
+        width: 80%;
+        height: auto; }
   .wrap .reviews__content {
     display: flex;
     flex-direction: column-reverse;
@@ -808,6 +825,8 @@ body {
       line-height: normal;
       letter-spacing: normal;
       color: #fff; }
+  .wrap .certificate {
+    padding: 0 60px; }
   .wrap .reviews {
     padding: 0; }
     .wrap .reviews__content .reviews__text-content .reviews__description {
@@ -973,6 +992,17 @@ body {
       line-height: normal;
       letter-spacing: normal;
       color: #fff; }
+  .wrap .certificate__content .certificate__form {
+    min-width: 480px; }
+    .wrap .certificate__content .certificate__form-group-input {
+      width: 100%; }
+    .wrap .certificate__content .certificate__form-btn {
+      width: 100%; }
+  .wrap .certificate__content .certificate__display-name {
+    font-size: 2.6vw; }
+  .wrap .certificate__content .certificate__display-img {
+    width: 100%;
+    height: auto; }
   .wrap .reviews .swiper-slide {
     padding: 0 60px; }
   .wrap .reviews__content .reviews__text-content .reviews__description {
@@ -1080,6 +1110,21 @@ body {
     width: 80%;
     height: 70px;
     font-size: 20px; }
+  .wrap .certificate {
+    padding: 0 30px; }
+    .wrap .certificate__content .certificate__form {
+      min-width: 100%; }
+      .wrap .certificate__content .certificate__form-group-input {
+        font-size: 18px;
+        height: 70px; }
+        .wrap .certificate__content .certificate__form-group-input::placeholder {
+          font-size: 18px; }
+      .wrap .certificate__content .certificate__form-group-btn {
+        height: 70px;
+        font-size: 18px; }
+    .wrap .certificate__content .certificate__display-img {
+      width: 100%;
+      height: auto; }
   .wrap .reviews .swiper-slide {
     padding: 0 30px; }
   .wrap .reviews__content .reviews__text-content .reviews__description {
@@ -1128,6 +1173,22 @@ body {
       .wrap .about-us__video .about-us__video-mask .about-us__video__play-btn--main {
         width: 80px;
         height: 80px; }
+  .wrap .certificate {
+    padding: 0; }
+    .wrap .certificate__content {
+      row-gap: 60px; }
+      .wrap .certificate__content .certificate__form {
+        padding: 0 30px; }
+        .wrap .certificate__content .certificate__form-group-input {
+          height: 60px;
+          font-size: 16px; }
+          .wrap .certificate__content .certificate__form-group-input::placeholder {
+            content: "Hui"; }
+        .wrap .certificate__content .certificate__form-btn {
+          height: 60px;
+          font-size: 18px; }
+      .wrap .certificate__content .certificate__display-name {
+        font-size: 3.2vw; }
   .wrap .reviews__content .reviews__text-content .reviews__description {
     font-size: 18px; }
   .wrap .reviews__content .reviews__video {
