@@ -312,8 +312,8 @@ body {
         /* Handle on hover */ }
         .wrap .about-us__video-left::-webkit-scrollbar {
           width: 10px;
-          border-radius: 5px;
-          height: 50px; }
+          height: 10px;
+          border-radius: 5px; }
         .wrap .about-us__video-left::-webkit-scrollbar-track {
           background: #262534;
           border-radius: 5px; }
@@ -586,6 +586,7 @@ body {
     column-gap: 0px;
     row-gap: 50px; }
     .wrap .about-us__video-left {
+      padding: 0 0 10px 0;
       width: 100%;
       height: auto;
       flex-direction: row;
