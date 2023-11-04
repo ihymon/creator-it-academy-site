@@ -392,7 +392,38 @@ toInput.oninput = () => controlToInput(toSlider, fromInput, toInput, toSlider);
 
 
 // Certificate Start 
+$("#userName").on("input", () => {
+    if($("#userName").val() == "") {
+        $("#outputUserName").text("Ваше імя");
+    } else {
+        $("#outputUserName").text($("#userName").val());
+    }
+});
 
+
+$("#userAge").on("input", () => {
+    $("#userAge").val($("#userAge").val().replace(/[^0-9]/g, ''));
+    
+    if ($("#userAge").val().indexOf('e') !== -1) {
+        $("#userAge").val($("#userAge").val().replace('e', ''));
+    }
+});
+
+
+function updatePlaceholderInCerteficte(input, defaultText, newText) {
+    let windowWidth = $(window).width();
+    const inputElement = input;
+
+    if (windowWidth < 450) {
+      inputElement.attr("placeholder", newText);
+    } else {
+      inputElement.attr("placeholder", defaultText);
+    }
+}
+
+updatePlaceholderInCerteficte($("#userName"), "Введіть ваше імя та прізвище", "Ваше ім'я та прізвище");
+updatePlaceholderInCerteficte($("#userPhoneNumber"), "Введіть ваш номер телефону", "Ваш номер телефону");
+updatePlaceholderInCerteficte($("#userAge"), "Введіть скільки вам років", "Ваш вік");
 // Certificate End 
 
 
