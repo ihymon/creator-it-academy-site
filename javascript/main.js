@@ -31,7 +31,6 @@ if(isMobile.any()) {
 } else {
     openFromMobile = false;
 }
-
 // IsMobile End
 
 
@@ -52,7 +51,6 @@ if(isMobile.any()) {
 
 
 // About Us Start 
-
 let currentPlayingVideo = null;
 
 function setupVideoControls(playBtn, video, poster, videoMask, playIcon, pauseIcon, isReviewVideo) {
@@ -174,9 +172,25 @@ setupVideoControls($("#video1PlayBtn"), $("#video1"), $("#video1Poster"), $("#vi
 setupVideoControls($("#video2PlayBtn"), $("#video2"), $("#video2Poster"), $("#videoMask2"), ".about-us__video__play-icon", ".about-us__video__pause-icon", false);
 setupVideoControls($("#video3PlayBtn"), $("#video3"), $("#video3Poster"), $("#videoMask3"), ".about-us__video__play-icon", ".about-us__video__pause-icon", false);
 setupVideoControls($("#video4PlayBtn"), $("#video4"), $("#video4Poster"), $("#videoMask4"), ".about-us__video__play-icon", ".about-us__video__pause-icon", false);
-
-
 // About Us End 
+
+
+
+// Benefits Start 
+
+// Benefits End 
+
+
+
+// Course Start 
+
+// Course End 
+
+
+
+// Certificate Start 
+
+// Certificate End 
 
 
 
@@ -193,8 +207,28 @@ var swiper = new Swiper(".reviews", {
 });
 setupVideoControls($("#reviewSlide1 .reviews__video-play-btn"), $("#reviewSlide1 .reviews__video-user"), $("#reviewSlide1 .reviews__video-poster"), $("#reviewSlide1 .reviews__video"), ".reviews__video-play", ".reviews__video-pause", true);
 setupVideoControls($("#reviewSlide2 .reviews__video-play-btn"), $("#reviewSlide2 .reviews__video-user"), $("#reviewSlide2 .reviews__video-poster"), $("#reviewSlide2 .reviews__video"), ".reviews__video-play", ".reviews__video-pause", true);
-
 // Reviews End
 
 
 
+// Team Start 
+
+// Team End 
+
+
+
+// Partners Start 
+
+// Partners End 
+
+
+
+// Map Start 
+
+// Map End 
+
+
+
+// Footer Start 
+
+// Footer End 
