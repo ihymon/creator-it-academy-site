@@ -288,16 +288,22 @@ updatePlaceholderInCerteficte($("#userAge"), "Введіть скільки ва
 
 
 // Reviews Start
+let owl = $('.owl-carousel-first').owlCarousel({
+    items: 1,
+    loop:true,
+    center: true,
+    dots: false,
+})
 
-var swiper = new Swiper(".reviews", {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    loop: true,
-    navigation: {
-        nextEl: ".reviews__control-next",
-        prevEl: ".reviews__control-prev",
-    },
+$('.reviews__control-prev').on('click', () => {
+    owl.trigger('prev.owl.carousel');
 });
+
+$('.reviews__control-next').on('click', () => {
+    owl.trigger('next.owl.carousel');
+});
+
+
 setupVideoControls($("#reviewSlide1 .reviews__video-play-btn"), $("#reviewSlide1 .reviews__video-user"), $("#reviewSlide1 .reviews__video-poster"), $("#reviewSlide1 .reviews__video"), ".reviews__video-play", ".reviews__video-pause", true);
 setupVideoControls($("#reviewSlide2 .reviews__video-play-btn"), $("#reviewSlide2 .reviews__video-user"), $("#reviewSlide2 .reviews__video-poster"), $("#reviewSlide2 .reviews__video"), ".reviews__video-play", ".reviews__video-pause", true);
 // Reviews End
@@ -305,6 +311,17 @@ setupVideoControls($("#reviewSlide2 .reviews__video-play-btn"), $("#reviewSlide2
 
 
 // Team Start 
+
+let owlTwo = $('.owl-carousel-second').owlCarousel({
+    items: 4,
+    loop: true,
+    center: true,
+    margin: 10,
+    autoplay: true,
+    autoplayTimeout: 2000,
+    autoplayHoverPause: true,
+    dots: false,
+})
 
 // Team End 
 

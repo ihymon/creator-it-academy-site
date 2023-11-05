@@ -44,21 +44,27 @@ body {
 .title-slash {
   color: #F5A006; }
 
-.social-media-icon {
-  width: 40px;
-  height: 40px;
+.social-media {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  background-color: #F5A006;
-  border-radius: 50%;
-  transition: .4s; }
-  .social-media-icon--telegram img {
-    transform: translateX(-5%); }
-  .social-media-icon:hover {
-    background-color: #3F3D56;
+  column-gap: 10px; }
+  .social-media-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: #F5A006;
+    border-radius: 50%;
     transition: .4s; }
+    .social-media-icon img {
+      width: 24px;
+      height: 24px; }
+    .social-media-icon--telegram img {
+      transform: translateX(-5%); }
+    .social-media-icon:hover {
+      background-color: #3F3D56;
+      transition: .4s; }
 
 .wrap {
   width: 100%;
@@ -505,17 +511,18 @@ body {
         height: 500px; }
 
 .reviews {
-  margin-bottom: 140px; }
-  .reviews .swiper-slide {
-    width: 100%;
+  margin-bottom: 140px;
+  width: 100%;
+  height: 100%; }
+  .reviews__title {
     padding: 0 200px; }
   .reviews__content {
+    margin-bottom: 40px;
+    padding: 0 200px;
+    height: 560px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 40px; }
-    .reviews__content .reviews__text-content .reviews__title {
-      margin-bottom: 15px; }
+    align-items: center; }
     .reviews__content .reviews__text-content .reviews__course {
       display: inline-block;
       margin-bottom: 15px;
@@ -549,9 +556,6 @@ body {
       line-height: normal;
       letter-spacing: 0;
       color: #FFF; }
-    .reviews__content .reviews__text-content .reviews__social-media {
-      display: flex;
-      column-gap: 10px; }
     .reviews__content .reviews__video {
       position: relative;
       background-color: #000;
@@ -617,6 +621,72 @@ body {
     .reviews__control-next .reviews__control-arrow--next {
       transform: rotate(180deg); }
 
+.team {
+  margin-bottom: 140px; }
+  .team__title {
+    padding: 0 200px;
+    margin-bottom: 35px;
+    text-align: right; }
+  .team__description {
+    padding: 0 200px;
+    margin-bottom: 70px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120.9%;
+    letter-spacing: 0;
+    color: #FFF; }
+  .team__photo {
+    margin-bottom: 70px;
+    width: 100%; }
+  .team__members {
+    display: flex;
+    column-gap: 70px; }
+  .team__row {
+    display: flex;
+    column-gap: 70px; }
+    .team__row-member {
+      width: 294px;
+      height: 434px;
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      flex-direction: column;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat; }
+      .team__row-member-name {
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: normal;
+        letter-spacing: 0;
+        color: #262534; }
+      .team__row-member-position {
+        margin-bottom: 20px;
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: normal;
+        letter-spacing: 0;
+        color: #262534; }
+    .team__row-social-media {
+      margin-bottom: 35px; }
+    .team__row .member-1 {
+      background-image: url(../img/team/team-members/member-1.jpg); }
+    .team__row .member-2 {
+      background-image: url(../img/team/team-members/member-2.jpg); }
+    .team__row .yura-kunec {
+      background-image: url(../img/team/team-members/yura-kunec.jpg); }
+    .team__row .sophia-kunec {
+      background-image: url(../img/team/team-members/sophia-kunec.jpg); }
+    .team__row .member-3 {
+      background-image: url(../img/team/team-members/member-3.jpg); }
+
 .wrap-hidden {
   width: 100%;
   height: 100vh;
@@ -660,7 +730,13 @@ body {
       .wrap .certificate__content .certificate__display-img {
         width: 640px;
         height: 500px; }
-    .wrap .reviews .swiper-slide {
+    .wrap .reviews__title {
+      padding: 0 100px; }
+    .wrap .reviews__content {
+      padding: 0 100px; }
+    .wrap .team__title {
+      padding: 0 100px; }
+    .wrap .team__description {
       padding: 0 100px; } }
 @media screen and (max-width: 1400px) {
   .wrap .home__header-left .logo {
@@ -765,19 +841,30 @@ body {
       .wrap .certificate__content .certificate__display-img {
         width: 80%;
         height: auto; }
+  .wrap .reviews__title {
+    text-align: center; }
   .wrap .reviews__content {
     display: flex;
     flex-direction: column-reverse;
-    row-gap: 60px; }
+    row-gap: 60px;
+    height: auto;
+    margin-top: 80px; }
     .wrap .reviews__content .reviews__text-content {
       display: flex;
       justify-content: none;
       align-items: center;
       flex-direction: column; }
-      .wrap .reviews__content .reviews__text-content .reviews__title {
-        text-align: center; }
       .wrap .reviews__content .reviews__text-content .reviews__description {
-        text-align: center; } }
+        text-align: center; }
+    .wrap .reviews__content .reviews__video {
+      width: 400px;
+      height: 400px; }
+      .wrap .reviews__content .reviews__video-poster {
+        width: 100%;
+        height: 100%; }
+      .wrap .reviews__content .reviews__video-user {
+        width: 100%;
+        height: 100%; } }
 @media screen and (max-width: 1200px) {
   .wrap .home {
     padding: 0 60px; }
@@ -827,10 +914,13 @@ body {
       color: #fff; }
   .wrap .certificate {
     padding: 0 60px; }
-  .wrap .reviews {
-    padding: 0; }
+  .wrap .reviews__content {
+    padding: 0 60px; }
     .wrap .reviews__content .reviews__text-content .reviews__description {
-      max-width: 100%; } }
+      max-width: 100%; }
+    .wrap .reviews__content .reviews__video {
+      width: 360px;
+      height: 360px; } }
 @media screen and (max-width: 1000px) {
   .wrap .home {
     padding: 0 60px; }
@@ -1003,19 +1093,11 @@ body {
   .wrap .certificate__content .certificate__display-img {
     width: 100%;
     height: auto; }
-  .wrap .reviews .swiper-slide {
-    padding: 0 60px; }
   .wrap .reviews__content .reviews__text-content .reviews__description {
     max-width: 100%; }
   .wrap .reviews__content .reviews__video {
     width: 360px;
-    height: 360px; }
-    .wrap .reviews__content .reviews__video-poster {
-      width: 100%;
-      height: 100%; }
-    .wrap .reviews__content .reviews__video-user {
-      width: 100%;
-      height: 100%; } }
+    height: 360px; } }
 @media screen and (max-width: 600px) {
   .wrap .secondary-title {
     font-size: 36px; }
@@ -1125,19 +1207,22 @@ body {
     .wrap .certificate__content .certificate__display-img {
       width: 100%;
       height: auto; }
-  .wrap .reviews .swiper-slide {
+  .wrap .reviews__title {
     padding: 0 30px; }
-  .wrap .reviews__content .reviews__text-content .reviews__description {
-    max-width: 100%;
-    font-size: 20px; }
-  .wrap .reviews__content .reviews__text-content .reviews__people-name {
-    font-size: 20px; }
-  .wrap .reviews__content .reviews__video {
-    width: 320px;
-    height: 320px; }
-    .wrap .reviews__content .reviews__video-play-btn-icon {
-      width: 100px;
-      height: 100px; } }
+  .wrap .reviews__content {
+    padding: 0 30px;
+    margin-top: 60px; }
+    .wrap .reviews__content .reviews__text-content .reviews__description {
+      max-width: 100%;
+      font-size: 20px; }
+    .wrap .reviews__content .reviews__text-content .reviews__people-name {
+      font-size: 20px; }
+    .wrap .reviews__content .reviews__video {
+      width: 300px;
+      height: 300px; }
+      .wrap .reviews__content .reviews__video-play-btn-icon {
+        width: 100px;
+        height: 100px; } }
 @media screen and (max-width: 450px) {
   .wrap .home__main-photo .home__photo {
     width: 70vw;
@@ -1182,18 +1267,18 @@ body {
         .wrap .certificate__content .certificate__form-group-input {
           height: 60px;
           font-size: 16px; }
-          .wrap .certificate__content .certificate__form-group-input::placeholder {
-            content: "Hui"; }
         .wrap .certificate__content .certificate__form-btn {
           height: 60px;
           font-size: 18px; }
       .wrap .certificate__content .certificate__display-name {
         font-size: 3.2vw; }
-  .wrap .reviews__content .reviews__text-content .reviews__description {
-    font-size: 18px; }
-  .wrap .reviews__content .reviews__video {
-    width: 250px;
-    height: 250px; } }
+  .wrap .reviews__content {
+    margin-top: 40px; }
+    .wrap .reviews__content .reviews__text-content .reviews__description {
+      font-size: 18px; }
+    .wrap .reviews__content .reviews__video {
+      width: 220px;
+      height: 220px; } }
 @media screen and (max-height: 800px) {
   .wrap .home {
     max-height: 200vh; }
