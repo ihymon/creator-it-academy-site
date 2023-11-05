@@ -1068,10 +1068,20 @@
 // Team End
 
 
-
 // Partners Start
 .partners {
+	margin-bottom: 180px;
 
+	&__title {
+		margin-bottom: 120px;
+		text-align: center;
+	}
+
+
+	&__row {
+		width: 100%;
+		height: auto;
+	}
 }
 // Partners End
 
@@ -2309,7 +2319,9 @@
 
 		// Partners Start
 		.partners {
-
+			&-logo {
+				max-width: 420px;
+			}
 		}
 		// Partners End
 
@@ -2499,7 +2511,9 @@
 
 		// Partners Start
 		.partners {
-
+			&-logo {
+				max-width: 250px;
+			}
 		}
 		// Partners End
 

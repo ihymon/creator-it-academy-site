@@ -453,7 +453,7 @@ setupVideoControls($("#reviewSlide2 .reviews__video-play-btn"), $("#reviewSlide2
 
 // Team Start 
 
-let owlTwo = $('.owl-carousel-second').owlCarousel({
+let owlSecond = $('.owl-carousel-second').owlCarousel({
     items: 4,
     loop: true,
     center: true,
@@ -471,10 +471,12 @@ let owlTwo = $('.owl-carousel-second').owlCarousel({
       600: {
         margin: 60,
       },
-      1000: {
+      1400: {
         margin: 80,
       },
-
+      2000: {
+        margin: 180,
+      },
     }
 })
 
@@ -484,6 +486,32 @@ let owlTwo = $('.owl-carousel-second').owlCarousel({
 
 // Partners Start 
 
+let owlThird = $('.owl-carousel-third').owlCarousel({
+  items: 4,
+  loop: true,
+  center: true,
+  margin: 140,
+  autoWidth: true,
+  autoplay: true,
+  autoplayTimeout: 1500,
+  autoplayHoverPause: true,
+  responsiveClass:true,
+  dots: false,
+  responsive: {
+    600: {
+      margin: 80,
+    },
+    600: {
+      margin: 100,
+    },
+    1400: {
+      margin: 120,
+    },
+    2000: {
+      margin: 200,
+    },
+  }
+})
 // Partners End 
 
 

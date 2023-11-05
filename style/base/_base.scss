@@ -45,5 +45,15 @@ body {
 			transition: .4s;
 		}
 	}
-	
+}
+
+
+.owl-stage {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+  
+.owl-item {
+	flex: 0 0 auto;
 }
