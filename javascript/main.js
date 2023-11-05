@@ -245,6 +245,147 @@ function animateValue(id, start, end, duration) {
 
 
 // Course Start 
+function fethcCourse() {
+  fetch('./api/course.json')
+    .then(response => response.json())
+    .then(courses => {
+      let maxPrice = 0;
+
+
+
+      $(".course__filter-title span").text(courses.length);
+      for(let i = 0; i < courses.length; i++) {
+        console.log(courses[i]);
+
+        if (courses[i].price > maxPrice) {
+          maxPrice = courses[i].price;
+        }
+        $('#toInput').val(maxPrice);
+        $('#toSlider').val(maxPrice);
+        $('#toInput').attr('max', maxPrice);
+        $('#fromInput').attr('max', maxPrice);
+        $('#toSlider').attr('max', maxPrice);
+        $('#fromSlider').attr('max', maxPrice);
+      }
+
+      console.log(maxPrice)
+      
+    })
+    .catch(error => {
+      console.error('Помилка отримання JSON файлу:', error);
+    });
+}
+
+fethcCourse();
+
+
+$(".filter__cart-arrow").click(function() {
+  let grandparentElement = $(this).parent().parent();
+  let contentElement = grandparentElement.find(".filter__cart-content");
+
+  $(this).toggleClass("filter__cart-arrow--open");
+  $(grandparentElement).toggleClass("filter__cart--open");
+
+  contentElement.toggleClass("filter__cart-content--open");
+});
+
+  $(".my-checkbox").click(function() {
+    $(".my-checkbox").prop('checked', false);
+    $(this).prop('checked', true);
+
+    let labelText = $(this).closest(".checkbox-container").find("span");
+    console.log($(labelText).attr("id"));
+  });
+
+
+
+  function controlFromInput(fromSlider, fromInput, toInput, controlSlider) {
+    const [from, to] = getParsed(fromInput, toInput);
+    fillSlider(fromInput, toInput, '#fff', '#F5A006', controlSlider);
+    if (from > to) {
+        fromSlider.value = to;
+        fromInput.value = to;
+    } else {
+        fromSlider.value = from;
+    }
+}
+    
+function controlToInput(toSlider, fromInput, toInput, controlSlider) {
+    const [from, to] = getParsed(fromInput, toInput);
+    fillSlider(fromInput, toInput, '#fff', '#F5A006', controlSlider);
+    setToggleAccessible(toInput);
+    if (from <= to) {
+        toSlider.value = to;
+        toInput.value = to;
+    } else {
+        toInput.value = from;
+    }
+}
+
+function controlFromSlider(fromSlider, toSlider, fromInput) {
+  const [from, to] = getParsed(fromSlider, toSlider);
+  fillSlider(fromSlider, toSlider, '#fff', '#F5A006', toSlider);
+  if (from > to) {
+    fromSlider.value = to;
+    fromInput.value = to;
+  } else {
+    fromInput.value = from;
+  }
+}
+
+function controlToSlider(fromSlider, toSlider, toInput) {
+  const [from, to] = getParsed(fromSlider, toSlider);
+  fillSlider(fromSlider, toSlider, '#fff', '#F5A006', toSlider);
+  setToggleAccessible(toSlider);
+  if (from <= to) {
+    toSlider.value = to;
+    toInput.value = to;
+  } else {
+    toInput.value = from;
+    toSlider.value = from;
+  }
+}
+
+function getParsed(currentFrom, currentTo) {
+  const from = parseInt(currentFrom.value, 0);
+  const to = parseInt(currentTo.value, 10);
+  return [from, to];
+}
+
+function fillSlider(from, to, sliderColor, rangeColor, controlSlider) {
+    const rangeDistance = to.max-to.min;
+    const fromPosition = from.value - to.min;
+    const toPosition = to.value - to.min;
+    controlSlider.style.background = `linear-gradient(
+      to right,
+      ${sliderColor} 0%,
+      ${sliderColor} ${(fromPosition)/(rangeDistance)*100}%,
+      ${rangeColor} ${((fromPosition)/(rangeDistance))*100}%,
+      ${rangeColor} ${(toPosition)/(rangeDistance)*100}%, 
+      ${sliderColor} ${(toPosition)/(rangeDistance)*100}%, 
+      ${sliderColor} 100%)`;
+}
+
+function setToggleAccessible(currentTarget) {
+  const toSlider = document.querySelector('#toSlider');
+  if (Number(currentTarget.value) <= 0 ) {
+    toSlider.style.zIndex = 2;
+  } else {
+    toSlider.style.zIndex = 0;
+  }
+}
+
+const fromSlider = document.querySelector('#fromSlider');
+const toSlider = document.querySelector('#toSlider');
+const fromInput = document.querySelector('#fromInput');
+const toInput = document.querySelector('#toInput');
+fillSlider(fromSlider, toSlider, '#fff', '#F5A006', toSlider);
+setToggleAccessible(toSlider);
+
+fromSlider.oninput = () => controlFromSlider(fromSlider, toSlider, fromInput);
+toSlider.oninput = () => controlToSlider(fromSlider, toSlider, toInput);
+fromInput.oninput = () => controlFromInput(fromSlider, fromInput, toInput, toSlider);
+toInput.oninput = () => controlToInput(toSlider, fromInput, toInput, toSlider);
 
 // Course End 
 
