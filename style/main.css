@@ -912,8 +912,7 @@ body {
     display: flex;
     column-gap: 70px; }
   .team__row {
-    display: flex;
-    column-gap: 70px; }
+    display: flex; }
     .team__row-member {
       width: 294px;
       height: 434px;
@@ -1133,7 +1132,9 @@ body {
         height: 100%; }
       .wrap .reviews__content .reviews__video-user {
         width: 100%;
-        height: 100%; } }
+        height: 100%; }
+  .wrap .team__title {
+    text-align: center; } }
 @media screen and (max-width: 1200px) {
   .wrap .home {
     padding: 0 60px; }
@@ -1189,7 +1190,11 @@ body {
       max-width: 100%; }
     .wrap .reviews__content .reviews__video {
       width: 360px;
-      height: 360px; } }
+      height: 360px; }
+  .wrap .team__title {
+    padding: 0 60px; }
+  .wrap .team__description {
+    padding: 0 60px; } }
 @media screen and (max-width: 1000px) {
   .wrap .home {
     padding: 0 60px; }
@@ -1366,7 +1371,20 @@ body {
     max-width: 100%; }
   .wrap .reviews__content .reviews__video {
     width: 360px;
-    height: 360px; } }
+    height: 360px; }
+  .wrap .team {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+    .wrap .team__photo {
+      width: 100%;
+      max-height: auto; }
+    .wrap .team__row-member {
+      width: 242px;
+      height: 360px; }
+      .wrap .team__row-member-name {
+        font-size: 28px; } }
 @media screen and (max-width: 600px) {
   .wrap .secondary-title {
     font-size: 36px; }
@@ -1491,7 +1509,19 @@ body {
       height: 300px; }
       .wrap .reviews__content .reviews__video-play-btn-icon {
         width: 100px;
-        height: 100px; } }
+        height: 100px; }
+  .wrap .team__title {
+    padding: 0 30px; }
+  .wrap .team__description {
+    padding: 0 30px;
+    font-size: 20px; }
+  .wrap .team__row-member {
+    width: 230px;
+    height: 343px; }
+    .wrap .team__row-member-name {
+      font-size: 24px; }
+  .wrap .team__row-social-media {
+    margin-bottom: 20px; } }
 @media screen and (max-width: 450px) {
   .wrap .home__main-photo .home__photo {
     width: 70vw;
@@ -1547,7 +1577,11 @@ body {
       font-size: 18px; }
     .wrap .reviews__content .reviews__video {
       width: 220px;
-      height: 220px; } }
+      height: 220px; }
+  .wrap .team__description {
+    font-size: 18px; }
+  .wrap .team__photo {
+    min-height: 200px; } }
 @media screen and (max-height: 800px) {
   .wrap .home {
     max-height: 200vh; }

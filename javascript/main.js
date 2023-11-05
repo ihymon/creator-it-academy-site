@@ -457,11 +457,25 @@ let owlTwo = $('.owl-carousel-second').owlCarousel({
     items: 4,
     loop: true,
     center: true,
-    margin: 10,
+    margin: 80,
+    autoWidth: true,
     autoplay: true,
     autoplayTimeout: 2000,
     autoplayHoverPause: true,
+    responsiveClass:true,
     dots: false,
+    responsive: {
+      600: {
+        margin: 40,
+      },
+      600: {
+        margin: 60,
+      },
+      1000: {
+        margin: 80,
+      },
+
+    }
 })
 
 // Team End 

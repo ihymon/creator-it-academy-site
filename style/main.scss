@@ -981,7 +981,6 @@
 // Reviews End
 
 
-
 // Team Start
 .team {
 	margin-bottom: 140px;
@@ -1013,7 +1012,6 @@
 
 	&__row {
 		display: flex;
-		column-gap: 70px;
 
 		&-member {
 			width: 294px;
@@ -1497,7 +1495,9 @@
 
 		// Team Start
 		.team {
-
+			&__title {
+				text-align: center;
+			}
 		}
 		// Team End
 
@@ -1650,7 +1650,12 @@
 
 		// Team Start
 		.team {
-
+			&__title {
+				padding: 0 60px;
+			}
+			&__description {
+				padding: 0 60px;
+			}
 		}
 		// Team End
 
@@ -1971,7 +1976,25 @@
 
 		// Team Start
 		.team {
+			@include display-center (center, center);
+			flex-direction: column;
 
+
+			&__photo {
+				width: 100%;
+				max-height: auto;
+			}
+
+			&__row {
+				&-member {
+					width: 242px;
+					height: 360px;
+
+					&-name {
+						font-size: 28px;
+					}
+				}
+			}
 		}
 		// Team End
 
@@ -2255,7 +2278,30 @@
 
 		// Team Start
 		.team {
+			&__title {
+				padding: 0 30px;
+			}
 
+			&__description {
+				padding: 0 30px;
+				font-size: 20px;
+			}
+
+
+			&__row {
+				&-member {
+					width: 230px;
+					height: 343px;
+
+					&-name {
+						font-size: 24px;
+					}
+				}
+
+				&-social-media {
+					margin-bottom: 20px;
+				}
+			}
 		}
 		// Team End
 
@@ -2439,7 +2485,13 @@
 
 		// Team Start
 		.team {
+			&__description {
+				font-size: 18px;
+			}
 
+			&__photo {
+				min-height: 200px;
+			}
 		}
 		// Team End
 
