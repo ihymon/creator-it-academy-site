@@ -12,26 +12,48 @@ body {
 .title-slash {
 	color: $main-color;
 }
+
+.social-media {
+	display: flex;
+	column-gap: 10px;
+
+
+	&-icon {
+		width: 40px;
+		height: 40px;
 	
-.social-media-icon {
-	width: 40px;
-	height: 40px;
-
-	@include display-center (center, center);
-	cursor: pointer;
-
-	background-color: $main-color;
-	border-radius: 50%;
-	transition: .4s;
+		@include display-center (center, center);
+		cursor: pointer;
 	
-
-	&--telegram img{
-		transform: translateX(-5%);
-	}
-
-
-	&:hover {
-		background-color: $dark-secondary-color;
+		background-color: $main-color;
+		border-radius: 50%;
 		transition: .4s;
+
+		& img {
+			width: 24px;
+			height: 24px;
+		}
+		
+	
+		&--telegram img{
+			transform: translateX(-5%);
+		}
+	
+	
+		&:hover {
+			background-color: $dark-secondary-color;
+			transition: .4s;
+		}
 	}
+}
+
+
+.owl-stage {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+  
+.owl-item {
+	flex: 0 0 auto;
 }

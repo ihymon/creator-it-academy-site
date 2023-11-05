@@ -471,16 +471,22 @@ updatePlaceholderInCerteficte($("#userAge"), "Введіть скільки ва
 
 
 // Reviews Start
+let owl = $('.owl-carousel-first').owlCarousel({
+    items: 1,
+    loop:true,
+    center: true,
+    dots: false,
+})
 
-var swiper = new Swiper(".reviews", {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    loop: true,
-    navigation: {
-        nextEl: ".reviews__control-next",
-        prevEl: ".reviews__control-prev",
-    },
+$('.reviews__control-prev').on('click', () => {
+    owl.trigger('prev.owl.carousel');
 });
+
+$('.reviews__control-next').on('click', () => {
+    owl.trigger('next.owl.carousel');
+});
+
+
 setupVideoControls($("#reviewSlide1 .reviews__video-play-btn"), $("#reviewSlide1 .reviews__video-user"), $("#reviewSlide1 .reviews__video-poster"), $("#reviewSlide1 .reviews__video"), ".reviews__video-play", ".reviews__video-pause", true);
 setupVideoControls($("#reviewSlide2 .reviews__video-play-btn"), $("#reviewSlide2 .reviews__video-user"), $("#reviewSlide2 .reviews__video-poster"), $("#reviewSlide2 .reviews__video"), ".reviews__video-play", ".reviews__video-pause", true);
 // Reviews End
@@ -489,12 +495,65 @@ setupVideoControls($("#reviewSlide2 .reviews__video-play-btn"), $("#reviewSlide2
 
 // Team Start 
 
+let owlSecond = $('.owl-carousel-second').owlCarousel({
+    items: 4,
+    loop: true,
+    center: true,
+    margin: 80,
+    autoWidth: true,
+    autoplay: true,
+    autoplayTimeout: 2000,
+    autoplayHoverPause: true,
+    responsiveClass:true,
+    dots: false,
+    responsive: {
+      600: {
+        margin: 40,
+      },
+      600: {
+        margin: 60,
+      },
+      1400: {
+        margin: 80,
+      },
+      2000: {
+        margin: 180,
+      },
+    }
+})
+
 // Team End 
 
 
 
 // Partners Start 
 
+let owlThird = $('.owl-carousel-third').owlCarousel({
+  items: 4,
+  loop: true,
+  center: true,
+  margin: 140,
+  autoWidth: true,
+  autoplay: true,
+  autoplayTimeout: 1500,
+  autoplayHoverPause: true,
+  responsiveClass:true,
+  dots: false,
+  responsive: {
+    600: {
+      margin: 80,
+    },
+    600: {
+      margin: 100,
+    },
+    1400: {
+      margin: 120,
+    },
+    2000: {
+      margin: 200,
+    },
+  }
+})
 // Partners End 
 
 
