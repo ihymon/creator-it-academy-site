@@ -18,6 +18,13 @@ body {
 	column-gap: 10px;
 
 
+	&--footer {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		row-gap: 20px;
+	}
+
 	&-icon {
 		width: 40px;
 		height: 40px;

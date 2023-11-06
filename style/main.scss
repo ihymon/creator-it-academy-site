@@ -1224,7 +1224,6 @@
 
 // Map Start
 .map {
-
 }
 // Map End
 
@@ -1232,7 +1231,75 @@
 
 // Footer Start
 .footer {
+	padding: 60px 200px;
+	background-color: $dark-color;
+	width: 100%;
 
+	&__content {
+		padding-bottom: 175px;
+		display: flex;
+		justify-content: space-between;
+		border-bottom: 4px solid $main-color;
+		flex-wrap: wrap;
+		column-gap: 60px;
+		row-gap: 80px;
+
+		.footer__list {
+			display: flex;
+			flex-direction: column;
+			row-gap: 15px;
+
+			.footer__description {
+				max-width: 432px;
+				@include font(#FFF, 24px, 400, normal, 0);
+			}
+
+
+			&-title {
+				margin-bottom: 10px;
+				@include font(#FFF, 32px, 600, normal, 0);
+			}
+
+			.footer__link {
+				@include font(#FFF, 20px, 500, normal, 0);
+				transition: .4s;
+
+				&:hover {
+					color: $main-color;
+					transition: .4s;
+				}
+			}
+
+			.footer__btn {
+				margin-top: 35px;
+				width: 234px;
+				height: 48px;
+				border-radius: 5px;
+				background: $main-color;
+				border: none;
+				transition: 0.5s;
+				@include font(#FFF, 16px, 600, normal, 0);
+
+
+				&:hover {
+					background-color: transparent;
+					border: 1px solid $main-color;
+					color: $main-color;
+					transition: 0.5s;
+				}
+			}
+		}
+	}
+
+
+	&__copyright {
+		margin-top: 25px;
+		@include display-center (space-between, center);
+
+		&-text {
+			@include font(#fff, 24px, 400, 158.333%, 0);
+		}
+	}
 }
 // Footer End
 
@@ -1358,7 +1425,6 @@
 			}
 			&__content {
 				padding: 0 100px;
-
 			}
 		}
 		// Reviews End
@@ -1397,7 +1463,7 @@
 
 		// Footer Start
 		.footer {
-
+			padding: 60px 100px 60px 100px;
 		}
 		// Footer End
 	}
@@ -1824,7 +1890,7 @@
 
 		// Footer Start
 		.footer {
-
+			padding: 50px 60px;
 		}
 		// Footer End
 	}
@@ -2163,7 +2229,24 @@
 
 		// Footer Start
 		.footer {
+			&__content {
+				column-gap: 180px;
+				justify-content: center;
 
+				.footer__list {
+					text-align: center;
+				}
+			}
+			
+			&__copyright {
+				display: flex;
+
+				justify-content: center;
+
+				flex-wrap: wrap;
+				column-gap: 100px;
+				row-gap: 20px;
+			}
 		}
 		// Footer End
 	}
@@ -2472,7 +2555,21 @@
 
 		// Footer Start
 		.footer {
+			padding: 50px 30px;
+			&__content {
+				.footer__list {
+					.footer__description {
+						font-size: 20px;
+					}
+				}
+			}
 
+
+			&__copyright {
+				&-text {
+					font-size: 20px;
+				}
+			}
 		}
 		// Footer End
 		}
@@ -2664,7 +2761,12 @@
 
 		// Footer Start
 		.footer {
-
+			&__copyright {
+				&-text {
+					text-align: center;
+					font-size: 18px;
+				}
+			}
 		}
 		// Footer End
   	}
