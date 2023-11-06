@@ -418,7 +418,7 @@
 	@include display-center (flex-start, center);
 	flex-direction: column;
 
-	.course__filter-title {
+	&__filter-title {
 		width: 100%;
 		margin-top: 35px;
 		@include font(#fff, 32px, 700, 120%, normal);
@@ -737,16 +737,141 @@
 
 		}
 		&-main {
-			display: flex;
+			flex-wrap: wrap;
+			@include display-center (flex-end, flex-start);
+			
+			padding-left: 30px;
 			gap: 30px;
 			.main__cart {
 				width: 450px;
-				height: 200px;
-				background-color: white;
+				height: 297px;
+				border-radius: 5px;
+				background: #FFF;
+				padding: 25px 0 25px 25px;
+				cursor: pointer;
+				overflow: hidden;
+				
+				&-button {
+					@include font(#fff, 16px, 600, 120%, normal);
+					@include display-center (center, center);
+					width: auto;
+					border: none;
+					border-radius: 4px;
+					padding: 0 15px;
+					height: 36px;
+					background-color: $main-color;
+
+				}
+
+				&-box {
+					position: relative;
+					@include display-center (space-between, flex-start);
+
+					.cart__left {
+						padding-top: 25px;
+						.main__cart-subtitle {
+							@include font($grey-ligth-color, 16px, 500, 120%, normal);
+						}
+						.main__cart-title {
+							width: 230px;
+							@include font(#000, 24px, 600, normal, normal);
+							margin-top: 10px;
+							padding-bottom: 15px
+						}
+						
+						.main__cart-sociable {
+							margin-top: 5px;
+							@include display-center (flex-start, center);
+
+							p {
+								margin-left: 5px;
+								@include font($grey-ligth-color, 16px, 500, normal, normal);
+								
+							}
+							
+						}
+					}
+
+					.cart__rigth {
+						width: 200px;
+						height: 100%;
+						position: absolute;
+						right: 0%;
+						padding-left: 30px;
+						
+
+						img {
+							width: 280px;
+							height: 280px;
+							position: relative;
+							bottom: 30px;
+						}
+					}
+
+				}
+
 			}
+
+			.main__cart-blue {
+				.main__cart-button {
+					background-color: $blue-color;
+				}
+				.icon__socibale {
+					fill: $blue-color;
+				}
+			}
+
+			.main__cart-programing {
+				.main__cart-button {
+					background-color: $main-color;
+				}
+				.icon__socibale {
+					fill: $main-color;
+				}
+			}
+
+			.main__cart-rare {
+				.main__cart-button {
+					background-color: $purple-color;
+				}
+				.icon__socibale {
+					fill: $purple-color;
+				}
+			}
+
+			.main__cart-green {
+				.main__cart-button {
+					background-color: $green-color;
+				}
+				.icon__socibale {
+					fill: $green-color;
+				}
+			}
+
 		}
 
 	}
+	&__button {
+		width: 250px;
+		height: 60px;
+	
+		border: none;
+		border-radius: 5px;
+		background: $main-color;  
+	  
+		@include font(#fff, 16px, 600, normal, normal);
+		transition: 0.5s !important;
+		margin-top: 50px;
+		
+	
+		&:hover {
+		  background-color: transparent;
+		  border: 1px solid $main-color;
+		  color: $main-color;
+		  transition: 0.5s !important;
+		}
+	  }
+
 }
 // Сourse End
 

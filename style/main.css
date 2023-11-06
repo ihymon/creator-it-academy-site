@@ -433,7 +433,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   flex-direction: column; }
-  .course .course__filter-title {
+  .course__filter-title {
     width: 100%;
     margin-top: 35px;
     font-family: 'Montserrat', sans-serif;
@@ -692,12 +692,124 @@ body {
       .course__box-filter .filter__cart--open {
         height: 60px; }
     .course__box-main {
+      flex-wrap: wrap;
       display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+      padding-left: 30px;
       gap: 30px; }
       .course__box-main .main__cart {
         width: 450px;
-        height: 200px;
-        background-color: white; }
+        height: 297px;
+        border-radius: 5px;
+        background: #FFF;
+        padding: 25px 0 25px 25px;
+        cursor: pointer;
+        overflow: hidden; }
+        .course__box-main .main__cart-button {
+          font-family: 'Montserrat', sans-serif;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 120%;
+          letter-spacing: normal;
+          color: #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: auto;
+          border: none;
+          border-radius: 4px;
+          padding: 0 15px;
+          height: 36px;
+          background-color: #F5A006; }
+        .course__box-main .main__cart-box {
+          position: relative;
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start; }
+          .course__box-main .main__cart-box .cart__left {
+            padding-top: 25px; }
+            .course__box-main .main__cart-box .cart__left .main__cart-subtitle {
+              font-family: 'Montserrat', sans-serif;
+              font-style: normal;
+              font-weight: 500;
+              font-size: 16px;
+              line-height: 120%;
+              letter-spacing: normal;
+              color: #1E1E1E; }
+            .course__box-main .main__cart-box .cart__left .main__cart-title {
+              width: 230px;
+              font-family: 'Montserrat', sans-serif;
+              font-style: normal;
+              font-weight: 600;
+              font-size: 24px;
+              line-height: normal;
+              letter-spacing: normal;
+              color: #000;
+              margin-top: 10px;
+              padding-bottom: 15px; }
+            .course__box-main .main__cart-box .cart__left .main__cart-sociable {
+              margin-top: 5px;
+              display: flex;
+              justify-content: flex-start;
+              align-items: center; }
+              .course__box-main .main__cart-box .cart__left .main__cart-sociable p {
+                margin-left: 5px;
+                font-family: 'Montserrat', sans-serif;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: normal;
+                letter-spacing: normal;
+                color: #1E1E1E; }
+          .course__box-main .main__cart-box .cart__rigth {
+            width: 200px;
+            height: 100%;
+            position: absolute;
+            right: 0%;
+            padding-left: 30px; }
+            .course__box-main .main__cart-box .cart__rigth img {
+              width: 280px;
+              height: 280px;
+              position: relative;
+              bottom: 30px; }
+      .course__box-main .main__cart-blue .main__cart-button {
+        background-color: #6EACCF; }
+      .course__box-main .main__cart-blue .icon__socibale {
+        fill: #6EACCF; }
+      .course__box-main .main__cart-programing .main__cart-button {
+        background-color: #F5A006; }
+      .course__box-main .main__cart-programing .icon__socibale {
+        fill: #F5A006; }
+      .course__box-main .main__cart-rare .main__cart-button {
+        background-color: #9D6ECF; }
+      .course__box-main .main__cart-rare .icon__socibale {
+        fill: #9D6ECF; }
+      .course__box-main .main__cart-green .main__cart-button {
+        background-color: #00C874; }
+      .course__box-main .main__cart-green .icon__socibale {
+        fill: #00C874; }
+  .course__button {
+    width: 250px;
+    height: 60px;
+    border: none;
+    border-radius: 5px;
+    background: #F5A006;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #fff;
+    transition: 0.5s !important;
+    margin-top: 50px; }
+    .course__button:hover {
+      background-color: transparent;
+      border: 1px solid #F5A006;
+      color: #F5A006;
+      transition: 0.5s !important; }
 
 .certificate {
   padding: 0 200px;

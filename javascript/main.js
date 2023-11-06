@@ -248,6 +248,19 @@ function animateValue(id, start, end, duration) {
 
 let maxAge;
 let minAge;
+let allCourse = false;
+
+function toggleAllCourses() {
+  $('#allCourse').text("Заховати курси");
+
+  if (allCourse == true) {
+    $('#allCourse').text("Показати більше");
+  }
+  allCourse = !allCourse;
+  fetchCourse();
+}
+
+$('#allCourse').on('click', toggleAllCourses);
 
 function fetchCourse() {
   fetch('./api/course.json')
@@ -260,8 +273,51 @@ function fetchCourse() {
 
 
       $(".course__filter-title span").text(courses.length);
-      for (let i = 0; i < courses.length; i++) {
+      $(".course__box-main").empty();
+
+
+      const maxCoursesToDisplay = allCourse ? courses.length : 6;
+
+      for (let i = 0; i < maxCoursesToDisplay; i++) {
         console.log(courses[i]);
+
+        const minNum = Math.min(...courses[i].age);
+        const maxNum = Math.max(...courses[i].age);
+
+
+        $(".course__box-main").append($(`
+        <div class="main__cart main__cart-${courses[i].type}">
+        <button class="main__cart-button">${courses[i].subtitle}</button>
+
+        <div class="main__cart-box">
+            <div class="cart__left">
+                <p class="main__cart-subtitle">Курс</p>
+                <p class="main__cart-title">«${courses[i].nameCourse}» </p>
+
+                <div class="main__cart-sociable">
+                    <svg  xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                        <path class="icon__socibale" fill-rule="evenodd" clip-rule="evenodd" d="M12.0823 22C17.6175 22 22.1046 17.5228 22.1046 12C22.1046 6.47715 17.6175 2 12.0823 2C6.54718 2 2.06006 6.47715 2.06006 12C2.06006 17.5228 6.54718 22 12.0823 22ZM12.834 6C12.834 5.58579 12.4975 5.25 12.0823 5.25C11.6672 5.25 11.3307 5.58579 11.3307 6V6.31673C9.6966 6.60867 8.32398 7.83361 8.32398 9.5C8.32398 11.4172 10.1408 12.75 12.0823 12.75C13.4619 12.75 14.3373 13.6557 14.3373 14.5C14.3373 15.3443 13.4619 16.25 12.0823 16.25C10.7028 16.25 9.82732 15.3443 9.82732 14.5C9.82732 14.0858 9.49079 13.75 9.07565 13.75C8.66051 13.75 8.32398 14.0858 8.32398 14.5C8.32398 16.1664 9.6966 17.3913 11.3307 17.6833V18C11.3307 18.4142 11.6672 18.75 12.0823 18.75C12.4975 18.75 12.834 18.4142 12.834 18V17.6833C14.4681 17.3913 15.8407 16.1664 15.8407 14.5C15.8407 12.5828 14.0239 11.25 12.0823 11.25C10.7028 11.25 9.82732 10.3443 9.82732 9.5C9.82732 8.65573 10.7028 7.75 12.0823 7.75C13.4619 7.75 14.3373 8.65573 14.3373 9.5C14.3373 9.91421 14.6739 10.25 15.089 10.25C15.5041 10.25 15.8407 9.91421 15.8407 9.5C15.8407 7.83361 14.4681 6.60867 12.834 6.31673V6Z" fill="#F5A006"/>
+                      </svg>
+                      <p>Ціна: <span>${courses[i].price}</span> грн/заняття</p>
+                </div>
+
+                <div class="main__cart-sociable">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                        <path class="icon__socibale" fill-rule="evenodd" clip-rule="evenodd" d="M5.26559 3.29918C5.86914 2 7.94025 2 12.0825 2C16.2247 2 18.2958 2 18.8994 3.29918C18.9513 3.41086 18.995 3.52686 19.0303 3.6461C19.4403 5.0333 17.9758 6.64111 15.0468 9.85674L13.0847 12L15.0468 14.1433C17.9758 17.3589 19.4403 18.9667 19.0303 20.3539C18.995 20.4731 18.9513 20.5891 18.8994 20.7008C18.2958 22 16.2247 22 12.0825 22C7.94025 22 5.86914 22 5.26559 20.7008C5.21371 20.5891 5.16994 20.4731 5.1347 20.3539C4.7247 18.9667 6.1892 17.3589 9.1182 14.1433L11.0803 12L9.1182 9.85674C6.1892 6.64111 4.7247 5.0333 5.1347 3.6461C5.16994 3.52686 5.21371 3.41086 5.26559 3.29918ZM10.078 17.75C9.66289 17.75 9.32636 18.0858 9.32636 18.5C9.32636 18.9142 9.66289 19.25 10.078 19.25H14.0869C14.5021 19.25 14.8386 18.9142 14.8386 18.5C14.8386 18.0858 14.5021 17.75 14.0869 17.75H10.078ZM9.32636 5.5C9.32636 5.08579 9.66289 4.75 10.078 4.75H14.0869C14.5021 4.75 14.8386 5.08579 14.8386 5.5C14.8386 5.91421 14.5021 6.25 14.0869 6.25H10.078C9.66289 6.25 9.32636 5.91421 9.32636 5.5Z" fill="#F5A006"/>
+                      </svg>
+                      <p>Вік дітей: <span>${minNum}-${maxNum}</span> років</p>
+                </div>
+            </div>
+
+            <div class="cart__rigth">
+                <img src=${courses[i].img} alt="hello">
+            </div>
+        </div>
+
+
+    </div>
+        `));
+
 
         if (courses[i].price > maxPrice) {
           maxPrice = courses[i].price;
