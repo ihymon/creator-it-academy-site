@@ -970,6 +970,83 @@ body {
     width: 100%;
     height: auto; }
 
+.footer {
+  padding: 60px 200px 60px 200px;
+  background-color: #2F2E41;
+  width: 100%; }
+  .footer__content {
+    padding-bottom: 175px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 4px solid #F5A006; }
+    .footer__content .footer__list {
+      display: flex;
+      flex-direction: column;
+      row-gap: 15px; }
+      .footer__content .footer__list .footer__description {
+        max-width: 432px;
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: normal;
+        letter-spacing: 0;
+        color: #FFF; }
+      .footer__content .footer__list-title {
+        margin-bottom: 10px;
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: normal;
+        letter-spacing: 0;
+        color: #FFF; }
+      .footer__content .footer__list .footer__link {
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: normal;
+        letter-spacing: 0;
+        color: #FFF;
+        transition: .4s; }
+        .footer__content .footer__list .footer__link:hover {
+          color: #F5A006;
+          transition: .4s; }
+      .footer__content .footer__list .footer__btn {
+        margin-top: 35px;
+        width: 234px;
+        height: 48px;
+        border-radius: 5px;
+        background: #F5A006;
+        border: none;
+        transition: 0.5s;
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: normal;
+        letter-spacing: 0;
+        color: #FFF; }
+        .footer__content .footer__list .footer__btn:hover {
+          background-color: transparent;
+          border: 1px solid #F5A006;
+          color: #F5A006;
+          transition: 0.5s; }
+  .footer__copyright {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .footer__copyright-text {
+      font-family: 'Montserrat', sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 158.333%;
+      letter-spacing: 0;
+      color: #fff; }
+
 .wrap-hidden {
   width: 100%;
   height: 100vh;
@@ -1022,7 +1099,9 @@ body {
     .wrap .team__title {
       padding: 0 100px; }
     .wrap .team__description {
-      padding: 0 100px; } }
+      padding: 0 100px; }
+    .wrap .footer {
+      padding: 60px 100px 60px 100px; } }
 @media screen and (max-width: 1400px) {
   .wrap .home__header-left .logo {
     width: 120px;
