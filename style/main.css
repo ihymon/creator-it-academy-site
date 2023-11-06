@@ -47,6 +47,11 @@ body {
 .social-media {
   display: flex;
   column-gap: 10px; }
+  .social-media--footer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 20px; }
   .social-media-icon {
     width: 40px;
     height: 40px;
@@ -978,14 +983,17 @@ body {
     height: auto; }
 
 .footer {
-  padding: 60px 200px 60px 200px;
+  padding: 60px 200px;
   background-color: #2F2E41;
   width: 100%; }
   .footer__content {
     padding-bottom: 175px;
     display: flex;
     justify-content: space-between;
-    border-bottom: 4px solid #F5A006; }
+    border-bottom: 4px solid #F5A006;
+    flex-wrap: wrap;
+    column-gap: 60px;
+    row-gap: 80px; }
     .footer__content .footer__list {
       display: flex;
       flex-direction: column;
@@ -1297,7 +1305,9 @@ body {
   .wrap .team__title {
     padding: 0 60px; }
   .wrap .team__description {
-    padding: 0 60px; } }
+    padding: 0 60px; }
+  .wrap .footer {
+    padding: 50px 60px; } }
 @media screen and (max-width: 1000px) {
   .wrap .home {
     padding: 0 60px; }
@@ -1487,7 +1497,18 @@ body {
       width: 242px;
       height: 360px; }
       .wrap .team__row-member-name {
-        font-size: 28px; } }
+        font-size: 28px; }
+  .wrap .footer__content {
+    column-gap: 180px;
+    justify-content: center; }
+    .wrap .footer__content .footer__list {
+      text-align: center; }
+  .wrap .footer__copyright {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 100px;
+    row-gap: 20px; } }
 @media screen and (max-width: 600px) {
   .wrap .secondary-title {
     font-size: 36px; }
@@ -1626,7 +1647,13 @@ body {
   .wrap .team__row-social-media {
     margin-bottom: 20px; }
   .wrap .partners-logo {
-    max-width: 420px; } }
+    max-width: 420px; }
+  .wrap .footer {
+    padding: 50px 30px; }
+    .wrap .footer__content .footer__list .footer__description {
+      font-size: 20px; }
+    .wrap .footer__copyright-text {
+      font-size: 20px; } }
 @media screen and (max-width: 450px) {
   .wrap .home__main-photo .home__photo {
     width: 70vw;
@@ -1688,7 +1715,10 @@ body {
   .wrap .team__photo {
     min-height: 200px; }
   .wrap .partners-logo {
-    max-width: 250px; } }
+    max-width: 250px; }
+  .wrap .footer__copyright-text {
+    text-align: center;
+    font-size: 18px; } }
 @media screen and (max-height: 800px) {
   .wrap .home {
     max-height: 200vh; }
