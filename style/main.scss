@@ -649,6 +649,16 @@
 					.sliders_control {
 						position: relative;
 					}
+
+					.range-line {
+						position: absolute;
+						height: 2px;
+						width: 100%;
+						background-color: #007BFF;
+						top: 50%;
+						transform: translateY(-50%);
+					}
+					
 					  
 					  input[type=range]::-webkit-slider-thumb {
 						-webkit-appearance: none;
@@ -712,7 +722,7 @@
 						pointer-events: none;
 					  }
 					  
-					  #fromSlider {
+					  #fromSlider1 {
 						height: 0;
 						z-index: 1;
 					  }
@@ -722,7 +732,7 @@
 			}
 
 			.filter__cart--open {
-				height: auto; 
+				height: 60px; 
 			}
 
 		}
