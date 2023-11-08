@@ -448,6 +448,7 @@
 
 				&-title {
 					@include font(#fff, 24px, 600, 120%, normal);
+					
 				}
 
 				&-arrow {
@@ -742,6 +743,11 @@
 			
 			padding-left: 30px;
 			gap: 30px;
+
+			.error__course {
+				@include font($red-color, 48px, 600, 120%, normal);
+			}
+
 			.main__cart {
 				width: 450px;
 				height: 297px;
@@ -750,6 +756,8 @@
 				padding: 25px 0 25px 25px;
 				cursor: pointer;
 				overflow: hidden;
+				transition: 0.5s;
+
 				
 				&-button {
 					@include font(#fff, 16px, 600, 120%, normal);
@@ -809,6 +817,10 @@
 					}
 
 				}
+
+				&:hover {
+					filter: drop-shadow(5px 10px 12px rgba(195, 195, 195, 0.9));				}
+					transition: 0.5s;
 
 			}
 
