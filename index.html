@@ -280,63 +280,64 @@
 
         <!-- Course Start -->
         <section class="course">
-            <h2 class="course__title secondary-title">
+            <h2 class="course__title secondary-title"    data-aos="flip-up" data-aos-once="true">
                 <span class="title-slash">/</span>Курси
             </h2>
 
-            <div class="course__filter-title">Фільтр (<span>6</span>)</div>
+            <div class="course__filter-title" data-aos="fade-right" data-aos-once="true">Фільтр (<span>6</span>)</div>
 
             <div class="course__box">
+
                 <div class="course__box-filter">
-                    <div class="filter__cart">
+                    <div class="filter__cart" data-aos="fade-up" data-aos-once="true">
                         <div class="filter__cart-box">
                             <div class="filter__cart-title">Пошук...</div>
                             <div class="filter__cart-arrow"></div>
                         </div>
                         <div class="filter__cart-content">
-                            <input class="filter__cart-input" placeholder="Назва курсу" />
+                            <input id="course__search" class="filter__cart-input" placeholder="Назва курсу" />
                         </div>
                     </div>
-
-                    <div class="filter__cart">
+  
+                    <div class="filter__cart"   data-aos="fade-up" data-aos-once="true">
                         <div class="filter__cart-box">
                             <div class="filter__cart-title">Типи</div>
                             <div class="filter__cart-arrow"></div>
                         </div>
                         <div class="filter__cart-content">
                             <div class="filter__cart-box2">
-                                <div class="checkbox-container">
-                                    <input class="my-checkbox" type="checkbox" checked name="remember-checkbox">
+                                <div id="subtitleAll" class="checkbox-container">
+                                    <input id="allType" class="my-checkbox" type="checkbox" checked name="remember-checkbox">
                                     <label class="checkmark"></label>
-                                    <span id="1">Всі</span>
+                                    <span>Всі</span>
                                 </div>
 
-                                <div class="checkbox-container">
+                                <div id="subtitlePrograming" class="checkbox-container">
                                     <input class="my-checkbox" type="checkbox" name="remember-checkbox">
                                     <label class="checkmark"></label>
-                                    <span id="2">Програмування</span>
+                                    <span>Програмування</span>
                                 </div>
 
 
-                                <div class="checkbox-container">
+                                <div id="subtitleEnglish" class="checkbox-container">
                                     <input class="my-checkbox" type="checkbox" name="remember-checkbox">
                                     <label class="checkmark"></label>
-                                    <span id="3">Англійська мовa</span>
+                                    <span >Англійська мовa</span>
                                 </div>
 
-                                <div class="checkbox-container">
+                                <div id="subtitleRobotics" class="checkbox-container">
                                     <input class="my-checkbox" type="checkbox" name="remember-checkbox">
                                     <label class="checkmark"></label>
-                                    <span id="4">Робототехніка</span>
+                                    <span>Робототехніка</span>
                                 </div>
 
                                 
                             </div>
                         </div>
                     </div>
-                    <div class="filter__cart">
+                    <div class="filter__cart"   data-aos="fade-up" data-aos-once="true">
                         <div class="filter__cart-box">
-                            <div class="filter__cart-title">Ціна (грн)</div>
+                            <div id="priceTitle" class="filter__cart-title">Ціна (грн)</div>
                             <div class="filter__cart-arrow"></div>
                         </div>
                         <div class="filter__cart-content">
@@ -355,23 +356,22 @@
                         </div>
                     </div>
 
-                    <div class="filter__cart">
+                    <div class="filter__cart"   data-aos="fade-up" data-aos-once="true">
                         <div class="filter__cart-box">
-                            <div class="filter__cart-title">Вік</div>
+                            <div id="ageTitle" class="filter__cart-title">Вік</div>
                             <div class="filter__cart-arrow"></div>
                         </div>
                         <div class="filter__cart-content">
                             <div class="filter__cart-input-box">
-                                <input class="input-age form_control_container__time__input" type="number" id="age1">
-                                <p>-</p>
-                                <input class="input-age form_control_container__time__input" type="number" id="age2" >
+                                <input class="input-age form_control_container__time__input" type="number" id="age1" value="6" max="25" min="1">
+
                             </div>
 
                         </div>
                     </div>
                 </div>
 
-                <div class="course__box-main">
+                <div class="course__box-main"  data-aos="fade-left" data-aos-once="true">
 
                     
              
@@ -379,7 +379,7 @@
             </div>
 
 
-            <button class="course__button" id="allCourse">Показати більше</button>
+            <button class="course__button" id="allCourse"  data-aos="zoom-in" data-aos-once="true">Показати більше</button>
 
 
         </section>
@@ -426,7 +426,7 @@
 
         <!-- Review Start -->
         <section class="reviews">
-            <h2 class="reviews__title secondary-title">
+            <h2 class="reviews__title secondary-title"  data-aos="fade-right" data-aos-once="true">
                 <span class="title-slash">/</span>Відгуки
             </h2>
 
@@ -526,18 +526,18 @@
 
         <!-- Team Start -->
         <section class="team">
-            <h2 class="team__title secondary-title">
+            <h2 class="team__title secondary-title"  data-aos="fade-right" data-aos-once="true">
                 <span class="title-slash">/</span>Команда
             </h2>
 
-            <p class="team__description">
+            <p class="team__description"  data-aos="fade-up" data-aos-once="true">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
             </p>
 
-            <img src="./img/team/team__photo.jpg" alt="Our Team" class="team__photo">
+            <img  data-aos="zoom-in" data-aos-once="true" src="./img/team/team__photo.jpg" alt="Our Team" class="team__photo">
 
 
-            <div class="team__row owl-carousel owl-theme owl-carousel-second">
+            <div class="team__row owl-carousel owl-theme owl-carousel-second"  data-aos="fade-up" data-aos-once="true">
                 <div class="team__row-member member-1">
                     <p class="team__row-member-name">Name Surname</p>
                     <p class="team__row-member-position">Position</p>
@@ -620,12 +620,12 @@
 
         <!-- Partners Start -->
         <div class="partners">
-            <h2 class="partners__title secondary-title">
+            <h2 class="partners__title secondary-title"  data-aos="fade-up" data-aos-once="true">
                 <span class="title-slash">/</span>Партнери
             </h2>
 
 
-            <div class="partners__row owl-carousel owl-theme owl-carousel-third">
+            <div class="partners__row owl-carousel owl-theme owl-carousel-third"  data-aos="fade-up" data-aos-once="true">
                 <img class="partners-logo" src="./img/partners/partner-1.png" alt="Partner">
                 <img class="partners-logo" src="./img/partners/partner-2.png" alt="Partner">
                 <img class="partners-logo" src="./img/partners/partner-3.png" alt="Partner">
@@ -646,7 +646,7 @@
         <footer class="footer">
             <div class="footer__content">
 
-                <ul class="footer__list">
+                <ul class="footer__list"  data-aos="fade-right" data-aos-once="true">
                     <div class="footer__logo">
                         <div class="footer__logo-link">
                             <img src="./img/main/logo.svg" alt="Logo">
@@ -657,8 +657,8 @@
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
                     </p>
                 </ul>
-
-                <ul class="footer__list">
+ 
+                <ul class="footer__list"  data-aos="fade-up" data-aos-once="true">
                     <h3 class="footer__list-title">
                         Навігація
                     </h3>
@@ -681,7 +681,7 @@
                 </ul>
 
 
-                <ul class="footer__list">
+                <ul class="footer__list"  data-aos="fade-left" data-aos-once="true">
                     <h3 class="footer__list-title">
                         Контакти
                     </h3>
@@ -703,7 +703,7 @@
 
 
             <div class="footer__copyright">
-                <p class="footer__copyright-text">
+                <p class="footer__copyright-text" >
                     © 2023 Усі права захищені
                 </p>
 

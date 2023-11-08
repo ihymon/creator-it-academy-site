@@ -625,22 +625,22 @@
 	height: 100%;
 	padding: 0 200px;
 	margin-bottom: 120px;
-	@include display-center (flex-start, center);
+	@include display-center (center, center);
 	flex-direction: column;
 
 	&__filter-title {
-		width: 100%;
+		width: 90%;
 		margin-top: 35px;
 		@include font(#fff, 32px, 700, 120%, normal);
 	}
 
 	&__box {
-		width: 100%;
+		width: 90%;
 		@include display-center (space-between, flex-start);
 		padding: 20px 0;
 
 		&-filter {
-			column-gap: 200px;
+			column-gap: 10px;
 			
 			.filter__cart {
 				width: 338px;
@@ -658,6 +658,7 @@
 
 				&-title {
 					@include font(#fff, 24px, 600, 120%, normal);
+					
 				}
 
 				&-arrow {
@@ -952,6 +953,11 @@
 			
 			padding-left: 30px;
 			gap: 30px;
+
+			.error__course {
+				@include font($red-color, 48px, 600, 120%, normal);
+			}
+
 			.main__cart {
 				width: 450px;
 				height: 297px;
@@ -960,6 +966,8 @@
 				padding: 25px 0 25px 25px;
 				cursor: pointer;
 				overflow: hidden;
+				transition: 0.5s;
+
 				
 				&-button {
 					@include font(#fff, 16px, 600, 120%, normal);
@@ -1019,6 +1027,10 @@
 					}
 
 				}
+
+				&:hover {
+					filter: drop-shadow(5px 10px 12px rgba(195, 195, 195, 0.9));				}
+					transition: 0.5s;
 
 			}
 
@@ -1597,6 +1609,32 @@
 		// Сourse Start
 		.course {
 			padding: 0 100px;
+			&__filter-title {
+				width: 100%;
+			}
+		
+			&__box {
+				width: 100%;
+				&-filter {
+					column-gap: 10px;
+					
+					.filter__cart {
+						width: 290px;
+						.input-age {
+							width: 100px;
+							height: 34px; 
+						}
+					}
+				}
+				&-main {
+					padding-left: 10px;
+					gap: 20px;
+					.main__cart {
+						width: 440px;
+						padding: 20px 0 20px 20px;
+					}
+				}			
+			}
 		}
 		// Сourse End
 
@@ -1825,10 +1863,49 @@
 		// Benefits End
 
 
-
 		// Сourse Start
-		.course {
 
+		.course {
+			padding: 0 100px;
+			@include display-center (center, center);
+
+			&__filter-title {
+				display: none;
+			}
+		
+			&__box {
+				width: 100%;
+				flex-direction: column;
+				&-filter {
+					column-gap: 10px;
+					@include display-center (center, flex-start);
+					flex-wrap: wrap;
+					margin: 20px 0;
+					
+					.filter__cart {
+						width: 440px;
+					height: 60px;
+
+						.input-age {
+							width: 100px;
+							height: 34px; 
+						}
+					}
+					.filter__cart--open {
+						height: auto; 
+					}
+				}
+				&-main {
+					width: 100%;
+					padding-left: 0px;
+					gap: 20px;
+					@include display-center (center, center);
+					.main__cart {
+						width: 440px;
+						padding: 20px 0 20px 20px;
+					}
+				}			
+			}
 		}
 		// Сourse End
 
@@ -2034,7 +2111,7 @@
 
 		// Сourse Start
 		.course {
-
+			padding: 0 60px;
 		}
 		// Course End
 
@@ -2335,7 +2412,11 @@
 
 		// Сourse Start
 		.course {
-
+			.error__course {
+				width: 100%;
+				@include font($red-color, 32px, 600, 120%, normal);
+				text-align: center;
+			}
 		}
 		// Сourse End
 
@@ -2627,12 +2708,70 @@
 		// Benefits End
 
 
-
 		// Сourse Start
+
 		.course {
+			padding: 0 30px;
+			&__box {
+				&-filter {
+					.filter__cart {
+						width: 100%;
+					}
+				}
+				&-main {
+					.main__cart {
+						width: 100%;
+						height: auto;
+						padding: 20px 20px 20px 20px;
+						padding-bottom: 20px;
+						&-button {
+							width: 100%;
+						}
+						&-box {
+							@include display-center (center, flex-start);							
+							flex-direction: column;
+
+							&-button {
+								@include font(#fff, 16px, 600, 120%, normal);
+								@include display-center (center, center);
+								width: auto;
+								border: none;
+								border-radius: 4px;
+								padding: 0 15px;
+								height: 36px;
+								background-color: $main-color;
 			
+							}
+							.cart__left {
+								width: 100%;
+								@include display-center (center, center);							
+								flex-direction: column;
+								padding-top: 25px;
+								z-index: 3;
+								.main__cart-subtitle {
+									@include font($grey-ligth-color, 16px, 500, 120%, normal);
+									text-align: center;
+								}
+								.main__cart-title {
+									width: 100%;
+									@include font(#000, 24px, 600, normal, normal);
+									margin-top: 10px;
+									padding-bottom: 15px;
+									text-align: center;
+
+								}
+								
+							}
+							.cart__rigth {
+								display: none;
+							}
+						}
+					}
+				}			
+			}
 		}
 		// Сourse End
+
 
 
 
