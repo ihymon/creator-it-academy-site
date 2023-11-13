@@ -250,6 +250,11 @@
 		min-height: 15vh;
 		@include display-center(space-between, center);
 		z-index: 1;
+		position: fixed;
+		top: 0%;
+		padding: 0 100px;
+		z-index: 10;
+		transition: 1s;
 
 		&-left {
 			.logo {
@@ -330,6 +335,13 @@
 		.home__header-box--burger {
 			display: none;
 		}
+	}
+
+	&__header-scroll {
+		background: rgba(0, 0, 0, 0.10);
+		backdrop-filter: blur(5px);
+		border-bottom: 1px solid $main-color;
+		transition: 1s;
 	}
 
 	
@@ -1019,7 +1031,7 @@
 				}
 
 				&:hover {
-					filter: drop-shadow(5px 10px 12px rgba(49, 43, 62, 0.378));
+					filter: drop-shadow(5px 10px 12px rgba(57, 51, 71, 0.964));
 					transition: 0.5s;
 				}
 
@@ -2016,6 +2028,7 @@
 		.home {
 			padding: 0 60px;
 			&__header {
+			padding: 0 60px;
 				&-rigth {
 
 					.header__nav {
@@ -2550,6 +2563,7 @@
 			}
 		
 			&__header {
+			padding: 0 30px;
 				&-rigth--open {
 					padding-top: 35%;
 					
@@ -2584,6 +2598,8 @@
 			}
 			&__main {
 				flex-direction: column;
+				position: relative;
+				top: 100px;
 				&-content {
 					width: auto;
 					height: auto;

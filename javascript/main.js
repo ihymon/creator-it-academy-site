@@ -113,6 +113,18 @@ function startConfetti() {
 
 
     });
+    $(document).ready(function() {
+      $(window).scroll(function() {
+          let header = $("#header");
+
+          if ($(this).scrollTop() > 100) {
+              header.addClass("home__header-scroll");
+          } else {
+              header.removeClass("home__header-scroll");
+          }
+      });
+  });
+
     
 // Home Page Finish
 
