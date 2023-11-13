@@ -1,8 +1,11 @@
 @import "./variables";
-// @import "./variables";
 
 body {
 	background-color: $grey-color;
+
+	&._active {
+		overflow: hidden
+	}
 }
 
 .secondary-title {
