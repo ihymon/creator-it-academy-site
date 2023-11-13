@@ -104,9 +104,16 @@ function startConfetti() {
 // Home Page Start
     AOS.init();
 
+    const resetBurger = () => {
+      $("#burger").removeClass("home__header-box--burger-open");
+      $(".home__header-rigth").removeClass("home__header-rigth--open");
+      $(".home__popup").removeClass("home__popup-open");
+      $("body").removeClass("wrap-hidden");
+    }
+
     $("#burger").click(function() {
         console.log("Button clicked");
-        $(this).toggleClass("home__header-box--burger-open");
+        $("#burger").toggleClass("home__header-box--burger-open");
         $(".home__header-rigth").toggleClass("home__header-rigth--open");
         $(".home__popup").toggleClass("home__popup-open");
         $("body").toggleClass("wrap-hidden");
@@ -123,6 +130,46 @@ function startConfetti() {
               header.removeClass("home__header-scroll");
           }
       });
+  });
+
+
+  $("#nav__about-us").click(function() {
+    $('html, body').animate({
+        scrollTop: $(".about-us").offset().top - 0.20 * $(window).height()
+    }, 1000);
+    resetBurger();
+
+  });
+
+  $("#nav__course").click(function() {
+    $('html, body').animate({
+        scrollTop: $(".course").offset().top - 0.20 * $(window).height()
+    }, 1000);
+    resetBurger();
+
+  });
+
+  $("#nav__team").click(function() {
+    $('html, body').animate({
+        scrollTop: $(".team").offset().top - 0.20 * $(window).height()
+    }, 1000);
+    resetBurger();
+
+  });
+
+  $("#nav__reviews").click(function() {
+    $('html, body').animate({
+        scrollTop: $(".reviews").offset().top - 0.20 * $(window).height()
+    }, 1000);
+    resetBurger();
+
+  });
+
+  $("#nav__contact").click(function() {
+    $('html, body').animate({
+        scrollTop: $(".footer").offset().top - 0.20 * $(window).height()
+    }, 1000);
+    resetBurger();
   });
 
 // Home Page Finish
@@ -326,6 +373,7 @@ function fetchCourse(nameCourseFilter, subtitleFilter, minPriceFilter, maxPriceF
       console.error('Error fetching JSON file:', error);
     });
 }
+
 fetchCourse();
 function toggleAllCourses() {
   if (allCourse == true) {
@@ -341,6 +389,7 @@ function toggleAllCourses() {
   $("#age1").val(minAge);
   $('#course__search').val("");
 }
+
 $('#allCourse').on('click', toggleAllCourses);
 $('#course__search').on('input', function () {
   const inputValue = $(this).val().toLowerCase();
