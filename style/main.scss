@@ -1179,18 +1179,51 @@
 
 		.certificate__display {
 			position: relative;
-				&-name {
-					position: absolute;
-					left: 50%;
-					top: 50%;
-					transform: translate(-50%, -120%);
-					@include font(#292929, 22px, 700, normal, 0);
-					white-space: nowrap;
-				}
+			width: 650px;
+			height: 400px;
+			background-color: #fff;
+			border: 10px solid #F5A006;
+			@include display-center(center, center);
+			flex-direction: column;
 
-			&-img {
-				width: 670px;
-				height: 500px;
+			&-logo {
+				margin-bottom: 15px;
+				text-align: center;
+
+				@include font(#000, 40px, 700, 90%, 1.2px);
+
+				&--mini {
+					@include font(#000, 28px, 400, 90%, 1.12px);
+				}
+			}
+
+			&-title {
+				text-transform: uppercase;
+				@include font(#000, 48px, 600, normal, 7.68px);
+			}
+
+			&-subtitle {
+				margin-bottom: 10px;
+				font-variant: all-small-caps;
+				@include font(#000, 16px, 400, normal,  0.7px);
+			}
+
+			&-name {
+				margin-bottom: 10px;
+				@include font(#292929, 22px, 700, normal, 0);
+				white-space: nowrap;
+			}
+
+			&-course  {
+				max-width: 250px;
+				text-align: center;
+				@include font(#000, 16px, 700, 140%, 0.8px);
+
+
+				& span {
+					font-variant: all-small-caps;
+					@include font(#000, 16px, 500, normal, 0.48px);
+				}
 			}
 		}
 	}
@@ -1935,13 +1968,7 @@
 				.certificate__display {
 					display: flex;
 					justify-content: center;
-					width: 100%;
-
-
-					&-img {
-						width: 80%;
-						height: auto;
-					}
+					width: 70%;
 				}
 			}
 		}
@@ -2437,13 +2464,21 @@
 
 				
 				.certificate__display {
+					width: 80%;
+
 					&-name {
 						font-size: 2.6vw;
 					}
-
-					&-img {
-						width: 100%;
-						height: auto;
+					&-logo {
+						font-size: 4.4vw;
+						
+						&--mini {
+							font-size: 2.8vw;
+						}
+					}
+		
+					&-title {
+						font-size: 5.5vw;
 					}
 				}
 			}
@@ -2797,9 +2832,23 @@
 
 
 				.certificate__display {
-					&-img {
-						width: 100%;
-						height: auto;
+					padding: 40px 0;
+					height: auto;
+					width: 100%;
+
+					&-name {
+						font-size: 2.9vw;
+					}
+					&-logo {
+						font-size: 5vw;
+						
+						&--mini {
+							font-size: 3.5vw;
+						}
+					}
+		
+					&-title {
+						font-size: 7.5vw;
 					}
 				}
 			}
@@ -3038,8 +3087,31 @@
 
 
 				.certificate__display {
+					border: 6px solid $main-color;
 					&-name {
-						font-size: 3.2vw;
+						font-size: 3.4vw;
+					}
+
+					&-logo {
+						font-size: 5vw;
+						
+						&--mini {
+							font-size: 3.5vw;
+						}
+					}
+		
+					&-title {
+						font-size: 7.5vw;
+					}
+
+		
+					&-course  {
+						max-width: 200px;
+						font-size: 14px;
+		
+						& span {
+							font-size: 14px;
+						}
 					}
 				}
 			}
