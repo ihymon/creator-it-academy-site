@@ -75,7 +75,7 @@
 			&__title {
 				margin-bottom: 50px;
 				text-align: center;
-				@include font(#fff, 24px, 400, normal, 1.5%);
+				@include font(#fff, 24px, 300, normal, 1.5%);
 
 				&--medium {
 					font-weight: 500;
@@ -91,7 +91,7 @@
 
 
 				&-title {
-					@include font(#fff, 18px, 400, normal, 0);
+					@include font(#fff, 18px, 300, normal, 0);
 				}
 
 				
@@ -152,7 +152,7 @@
 
 				&-text {
 					display: inline-block;
-					@include font(#fff, 16px, 400, normal, 0);
+					@include font(#fff, 16px, 300, normal, 0);
 					border-bottom: 1px solid transparent;
 					cursor: pointer;
 					transition: .5s;
@@ -270,7 +270,7 @@
 				a {
 					position: relative;
 					cursor: pointer;
-					@include font(#fff, 20px, 400, normal, normal);
+					@include font(#fff, 20px, 300, normal, normal);
 				}	
 
 				a:before {
@@ -407,7 +407,7 @@
     &__subtitle {    
         margin: 0 auto 80px auto;
         max-width: 880px;
-        @include font(#FFF, 24px, 400,  124.4%, 0.6px);
+        @include font(#FFF, 24px, 300,  124.4%, 0.6px);
     }
 
     &__video {
@@ -952,7 +952,7 @@
 				width: 450px;
 				height: 297px;
 				border-radius: 5px;
-				background: #FFF;
+				background: $dark-secondary-color;
 				padding: 25px 0 25px 25px;
 				cursor: pointer;
 				overflow: hidden;
@@ -978,11 +978,11 @@
 					.cart__left {
 						padding-top: 25px;
 						.main__cart-subtitle {
-							@include font($grey-ligth-color, 16px, 500, 120%, normal);
+							@include font(#FFF, 16px, 500, 120%, normal);
 						}
 						.main__cart-title {
 							width: 230px;
-							@include font(#000, 24px, 600, normal, normal);
+							@include font(#FFF, 24px, 600, normal, normal);
 							margin-top: 10px;
 							padding-bottom: 15px
 						}
@@ -993,7 +993,7 @@
 
 							p {
 								margin-left: 5px;
-								@include font($grey-ligth-color, 16px, 500, normal, normal);
+								@include font(#FFF, 16px, 500, normal, normal);
 								
 							}
 							
@@ -1019,8 +1019,9 @@
 				}
 
 				&:hover {
-					filter: drop-shadow(5px 10px 12px rgba(195, 195, 195, 0.9));				}
+					filter: drop-shadow(5px 10px 12px rgba(49, 43, 62, 0.378));
 					transition: 0.5s;
+				}
 
 			}
 
@@ -1115,7 +1116,7 @@
 
 				&-title {
 					margin-bottom: 5px;
-					@include font(#FFF, 20px, 400, normal, 0);
+					@include font(#FFF, 20px, 300, normal, 0);
 				}
 
 				&-input {
@@ -1224,7 +1225,7 @@
 			.reviews__description {
 				margin-bottom: 25px;
 				max-width: 730px;
-				@include font(#FFF, 24px, 400, normal, 0);
+				@include font(#FFF, 24px, 300, normal, 0);
 			}
 			
 			.reviews__people-name {
@@ -1343,7 +1344,7 @@
 		margin-bottom: 70px;
 
 		text-align: center;
-		@include font(#FFF, 24px, 400, 120.9%, 0);
+		@include font(#FFF, 24px, 300, 120.9%, 0);
 	}
 
 	&__photo {
@@ -1378,7 +1379,7 @@
 
 			&-position {
 				margin-bottom: 20px;
-				@include font($grey-color, 20px, 400, normal, 0);
+				@include font($grey-color, 20px, 300, normal, 0);
 			}
 		}
 
@@ -1463,7 +1464,7 @@
 
 			.footer__description {
 				max-width: 432px;
-				@include font(#FFF, 24px, 400, normal, 0);
+				@include font(#FFF, 24px, 300, normal, 0);
 			}
 
 
@@ -1509,7 +1510,7 @@
 		@include display-center (space-between, center);
 
 		&-text {
-			@include font(#fff, 24px, 400, 158.333%, 0);
+			@include font(#fff, 24px, 300, 158.333%, 0);
 		}
 	}
 }

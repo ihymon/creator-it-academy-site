@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -131,7 +131,7 @@ body {
         text-align: center;
         font-family: 'Montserrat', sans-serif;
         font-style: normal;
-        font-weight: 400;
+        font-weight: 300;
         font-size: 24px;
         line-height: normal;
         letter-spacing: 1.5%;
@@ -146,7 +146,7 @@ body {
         .wrap .gift__popup-container .gift__popup__group-title {
           font-family: 'Montserrat', sans-serif;
           font-style: normal;
-          font-weight: 400;
+          font-weight: 300;
           font-size: 18px;
           line-height: normal;
           letter-spacing: 0;
@@ -210,7 +210,7 @@ body {
           display: inline-block;
           font-family: 'Montserrat', sans-serif;
           font-style: normal;
-          font-weight: 400;
+          font-weight: 300;
           font-size: 16px;
           line-height: normal;
           letter-spacing: 0;
@@ -301,7 +301,7 @@ body {
             cursor: pointer;
             font-family: 'Montserrat', sans-serif;
             font-style: normal;
-            font-weight: 400;
+            font-weight: 300;
             font-size: 20px;
             line-height: normal;
             letter-spacing: normal;
@@ -415,7 +415,7 @@ body {
       max-width: 880px;
       font-family: 'Montserrat', sans-serif;
       font-style: normal;
-      font-weight: 400;
+      font-weight: 300;
       font-size: 24px;
       line-height: 124.4%;
       letter-spacing: 0.6px;
@@ -871,11 +871,10 @@ body {
         width: 450px;
         height: 297px;
         border-radius: 5px;
-        background: #FFF;
+        background: #3F3D56;
         padding: 25px 0 25px 25px;
         cursor: pointer;
         overflow: hidden;
-        transition: 0.5s;
         transition: 0.5s; }
         .course__box-main .main__cart-button {
           font-family: 'Montserrat', sans-serif;
@@ -908,7 +907,7 @@ body {
               font-size: 16px;
               line-height: 120%;
               letter-spacing: normal;
-              color: #1E1E1E; }
+              color: #FFF; }
             .course__box-main .main__cart-box .cart__left .main__cart-title {
               width: 230px;
               font-family: 'Montserrat', sans-serif;
@@ -917,7 +916,7 @@ body {
               font-size: 24px;
               line-height: normal;
               letter-spacing: normal;
-              color: #000;
+              color: #FFF;
               margin-top: 10px;
               padding-bottom: 15px; }
             .course__box-main .main__cart-box .cart__left .main__cart-sociable {
@@ -933,7 +932,7 @@ body {
                 font-size: 16px;
                 line-height: normal;
                 letter-spacing: normal;
-                color: #1E1E1E; }
+                color: #FFF; }
           .course__box-main .main__cart-box .cart__rigth {
             width: 200px;
             height: 100%;
@@ -946,7 +945,8 @@ body {
               position: relative;
               bottom: 30px; }
         .course__box-main .main__cart:hover {
-          filter: drop-shadow(5px 10px 12px rgba(195, 195, 195, 0.9)); }
+          filter: drop-shadow(5px 10px 12px rgba(49, 43, 62, 0.378));
+          transition: 0.5s; }
       .course__box-main .main__cart-blue .main__cart-button {
         background-color: #6EACCF; }
       .course__box-main .main__cart-blue .icon__socibale {
@@ -1006,7 +1006,7 @@ body {
           margin-bottom: 5px;
           font-family: 'Montserrat', sans-serif;
           font-style: normal;
-          font-weight: 400;
+          font-weight: 300;
           font-size: 20px;
           line-height: normal;
           letter-spacing: 0;
@@ -1109,7 +1109,7 @@ body {
       max-width: 730px;
       font-family: 'Montserrat', sans-serif;
       font-style: normal;
-      font-weight: 400;
+      font-weight: 300;
       font-size: 24px;
       line-height: normal;
       letter-spacing: 0;
@@ -1200,7 +1200,7 @@ body {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 24px;
     line-height: 120.9%;
     letter-spacing: 0;
@@ -1235,7 +1235,7 @@ body {
         margin-bottom: 20px;
         font-family: 'Montserrat', sans-serif;
         font-style: normal;
-        font-weight: 400;
+        font-weight: 300;
         font-size: 20px;
         line-height: normal;
         letter-spacing: 0;
@@ -1282,7 +1282,7 @@ body {
         max-width: 432px;
         font-family: 'Montserrat', sans-serif;
         font-style: normal;
-        font-weight: 400;
+        font-weight: 300;
         font-size: 24px;
         line-height: normal;
         letter-spacing: 0;
@@ -1336,7 +1336,7 @@ body {
     .footer__copyright-text {
       font-family: 'Montserrat', sans-serif;
       font-style: normal;
-      font-weight: 400;
+      font-weight: 300;
       font-size: 24px;
       line-height: 158.333%;
       letter-spacing: 0;
