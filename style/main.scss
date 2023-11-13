@@ -83,21 +83,36 @@
 
 
 			.home__button-small {
-				width: 250px;
+				width: 280px;
 				height: 46px;
 
 				border: none;
 				border-radius: 5px;
-				background: $main-color;	
-			
+				background: $main-color;
+
+				@include display-center(center, center);
 				@include font(#fff, 16px, 600, normal, normal);
 				transition: 0.5s;
+				gap: 10px;
+
+				.home__telegram {
+					&-color {
+						fill: white;
+						transition: 0.5s;
+					}
+				}
 
 				&:hover {
 					background-color: transparent;
 					border: 1px solid $main-color;
 					color: $main-color;
 					transition: 0.5s;
+					.home__telegram {
+						&-color {
+							fill: $main-color;
+							transition: 0.5s;
+						}
+					}
 				}
 			}
 		}
@@ -116,41 +131,16 @@
 
 		&-content {
 			padding-right: 20px;
-			.home__button-small {
-				width: 293px;
-				height: 46px;
 
-				border: none;
-				border-radius: 5px;
-				background: $main-color;	
-			
-				@include font(#fff, 16px, 600, normal, normal);
-				transition: 0.5s;
-				margin-bottom: 25px;
-
-				&:hover {
-					background-color: transparent;
-					border: 1px solid $main-color;
-					color: $main-color;
-					transition: 0.5s;
-				}
-			}
 
 			.home__title {
+				width: 480px;
 				@include font(#fff, 64px, 700, normal, normal);
 
 				span {
 					color: $main-color;
 				}
 			}
-
-			.home__description {
-				width: 600px;
-				margin-top: 15px;
-
-				@include font(#fff, 36px, 400, normal, normal);
-			}
-
 			.home__button {
 				width: 460px;
 				height: 100px;
@@ -1529,10 +1519,7 @@
 							font-size: 18px;
 						}	
 					}
-					.home__button-small {
-						width: 235px;
-						height: 40px;
-					}
+					
 				}
 			}
 				
@@ -1541,10 +1528,6 @@
 					.home__button {
 						width: 380px;
 						height: 75px;
-					}
-					.home__description {
-						width: 500px;
-						font-size: 32px;
 					}
 		
 				}
@@ -1833,9 +1816,11 @@
 						}	
 					}
 					.home__button-small {
-						width: 200px;
+						width: 230px;
 						height: 35px;
-						font-size: 14px;
+						p {
+							font-size: 14px;
+						}
 					}
 				}
 			}
@@ -1846,10 +1831,6 @@
 					.home__button {
 						width: 380px;
 						height: 75px;
-					}
-					.home__description {
-						width: auto;
-						font-size: 24px;
 					}
 		
 				}
@@ -2096,11 +2077,6 @@
 					flex-direction: column;
 
 					.home__title {
-						text-align: center;
-					}
-					.home__description {
-						width: auto;
-						font-size: 24px;
 						text-align: center;
 					}
 		
@@ -2401,12 +2377,8 @@
 					width: auto;
 					height: auto;
 					.home__title {
-						width: 300px;
-						font-size: 36px;
-					}
-					.home__description {
 						width: 100%;
-						font-size: 24px;
+						font-size: 30px;
 					}
 					.home__button {
 						width: 330px;
