@@ -75,7 +75,7 @@
 			&__title {
 				margin-bottom: 50px;
 				text-align: center;
-				@include font(#fff, 24px, 400, normal, 1.5%);
+				@include font(#fff, 24px, 300, normal, 1.5%);
 
 				&--medium {
 					font-weight: 500;
@@ -91,7 +91,7 @@
 
 
 				&-title {
-					@include font(#fff, 18px, 400, normal, 0);
+					@include font(#fff, 18px, 300, normal, 0);
 				}
 
 				
@@ -152,7 +152,7 @@
 
 				&-text {
 					display: inline-block;
-					@include font(#fff, 16px, 400, normal, 0);
+					@include font(#fff, 16px, 300, normal, 0);
 					border-bottom: 1px solid transparent;
 					cursor: pointer;
 					transition: .5s;
@@ -250,6 +250,11 @@
 		min-height: 15vh;
 		@include display-center(space-between, center);
 		z-index: 1;
+		position: fixed;
+		top: 0%;
+		padding: 0 100px;
+		z-index: 5;
+		transition: 1s;
 
 		&-left {
 			.logo {
@@ -270,7 +275,7 @@
 				a {
 					position: relative;
 					cursor: pointer;
-					@include font(#fff, 20px, 400, normal, normal);
+					@include font(#fff, 20px, 300, normal, normal);
 				}	
 
 				a:before {
@@ -293,21 +298,36 @@
 
 
 			.home__button-small {
-				width: 250px;
+				width: 280px;
 				height: 46px;
 
 				border: none;
 				border-radius: 5px;
-				background: $main-color;	
-			
+				background: $main-color;
+
+				@include display-center(center, center);
 				@include font(#fff, 16px, 600, normal, normal);
 				transition: 0.5s;
+				gap: 10px;
+
+				.home__telegram {
+					&-color {
+						fill: white;
+						transition: 0.5s;
+					}
+				}
 
 				&:hover {
 					background-color: transparent;
 					border: 1px solid $main-color;
 					color: $main-color;
 					transition: 0.5s;
+					.home__telegram {
+						&-color {
+							fill: $main-color;
+							transition: 0.5s;
+						}
+					}
 				}
 			}
 		}
@@ -315,6 +335,13 @@
 		.home__header-box--burger {
 			display: none;
 		}
+	}
+
+	&__header-scroll {
+		background: rgba(0, 0, 0, 0.10);
+		backdrop-filter: blur(5px);
+		border-bottom: 1px solid $main-color;
+		transition: 1s;
 	}
 
 	
@@ -326,41 +353,16 @@
 
 		&-content {
 			padding-right: 20px;
-			.home__button-small {
-				width: 293px;
-				height: 46px;
 
-				border: none;
-				border-radius: 5px;
-				background: $main-color;	
-			
-				@include font(#fff, 16px, 600, normal, normal);
-				transition: 0.5s;
-				margin-bottom: 25px;
-
-				&:hover {
-					background-color: transparent;
-					border: 1px solid $main-color;
-					color: $main-color;
-					transition: 0.5s;
-				}
-			}
 
 			.home__title {
+				width: 480px;
 				@include font(#fff, 64px, 700, normal, normal);
 
 				span {
 					color: $main-color;
 				}
 			}
-
-			.home__description {
-				width: 600px;
-				margin-top: 15px;
-
-				@include font(#fff, 36px, 400, normal, normal);
-			}
-
 			.home__button {
 				width: 460px;
 				height: 100px;
@@ -417,7 +419,7 @@
     &__subtitle {    
         margin: 0 auto 80px auto;
         max-width: 880px;
-        @include font(#FFF, 24px, 400,  124.4%, 0.6px);
+        @include font(#FFF, 24px, 300,  124.4%, 0.6px);
     }
 
     &__video {
@@ -962,7 +964,7 @@
 				width: 450px;
 				height: 297px;
 				border-radius: 5px;
-				background: #FFF;
+				background: $dark-secondary-color;
 				padding: 25px 0 25px 25px;
 				cursor: pointer;
 				overflow: hidden;
@@ -988,11 +990,11 @@
 					.cart__left {
 						padding-top: 25px;
 						.main__cart-subtitle {
-							@include font($grey-ligth-color, 16px, 500, 120%, normal);
+							@include font(#FFF, 16px, 500, 120%, normal);
 						}
 						.main__cart-title {
 							width: 230px;
-							@include font(#000, 24px, 600, normal, normal);
+							@include font(#FFF, 24px, 600, normal, normal);
 							margin-top: 10px;
 							padding-bottom: 15px
 						}
@@ -1003,7 +1005,7 @@
 
 							p {
 								margin-left: 5px;
-								@include font($grey-ligth-color, 16px, 500, normal, normal);
+								@include font(#FFF, 16px, 500, normal, normal);
 								
 							}
 							
@@ -1029,8 +1031,9 @@
 				}
 
 				&:hover {
-					filter: drop-shadow(5px 10px 12px rgba(195, 195, 195, 0.9));				}
+					filter: drop-shadow(5px 10px 12px rgba(57, 51, 71, 0.964));
 					transition: 0.5s;
+				}
 
 			}
 
@@ -1125,7 +1128,7 @@
 
 				&-title {
 					margin-bottom: 5px;
-					@include font(#FFF, 20px, 400, normal, 0);
+					@include font(#FFF, 20px, 300, normal, 0);
 				}
 
 				&-input {
@@ -1234,7 +1237,7 @@
 			.reviews__description {
 				margin-bottom: 25px;
 				max-width: 730px;
-				@include font(#FFF, 24px, 400, normal, 0);
+				@include font(#FFF, 24px, 300, normal, 0);
 			}
 			
 			.reviews__people-name {
@@ -1353,7 +1356,7 @@
 		margin-bottom: 70px;
 
 		text-align: center;
-		@include font(#FFF, 24px, 400, 120.9%, 0);
+		@include font(#FFF, 24px, 300, 120.9%, 0);
 	}
 
 	&__photo {
@@ -1388,7 +1391,7 @@
 
 			&-position {
 				margin-bottom: 20px;
-				@include font($grey-color, 20px, 400, normal, 0);
+				@include font($grey-color, 20px, 300, normal, 0);
 			}
 		}
 
@@ -1473,7 +1476,7 @@
 
 			.footer__description {
 				max-width: 432px;
-				@include font(#FFF, 24px, 400, normal, 0);
+				@include font(#FFF, 24px, 300, normal, 0);
 			}
 
 
@@ -1519,7 +1522,7 @@
 		@include display-center (space-between, center);
 
 		&-text {
-			@include font(#fff, 24px, 400, 158.333%, 0);
+			@include font(#fff, 24px, 300, 158.333%, 0);
 		}
 	}
 }
@@ -1739,10 +1742,7 @@
 							font-size: 18px;
 						}	
 					}
-					.home__button-small {
-						width: 235px;
-						height: 40px;
-					}
+					
 				}
 			}
 				
@@ -1751,10 +1751,6 @@
 					.home__button {
 						width: 380px;
 						height: 75px;
-					}
-					.home__description {
-						width: 500px;
-						font-size: 32px;
 					}
 		
 				}
@@ -2032,6 +2028,7 @@
 		.home {
 			padding: 0 60px;
 			&__header {
+			padding: 0 60px;
 				&-rigth {
 
 					.header__nav {
@@ -2043,9 +2040,11 @@
 						}	
 					}
 					.home__button-small {
-						width: 200px;
+						width: 230px;
 						height: 35px;
-						font-size: 14px;
+						p {
+							font-size: 14px;
+						}
 					}
 				}
 			}
@@ -2056,10 +2055,6 @@
 					.home__button {
 						width: 380px;
 						height: 75px;
-					}
-					.home__description {
-						width: auto;
-						font-size: 24px;
 					}
 		
 				}
@@ -2306,11 +2301,6 @@
 					flex-direction: column;
 
 					.home__title {
-						text-align: center;
-					}
-					.home__description {
-						width: auto;
-						font-size: 24px;
 						text-align: center;
 					}
 		
@@ -2573,6 +2563,7 @@
 			}
 		
 			&__header {
+			padding: 0 30px;
 				&-rigth--open {
 					padding-top: 35%;
 					
@@ -2607,16 +2598,14 @@
 			}
 			&__main {
 				flex-direction: column;
+				position: relative;
+				top: 100px;
 				&-content {
 					width: auto;
 					height: auto;
 					.home__title {
-						width: 300px;
-						font-size: 36px;
-					}
-					.home__description {
 						width: 100%;
-						font-size: 24px;
+						font-size: 30px;
 					}
 					.home__button {
 						width: 330px;
