@@ -125,7 +125,6 @@ function startConfetti() {
       });
   });
 
-    
 // Home Page Finish
 
 

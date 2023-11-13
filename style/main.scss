@@ -224,12 +224,10 @@
 // Home Start 
 .home {
 	width: 100%;
-	max-height: 100vh;
+	height: 100vh;
 	padding: 0 200px;
-	display: flex;
+	@include display-center(center, center);
 	flex-direction: column;
-	align-items: center;
-	justify-content: center;
 	position: relative;
 	// overflow-x: hidden;
 
@@ -252,7 +250,7 @@
 		z-index: 1;
 		position: fixed;
 		top: 0%;
-		padding: 0 100px;
+		padding: 0 200px;
 		z-index: 5;
 		transition: 1s;
 
@@ -338,7 +336,7 @@
 	}
 
 	&__header-scroll {
-		background: rgba(0, 0, 0, 0.10);
+		background: rgba(0, 0, 0, 0.3);
 		backdrop-filter: blur(5px);
 		border-bottom: 1px solid $main-color;
 		transition: 1s;
@@ -642,6 +640,7 @@
 		padding: 20px 0;
 
 		&-filter {
+			width: 25%;
 			column-gap: 10px;
 			
 			.filter__cart {
@@ -950,11 +949,11 @@
 
 		}
 		&-main {
+			width: 75%;
 			flex-wrap: wrap;
-			@include display-center (flex-end, flex-start);
-			
-			padding-left: 30px;
+			@include display-center (flex-start, flex-start);
 			gap: 30px;
+			padding-left: 15px;
 
 			.error__course {
 				@include font($red-color, 48px, 600, 120%, normal);
@@ -1570,6 +1569,10 @@
 
 		.home {
 			padding: 0 100px;
+			&__header {
+				padding: 0 100px;
+			}
+
 			&__main {
 				&-content {
 					.home__title {
@@ -1618,6 +1621,7 @@
 		
 			&__box {
 				width: 100%;
+				
 				&-filter {
 					column-gap: 10px;
 					
@@ -1631,9 +1635,9 @@
 				}
 				&-main {
 					padding-left: 10px;
-					gap: 20px;
+					gap: 15px;
 					.main__cart {
-						width: 440px;
+						width: 430px;
 						padding: 20px 0 20px 20px;
 					}
 				}			
@@ -1871,15 +1875,17 @@
 		
 			&__box {
 				width: 100%;
+				@include display-center(flex-start, center);
 				flex-direction: column;
 				&-filter {
+					width: 100%;
 					column-gap: 10px;
 					@include display-center (center, flex-start);
 					flex-wrap: wrap;
 					margin: 20px 0;
 					
 					.filter__cart {
-						width: 440px;
+					width: 440px;
 					height: 60px;
 
 						.input-age {
@@ -2738,12 +2744,12 @@
 								padding-top: 25px;
 								z-index: 3;
 								.main__cart-subtitle {
-									@include font($grey-ligth-color, 16px, 500, 120%, normal);
+									@include font(#fff, 16px, 500, 120%, normal);
 									text-align: center;
 								}
 								.main__cart-title {
 									width: 100%;
-									@include font(#000, 24px, 600, normal, normal);
+									@include font(#fff, 24px, 600, normal, normal);
 									margin-top: 10px;
 									padding-bottom: 15px;
 									text-align: center;
