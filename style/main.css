@@ -183,8 +183,6 @@ body {
           .wrap .gift__popup-container .gift__popup__group--select::-ms-expand {
             display: none; }
       .wrap .gift__popup-container .gift__popup-btn {
-        margin-top: 35px;
-        margin-bottom: 30px;
         margin: 35px 0 30px 0;
         width: 100%;
         height: 60px;
@@ -1638,6 +1636,14 @@ body {
   .wrap .team__title {
     text-align: center; } }
 @media screen and (max-width: 1200px) {
+  .wrap .gift-wrapper {
+    right: 60px; }
+    .wrap .gift-wrapper .gift-icon {
+      width: 70px;
+      height: 70px; }
+    .wrap .gift-wrapper .gift-text {
+      width: 125px;
+      height: 125px; }
   .wrap .home {
     padding: 0 60px; }
     .wrap .home__header {
@@ -1702,6 +1708,14 @@ body {
   .wrap .footer {
     padding: 50px 60px; } }
 @media screen and (max-width: 1000px) {
+  .wrap .gift-wrapper {
+    bottom: 30px; }
+    .wrap .gift-wrapper .gift-icon {
+      width: 60px;
+      height: 60px; }
+    .wrap .gift-wrapper .gift-text {
+      width: 110px;
+      height: 110px; }
   .wrap .home {
     padding: 0 60px; }
     .wrap .home__bg {
@@ -1922,6 +1936,17 @@ body {
     opacity: 1;
     margin-top: 50px; }
 
+  .wrap .gift-wrapper {
+    right: 30px; }
+    .wrap .gift-wrapper .gift-icon {
+      width: 50px;
+      height: 50px; }
+      .wrap .gift-wrapper .gift-icon svg {
+        width: 30px;
+        height: 30px; }
+    .wrap .gift-wrapper .gift-text {
+      width: 95px;
+      height: 95px; }
   .wrap .home {
     padding: 0 30px; }
     .wrap .home__bg {
@@ -2137,6 +2162,22 @@ body {
     width: 70vw;
     height: 60vw; }
 
+  .wrap .gift__popup-container .gift__popup {
+    width: 100%;
+    height: 100vh;
+    border-radius: 0; }
+    .wrap .gift__popup-container .gift__popup::before {
+      width: 100%;
+      min-height: 100px;
+      background-size: contain; }
+    .wrap .gift__popup-container .gift__popup__title {
+      margin-bottom: 80px; }
+    .wrap .gift__popup-container .gift__popup__group-input {
+      font-size: 15px; }
+      .wrap .gift__popup-container .gift__popup__group-input::placeholder {
+        font-size: 15px; }
+    .wrap .gift__popup-container .gift__popup-btn {
+      font-size: 16px; }
   .wrap .home__bg {
     width: 300vw;
     height: 300vh;
@@ -2211,6 +2252,8 @@ body {
     text-align: center;
     font-size: 18px; } }
 @media screen and (max-height: 800px) {
+  .wrap .gift__popup-container {
+    overflow: auto; }
   .wrap .home {
     max-height: 200vh; }
     .wrap .home__main {
