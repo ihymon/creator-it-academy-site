@@ -1487,7 +1487,7 @@ body {
 @media screen and (max-width: 1400px) {
   .wrap .home__header-left .logo {
     width: 120px;
-    height: 55px; }
+    height: 58.5px; }
   .wrap .home__header-rigth .header__nav {
     margin-right: 40px;
     display: flex;
@@ -1834,7 +1834,7 @@ body {
       background-color: #262534;
       left: 0%;
       top: 0%;
-      z-index: 2;
+      z-index: 4;
       transition: 1s;
       overflow-y: auto; }
     .wrap .home__popup-open {

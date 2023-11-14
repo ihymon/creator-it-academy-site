@@ -1763,7 +1763,8 @@
 				&-left {
 					.logo {
 						width: 120px;
-						height: 55px;
+						height: 58.5px;
+						
 					}
 				}
 
@@ -2392,7 +2393,7 @@
 				background-color: $grey-color;
 				left: 0%;
 				top: 0%;
-				z-index: 2;
+				z-index: 4;
 				transition: 1s;
 				overflow-y: auto;
 			}
