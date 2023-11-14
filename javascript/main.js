@@ -720,7 +720,6 @@ let owlThird = $('.owl-carousel-third').owlCarousel({
   autoWidth: true,
   autoplay: true,
   autoplayTimeout: 1500,
-  autoplayHoverPause: true,
   responsiveClass:true,
   dots: false,
   responsive: {
@@ -749,5 +748,15 @@ let owlThird = $('.owl-carousel-third').owlCarousel({
 
 
 // Footer Start 
+$(window).scroll(function() {
+  let footer = $('footer');
 
+  let footerPosition = footer.offset().top; 
+  let windowHeight = $(window).height();
+  if (footerPosition < windowHeight + $(window).scrollTop()) {
+      $(".gift").hide(300);
+  } else {
+    $(".gift").show(300);
+  }
+});
 // Footer End 
