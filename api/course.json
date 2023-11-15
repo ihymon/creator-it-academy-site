@@ -7,7 +7,7 @@
 		"duration": "1 год 20 хв",
 		"age": [7, 8],
 		"frequency": "1 раз на тиждень",
-		"img": "./img/course/course1.png",
+		"img": "./img/course/course1.webp",
 		"type": "programing",
 		"subtitle": "Програмування"
 	},
@@ -19,7 +19,7 @@
 		"duration": "1 год 20 хв",
 		"age": [9, 10, 11],
 		"frequency": "1 раз на тиждень",
-		"img": "./img/course/course3.png",
+		"img": "./img/course/course3.webp",
 		"type": "rare",
 		"subtitle": "Програмування"
 	},
@@ -31,7 +31,7 @@
 		"duration": "2 год + (1 консультація щотижня)",
 		"age": [13, 14, 15, 16, 17],
 		"frequency": "1 раз на тиждень",
-		"img": "./img/course/course4.png",
+		"img": "./img/course/course4.webp",
 		"type": "programing",
 		"subtitle": "Програмування"
 	},
@@ -43,7 +43,7 @@
 		"duration": "2 год",
 		"age": [13, 14, 15, 16, 17],
 		"frequency": "1 раз на тиждень",
-		"img": "./img/course/course5.png",
+		"img": "./img/course/course5.webp",
 		"type": "green",
 		"subtitle": "Програмування"
 	},
@@ -55,7 +55,7 @@
 		"duration": "1 год 20 хв",
 		"age": [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18],
 		"frequency": "2 рази на тиждень",
-		"img": "./img/course/course6.png",
+		"img": "./img/course/course6.webp",
 		"type": "blue",
 		"subtitle": "Англійська мовa"
 	},
@@ -67,7 +67,7 @@
 		"duration": "1 год 20 хв",
 		"age": [9, 10, 11],
 		"frequency": "1 рази на тиждень",
-		"img": "./img/course/course7.png",
+		"img": "./img/course/course7.webp",
 		"type": "rare",
 		"subtitle": "Програмування"
 	},
@@ -79,7 +79,7 @@
 		"duration": "1 год 20 хв",
 		"age": [9, 10, 11],
 		"frequency": "1 рази на тиждень",
-		"img": "./img/course/course7.png",
+		"img": "./img/course/course7.webp",
 		"type": "programing",
 		"subtitle": "Робототехніка"
 	},
@@ -91,7 +91,7 @@
 		"duration": "1 год 20 хв",
 		"age": [11, 12],
 		"frequency": "1 рази на тиждень",
-		"img": "./img/course/course2.png",
+		"img": "./img/course/course2.webp",
 		"type": "programing",
 		"subtitle": "Робототехніка"
 	},
@@ -103,7 +103,7 @@
 		"duration": "1 год 20 хв",
 		"age": [10, 11, 12],
 		"frequency": "1 рази на тиждень",
-		"img": "./img/course/course9.png",
+		"img": "./img/course/course9.webp",
 		"type": "rare",
 		"subtitle": "Програмування"
 	}
