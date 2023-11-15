@@ -1271,7 +1271,7 @@ body {
     font-style: normal;
     font-weight: 300;
     font-size: 24px;
-    line-height: 120.9%;
+    line-height: normal;
     letter-spacing: 0;
     color: #FFF; }
   .team__photo {
@@ -2051,19 +2051,18 @@ body {
       height: auto;
       padding: 20px 20px 20px 20px;
       padding-bottom: 20px; }
+      .wrap .course__box-main .main__cart:nth-child(1) .cart__rigth img {
+        position: relative;
+        left: 15px; }
       .wrap .course__box-main .main__cart:nth-child(2) .cart__rigth img {
         position: relative;
         left: 40px; }
-      .wrap .course__box-main .main__cart:nth-child(8) {
-        background-color: red; }
-        .wrap .course__box-main .main__cart:nth-child(8) .cart__rigth img {
-          position: relative;
-          left: 25px; }
-      .wrap .course__box-main .main__cart:nth-child(9) {
-        background-color: red; }
-        .wrap .course__box-main .main__cart:nth-child(9) .cart__rigth img {
-          position: relative;
-          left: 30px; }
+      .wrap .course__box-main .main__cart:nth-child(8) .cart__rigth img {
+        position: relative;
+        left: 25px; }
+      .wrap .course__box-main .main__cart:nth-child(9) .cart__rigth img {
+        position: relative;
+        left: 30px; }
       .wrap .course__box-main .main__cart-button {
         width: 100%; }
       .wrap .course__box-main .main__cart-box {
@@ -2159,7 +2158,7 @@ body {
     margin-top: 60px; }
     .wrap .reviews__content .reviews__text-content .reviews__description {
       max-width: 100%;
-      font-size: 20px; }
+      font-size: 18px; }
     .wrap .reviews__content .reviews__text-content .reviews__people-name {
       font-size: 20px; }
     .wrap .reviews__content .reviews__video {
@@ -2172,7 +2171,7 @@ body {
     padding: 0 30px; }
   .wrap .team__description {
     padding: 0 30px;
-    font-size: 20px; }
+    font-size: 18px; }
   .wrap .team__row-member {
     width: 230px;
     height: 343px; }
@@ -2185,7 +2184,7 @@ body {
   .wrap .footer {
     padding: 50px 30px; }
     .wrap .footer__content .footer__list .footer__description {
-      font-size: 20px; }
+      font-size: 18px; }
     .wrap .footer__copyright-text {
       font-size: 20px; } }
 @media screen and (max-width: 450px) {

@@ -1388,8 +1388,7 @@
 		margin-bottom: 70px;
 
 		text-align: center;
-		@include font(#FFF, 24px, 300, 120.9%, 0);
-	}
+		@include font(#FFF, 24px, 300, normal, 0);	}
 
 	&__photo {
 		margin-bottom: 70px;
@@ -2816,6 +2815,14 @@
 						height: auto;
 						padding: 20px 20px 20px 20px;
 						padding-bottom: 20px;
+						&:nth-child(1) {
+							.cart__rigth {
+								img {
+									position: relative;
+									left: 15px;
+								}
+						}
+					}
 						&:nth-child(2) {
 								.cart__rigth {
 									img {
@@ -2825,7 +2832,6 @@
 							}
 						}
 						&:nth-child(8) {
-							background-color: red;
 								.cart__rigth {
 									img {
 										position: relative;
@@ -2835,7 +2841,6 @@
 						}
 
 						&:nth-child(9) {
-							background-color: red;
 								.cart__rigth {
 									img {
 										position: relative;
@@ -2970,7 +2975,7 @@
 				.reviews__text-content {
 					.reviews__description {
 						max-width: 100%;
-						font-size: 20px;
+						font-size: 18px;
 					}
 
 					.reviews__people-name {
@@ -3005,7 +3010,7 @@
 
 			&__description {
 				padding: 0 30px;
-				font-size: 20px;
+				font-size: 18px;
 			}
 
 
@@ -3052,7 +3057,7 @@
 			&__content {
 				.footer__list {
 					.footer__description {
-						font-size: 20px;
+						font-size: 18px;
 					}
 				}
 			}
