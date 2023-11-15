@@ -40,8 +40,12 @@
 			position: relative;
 			padding: 30px;
 
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+
 			width: 400px;
-			height: 640px;
+			height: 600px;
 
 			border-radius: 5px;
 			box-shadow: 0px 4px 15px 0px $grey-color;
@@ -82,91 +86,93 @@
 				}
 			}
 
+			&__group-content {
+				.gift__popup__group {
+					margin-bottom: 10px;
+					display: flex;
+					flex-direction: column;
+					row-gap: 5px;
 
-			&__group {
-				margin-bottom: 10px;
-				display: flex;
-				flex-direction: column;
-				row-gap: 5px;
+
+					&-title {
+						@include font(#fff, 16px, 300, normal, 0);
+					}
+
+					
+					&-input {
+						height: 46px;
+						border-radius: 5px;
+						background-color: rgba(38, 37, 52, 0.70);
+						border: none;
+						@include font(#fff, 15px, 500, normal, 0);
+						padding: 0 10px;
+
+						&::placeholder {
+							@include font(#fff, 15px, 500, normal, 0);
+						}
+					}
 
 
-				&-title {
-					@include font(#fff, 18px, 300, normal, 0);
+					&--select {
+						-webkit-appearance: none;
+						-moz-appearance: none;
+						background-image: url(../img/gift/popup__select-arrow.svg);
+						background-repeat: no-repeat;
+						background-size: 24px;  
+						background-position: center right 10px;
+						cursor: pointer;
+						
+						&::-ms-expand {
+							display: none;
+						}
+
+						& option {
+							background-color: $dark-color;
+							height: 40px;
+
+						}
+					}
 				}
 
-				
-				&-input {
+
+				.gift__popup-btn {
+					margin: 35px 0 20px 0;
+					width: 100%;
 					height: 50px;
 					border-radius: 5px;
-					background-color: rgba(38, 37, 52, 0.70);
+					background-color: $main-color;
 					border: none;
-					@include font(#fff, 16px, 500, normal, 0);
-					padding: 0 10px;
-
-					&::placeholder {
-						@include font(#fff, 16px, 500, normal, 0);
-					}
-				}
-
-
-				&--select {
-					-webkit-appearance: none;
-					-moz-appearance: none;
-					background-image: url(../img/gift/popup__select-arrow.svg);
-					background-repeat: no-repeat;
-					background-size: 24px;  
-					background-position: center right 10px;
-					cursor: pointer;
-					
-					&::-ms-expand {
-						display: none;
-					}
-
-					& option {
-						padding: 15px;
-						margin: 15px;
-						background-color: $dark-color;
-					}
-				}
-			}
-
-
-			&-btn {
-				margin: 35px 0 30px 0;
-				width: 100%;
-				height: 60px;
-				border-radius: 5px;
-				background-color: $main-color;
-				border: none;
-				@include font(#fff, 18px, 600, normal, 0);
-				transition: 0.5s;
-
-
-				&:hover {
-					background-color: transparent;
-					border: 1px solid $main-color;
-					color: $main-color;
+					@include font(#fff, 16px, 600, normal, 0);
 					transition: 0.5s;
-				}
-			}
 
-						
-			&-exit{
-				text-align: center;
-
-				&-text {
-					display: inline-block;
-					@include font(#fff, 16px, 300, normal, 0);
-					border-bottom: 1px solid transparent;
-					cursor: pointer;
-					transition: .5s;
 
 					&:hover {
+						background-color: transparent;
+						border: 1px solid $main-color;
+						color: $main-color;
+						transition: 0.5s;
+					}
+				}
+
+							
+				.gift__popup-exit{
+					text-align: center;
+
+					&-text {
+						display: inline-block;
+						@include font(#fff, 16px, 300, normal, 0);
+						border-bottom: 1px solid transparent;
+						cursor: pointer;
 						transition: .5s;
-						border-bottom: 1px solid $main-color;
+
+						&:hover {
+							transition: .5s;
+							border-bottom: 1px solid $main-color;
+						}
 					}
 				}
 			}
+
 		}
 	}
 
