@@ -527,7 +527,8 @@ body {
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  padding: 200px 0;
+  padding-top: 40px;
+  padding-bottom: 120px;
   position: relative; }
   .benefits__box {
     width: 100%;
@@ -1274,7 +1275,7 @@ body {
     font-style: normal;
     font-weight: 300;
     font-size: 24px;
-    line-height: 120.9%;
+    line-height: normal;
     letter-spacing: 0;
     color: #FFF; }
   .team__photo {
@@ -1315,15 +1316,15 @@ body {
     .team__row-social-media {
       margin-bottom: 35px; }
     .team__row .member-1 {
-      background-image: url(../img/team/team-members/member-1.jpg); }
+      background-image: url(../img/team/team-members/member-1.webp); }
     .team__row .member-2 {
-      background-image: url(../img/team/team-members/member-2.jpg); }
+      background-image: url(../img/team/team-members/member-2.webp); }
     .team__row .yura-kunec {
-      background-image: url(../img/team/team-members/yura-kunec.jpg); }
+      background-image: url(../img/team/team-members/yura-kunec.webp); }
     .team__row .sophia-kunec {
-      background-image: url(../img/team/team-members/sophia-kunec.jpg); }
+      background-image: url(../img/team/team-members/sophia-kunec.webp); }
     .team__row .member-3 {
-      background-image: url(../img/team/team-members/member-3.jpg); }
+      background-image: url(../img/team/team-members/member-3.webp); }
 
 .partners {
   margin-bottom: 180px; }
@@ -2054,6 +2055,18 @@ body {
       height: auto;
       padding: 20px 20px 20px 20px;
       padding-bottom: 20px; }
+      .wrap .course__box-main .main__cart:nth-child(1) .cart__rigth img {
+        position: relative;
+        left: 15px; }
+      .wrap .course__box-main .main__cart:nth-child(2) .cart__rigth img {
+        position: relative;
+        left: 40px; }
+      .wrap .course__box-main .main__cart:nth-child(8) .cart__rigth img {
+        position: relative;
+        left: 25px; }
+      .wrap .course__box-main .main__cart:nth-child(9) .cart__rigth img {
+        position: relative;
+        left: 30px; }
       .wrap .course__box-main .main__cart-button {
         width: 100%; }
       .wrap .course__box-main .main__cart-box {
@@ -2085,7 +2098,8 @@ body {
           align-items: center;
           flex-direction: column;
           padding-top: 25px;
-          z-index: 3; }
+          z-index: 3;
+          padding-bottom: 30px; }
           .wrap .course__box-main .main__cart-box .cart__left .main__cart-subtitle {
             font-family: 'Montserrat', sans-serif;
             font-style: normal;
@@ -2108,7 +2122,15 @@ body {
             padding-bottom: 15px;
             text-align: center; }
         .wrap .course__box-main .main__cart-box .cart__rigth {
-          display: none; }
+          width: 100%;
+          position: static;
+          display: flex;
+          justify-content: center;
+          margin-top: 15px;
+          padding-left: 0px; }
+          .wrap .course__box-main .main__cart-box .cart__rigth img {
+            width: 200px;
+            height: 200px; }
   .wrap .certificate {
     padding: 0 30px; }
     .wrap .certificate__content .certificate__form {
@@ -2140,7 +2162,7 @@ body {
     margin-top: 60px; }
     .wrap .reviews__content .reviews__text-content .reviews__description {
       max-width: 100%;
-      font-size: 20px; }
+      font-size: 18px; }
     .wrap .reviews__content .reviews__text-content .reviews__people-name {
       font-size: 20px; }
     .wrap .reviews__content .reviews__video {
@@ -2153,7 +2175,7 @@ body {
     padding: 0 30px; }
   .wrap .team__description {
     padding: 0 30px;
-    font-size: 20px; }
+    font-size: 18px; }
   .wrap .team__row-member {
     width: 230px;
     height: 343px; }
@@ -2166,7 +2188,7 @@ body {
   .wrap .footer {
     padding: 50px 30px; }
     .wrap .footer__content .footer__list .footer__description {
-      font-size: 20px; }
+      font-size: 18px; }
     .wrap .footer__copyright-text {
       font-size: 20px; } }
 @media screen and (max-width: 450px) {

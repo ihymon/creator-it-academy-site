@@ -560,7 +560,9 @@
 	height: 100%;
 	@include display-center (flex-start, center);
 	flex-direction: column;
-	padding: 200px 0;
+	padding-top: 40px;
+	padding-bottom: 120px;
+
 	position: relative;
   
 	&__box {
@@ -1392,8 +1394,7 @@
 		margin-bottom: 70px;
 
 		text-align: center;
-		@include font(#FFF, 24px, 300, 120.9%, 0);
-	}
+		@include font(#FFF, 24px, 300, normal, 0);	}
 
 	&__photo {
 		margin-bottom: 70px;
@@ -1439,23 +1440,23 @@
 		
 
 		.member-1 {
-			background-image: url(../img/team/team-members/member-1.jpg);
+			background-image: url(../img/team/team-members/member-1.webp);
 		}
 
 		.member-2 {
-			background-image: url(../img/team/team-members/member-2.jpg);
+			background-image: url(../img/team/team-members/member-2.webp);
 		}
 
 		.yura-kunec {
-			background-image: url(../img/team/team-members/yura-kunec.jpg);
+			background-image: url(../img/team/team-members/yura-kunec.webp);
 		}
 
 		.sophia-kunec {
-			background-image: url(../img/team/team-members/sophia-kunec.jpg);
+			background-image: url(../img/team/team-members/sophia-kunec.webp);
 		}
 		
 		.member-3 {
-			background-image: url(../img/team/team-members/member-3.jpg);
+			background-image: url(../img/team/team-members/member-3.webp);
 		}
 	}
 
@@ -2814,11 +2815,46 @@
 					}
 				}
 				&-main {
+			
 					.main__cart {
 						width: 100%;
 						height: auto;
 						padding: 20px 20px 20px 20px;
 						padding-bottom: 20px;
+						&:nth-child(1) {
+							.cart__rigth {
+								img {
+									position: relative;
+									left: 15px;
+								}
+						}
+					}
+						&:nth-child(2) {
+								.cart__rigth {
+									img {
+										position: relative;
+										left: 40px;
+									}
+							}
+						}
+						&:nth-child(8) {
+								.cart__rigth {
+									img {
+										position: relative;
+										left: 25px;
+									}
+							}
+						}
+
+						&:nth-child(9) {
+								.cart__rigth {
+									img {
+										position: relative;
+										left: 30px;
+									}
+							}
+						}
+				
 						&-button {
 							width: 100%;
 						}
@@ -2843,6 +2879,7 @@
 								flex-direction: column;
 								padding-top: 25px;
 								z-index: 3;
+								padding-bottom: 30px;
 								.main__cart-subtitle {
 									@include font(#fff, 16px, 500, 120%, normal);
 									text-align: center;
@@ -2858,7 +2895,16 @@
 								
 							}
 							.cart__rigth {
-								display: none;
+								width: 100%;
+								position: static;
+								display: flex;
+								justify-content: center;
+								margin-top: 15px;
+								padding-left: 0px;
+								img {
+									width: 200px;
+									height: 200px;
+								}
 							}
 						}
 					}
@@ -2935,7 +2981,7 @@
 				.reviews__text-content {
 					.reviews__description {
 						max-width: 100%;
-						font-size: 20px;
+						font-size: 18px;
 					}
 
 					.reviews__people-name {
@@ -2970,7 +3016,7 @@
 
 			&__description {
 				padding: 0 30px;
-				font-size: 20px;
+				font-size: 18px;
 			}
 
 
@@ -3017,7 +3063,7 @@
 			&__content {
 				.footer__list {
 					.footer__description {
-						font-size: 20px;
+						font-size: 18px;
 					}
 				}
 			}

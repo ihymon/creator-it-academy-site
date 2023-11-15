@@ -404,6 +404,7 @@ function toggleAllCourses() {
 }
 
 $('#allCourse').on('click', toggleAllCourses);
+
 $('#course__search').on('input', function () {
   const inputValue = $(this).val().toLowerCase();
   fetchCourse(inputValue);
@@ -414,8 +415,11 @@ $('#course__search').on('input', function () {
   resetValue();
   $("#age1").val(minAge);
   
+
 });
 $(".my-checkbox").click(function() {
+  toggleAllCourses();
+
   $(".my-checkbox").prop('checked', false);
   $(this).prop('checked', true);
   let labelText = $(this).closest(".checkbox-container").find("span");
