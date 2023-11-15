@@ -68,7 +68,6 @@ $("#giftClose").click(() => {
 
 
 
-
 function startConfetti() {
     const count = 200,
     defaults = {
@@ -146,7 +145,7 @@ function startConfetti() {
   });
 
 
-  $("#nav__about-us").click(function() {
+  $(".about-us--scroll").click(function() {
     $('html, body').animate({
         scrollTop: $(".about-us").offset().top - 0.20 * $(window).height()
     }, 1000);
@@ -154,7 +153,7 @@ function startConfetti() {
 
   });
 
-  $("#nav__course").click(function() {
+  $(".course--scroll").click(function() {
     $('html, body').animate({
         scrollTop: $(".course").offset().top - 0.20 * $(window).height()
     }, 1000);
@@ -162,7 +161,7 @@ function startConfetti() {
 
   });
 
-  $("#nav__team").click(function() {
+  $(".team--scroll").click(function() {
     $('html, body').animate({
         scrollTop: $(".team").offset().top - 0.20 * $(window).height()
     }, 1000);
@@ -170,7 +169,7 @@ function startConfetti() {
 
   });
 
-  $("#nav__reviews").click(function() {
+  $(".reviews--scroll").click(function() {
     $('html, body').animate({
         scrollTop: $(".reviews").offset().top - 0.20 * $(window).height()
     }, 1000);
@@ -178,7 +177,7 @@ function startConfetti() {
 
   });
 
-  $("#nav__contact").click(function() {
+  $(".contact--scroll").click(function() {
     $('html, body').animate({
         scrollTop: $(".footer").offset().top - 0.20 * $(window).height()
     }, 1000);
@@ -824,5 +823,12 @@ $(window).scroll(function() {
   } else {
     $(".gift").show(300);
   }
+});
+
+$(".home--scroll").click(function() {
+  $('html, body').animate({
+      scrollTop: $(".home").offset().top - 0.20 * $(window).height()
+  }, 1000);
+  resetBurger();
 });
 // Footer End 
