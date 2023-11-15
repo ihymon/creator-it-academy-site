@@ -36,6 +36,16 @@ if(isMobile.any()) {
 
 
 // Gift Start
+fetch('./api/course.json')
+.then(response => response.json())
+.then(courses => {
+  for (let i = 0; i < courses.length; i++) {
+    $("#gifrCourseSelect").append(`
+      <option class="" value="${courses[i].nameCourse}">«${courses[i].nameCourse}»</option>
+    `);
+  }
+})
+
 $("#giftIcon").click(() => {
   startConfetti();
   $(".gift__popup-container").addClass("_active");
@@ -44,6 +54,7 @@ $("#giftIcon").click(() => {
   setTimeout(() => {
     $(".gift__popup").addClass("_active");
   }, 10);
+  {}
 });
 
 $("#giftClose").click(() => {
@@ -54,6 +65,8 @@ $("#giftClose").click(() => {
 
   $(".gift__popup").removeClass("_active");
 })
+
+
 
 
 function startConfetti() {
