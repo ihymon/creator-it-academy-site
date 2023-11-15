@@ -41,7 +41,7 @@
 			padding: 30px;
 
 			width: 400px;
-			height: 600px;
+			height: 640px;
 
 			border-radius: 5px;
 			box-shadow: 0px 4px 15px 0px $grey-color;
@@ -73,7 +73,7 @@
 
 
 			&__title {
-				margin-bottom: 50px;
+				margin-bottom: 30px;
 				text-align: center;
 				@include font(#fff, 24px, 300, normal, 1.5%);
 
@@ -120,6 +120,12 @@
 					
 					&::-ms-expand {
 						display: none;
+					}
+
+					& option {
+						padding: 15px;
+						margin: 15px;
+						background-color: $dark-color;
 					}
 				}
 			}
@@ -3367,14 +3373,12 @@
 
 		// Certificate Start
 		.certificate {
-			padding: 0;
+			padding: 0 30px;
 
 			&__content {
 				row-gap: 60px;
 
 				.certificate__form {
-					padding: 0 30px;
-
 					&-group {
 						&-input {
 							height: 60px;
