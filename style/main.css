@@ -523,7 +523,8 @@ body {
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  padding: 200px 0;
+  padding-top: 40px;
+  padding-bottom: 120px;
   position: relative; }
   .benefits__box {
     width: 100%;
@@ -1311,15 +1312,15 @@ body {
     .team__row-social-media {
       margin-bottom: 35px; }
     .team__row .member-1 {
-      background-image: url(../img/team/team-members/member-1.jpg); }
+      background-image: url(../img/team/team-members/member-1.webp); }
     .team__row .member-2 {
-      background-image: url(../img/team/team-members/member-2.jpg); }
+      background-image: url(../img/team/team-members/member-2.webp); }
     .team__row .yura-kunec {
-      background-image: url(../img/team/team-members/yura-kunec.jpg); }
+      background-image: url(../img/team/team-members/yura-kunec.webp); }
     .team__row .sophia-kunec {
-      background-image: url(../img/team/team-members/sophia-kunec.jpg); }
+      background-image: url(../img/team/team-members/sophia-kunec.webp); }
     .team__row .member-3 {
-      background-image: url(../img/team/team-members/member-3.jpg); }
+      background-image: url(../img/team/team-members/member-3.webp); }
 
 .partners {
   margin-bottom: 180px; }

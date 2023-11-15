@@ -554,7 +554,9 @@
 	height: 100%;
 	@include display-center (flex-start, center);
 	flex-direction: column;
-	padding: 200px 0;
+	padding-top: 40px;
+	padding-bottom: 120px;
+
 	position: relative;
   
 	&__box {
@@ -1433,23 +1435,23 @@
 		
 
 		.member-1 {
-			background-image: url(../img/team/team-members/member-1.jpg);
+			background-image: url(../img/team/team-members/member-1.webp);
 		}
 
 		.member-2 {
-			background-image: url(../img/team/team-members/member-2.jpg);
+			background-image: url(../img/team/team-members/member-2.webp);
 		}
 
 		.yura-kunec {
-			background-image: url(../img/team/team-members/yura-kunec.jpg);
+			background-image: url(../img/team/team-members/yura-kunec.webp);
 		}
 
 		.sophia-kunec {
-			background-image: url(../img/team/team-members/sophia-kunec.jpg);
+			background-image: url(../img/team/team-members/sophia-kunec.webp);
 		}
 		
 		.member-3 {
-			background-image: url(../img/team/team-members/member-3.jpg);
+			background-image: url(../img/team/team-members/member-3.webp);
 		}
 	}
 
