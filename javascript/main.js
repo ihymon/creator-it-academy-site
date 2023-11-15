@@ -806,6 +806,29 @@ let owlThird = $('.owl-carousel-third').owlCarousel({
 
 
 
+
+//  Question Start
+$(".question__cart-circle").click(function() {
+  let thisCart = $(this).closest(".question__cart");
+  let thisDescription = $(thisCart).find(".question__cart-description");
+
+  
+  $(".question__cart").not(thisCart).removeClass("question__cart-open");
+  $(".question__cart-description").not(thisDescription).hide(0);
+
+  $(thisCart).toggleClass("question__cart-open");
+
+  if (thisDescription.is(":hidden")) {
+    thisDescription.fadeIn(500);
+  } else {
+    thisDescription.fadeOut(500);
+  }
+});
+
+
+//  Question Finish
+
+
 // Map Start 
 
 // Map End 
