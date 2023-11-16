@@ -315,7 +315,6 @@ setupVideoControls($("#video4PlayBtn"), $("#video4"), $("#video4Poster"), $("#vi
 // Course Start 
 let age;
 let allCourse = false;
-let courseLength2 = 6;
 let courseLength;
 
 function fetchCourse(nameCourseFilter, subtitleFilter, minPriceFilter, maxPriceFilter, ageValue) {
@@ -326,7 +325,6 @@ function fetchCourse(nameCourseFilter, subtitleFilter, minPriceFilter, maxPriceF
       let courseFound = false;
       $(".course__filter-title span").text(courses.length);
       $(".course__box-main").empty();
-      courses = courses.slice(0, courseLength2);
       courses = courses.filter(course => {
         return (!minPriceFilter || course.price >= minPriceFilter) &&
           (!maxPriceFilter || course.price <= maxPriceFilter) &&
@@ -387,22 +385,7 @@ function fetchCourse(nameCourseFilter, subtitleFilter, minPriceFilter, maxPriceF
 }
 
 fetchCourse();
-function toggleAllCourses() {
-  if (allCourse == true) {
-    $('#allCourse').text("Показати більше");
-    courseLength2 = 6; 
-  } else {
-    courseLength2 = Infinity;
-    $('#allCourse').text("Заховати курси"); 
-  }
-  allCourse = !allCourse;
-  fetchCourse();
-  resetValue();
-  $("#age1").val(minAge);
-  $('#course__search').val("");
-}
 
-$('#allCourse').on('click', toggleAllCourses);
 
 $('#course__search').on('input', function () {
   const inputValue = $(this).val().toLowerCase();
@@ -417,7 +400,6 @@ $('#course__search').on('input', function () {
 
 });
 $(".my-checkbox").click(function() {
-  toggleAllCourses();
 
   $(".my-checkbox").prop('checked', false);
   $(this).prop('checked', true);

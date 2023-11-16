@@ -3104,7 +3104,9 @@
 				.reviews__text-content {
 					.reviews__description {
 						max-width: 100%;
-						font-size: 18px;
+						font-size: 18px !important;
+						letter-spacing: auto !important;
+						line-height: auto !important;
 					}
 
 					.reviews__people-name {
@@ -3139,7 +3141,10 @@
 
 			&__description {
 				padding: 0 30px;
-				font-size: 18px;
+				font-size: 18px !important;
+				letter-spacing: auto !important;
+				line-height: auto !important;
+
 			}
 
 
@@ -3222,7 +3227,9 @@
 			&__content {
 				.footer__list {
 					.footer__description {
-						font-size: 18px;
+						font-size: 18px !important;
+						letter-spacing: auto !important;
+						line-height: auto !important;
 					}
 				}
 			}

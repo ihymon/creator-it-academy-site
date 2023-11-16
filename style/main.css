@@ -2263,7 +2263,9 @@ body {
     margin-top: 60px; }
     .wrap .reviews__content .reviews__text-content .reviews__description {
       max-width: 100%;
-      font-size: 18px; }
+      font-size: 18px !important;
+      letter-spacing: auto !important;
+      line-height: auto !important; }
     .wrap .reviews__content .reviews__text-content .reviews__people-name {
       font-size: 20px; }
     .wrap .reviews__content .reviews__video {
@@ -2276,7 +2278,9 @@ body {
     padding: 0 30px; }
   .wrap .team__description {
     padding: 0 30px;
-    font-size: 18px; }
+    font-size: 18px !important;
+    letter-spacing: auto !important;
+    line-height: auto !important; }
   .wrap .team__row-member {
     width: 230px;
     height: 343px; }
@@ -2320,7 +2324,9 @@ body {
   .wrap .footer {
     padding: 50px 30px; }
     .wrap .footer__content .footer__list .footer__description {
-      font-size: 18px; }
+      font-size: 18px !important;
+      letter-spacing: auto !important;
+      line-height: auto !important; }
     .wrap .footer__copyright-text {
       font-size: 20px; } }
 @media screen and (max-width: 450px) {
