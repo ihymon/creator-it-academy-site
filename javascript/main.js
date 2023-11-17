@@ -822,6 +822,50 @@ $(".question__cart-circle").click(function() {
 
 
 // Map Start 
+fetch('./api/city.json')
+    .then(response => response.json())
+    .then(courses => {
+
+      $("#city__location").text(courses[0].location);
+
+      for (let i = 0; i< courses.length; i++) {
+        console.log(courses[i]);
+        $("#allCity").append(`
+        <div  class="checkbox-container">
+        <input id=${courses[i].id} class="my-checkbox" type="checkbox" ${courses[i].type} name="remember-checkbox">
+        <label class="checkmark"></label>
+        <span>${courses[i].name}</span>
+    </div> `)
+      }
+
+      let linkLocation;
+      $(".my-checkbox").click(function() {
+
+        $(".my-checkbox").prop('checked', false);
+        $(this).prop('checked', true);
+        if ($(this).is(":checked")) {
+          let selectedId = $(this).attr('id');
+          console.log('Selected ID:', selectedId);
+           let selectedCourse = courses.find(course => course.id === selectedId);
+
+           linkLocation = selectedCourse.herf;
+           $("#city__location").text(selectedCourse.location);
+
+      }
+      });
+
+      $("#opneLocation").click(function () {
+        if (linkLocation) {
+          window.open(linkLocation, '_blank');
+        } else {
+          alert("Please select a city before opening the location.");
+        }
+      });
+
+
+})
+
+
 
 // Map End 
 

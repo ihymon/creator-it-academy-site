@@ -1526,8 +1526,225 @@
 
 // Map Start
 .map {
+	width: 100%;
+	height: 640px;
+	padding: 0 200px;
+	background-image: url(../img/map/map__bg.jpg);
+	background-size: cover;
+	@include display-center (center, flex-start);
+	flex-direction: column;
+
+	.filter__cart {
+		width: 338px;
+		height: auto;
+		flex-shrink: 0;
+		padding: 16px 20px 35px 20px;
+		border-radius: 5px;
+		background-color: $dark-secondary-color;
+		margin-bottom: 20px;
+		overflow: hidden;
+		&-box {
+			@include display-center (space-between, center);
+		}
+		
+
+		&-title {
+			@include font(#fff, 24px, 600, 120%, normal);
+			
+		}
+		&-content {
+			margin-top: 25px
+		}
+
+		&-content--open {
+			animation-name: filter;
+			animation-duration: 0.5s;
+			animation-iteration-count: 1;
+			@keyframes filter {
+				0% {
+					opacity: 0;
+					position: relative;
+					top: 20px;
+				}
+				100% {
+					opacity: 1;
+					position: relative;
+					top: 0px;
+				}
+			
+			}
+		}
+		
+		&-input {
+			width: 100%;
+			height: 45px;
+
+			border: none;
+			outline: none;
+			background-color: transparent;
+
+			border: 1px solid $main-color;
+			border-radius: 2px;
+			padding: 0 15px;
+			@include font($main-color, 20px, 500, 120%, normal);
+
+			&::placeholder {
+				color: $main-color;
+			}
+		}
+
+		&-box2 {
+			min-height: 120px;
+			max-height: 170px;
+			overflow-y: auto;
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+			padding-bottom: 5px;
+
+			&::-webkit-scrollbar {
+				width: 10px;
+				border-radius: 5px;
+
+			  }
+			  
+			 &::-webkit-scrollbar-track {
+				background: transparent;
+			  }
+			  
+			  &::-webkit-scrollbar-thumb {
+				background: $main-color;
+				border-radius: 5px; 
+
+			  }
+
+			.checkbox-container {
+				display: inline-block;
+				position: relative;
+				padding-left: 25px;
+				cursor: pointer;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+				line-height: 16px;
+			  }
+			  .checkbox-container input {
+				position: absolute;
+				opacity: 0;
+				cursor: pointer;
+				height: 100%;
+				width: 100%;
+				left: 0;
+				top: 0;
+				z-index: 2;
+			  }
+			  .checkbox-container .checkmark{
+				position: relative;
+				cursor: pointer;
+			  }
+			  .checkbox-container .checkmark:before {
+				content: '';
+				position: absolute;
+				height: 16px;
+				width: 16px;
+				top: 0;
+				left: -25px;
+				background-color: transparent;
+				border: 1px solid $main-color;
+				border-radius: 2px;
+			  }
+			  .checkbox-container:hover input~.checkmark:before {
+				background-color: #ffffff;
+				border-color: rgba(0, 0, 0, 0.3);
+			  }
+			  .checkbox-container input:checked~.checkmark:before {
+				background-color: #fff;
+				border-color: #fff;
+			  }
+			  .checkbox-container .checkmark:after{
+				content: "";
+				position: absolute;
+				left: -18.9px;
+				top: 1.9px;
+				width: 4px;
+				height: 8px;
+				border: solid $main-color;
+				border-width: 0 2px 2px 0;
+				-webkit-transform: rotate(90deg) scale(0);
+				-ms-transform: rotate(90deg) scale(0);
+				transform: rotate(90deg) scale(0);
+				transition: 350ms;
+			  }
+			  .checkbox-container input:checked~.checkmark:after {
+				opacity: 1;
+				-webkit-transform: rotate(45deg) scale(1);
+				-ms-transform: rotate(45deg) scale(1);
+				transform: rotate(45deg) scale(1);
+			  }
+			
+			span {
+				margin-left: 5px;
+				@include font(#fff, 20px, 500, 120%, normal);
+				position: relative;
+				top: 1px;
+			}
+		}
+
+	}
+
+	.filter__cart2 {
+		width: 338px;
+		height: auto;
+		flex-shrink: 0;
+		padding: 20px;
+		border-radius: 5px;
+		background-color: $dark-secondary-color;
+		margin-bottom: 20px;
+		
+		&-box {
+			@include display-center (flex-start, center);
+			display: flex
+			
+		}
+		&-title {
+			@include font(#fff, 20px, 300, normal, normal);
+			margin-left: 15px;
+		}
+		.filter__cart2-img {
+			width: 30px;
+			height: 30px;
+			background-size: cover;
+		}
+
+		#city__location {
+			width: 280px;
+		}
+
+		.filter__cart2--city {
+			background-image: url(../img/map/Buildings.svg);
+			background-size: cover;
+		}
+		.filter__cart2--location {
+			background-image: url(../img/map/Location.svg);
+		}
+	}
+
+	.filter__button {
+		cursor: pointer;
+		transition: 0.5s;
+		transition: 0.5s !important;
+		
+		&:hover {
+			background-color: $main-color;
+			transition: 0.5s !important;
+		}
+	}
+
+
 }
 // Map End
+
 
 // Question Start
 .question {
@@ -1873,7 +2090,7 @@
 		
 		// Map Start
 		.map {
-
+			padding: 0 100px;
 		}
 		// Map End
 
@@ -2352,6 +2569,7 @@
 		
 		// Map Start
 		.map {
+			padding: 0 60px;
 
 		}
 		// Map End
@@ -3277,6 +3495,15 @@
 		
 		// Map Start
 		.map {
+			padding: 0 30px;
+			@include display-center (center, center);
+			flex-direction: column;
+			.filter__cart {
+				width: 100%;
+			}
+			.filter__cart2 {
+				width: 100%;
+			}
 
 		}
 		// Map End
