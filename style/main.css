@@ -1188,6 +1188,8 @@ body {
         color: #FFF; }
     .reviews__content .reviews__text-content .reviews__description {
       margin-bottom: 25px;
+      height: 140px;
+      overflow-y: auto;
       max-width: 730px;
       font-family: 'Montserrat', sans-serif;
       font-style: normal;
@@ -1195,7 +1197,23 @@ body {
       font-size: 24px;
       line-height: normal;
       letter-spacing: 0;
-      color: #FFF; }
+      color: #FFF;
+      /* Track */
+      /* Handle */
+      /* Handle on hover */ }
+      .reviews__content .reviews__text-content .reviews__description::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+        border-radius: 5px; }
+      .reviews__content .reviews__text-content .reviews__description::-webkit-scrollbar-track {
+        background: #262534;
+        border-radius: 5px; }
+      .reviews__content .reviews__text-content .reviews__description::-webkit-scrollbar-thumb {
+        background: #F5A006;
+        border-radius: 5px; }
+      .reviews__content .reviews__text-content .reviews__description::-webkit-scrollbar-thumb:hover {
+        background: #F5A006;
+        filter: brightness(0.7); }
     .reviews__content .reviews__text-content .reviews__people-name {
       margin-bottom: 20px;
       font-family: 'Montserrat', sans-serif;

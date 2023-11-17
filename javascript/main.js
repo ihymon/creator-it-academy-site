@@ -714,31 +714,29 @@ updatePlaceholderInCerteficte($("#userAge"), "Введіть скільки ва
 
 
 // Reviews Start
-let owl = $('.owl-carousel-first').owlCarousel({
-    items: 1,
-    loop:true,
-    center: true,
-    dots: false,
-})
 
-$('.reviews__control-prev').on('click', () => {
-    owl.trigger('prev.owl.carousel');
+var swiper = new Swiper(".reviews", {
+  slidesPerView: 1,
+  spaceBetween: 30,
+  loop: true,
+  navigation: {
+      nextEl: ".reviews__control-next",
+      prevEl: ".reviews__control-prev",
+  },
 });
 
-$('.reviews__control-next').on('click', () => {
-    owl.trigger('next.owl.carousel');
-});
-
-
-setupVideoControls($("#reviewSlide1 .reviews__video-play-btn"), $("#reviewSlide1 .reviews__video-user"), $("#reviewSlide1 .reviews__video-poster"), $("#reviewSlide1 .reviews__video"), ".reviews__video-play", ".reviews__video-pause", true);
-setupVideoControls($("#reviewSlide2 .reviews__video-play-btn"), $("#reviewSlide2 .reviews__video-user"), $("#reviewSlide2 .reviews__video-poster"), $("#reviewSlide2 .reviews__video"), ".reviews__video-play", ".reviews__video-pause", true);
+setupVideoControls($("#reviewSlide1 .reviews__video-play-btn"), $("#reviewSlide1 .reviews__video-user"), $("#reviewSlide1 .reviews__video-poster"), $("#reviewSlide1 .reviews__video"), ".reviews__video-play", ".reviews__video-pause", false);
+setupVideoControls($("#reviewSlide2 .reviews__video-play-btn"), $("#reviewSlide2 .reviews__video-user"), $("#reviewSlide2 .reviews__video-poster"), $("#reviewSlide2 .reviews__video"), ".reviews__video-play", ".reviews__video-pause", false);
+setupVideoControls($("#reviewSlide3 .reviews__video-play-btn"), $("#reviewSlide3 .reviews__video-user"), $("#reviewSlide3 .reviews__video-poster"), $("#reviewSlide3 .reviews__video"), ".reviews__video-play", ".reviews__video-pause", false);
+setupVideoControls($("#reviewSlide4 .reviews__video-play-btn"), $("#reviewSlide4 .reviews__video-user"), $("#reviewSlide4 .reviews__video-poster"), $("#reviewSlide4 .reviews__video"), ".reviews__video-play", ".reviews__video-pause", false);
+setupVideoControls($("#reviewSlide5 .reviews__video-play-btn"), $("#reviewSlide5 .reviews__video-user"), $("#reviewSlide5 .reviews__video-poster"), $("#reviewSlide5 .reviews__video"), ".reviews__video-play", ".reviews__video-pause", false);
 // Reviews End
 
 
 
 // Team Start 
 
-let owlSecond = $('.owl-carousel-second').owlCarousel({
+let owlSecond = $('.owl-carousel-first').owlCarousel({
     items: 4,
     loop: true,
     center: true,
@@ -771,7 +769,7 @@ let owlSecond = $('.owl-carousel-second').owlCarousel({
 
 // Partners Start 
 
-let owlThird = $('.owl-carousel-third').owlCarousel({
+let owlThird = $('.owl-carousel-second').owlCarousel({
   items: 4,
   loop: true,
   center: true,

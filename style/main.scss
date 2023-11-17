@@ -1288,8 +1288,34 @@
 
 			.reviews__description {
 				margin-bottom: 25px;
+				height: 140px;
+				overflow-y: auto;
 				max-width: 730px;
 				@include font(#FFF, 24px, 300, normal, 0);
+
+				&::-webkit-scrollbar {
+					width: 8px;
+					height: 8px;
+					border-radius: 5px;
+				}
+				  
+				/* Track */
+				&::-webkit-scrollbar-track {
+					background: $grey-color;
+					border-radius: 5px;
+				}
+				  
+				/* Handle */
+				&::-webkit-scrollbar-thumb {
+					background: $main-color;
+					border-radius: 5px;
+				}
+				  
+				/* Handle on hover */
+				&::-webkit-scrollbar-thumb:hover {
+					background: $main-color;
+					filter: brightness(0.7);
+				}
 			}
 			
 			.reviews__people-name {
