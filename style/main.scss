@@ -3006,6 +3006,22 @@
 									}
 							}
 						}
+						&:nth-child(6) {
+							.cart__rigth {
+								img {
+									position: relative;
+									left: 5px;
+								}
+						}
+					}
+					&:nth-child(7) {
+						.cart__rigth {
+							img {
+								position: relative;
+								left: 25px;
+							}
+					}
+				}
 						&:nth-child(8) {
 								.cart__rigth {
 									img {
@@ -3680,7 +3696,12 @@
 	.wrap {
 		.home {
 			&__header {
-				padding-top: 20px;
+				height: 20vh;
+
+				.logo {
+					width: 82px;
+					height: 40px;
+				}
 				&-rigth--open {
 					overflow-y: auto;
 					padding-top: 20%;

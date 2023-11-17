@@ -2193,6 +2193,12 @@ body {
       .wrap .course__box-main .main__cart:nth-child(2) .cart__rigth img {
         position: relative;
         left: 40px; }
+      .wrap .course__box-main .main__cart:nth-child(6) .cart__rigth img {
+        position: relative;
+        left: 5px; }
+      .wrap .course__box-main .main__cart:nth-child(7) .cart__rigth img {
+        position: relative;
+        left: 25px; }
       .wrap .course__box-main .main__cart:nth-child(8) .cart__rigth img {
         position: relative;
         left: 25px; }
@@ -2487,7 +2493,10 @@ body {
       margin-top: 45px; } }
 @media screen and (max-height: 500px) {
   .wrap .home__header {
-    padding-top: 20px; }
+    height: 20vh; }
+    .wrap .home__header .logo {
+      width: 82px;
+      height: 40px; }
     .wrap .home__header-rigth--open {
       overflow-y: auto;
       padding-top: 20%;
