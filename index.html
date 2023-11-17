@@ -437,6 +437,11 @@
                         <input class="certificate__form-group-input" id="userAge" placeholder="Введіть скільки вам років" type="number" pattern="[0-9]*" />
                     </div>
 
+                    <div class="certificate__form-group">
+                        <span class="certificate__form-group-title">Курс</span>
+                        <input class="certificate__form-group-input" id="userCourse" placeholder="Введіть назву курсу" type="name" maxlength="100">
+                    </div>
+
                     <button class="certificate__form-btn">
                         Отримати сертифікат
                     </button>
@@ -457,7 +462,7 @@
                     <p class="certificate__display-name" id="outputUserName">Ваше імя</p>
 
                     <p class="certificate__display-course">
-                       <span>пройшов(ла) курс навчання</span> Web-програмування (HTML/CSS/JS(основи))
+                       пройшов(ла) курс навчання <br> <span id="outputUserCourse">Web-програмування <br> (HTML/CSS/JS(основи))</span>
                     </p>
                 </div>
             </div>
@@ -770,7 +775,7 @@
 
 
         <!-- Footer Start -->
-        <footer class="footer" id="footer">
+        <footer class="footer">
             <div class="footer__content">
 
                 <ul class="footer__list"  data-aos="fade-right" data-aos-once="true">

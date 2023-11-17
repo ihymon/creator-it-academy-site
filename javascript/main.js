@@ -674,6 +674,18 @@ $("#userName").on("input", () => {
 });
 
 
+$("#userCourse").on("input", () => {
+  if($("#userCourse").val() == "") {
+      $("#outputUserCourse").text("");
+      $("#outputUserCourse").append(`
+        Web-програмування <br> (HTML/CSS/JS(основи))
+      `);
+  } else {
+      $("#outputUserCourse").text($("#userCourse").val());
+  }
+});
+
+
 $("#userAge").on("input", () => {
     $("#userAge").val($("#userAge").val().replace(/[^0-9]/g, ''));
     
@@ -819,7 +831,7 @@ $(".question__cart-circle").click(function() {
 
 // Footer Start 
 $(window).scroll(function() {
-  let footer = $('footer');
+  let footer = $('.footer');
 
   let footerPosition = footer.offset().top; 
   let windowHeight = $(window).height();

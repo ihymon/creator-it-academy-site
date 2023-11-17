@@ -1039,11 +1039,15 @@ body {
           color: #FFF;
           padding: 0 20px;
           width: 532px;
-          height: 80px;
+          height: 70px;
           color: #fff;
           border-radius: 5px;
           background: #3F3D56;
-          border: none; }
+          border: none;
+          -webkit-box-shadow: inset 0 0 0 50px #3F3D56;
+          -webkit-text-fill-color: #fff; }
+          .certificate__content .certificate__form-group-input:-webkit-autofill {
+            font-size: 20px; }
           .certificate__content .certificate__form-group-input::-webkit-outer-spin-button, .certificate__content .certificate__form-group-input::-webkit-inner-spin-button {
             -webkit-appearance: none;
             margin: 0; }
@@ -1133,24 +1137,27 @@ body {
         color: #292929;
         white-space: nowrap; }
       .certificate__content .certificate__display-course {
-        max-width: 250px;
-        text-align: center;
+        max-width: 60%;
+        font-variant: all-small-caps;
         font-family: 'Montserrat', sans-serif;
         font-style: normal;
-        font-weight: 700;
+        font-weight: 500;
         font-size: 16px;
-        line-height: 140%;
-        letter-spacing: 0.8px;
-        color: #000; }
+        line-height: normal;
+        letter-spacing: 0.48px;
+        color: #000;
+        text-align: center; }
         .certificate__content .certificate__display-course span {
-          font-variant: all-small-caps;
           font-family: 'Montserrat', sans-serif;
           font-style: normal;
-          font-weight: 500;
+          font-weight: 700;
           font-size: 16px;
-          line-height: normal;
-          letter-spacing: 0.48px;
-          color: #000; }
+          line-height: 140%;
+          letter-spacing: 0.8px;
+          color: #000;
+          word-wrap: break-word;
+          text-align: center;
+          font-variant: normal; }
 
 .reviews {
   margin-bottom: 140px;
@@ -1978,7 +1985,9 @@ body {
     .wrap .certificate__content .certificate__form-btn {
       width: 100%; }
   .wrap .certificate__content .certificate__display {
-    width: 80%; }
+    width: 80%;
+    height: auto;
+    padding: 40px 0; }
     .wrap .certificate__content .certificate__display-name {
       font-size: 2.6vw; }
     .wrap .certificate__content .certificate__display-logo {
@@ -1987,6 +1996,8 @@ body {
         font-size: 2.8vw; }
     .wrap .certificate__content .certificate__display-title {
       font-size: 5.5vw; }
+    .wrap .certificate__content .certificate__display-course {
+      max-width: 80%; }
   .wrap .reviews__content .reviews__text-content .reviews__description {
     max-width: 100%; }
   .wrap .reviews__content .reviews__video {
@@ -2257,7 +2268,7 @@ body {
         .wrap .certificate__content .certificate__display-logo--mini {
           font-size: 3.5vw; }
       .wrap .certificate__content .certificate__display-title {
-        font-size: 7.5vw; }
+        font-size: 6vw; }
   .wrap .reviews__title {
     padding: 0 30px; }
   .wrap .reviews__content {
@@ -2388,12 +2399,13 @@ body {
       row-gap: 60px; }
       .wrap .certificate__content .certificate__form-group-input {
         height: 60px;
-        font-size: 16px; }
+        font-size: 15px; }
       .wrap .certificate__content .certificate__form-btn {
         height: 60px;
         font-size: 18px; }
       .wrap .certificate__content .certificate__display {
-        border: 6px solid #F5A006; }
+        border: 6px solid #F5A006;
+        padding: 25px 0; }
         .wrap .certificate__content .certificate__display-name {
           font-size: 3.4vw; }
         .wrap .certificate__content .certificate__display-logo {
@@ -2401,12 +2413,12 @@ body {
           .wrap .certificate__content .certificate__display-logo--mini {
             font-size: 3.5vw; }
         .wrap .certificate__content .certificate__display-title {
-          font-size: 7.5vw; }
+          font-size: 6vw; }
         .wrap .certificate__content .certificate__display-course {
-          max-width: 200px;
-          font-size: 14px; }
+          font-size: 13px;
+          max-width: 90%; }
           .wrap .certificate__content .certificate__display-course span {
-            font-size: 14px; }
+            font-size: 13px; }
   .wrap .reviews__content {
     margin-top: 40px; }
     .wrap .reviews__content .reviews__text-content .reviews__description {
