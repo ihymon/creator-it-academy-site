@@ -10,7 +10,7 @@
     color: $color;
 }
 
-@mixin display-center ($justify, $align) {
+@mixin display-center($justify, $align) {
     display: flex;
     justify-content: $justify;
     align-items: $align;

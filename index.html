@@ -69,7 +69,7 @@
                         </select>
                     </div>
 
-                    <button class="gift__popup-btn">Спробувати безкоштовно</button>
+                    <button class="gift__popup-btn btn--orange">Спробувати безкоштовно</button>
 
                     <div class="gift__popup-exit" id="giftClose">
                         <p class="gift__popup-exit-text">Закрити</p>
@@ -147,7 +147,7 @@
 
                 <h1 class="home__title">Академія програмування та робототехніки.</h1>
 
-                <button class="home__button">Записатися</button>
+                <button class="home__button btn--orange">Записатися</button>
 
                 
             </div>
@@ -299,7 +299,7 @@
                 </div>
             </div>  
 
-            <button class="benefits__button" data-aos="zoom-in" data-aos-once="true">Рейтинг учнів</button>
+            <button class="benefits__button btn--orange" data-aos="zoom-in" data-aos-once="true">Рейтинг учнів</button>
 
 
         </section>
@@ -415,6 +415,79 @@
         <!-- Course End --> 
 
 
+
+        <!-- Course Selection Start -->
+        <section class="course-selection">
+            <h2 class="course-selection__title secondary-title" data-aos="flip-up" data-aos-once="true">
+                <span class="title-slash">/</span>Підбір ідеального курсу
+            </h2>
+            <p class="course-selection__description">
+                Не зміг обрати курс? Давай допоможемо.
+            </p>
+
+            <img src="./img/course-selection/course-selection__img.svg" alt="Image" class="course-selection__img">
+
+            <button class="course-selection__btn btn--orange" id="courseSelectionOpenBtn">
+                Підібрати курс
+            </button>
+
+            <div class="course-selection__popup-overlay">
+                <div class="course-selection__popup">
+                    <h2 class="popup__title secondary-title">
+                        Пройдіть вікторину <span class="popup__title--orange">(<span id="courseSelectionSlide">1</span>/6)</span>
+                    </h2>
+                    
+                    <div class="course-selection__popup__description">
+                        За нашими результатами вам найкраще підійдуть такі курси як:
+                    </div>
+
+                    <div class="popup__progress">
+                        <div class="popup__progress-line" id="courseSelectionLine"></div>
+                    </div>
+
+                    <p class="popup__question" id="courseSelectionQuestion">
+                        1. Скільки вам років?
+                    </p>
+                    <div class="popup__answer-container">
+                        <div class="popup__answer-block  checkbox-container">
+                            <input class="popup__answer-block__input" type="checkbox" id="courseSelectionAnswer1">
+                            <label class="popup__answer-block__label popup__answer-block__label--1 checkmark" for="courseSelectionAnswer1">
+                                а) 6 - 10
+                            </label>
+                        </div>
+
+                        <div class="popup__answer-block checkbox-container">
+                            <input class="popup__answer-block__input" type="checkbox" id="courseSelectionAnswer2">
+                            <label class="popup__answer-block__label popup__answer-block__label--2 checkmark" for="courseSelectionAnswer2">
+                                б) 10 - 14
+                            </label>
+                        </div>
+                        
+                        <div class="popup__answer-block checkbox-container">
+                            <input class="popup__answer-block__input" type="checkbox" id="courseSelectionAnswer3">
+                            <label class="popup__answer-block__label popup__answer-block__label--3 checkmark" for="courseSelectionAnswer3">
+                                в) 14 - 18
+                            </label>
+                        </div>  
+                    </div>
+
+                    <div class="popup__result" id="courseSelectionResult">
+                    </div>
+
+                    <div class="popup__action-btns">
+                        <button class="popup__next-btn btn--orange" id="courseSelectionNextBtn"> 
+                            Наступне питання
+                        </button>
+    
+                        <p class="popup__close-btn" id="courseSelectionClosePopup">Закрити</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Course Selection End --> 
+
+
+
         <!-- Certificate Start -->
         <section class="certificate">
             <h2 class="certificate__title secondary-title" data-aos="fade-down" data-aos-once="true">
@@ -443,7 +516,7 @@
                         <input class="certificate__form-group-input" id="userCourse" placeholder="Введіть назву курсу" type="name" maxlength="100">
                     </div>
 
-                    <button class="certificate__form-btn">
+                    <button class="certificate__form-btn btn--orange">
                         Отримати сертифікат
                     </button>
                 </div>
@@ -947,7 +1020,7 @@
                         <a href="mailto:creator@gmail.com" class="footer__link">creator@gmail.com</a>
                     </li>
 
-                    <button class="footer__btn">
+                    <button class="footer__btn btn--orange">
                         Пробне заняття
                     </button>
                 </ul>
