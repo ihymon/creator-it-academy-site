@@ -54,7 +54,7 @@ fetch('./api/course.json')
 .then(courses => {
   for (let i = 0; i < courses.length; i++) {
     $("#gifrCourseSelect").append(`
-      <option class="" value="${courses[i].nameCourse}">«${courses[i].nameCourse}»</option>
+      <option value="${courses[i].nameCourse}">«${courses[i].nameCourse}»</option>
     `);
   }
 })
@@ -607,6 +607,322 @@ function controlRange(id) {
 }
 controlRange('1');
 // Course End 
+
+
+
+// Course Selection Start
+function resetCheckbox() {
+  $('#courseSelectionAnswer1').prop('checked');
+  $('#courseSelectionAnswer2').prop('checked');
+  $('#courseSelectionAnswer3').prop('checked');
+}
+
+$("#courseSelectionOpenBtn").click(() => {
+  
+  $(".course-selection__popup-overlay").addClass("_active");
+  $("body").addClass("_active");
+
+  setTimeout(() => {
+    $(".course-selection__popup").addClass("_active");
+  }, 10);
+});
+
+$("#courseSelectionClosePopup").click(() => {
+  setTimeout(() => {
+    $(".course-selection__popup-overlay").removeClass("_active");
+    $("body").removeClass("_active");
+  }, 500);
+
+  $(".course-selection__popup").removeClass("_active");
+});
+
+
+let currentPopupProgress = 1;
+let lineProgress = 16.66666666666667;
+let selectedCheckboxes = [];
+
+
+let scratchProgrammingCount = 0;
+let tynkerProgrammingCount = 0;
+let webProgrammingCount = 0;
+let pythonProgrammingCount = 0;
+let englishCount = 0;
+let minecraftProgrammingCount = 0;
+let roboticWeDoCount = 0;
+let arduinoRoboticCount = 0;
+let constructProgrammingCount = 0;
+
+
+
+function checkCheckboxes() {
+  const checkboxes = document.querySelectorAll('.popup__answer-block__input');
+
+  checkboxes.forEach((checkbox) => {
+      if (checkbox.checked) {
+        selectedCheckboxes.push(checkbox.id);
+      }
+  });
+
+  // console.log('Selected ch', selectedCheckboxes);
+}
+
+
+$("#courseSelectionNextBtn").click(() => {
+  checkCheckboxes();
+  $('.popup__answer-block input').prop('checked', false);
+
+  currentPopupProgress++;
+
+
+  switch (currentPopupProgress) {
+    case 2:
+      $("#courseSelectionSlide").text(currentPopupProgress);
+      lineProgress += 16.66666666666667;
+      $("#courseSelectionLine").css("width", `${lineProgress}%`);
+
+      $("#courseSelectionQuestion").text("Як ви відчуваєте себе при розв'язанні складних завдань?");
+      $(".popup__answer-block__label--1").text("а) Відчуваю себе комфортно і насолоджуюсь вирішенням головоломок.");
+      $(".popup__answer-block__label--2").text("б) Знаходжу радість в конструюванні різних об'єктів і механізмів.");
+      $(".popup__answer-block__label--3").text("в) Предпочитаю створювати і програмувати різні ігрові сценарії.");
+      break;
+      
+    case 3:
+      $("#courseSelectionSlide").text(currentPopupProgress);
+
+      lineProgress += 16.66666666666667;
+      $("#courseSelectionLine").css("width", `${lineProgress}%`);
+
+      $("#courseSelectionQuestion").text("Як ви оцінюєте свою увагу до деталей?");
+      $(".popup__answer-block__label--1").text("а) Якісно аналізую деталі і уникаю помилок на кожному етапі.");
+      $(".popup__answer-block__label--2").text("б) Зацікавлений у взаємодії з механізмами, навіть якщо деякі деталі важко помітити.");
+      $(".popup__answer-block__label--3").text("в) Спроможний створити ігровий сценарій, об'єднуючи декілька деталей разом. ");
+      break;
+      
+    case 4:
+      $("#courseSelectionSlide").text(currentPopupProgress);
+
+      lineProgress += 16.66666666666667;
+      $("#courseSelectionLine").css("width", `${lineProgress}%`);
+
+      $("#courseSelectionQuestion").text("Як ви відчуваєте себе в ігровому середовищі?");
+      $(".popup__answer-block__label--1").text("а) Люблю логічні гри та викликання для розвитку критичного мислення.");
+      $(".popup__answer-block__label--2").text("б) Захоплююся іграми, де можна створювати власні об'єкти та механізми.");
+      $(".popup__answer-block__label--3").text("в) Бажаю програмувати та створювати власні ігрові світи.");
+      break;
+
+    case 5:
+      $("#courseSelectionSlide").text(currentPopupProgress);
+
+      lineProgress += 16.66666666666667;
+      $("#courseSelectionLine").css("width", `${lineProgress}%`);
+
+      $("#courseSelectionQuestion").text("Яке відношення ви маєте до програмування?");
+      $(".popup__answer-block__label--1").text("а) Обожнюю аналізувати код та шукати оптимальні рішення.");
+      $(".popup__answer-block__label--2").text("б) Цікавлюся програмуванням для створення робочих проектів.");
+      $(".popup__answer-block__label--3").text("в) Бажаю вивчити основи програмування, починаючи з простих завдань.");
+      break;
+
+    case 6:
+      $("#courseSelectionSlide").text(currentPopupProgress);
+
+      lineProgress += 16.66666666666667;
+      $("#courseSelectionLine").css("width", `${lineProgress}%`);
+
+      $("#courseSelectionQuestion").text("Яке середовище ви вважаєте найпривабливішим для навчання?");
+      $(".popup__answer-block__label--1").text("а) Люблю використовувати текстовий код та вирішувати завдання в програмному середовищі.");
+      $(".popup__answer-block__label--2").text("б) Віддаю перевагу використанню фізичних об'єктів для створення проектів.");
+      $(".popup__answer-block__label--3").text("в) Цікавлюся ігровим середовищем для програмування та розв'язання завдань.");
+      $("#courseSelectionNextBtn").text("Підібрати курс");
+      break;
+
+    default:
+      break;
+  }
+
+  if(currentPopupProgress >= 7) {
+    switch (selectedCheckboxes[0]) {
+      case 'courseSelectionAnswer1':
+        age = [6, 7, 8, 9, 10];
+        break;
+      case "courseSelectionAnswer2":
+        age = [10, 11, 12, 13, 14];
+        break;
+      case 'courseSelectionAnswer3':
+        age = [14, 15, 16, 17, 18];
+        break;
+    }
+  
+    switch (selectedCheckboxes[1]) {
+      case "courseSelectionAnswer1":
+        scratchProgrammingCount++;
+        tynkerProgrammingCount++;
+        break;
+      case "courseSelectionAnswer2":
+        arduinoRoboticCount++;
+        roboticWeDoCount++;
+        break;
+      case 'courseSelectionAnswer3':
+        minecraftProgrammingCount++;
+        webProgrammingCount++;
+        break;
+    }
+  
+    switch (selectedCheckboxes[2]) {
+      case "courseSelectionAnswer1":
+        pythonProgrammingCount++;
+        webProgrammingCount++;
+        break;
+      case "courseSelectionAnswer2":
+        arduinoRoboticCount++;
+        roboticWeDoCount++;
+        break;
+      case "courseSelectionAnswer3":
+        minecraftProgrammingCount++;
+        scratchProgrammingCount++;
+        break;
+    }
+  
+    switch (selectedCheckboxes[3]) {
+      case "courseSelectionAnswer1":
+        pythonProgrammingCount++;
+        webProgrammingCount++;
+        break;
+      case "courseSelectionAnswer2":
+        minecraftProgrammingCount++;
+        roboticWeDoCount++;
+        break;
+      case "courseSelectionAnswer3":
+        tynkerProgrammingCount++;
+        scratchProgrammingCount++;
+        break;
+    }
+  
+    switch (selectedCheckboxes[4]) {
+      case "courseSelectionAnswer1":
+        pythonProgrammingCount++;
+        webProgrammingCount++;
+        break;
+      case "courseSelectionAnswer2":
+        minecraftProgrammingCount++;
+        arduinoRoboticCount++;
+        break;
+      case "courseSelectionAnswer3":
+        scratchProgrammingCount++;
+        tynkerProgrammingCount++;
+        break;
+    }
+  
+    switch (selectedCheckboxes[5]) {
+      case "courseSelectionAnswer1":
+        pythonProgrammingCount++;
+        webProgrammingCount++;
+        break;
+      case "courseSelectionAnswer2":
+        roboticWeDoCount++;
+        arduinoRoboticCount++;
+        break;
+      case "courseSelectionAnswer3":
+        minecraftProgrammingCount++;
+        scratchProgrammingCount++;
+        break;
+    }
+
+
+    let allCourses = [
+      {count: scratchProgrammingCount, id: 0, age: [7, 8],},
+      {count: tynkerProgrammingCount, id: 1, age: [9, 10, 11],},
+      {count: webProgrammingCount, id: 2, age: [13, 14, 15, 16, 17],},
+      {count: pythonProgrammingCount, id: 3, age: [13, 14, 15, 16, 17],},
+      {count: englishCount, id: 4, age: [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18],},
+      {count: minecraftProgrammingCount, id: 5, age: [9, 10, 11],},
+      {count: roboticWeDoCount, id: 6, age: [9, 10, 11],},
+      {count: arduinoRoboticCount, id: 7, age: [11, 12],},
+      {count: constructProgrammingCount, id: 8, age: [10, 11, 12],},
+    ]
+
+
+    let filteredCourses = allCourses.filter(course => course.age.some(ageGroup => age.includes(ageGroup)));
+    filteredCourses.sort((a, b) => b.count - a.count);
+    let recommendedCourses = filteredCourses.slice(0, 3);
+    
+    // console.log(recommendedCourses);
+    
+    startConfetti();
+    $(".popup__title").text("Вітаю з проходженням вікторини");
+    $(".course-selection__popup__description").show(300);
+
+    $(".course-selection__popup").addClass("_result");
+
+
+    fetch('./api/course.json')
+    .then(response => response.json())
+    .then(courses => {
+
+        for (let i = 0; i < recommendedCourses.length; i++) {
+            let currentCardId = recommendedCourses[i].id;
+
+            for (let el of courses) {
+                if (el.id === currentCardId) {
+                    const minNum = Math.min(...courses[currentCardId].age || []);
+                    const maxNum = Math.max(...courses[currentCardId].age || []);
+
+                    $("#courseSelectionResult").append($(`
+                        <div class="main__cart main__cart--white-bg main__cart-${courses[currentCardId].type}">
+                            <button class="main__cart-button">${courses[currentCardId].subtitle}</button>
+                    
+                            <div class="main__cart-box">
+                                <div class="cart__left">
+                                    <p class="main__cart-subtitle">Курс</p>
+                                    <p class="main__cart-title">«${courses[currentCardId].nameCourse}» </p>
+                    
+                                    <div class="main__cart-sociable">
+                                        <svg  xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                            <path class="icon__socibale" fill-rule="evenodd" clip-rule="evenodd" d="M12.0823 22C17.6175 22 22.1046 17.5228 22.1046 12C22.1046 6.47715 17.6175 2 12.0823 2C6.54718 2 2.06006 6.47715 2.06006 12C2.06006 17.5228 6.54718 22 12.0823 22ZM12.834 6C12.834 5.58579 12.4975 5.25 12.0823 5.25C11.6672 5.25 11.3307 5.58579 11.3307 6V6.31673C9.6966 6.60867 8.32398 7.83361 8.32398 9.5C8.32398 11.4172 10.1408 12.75 12.0823 12.75C13.4619 12.75 14.3373 13.6557 14.3373 14.5C14.3373 15.3443 13.4619 16.25 12.0823 16.25C10.7028 16.25 9.82732 15.3443 9.82732 14.5C9.82732 14.0858 9.49079 13.75 9.07565 13.75C8.66051 13.75 8.32398 14.0858 8.32398 14.5C8.32398 16.1664 9.6966 17.3913 11.3307 17.6833V18C11.3307 18.4142 11.6672 18.75 12.0823 18.75C12.4975 18.75 12.834 18.4142 12.834 18V17.6833C14.4681 17.3913 15.8407 16.1664 15.8407 14.5C15.8407 12.5828 14.0239 11.25 12.0823 11.25C10.7028 11.25 9.82732 10.3443 9.82732 9.5C9.82732 8.65573 10.7028 7.75 12.0823 7.75C13.4619 7.75 14.3373 8.65573 14.3373 9.5C14.3373 9.91421 14.6739 10.25 15.089 10.25C15.5041 10.25 15.8407 9.91421 15.8407 9.5C15.8407 7.83361 14.4681 6.60867 12.834 6.31673V6Z" fill="#F5A006"/>
+                                            </svg>
+                                            <p>Ціна: <span>${courses[currentCardId].price}</span> грн/заняття</p>
+                                    </div>
+                    
+                                    <div class="main__cart-sociable">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                            <path class="icon__socibale" fill-rule="evenodd" clip-rule="evenodd" d="M5.26559 3.29918C5.86914 2 7.94025 2 12.0825 2C16.2247 2 18.2958 2 18.8994 3.29918C18.9513 3.41086 18.995 3.52686 19.0303 3.6461C19.4403 5.0333 17.9758 6.64111 15.0468 9.85674L13.0847 12L15.0468 14.1433C17.9758 17.3589 19.4403 18.9667 19.0303 20.3539C18.995 20.4731 18.9513 20.5891 18.8994 20.7008C18.2958 22 16.2247 22 12.0825 22C7.94025 22 5.86914 22 5.26559 20.7008C5.21371 20.5891 5.16994 20.4731 5.1347 20.3539C4.7247 18.9667 6.1892 17.3589 9.1182 14.1433L11.0803 12L9.1182 9.85674C6.1892 6.64111 4.7247 5.0333 5.1347 3.6461C5.16994 3.52686 5.21371 3.41086 5.26559 3.29918ZM10.078 17.75C9.66289 17.75 9.32636 18.0858 9.32636 18.5C9.32636 18.9142 9.66289 19.25 10.078 19.25H14.0869C14.5021 19.25 14.8386 18.9142 14.8386 18.5C14.8386 18.0858 14.5021 17.75 14.0869 17.75H10.078ZM9.32636 5.5C9.32636 5.08579 9.66289 4.75 10.078 4.75H14.0869C14.5021 4.75 14.8386 5.08579 14.8386 5.5C14.8386 5.91421 14.5021 6.25 14.0869 6.25H10.078C9.66289 6.25 9.32636 5.91421 9.32636 5.5Z" fill="#F5A006"/>
+                                            </svg>
+                                            <p>Вік дітей: <span>${minNum}-${maxNum}</span> років</p>
+                                    </div>
+                                </div>
+                    
+                                <div class="cart__rigth">
+                                    <img src=${courses[currentCardId].img} alt="hello">
+                                </div>
+                            </div>
+                        </div>
+                    `));
+                }
+            }
+        }
+        // console.log(courses);
+    })
+    
+  }
+});
+
+
+
+const courseSelectionCheckboxes = document.querySelectorAll('.popup__answer-block__input');
+
+courseSelectionCheckboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        if (this.checked) {
+          courseSelectionCheckboxes.forEach(otherCheckbox => {
+                if (otherCheckbox !== this) {
+                    otherCheckbox.checked = false;
+                }
+            });
+        }
+    });
+});
+
+// Course Selection End
+
 
 
 // Benefits Start 
