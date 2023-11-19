@@ -1,3 +1,17 @@
+// Loader Start
+const loader = () => {
+  setTimeout(() => {
+    console.log("hello")
+    $("body").removeClass("wrap-hidden");
+    $(".loader").hide();
+  }, 5000)
+}
+
+loader();
+
+// Loader Finish
+
+
 // IsMobile Start
 const isMobile = {
     Android: function () {
@@ -34,7 +48,6 @@ if(isMobile.any()) {
 // IsMobile End
 
 
-
 // Gift Start
 fetch('./api/course.json')
 .then(response => response.json())
@@ -65,7 +78,6 @@ $("#giftClose").click(() => {
 
   $(".gift__popup").removeClass("_active");
 })
-
 
 
 function startConfetti() {
@@ -830,7 +842,6 @@ fetch('./api/city.json')
       $("#city__location").text(courses[0].location);
 
       for (let i = 0; i< courses.length; i++) {
-        console.log(courses[i]);
         $("#allCity").append(`
         <div  class="checkbox-container">
         <input id=${courses[i].id} class="my-checkbox my-checkbox--map" type="checkbox" ${courses[i].type} name="remember-checkbox">
@@ -846,7 +857,6 @@ fetch('./api/city.json')
         $(this).prop('checked', true);
         if ($(this).is(":checked")) {
           let selectedId = $(this).attr('id');
-          console.log('Selected ID:', selectedId);
            let selectedCourse = courses.find(course => course.id === selectedId);
 
            linkLocation = selectedCourse.herf;
