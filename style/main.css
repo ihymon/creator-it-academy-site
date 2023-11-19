@@ -720,7 +720,11 @@ body {
           letter-spacing: normal;
           color: #fff;
           transition: 0.5s;
-          margin-top: 50px; }
+          margin-top: 50px;
+          transition: 0.5s; }
+          .wrap .home__main-content .home__button:hover {
+            color: #F5A006;
+            transition: 0.5s; }
       .wrap .home__main-photo .home__photo {
         width: 530px;
         height: 440px;
@@ -1141,9 +1145,6 @@ body {
   .course__button {
     width: 250px;
     height: 60px;
-    border: none;
-    border-radius: 5px;
-    background: #F5A006;
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 600;
@@ -1153,11 +1154,6 @@ body {
     color: #fff;
     transition: 0.5s !important;
     margin-top: 50px; }
-    .course__button:hover {
-      background-color: transparent;
-      border: 1px solid #F5A006;
-      color: #F5A006;
-      transition: 0.5s !important; }
 
 .course-selection {
   padding: 0 200px;

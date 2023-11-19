@@ -59,7 +59,7 @@ fetch('./api/course.json')
   }
 })
 
-$("#giftIcon").click(() => {
+function openPopup () {
   startConfetti();
   $(".gift__popup-container").addClass("_active");
   $("body").addClass("_active");
@@ -67,7 +67,15 @@ $("#giftIcon").click(() => {
   setTimeout(() => {
     $(".gift__popup").addClass("_active");
   }, 10);
-  {}
+
+}
+
+$("#giftIcon").click(() => {
+  openPopup();
+});
+
+$(".course__button").click(() => {
+  openPopup();
 });
 
 $("#giftClose").click(() => {

@@ -646,10 +646,15 @@
 			.home__button {
 				width: 460px;
 				height: 100px;
-
-				@include font(#fff, 24px, 600, normal, normal);
+ 				@include font(#fff, 24px, 600, normal, normal);
 				transition: 0.5s;
 				margin-top: 50px;
+				transition: 0.5s;
+
+				&:hover {
+					color: $main-color;
+					transition: 0.5s;
+				}
 			}
 		}
 
@@ -1167,22 +1172,10 @@
 	&__button {
 		width: 250px;
 		height: 60px;
-	
-		border: none;
-		border-radius: 5px;
-		background: $main-color;  
-	  
 		@include font(#fff, 16px, 600, normal, normal);
 		transition: 0.5s !important;
 		margin-top: 50px;
 		
-	
-		&:hover {
-		  background-color: transparent;
-		  border: 1px solid $main-color;
-		  color: $main-color;
-		  transition: 0.5s !important;
-		}
 	  }
 
 }
