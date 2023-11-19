@@ -1,16 +1,37 @@
+
 // Loader Start
+$(".loader").show();
+$("body").addClass("wrap-hidden");
+
 const loader = () => {
   setTimeout(() => {
     console.log("hello")
     $("body").removeClass("wrap-hidden");
-    $(".loader").hide();
   }, 5000)
+
 }
 
 loader();
 
 // Loader Finish
 
+// Favicon Start
+function toggleFavicon() {
+  let favicon = $('#blinking_image');
+
+  let currentPath = favicon.attr('href');
+
+  if (currentPath === './img/main/favicon/favicon-32x32.webp') {
+      favicon.attr('href', './img/main/favicon/faviconAnimation.webp');
+  } else {
+      favicon.attr('href', './img/main/favicon/favicon-32x32.webp');
+  }
+}
+
+$(document).ready(function () {
+  setInterval(toggleFavicon, 500);
+});
+// Favicon Finish
 
 // IsMobile Start
 const isMobile = {
@@ -59,7 +80,7 @@ fetch('./api/course.json')
   }
 })
 
-$("#giftIcon").click(() => {
+function openPopup () {
   startConfetti();
   $(".gift__popup-container").addClass("_active");
   $("body").addClass("_active");
@@ -67,7 +88,16 @@ $("#giftIcon").click(() => {
   setTimeout(() => {
     $(".gift__popup").addClass("_active");
   }, 10);
-  {}
+
+}
+
+$("#giftIcon").click(() => {
+  openPopup();
+
+});
+
+$("course__button").click(() => {
+  openPopup();
 });
 
 $("#giftClose").click(() => {
@@ -1045,7 +1075,7 @@ updatePlaceholderInCerteficte($("#userAge"), "Введіть скільки ва
 
 // Reviews Start
 
-var swiper = new Swiper(".reviews", {
+let swiper = new Swiper(".reviews", {
   slidesPerView: 1,
   spaceBetween: 30,
   loop: true,

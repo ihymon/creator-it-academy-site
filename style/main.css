@@ -276,21 +276,46 @@ body {
 ::-webkit-scrollbar-thumb {
   background: #F5A006; }
 
+.blink {
+  opacity: 0; }
+
 .wrap {
   width: 100%;
   min-height: auto;
   overflow-x: hidden; }
   .wrap .loader {
     width: 100%;
-    height: 100vh;
-    position: absolute;
-    background-color: #000;
+    height: 0vh;
+    position: fixed;
+    background-color: #262534;
     left: 0%;
     top: 0%;
     z-index: 10;
     display: flex;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    animation-name: loader;
+    animation-duration: 4.8s;
+    animation-iteration-count: 1; }
+    .wrap .loader svg {
+      animation-name: svgloader;
+      animation-duration: 4s;
+      animation-iteration-count: 1;
+      opacity: 0; }
+@keyframes svgloader {
+  0% {
+    opacity: 1; }
+  70% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@keyframes loader {
+  0% {
+    height: 100vh; }
+  70% {
+    height: 100vh; }
+  100% {
+    height: 0vh; } }
 @keyframes animate-svg-fill-1 {
   0% {
     fill: transparent; }
@@ -720,7 +745,11 @@ body {
           letter-spacing: normal;
           color: #fff;
           transition: 0.5s;
-          margin-top: 50px; }
+          margin-top: 50px;
+          transition: 0.5s; }
+          .wrap .home__main-content .home__button:hover {
+            color: #F5A006;
+            transition: 0.5s; }
       .wrap .home__main-photo .home__photo {
         width: 530px;
         height: 440px;
@@ -1141,9 +1170,6 @@ body {
   .course__button {
     width: 250px;
     height: 60px;
-    border: none;
-    border-radius: 5px;
-    background: #F5A006;
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 600;
@@ -1153,11 +1179,6 @@ body {
     color: #fff;
     transition: 0.5s !important;
     margin-top: 50px; }
-    .course__button:hover {
-      background-color: transparent;
-      border: 1px solid #F5A006;
-      color: #F5A006;
-      transition: 0.5s !important; }
 
 .course-selection {
   padding: 0 200px;
@@ -1766,7 +1787,7 @@ body {
   width: 100%;
   height: 640px;
   padding: 0 200px;
-  background-image: url(../img/map/map__bg.jpg);
+  background-image: url(../img/map/map__bg.webp);
   background-size: cover;
   display: flex;
   justify-content: center;

@@ -21,6 +21,10 @@
 }
   
 
+.blink {
+	opacity: 0;
+}
+
 .wrap {
 	width: 100%;
 	min-height: auto;
@@ -30,15 +34,47 @@
 // Loader Start
 .loader {
 	width: 100%;
-	height: 100vh;
-	position: absolute;
-	background-color: #000;
+	height: 0vh;
+	position: fixed;
+	background-color: $grey-color;
 	left: 0%;
 	top: 0%;
 	z-index: 10;
 	@include display-center (center, center);
+	animation-name: loader;
+	animation-duration: 4.8s;
+	animation-iteration-count: 1;
 
+	svg {
+		animation-name: svgloader;
+		animation-duration: 4s;
+		animation-iteration-count: 1;
+		opacity: 0;
+	
+		@keyframes svgloader {
+			0% {
+				opacity: 1;
+			}
+			70% {
+				opacity: 1;
+			}
+			100% {
+				opacity: 0;
+			}
+		}
+	}
 
+	@keyframes loader {
+		0% {
+			height: 100vh;
+		}
+		70% {
+			height: 100vh;
+		}
+		100% {
+			height: 0vh;
+		}
+	}
 
 	@keyframes animate-svg-fill-1 {
 		0% {
@@ -646,10 +682,15 @@
 			.home__button {
 				width: 460px;
 				height: 100px;
-
-				@include font(#fff, 24px, 600, normal, normal);
+ 				@include font(#fff, 24px, 600, normal, normal);
 				transition: 0.5s;
 				margin-top: 50px;
+				transition: 0.5s;
+
+				&:hover {
+					color: $main-color;
+					transition: 0.5s;
+				}
 			}
 		}
 
@@ -1167,22 +1208,10 @@
 	&__button {
 		width: 250px;
 		height: 60px;
-	
-		border: none;
-		border-radius: 5px;
-		background: $main-color;  
-	  
 		@include font(#fff, 16px, 600, normal, normal);
 		transition: 0.5s !important;
 		margin-top: 50px;
 		
-	
-		&:hover {
-		  background-color: transparent;
-		  border: 1px solid $main-color;
-		  color: $main-color;
-		  transition: 0.5s !important;
-		}
 	  }
 
 }
@@ -1884,7 +1913,7 @@
 	width: 100%;
 	height: 640px;
 	padding: 0 200px;
-	background-image: url(../img/map/map__bg.jpg);
+	background-image: url(../img/map/map__bg.webp);
 	background-size: cover;
 	@include display-center (center, flex-start);
 	flex-direction: column;
