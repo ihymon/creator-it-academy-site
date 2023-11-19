@@ -81,6 +81,17 @@ body {
 .owl-item {
   flex: 0 0 auto; }
 
+::-webkit-scrollbar {
+  width: 10px; }
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #262534; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #F5A006; }
+
 .wrap {
   width: 100%;
   min-height: auto;
@@ -640,7 +651,8 @@ body {
         .course__box-filter .filter__cart-box {
           display: flex;
           justify-content: space-between;
-          align-items: center; }
+          align-items: center;
+          cursor: pointer; }
         .course__box-filter .filter__cart-title {
           font-family: 'Montserrat', sans-serif;
           font-style: normal;
@@ -1569,7 +1581,8 @@ body {
     margin-top: 30px;
     border-radius: 5px;
     transition: 0.5s;
-    overflow: hidden; }
+    overflow: hidden;
+    cursor: pointer; }
     .question__cart-box {
       width: 100%;
       height: auto;

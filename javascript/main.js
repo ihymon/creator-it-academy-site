@@ -465,13 +465,15 @@ function fetchMaxMinValue() {
     });
 }
 fetchMaxMinValue();
-$(".filter__cart-arrow").click(function() {
-  let grandparentElement = $(this).parent().parent();
+
+$(".filter__cart-box").click(function() {
+  let grandparentElement = $(this).parent();
   let contentElement = grandparentElement.find(".filter__cart-content");
-  $(this).toggleClass("filter__cart-arrow--open");
-  $(grandparentElement).toggleClass("filter__cart--open");
+  grandparentElement.find(".filter__cart-arrow").toggleClass("filter__cart-arrow--open");
+  grandparentElement.toggleClass("filter__cart--open");
   contentElement.toggleClass("filter__cart-content--open");
 });
+
 function ageControl() {
   const $ageInput = $("#age1");
   $ageInput.on("input", function() {
@@ -800,15 +802,14 @@ let owlThird = $('.owl-carousel-second').owlCarousel({
 
 
 //  Question Start
-$(".question__cart-circle").click(function() {
-  let thisCart = $(this).closest(".question__cart");
-  let thisDescription = $(thisCart).find(".question__cart-description");
+$(".question__cart").click(function() {
+  let thisDescription = $(this).find(".question__cart-description");
 
   
-  $(".question__cart").not(thisCart).removeClass("question__cart-open");
+  $(".question__cart").not(this).removeClass("question__cart-open");
   $(".question__cart-description").not(thisDescription).hide(0);
 
-  $(thisCart).toggleClass("question__cart-open");
+  $(this).toggleClass("question__cart-open");
 
   if (thisDescription.is(":hidden")) {
     thisDescription.fadeIn(500);
@@ -832,16 +833,16 @@ fetch('./api/city.json')
         console.log(courses[i]);
         $("#allCity").append(`
         <div  class="checkbox-container">
-        <input id=${courses[i].id} class="my-checkbox" type="checkbox" ${courses[i].type} name="remember-checkbox">
+        <input id=${courses[i].id} class="my-checkbox my-checkbox--map" type="checkbox" ${courses[i].type} name="remember-checkbox">
         <label class="checkmark"></label>
         <span>${courses[i].name}</span>
     </div> `)
       }
 
       let linkLocation;
-      $(".my-checkbox").click(function() {
+      $(".my-checkbox--map").click(function() {
 
-        $(".my-checkbox").prop('checked', false);
+        $(".my-checkbox--map").prop('checked', false);
         $(this).prop('checked', true);
         if ($(this).is(":checked")) {
           let selectedId = $(this).attr('id');
