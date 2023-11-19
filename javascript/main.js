@@ -7,8 +7,8 @@ const loader = () => {
   setTimeout(() => {
     console.log("hello")
     $("body").removeClass("wrap-hidden");
-    $(".loader").hide();
   }, 5000)
+
 }
 
 loader();

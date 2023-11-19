@@ -34,15 +34,47 @@
 // Loader Start
 .loader {
 	width: 100%;
-	height: 100vh;
+	height: 0vh;
 	position: fixed;
 	background-color: #000;
 	left: 0%;
 	top: 0%;
 	z-index: 10;
 	@include display-center (center, center);
+	animation-name: loader;
+	animation-duration: 4.8s;
+	animation-iteration-count: 1;
 
+	svg {
+		animation-name: svgloader;
+		animation-duration: 4s;
+		animation-iteration-count: 1;
+		opacity: 0;
+	
+		@keyframes svgloader {
+			0% {
+				opacity: 1;
+			}
+			70% {
+				opacity: 1;
+			}
+			100% {
+				opacity: 0;
+			}
+		}
+	}
 
+	@keyframes loader {
+		0% {
+			height: 100vh;
+		}
+		70% {
+			height: 100vh;
+		}
+		100% {
+			height: 0vh;
+		}
+	}
 
 	@keyframes animate-svg-fill-1 {
 		0% {
