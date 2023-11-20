@@ -8,6 +8,16 @@ body {
 	}
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type=number] {
+	-moz-appearance: textfield;
+}
+
 .secondary-title {
 	@include font(#FFF, 48px, 700, normal, 0);
 }

@@ -1,7 +1,7 @@
 
 // Loader Start
-$(".loader").show();
-$("body").addClass("wrap-hidden");
+// $(".loader").show();
+// $("body").addClass("wrap-hidden");
 
 const loader = () => {
   setTimeout(() => {
@@ -96,9 +96,46 @@ $("#giftIcon").click(() => {
 
 });
 
-$("course__button").click(() => {
+$("#courseButton").click(() => {
   openPopup();
 });
+
+let gifNumberControl;
+
+
+
+$("#giftButton").click(() => {
+  let giftNumber = $("#giftNumber").val();
+
+  let cleanedNumber = giftNumber.replace(/^\+/, '');
+  let isValidPhoneNumber = /^\d{8,15}$/.test(cleanedNumber);
+
+  if (isValidPhoneNumber) {
+    console.log("Valid phone number");
+    $("#giftNumberTitle").text("Номер телефону");
+    $("#giftNumberTitle").css("color", "#fff");
+  } else {
+    console.log("Invalid phone number");
+    $("#giftNumberTitle").text("Неправильний номер телефону");
+    $("#giftNumberTitle").css("color", "#FF3737");
+  }
+
+  if ($("#giftName").val() === "") {
+    console.log("Invalid phone number");
+    $("#giftNameTitle").text("Введіть конкретне імя");
+    $("#giftNameTitle").css("color", "#FF3737");
+
+  } else {
+    console.log("Valid phone age");
+    $("#giftNameTitle").text("Імя");
+    $("#giftNameTitle").css("color", "#fff");
+  }
+
+  if (isValidPhoneNumber == true && $("#giftName").val() !== "") {
+    console.log("nice")
+  }
+});
+
 
 $("#giftClose").click(() => {
   setTimeout(() => {

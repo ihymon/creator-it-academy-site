@@ -406,7 +406,6 @@
 						@include font(#fff, 16px, 300, normal, 0);
 					}
 
-					
 					&-input {
 						height: 46px;
 						border-radius: 5px;
@@ -414,7 +413,6 @@
 						border: none;
 						@include font(#fff, 15px, 500, normal, 0);
 						padding: 0 10px;
-
 						&::placeholder {
 							@include font(#fff, 15px, 500, normal, 0);
 						}

@@ -34,6 +34,14 @@ body {
   body._active {
     overflow: hidden; }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+input[type=number] {
+  -moz-appearance: textfield; }
+
 .secondary-title {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
