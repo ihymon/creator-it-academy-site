@@ -282,7 +282,7 @@ function setupVideoControls(playBtn, video, poster, videoMask, playIcon, pauseIc
         }
     });
 
-    videoMask.on("mouseenter", () => {
+    videoMask.on("mousemove", () => {
         clearTimeout(videoPlayTimerID);
         if (isVideoStarted) {
             playBtn.show(300);
@@ -290,7 +290,7 @@ function setupVideoControls(playBtn, video, poster, videoMask, playIcon, pauseIc
             if(isVideoPlay) {
                 videoPlayTimerID = setTimeout(() => {
                     playBtn.hide(300);
-                }, 3000);
+                }, 2500);
             }
         }
     });
