@@ -1174,7 +1174,7 @@ input[type=number] {
         font-size: 48px;
         line-height: 120%;
         letter-spacing: normal;
-        color: #D95A5A; }
+        color: #f62c2c; }
   .course__button {
     width: 250px;
     height: 60px;
@@ -2649,7 +2649,7 @@ input[type=number] {
     font-size: 32px;
     line-height: 120%;
     letter-spacing: normal;
-    color: #D95A5A;
+    color: #f62c2c;
     text-align: center; }
   .wrap .course-selection__img {
     height: auto;
@@ -3180,7 +3180,7 @@ input[type=number] {
       min-height: 100px;
       background-size: contain; }
     .wrap .gift__popup-container .gift__popup__title {
-      margin-bottom: 80px; }
+      margin-bottom: 20%; }
     .wrap .gift__popup-container .gift__popup__group-content .gift__popup__group-input {
       font-size: 14px; }
       .wrap .gift__popup-container .gift__popup__group-content .gift__popup__group-input::placeholder {
@@ -3244,6 +3244,8 @@ input[type=number] {
     padding: 0 30px; }
     .wrap .certificate__content {
       row-gap: 60px; }
+      .wrap .certificate__content .certificate__form-group-title {
+        font-size: 18px; }
       .wrap .certificate__content .certificate__form-group-input {
         padding: 0 10px;
         font-size: 15px;

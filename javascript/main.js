@@ -5,7 +5,6 @@
 
 const loader = () => {
   setTimeout(() => {
-    console.log("hello")
     $("body").removeClass("wrap-hidden");
   }, 5000)
 
@@ -69,6 +68,39 @@ if(isMobile.any()) {
 // IsMobile End
 
 
+function validateInput(inputValue, titleElement, errorMessage, successMessage) {
+  if (inputValue === "") {
+    // console.log("Invalid input");
+    titleElement.text(errorMessage);
+    titleElement.css("color", "#FF3737");
+    return false;
+  } else {
+    // console.log("Valid input");
+    titleElement.text(successMessage);
+    titleElement.css("color", "#fff");
+    return true;
+  }
+}
+
+function validatePhoneNumber(inputPhoneNumber, titleElement, errorMessage, successMessage) {
+  let cleanedNumber = inputPhoneNumber.replace(/^\+/, '');
+  let isValidPhoneNumber = /^\d{8,15}$/.test(cleanedNumber);
+
+  if (isValidPhoneNumber) {
+    // console.log("Valid phone number");
+    titleElement.text(successMessage);
+    titleElement.css("color", "#fff");
+    return true;
+  } else {
+    // console.log("Invalid phone number");
+    titleElement.text(errorMessage);
+    titleElement.css("color", "#FF3737");
+    return false;
+  }
+}
+
+
+
 // Gift Start
 fetch('./api/course.json')
 .then(response => response.json())
@@ -106,33 +138,13 @@ let gifNumberControl;
 
 $("#giftButton").click(() => {
   let giftNumber = $("#giftNumber").val();
+  let giftName = $("#giftName").val();
 
-  let cleanedNumber = giftNumber.replace(/^\+/, '');
-  let isValidPhoneNumber = /^\d{8,15}$/.test(cleanedNumber);
+  let isPhoneNumberValid = validatePhoneNumber(giftNumber, $("#giftNumberTitle"), "Неправильний номер телефону", "Номер телефону");
+  let isNameValid = validateInput(giftName, $("#giftNameTitle"), "Введіть конкретне імя", "Імя");
 
-  if (isValidPhoneNumber) {
-    console.log("Valid phone number");
-    $("#giftNumberTitle").text("Номер телефону");
-    $("#giftNumberTitle").css("color", "#fff");
-  } else {
-    console.log("Invalid phone number");
-    $("#giftNumberTitle").text("Неправильний номер телефону");
-    $("#giftNumberTitle").css("color", "#FF3737");
-  }
-
-  if ($("#giftName").val() === "") {
-    console.log("Invalid phone number");
-    $("#giftNameTitle").text("Введіть конкретне імя");
-    $("#giftNameTitle").css("color", "#FF3737");
-
-  } else {
-    console.log("Valid phone age");
-    $("#giftNameTitle").text("Імя");
-    $("#giftNameTitle").css("color", "#fff");
-  }
-
-  if (isValidPhoneNumber == true && $("#giftName").val() !== "") {
-    console.log("nice")
+  if (isPhoneNumberValid && isNameValid) {
+    console.log("All inputs are valid");
   }
 });
 
@@ -188,6 +200,7 @@ function startConfetti() {
     startVelocity: 45,
   });
 }
+
 // Gift End
 
 
@@ -1064,8 +1077,6 @@ function animateValue(id, start, end, duration) {
 
 
 
-
-
 // Certificate Start 
 $("#userName").on("input", () => {
     if($("#userName").val() == "") {
@@ -1121,40 +1132,22 @@ fetch('./api/course.json')
 updatePlaceholderInCerteficte($("#userName"), "Введіть ваше імя та прізвище", "Ваше ім'я та прізвище");
 updatePlaceholderInCerteficte($("#userPhoneNumber"), "Введіть ваш номер телефону", "Ваш номер телефону");
 updatePlaceholderInCerteficte($("#userAge"), "Введіть скільки вам років", "Ваш вік");
+
+
+$("#getCertificateBtn").click(() => {
+  let userPhoneNumber = $("#userPhoneNumber").val();
+  let userName = $("#userName").val();
+  let userAge = $("#userAge").val();
+
+  let isPhoneNumberValid = validatePhoneNumber(userPhoneNumber, $("#userPhoneNumberTitle"), "Неправильний номер телефону", "Номер телефону");
+  let isNameValid = validateInput(userName, $("#userNameTitle"), "Введіть конкретне імя", "Імя");
+  let isAgeValid = validateInput(userAge, $("#userAgeTitle"), "Введіть скільки вам зараз років", "Вік");
+
+  if (isPhoneNumberValid && isNameValid && isAgeValid && $("#giftName").val() !== "") {
+    console.log("All inputs are valid");
+  }
+});
 // Certificate End 
-
-
-
-// Gallery End 
-
-// let owlFirst = $('.owl-carousel-third').owlCarousel({
-//   items: 4,
-//   loop: true,
-//   center: true,
-//   margin: 80,
-//   autoWidth: true,
-//   autoplay: true,
-//   autoplayTimeout: 2000,
-//   autoplayHoverPause: true,
-//   responsiveClass:true,
-//   dots: false,
-//   responsive: {
-//     600: {
-//       margin: 40,
-//     },
-//     600: {
-//       margin: 60,
-//     },
-//     1400: {
-//       margin: 80,
-//     },
-//     2000: {
-//       margin: 180,
-//     },
-//   }
-// })
-
-// Gallery End 
 
 
 

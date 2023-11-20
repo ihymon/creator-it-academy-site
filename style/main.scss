@@ -4248,7 +4248,7 @@
 					}
 
 					&__title {
-						margin-bottom: 80px;
+						margin-bottom: 20%;
 					}
 
 					&__group-content{
@@ -4414,11 +4414,14 @@
 
 				.certificate__form {
  					&-group {
+						&-title {
+							font-size: 18px;
+						}
+
 						&-input {
 							padding: 0 10px;
 							font-size: 15px;
 							height: 60px;
-
 
 							&::placeholder {
 								font-size: 14px;
