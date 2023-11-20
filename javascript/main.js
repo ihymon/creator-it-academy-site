@@ -319,7 +319,7 @@ function setupVideoControls(playBtn, video, poster, videoMask, playIcon, pauseIc
         }
     });
 
-    videoMask.on("mouseenter", () => {
+    videoMask.on("mousemove", () => {
         clearTimeout(videoPlayTimerID);
         if (isVideoStarted) {
             playBtn.show(300);
@@ -327,7 +327,7 @@ function setupVideoControls(playBtn, video, poster, videoMask, playIcon, pauseIc
             if(isVideoPlay) {
                 videoPlayTimerID = setTimeout(() => {
                     playBtn.hide(300);
-                }, 3000);
+                }, 2500);
             }
         }
     });
@@ -1107,6 +1107,16 @@ function updatePlaceholderInCerteficte(input, defaultText, newText) {
       inputElement.attr("placeholder", defaultText);
     }
 }
+
+fetch('./api/course.json')
+.then(response => response.json())
+.then(courses => {
+  for (let i = 0; i < courses.length; i++) {
+    $("#userCourse").append(`
+      <option value="${courses[i].nameCourse}">«${courses[i].nameCourse}»</option>
+    `);
+  }
+})
 
 updatePlaceholderInCerteficte($("#userName"), "Введіть ваше імя та прізвище", "Ваше ім'я та прізвище");
 updatePlaceholderInCerteficte($("#userPhoneNumber"), "Введіть ваш номер телефону", "Ваш номер телефону");

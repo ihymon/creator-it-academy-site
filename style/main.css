@@ -536,7 +536,7 @@ input[type=number] {
         .wrap .gift__popup-container .gift__popup__group-content .gift__popup__group--select {
           -webkit-appearance: none;
           -moz-appearance: none;
-          background-image: url(../img/gift/popup__select-arrow.svg);
+          background-image: url(../img/main/select-arrow-bottom.svg);
           background-repeat: no-repeat;
           background-size: 24px;
           background-position: center right 10px;
@@ -1480,9 +1480,7 @@ input[type=number] {
           color: #fff;
           border-radius: 5px;
           background: #3F3D56;
-          border: none;
-          -webkit-box-shadow: inset 0 0 0 50px #3F3D56;
-          -webkit-text-fill-color: #fff; }
+          border: none; }
           .certificate__content .certificate__form-group-input:-webkit-autofill {
             font-size: 20px; }
           .certificate__content .certificate__form-group-input::-webkit-outer-spin-button, .certificate__content .certificate__form-group-input::-webkit-inner-spin-button {
@@ -1496,6 +1494,19 @@ input[type=number] {
             line-height: normal;
             letter-spacing: 0;
             color: #FFF; }
+        .certificate__content .certificate__form-group input {
+          -webkit-box-shadow: inset 0 0 0 50px #3F3D56;
+          -webkit-text-fill-color: #fff; }
+        .certificate__content .certificate__form-group--select {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          background-image: url(../img/main/select-arrow-bottom.svg);
+          background-repeat: no-repeat;
+          background-size: 24px;
+          background-position: center right 20px;
+          cursor: pointer; }
+          .certificate__content .certificate__form-group--select::-ms-expand {
+            display: none; }
       .certificate__content .certificate__form-btn {
         margin-top: 30px;
         width: 532px;
@@ -3144,11 +3155,11 @@ input[type=number] {
       background-size: contain; }
     .wrap .gift__popup-container .gift__popup__title {
       margin-bottom: 80px; }
-    .wrap .gift__popup-container .gift__popup__group-input {
-      font-size: 15px; }
-      .wrap .gift__popup-container .gift__popup__group-input::placeholder {
-        font-size: 15px; }
-    .wrap .gift__popup-container .gift__popup-btn {
+    .wrap .gift__popup-container .gift__popup__group-content .gift__popup__group-input {
+      font-size: 14px; }
+      .wrap .gift__popup-container .gift__popup__group-content .gift__popup__group-input::placeholder {
+        font-size: 14px; }
+    .wrap .gift__popup-container .gift__popup__group-content .gift__popup__group-btn {
       font-size: 16px; }
   .wrap .home__bg {
     width: 300vw;
@@ -3178,8 +3189,8 @@ input[type=number] {
       width: 65px;
       height: 65px; }
       .wrap .about-us__video .about-us__video-mask .about-us__video__play-btn--main {
-        width: 80px;
-        height: 80px; }
+        width: 18vw;
+        height: 18vw; }
   .wrap .course-selection__popup-overlay .course-selection__popup {
     width: 100%;
     height: 100%;
@@ -3208,8 +3219,16 @@ input[type=number] {
     .wrap .certificate__content {
       row-gap: 60px; }
       .wrap .certificate__content .certificate__form-group-input {
-        height: 60px;
-        font-size: 15px; }
+        padding: 0 10px;
+        font-size: 15px;
+        height: 60px; }
+        .wrap .certificate__content .certificate__form-group-input::placeholder {
+          font-size: 14px; }
+      .wrap .certificate__content .certificate__form-group--select {
+        background-size: 20px;
+        font-size: 14px;
+        text-align: left;
+        background-position: center right 10px; }
       .wrap .certificate__content .certificate__form-btn {
         height: 60px;
         font-size: 18px; }

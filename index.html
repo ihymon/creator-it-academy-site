@@ -200,7 +200,8 @@
                 data-aos="fade-right" 
                 data-aos-once="true">
 
-                <div class="about-us__video-left" id="aboutUsVideos">
+                <!-- <div class="about-us__video-left" id="aboutUsVideos">
+
                     <div id="videoMask1" class="about-us__video-mask about-us__video-mask--small">
                         <img id="video1Poster" class="about-us__video-poster" src="./img/about-us/poster-2.webp" alt="Poster">
 
@@ -255,11 +256,11 @@
                             <source src="./video/about-us/video-5.mp4" type="video/mp4">
                         </video>
                     </div>
-                </div>
+                </div> -->
 
                 <div id="mainVideoMask" class="about-us__video-right">
                     <div class="about-us__video-mask about-us__video-mask--main">
-                        <img id="mainPoster" class="about-us__video-poster" src="./img/about-us/poster-1.webp" alt="Poster">
+                        <img id="mainPoster" class="about-us__video-poster" src="./img/about-us/main-video__poster.jpg" alt="Poster">
 
                         <div id="mainVideoPlayBtn" class="about-us__video__play-btn about-us__video__play-btn--main">
                             <img class="about-us__video__play-icon about-us__video--icon-main" src="./img/about-us/play-icon.svg" alt="Play">
@@ -267,7 +268,7 @@
                         </div>
 
                         <video id="mainVideo" class="about-us__video-main" controls>
-                            <source src="./video/about-us/video-1.mp4" type="video/mp4">
+                            <source src="./video/about-us/main-video.mp4" type="video/mp4">
                         </video>
                     </div>
                 </div>
@@ -531,7 +532,7 @@
         
                     <div class="certificate__form-group">
                         <span class="certificate__form-group-title">Номер телефону</span>
-                        <input class="certificate__form-group-input" id="userPhoneNumber" placeholder="Введіть ваш номер телефону"  type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
+                        <input class="certificate__form-group-input" id="userPhoneNumber" placeholder="Введіть ваш номер телефону"  type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
                     </div>
         
                     <div class="certificate__form-group">
@@ -541,7 +542,9 @@
 
                     <div class="certificate__form-group">
                         <span class="certificate__form-group-title">Курс</span>
-                        <input class="certificate__form-group-input" id="userCourse" placeholder="Введіть назву курсу" type="name" maxlength="100">
+                        <select class="certificate__form-group--select certificate__form-group-input" id="userCourse" placeholder="Введіть назву курсу">
+                            
+                        </select>
                     </div>
 
                     <button class="certificate__form-btn btn--orange">
