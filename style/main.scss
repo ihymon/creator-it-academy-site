@@ -1303,6 +1303,7 @@
 					@include display-center(space-around, center);
 					flex-wrap: wrap;
 					row-gap: 50px;
+					column-gap: 50px;
 					overflow: auto;
 
 					&::-webkit-scrollbar {
@@ -1388,8 +1389,6 @@
 						@include font(#FFF, 24px, 500, 120%, 0.6px);
 					}
 				}
-
-
 			}
 
 			.popup__result {
@@ -1415,7 +1414,6 @@
 				height: 0.1px;
 				width: 0.1px;
 				z-index: 2;
-
 			}
 			.checkbox-container .checkmark{
 				position: relative;
@@ -1461,10 +1459,9 @@
 			}
 			.checkbox-container input:checked~.checkmark:after {
 				top: 50%;
-				// left: 50%;
 				opacity: 1;
-				-webkit-transform: rotate(-45deg) scaleX(-1);
-				-ms-transform: rotate(-45deg) scaleX(-1);
+				-webkit-transform: rotate(-45deg) scaleX(-1) translate(-35%, -55%);
+				-ms-transform: rotate(-45deg) scaleX(-1) translate(-35%, -55%);
 				transform: rotate(-45deg) scaleX(-1) translate(-35%, -55%);
 			}
 
@@ -3002,7 +2999,7 @@
 	}
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1000px) {	
 	.wrap {
 		
 		// Gift Start
@@ -3263,10 +3260,25 @@
 
 			&__popup-overlay {
 				.course-selection__popup {
+					padding: 30px;
+
+
+					&._result {
+						.course-selection__popup__description {
+							font-size: 20px;
+						}
+					}
+
 					.popup__title {
 						font-size: 32px;
-						margin-bottom: 15px;
+						margin-bottom: 10px;
 					}
+
+					.popup__progress {
+						margin-bottom: 20px;
+					}
+
+					
 
 					.popup__question {
 						font-size: 24px;
@@ -3277,77 +3289,40 @@
 						height: 40px;
 					}
 
+					.popup__answer-container {
+						.popup__answer-block {
+							column-gap: 0px;
+
+							&__label {
+								font-size: 18px;
+							}
+						}
+					}
 
 					.checkbox-container {
-						display: inline-block;
-						position: relative;
-						padding-left: 55px;
-						cursor: pointer;
-						-webkit-user-select: none;
-						-moz-user-select: none;
-						-ms-user-select: none;
-						user-select: none;
-						line-height: 16px;
-					}
-					.checkbox-container input {
-						position: relative;
-						opacity: 0;
-						cursor: pointer;
-						height: 0.1px;
-						width: 0.1px;
-						z-index: 2;
-					}
-					.checkbox-container .checkmark{
-						position: relative;
-						cursor: pointer;
+						padding-left: 46px;
 					}
 					.checkbox-container .checkmark:before {
-						content: '';
-						position: absolute;
-						height: 36px;
-						width: 36px;
-						left: -58px;
-						background-color: transparent;
-						border: 1px solid $main-color;
-						border-radius: 2px;
-		
-						top: 50%;
-						transform: translateY(-50%);
-					}
-					.checkbox-container:hover input~.checkmark:before {
-						background-color: #ffffff;
-						border-color: rgba(0, 0, 0, 0.3);
-					}
-					.checkbox-container input:checked~.checkmark:before {
-						background-color: #fff;
-						border-color: #fff;
+						height: 30px;
+						width: 30px;
+						left: -46px;
 					}
 					.checkbox-container .checkmark:after{
-						content: "";
-						position: absolute;
-						left: -49px;
-						
+						left: -41px;
 						width: 18px;
 						height: 10px;
-		
-						top: auto;
-		
-						border: solid $main-color;
-						border-width: 0 2px 2px 0;
-						-webkit-transform: rotate(90deg) scaleX(0);
-						-ms-transform: rotate(90deg) scaleX(0);
-						transform: rotate(90deg) scaleX(0);
-						transition: 350ms;
 					}
-					.checkbox-container input:checked~.checkmark:after {
-						top: 50%;
-						// left: 50%;
-						opacity: 1;
-						-webkit-transform: rotate(-45deg) scaleX(-1);
-						-ms-transform: rotate(-45deg) scaleX(-1);
-						transform: rotate(-45deg) scaleX(-1) translate(-35%, -55%);
+
+					.popup__result {
+						.main__cart--white-bg {
+							width: 440px;
+
+							.main__cart-box {
+								display: flex;
+								flex-direction: row;
+							}
+						}
 					}
-		
 				}
 			}
 		}
@@ -3793,7 +3768,6 @@
 								padding: 0 15px;
 								height: 36px;
 								background-color: $main-color;
-			
 							}
 							.cart__left {
 								width: 100%;
@@ -3854,6 +3828,108 @@
 				width: 100%;
 				height: 70px;
 				font-size: 20px;
+			}
+			
+
+			&__popup-overlay {
+				.course-selection__popup {
+					&._result {
+						.course-selection__popup__description {
+							font-size: 16px;
+						}
+
+						.popup__result {
+							.main__cart--white-bg {
+								width: 100%;
+								height: auto;
+								padding: 10px;
+								padding-bottom: 20px;
+								background-color: #fff;
+								
+
+								.main__cart-button {
+									width: 100%;
+								}
+
+								.main__cart-box {
+									@include display-center (center, flex-start);							
+									flex-direction: column;
+									
+									&-button {
+										@include font(#000, 16px, 600, 120%, normal);
+										@include display-center (center, center);
+										width: 100%;
+										border: none;
+										border-radius: 4px;
+										padding: 0 15px;
+										height: 36px;
+										background-color: $main-color;
+									}
+									.cart__left {
+										width: 100%;
+										@include display-center (center, center);							
+										flex-direction: column;
+										padding-top: 25px;
+										z-index: 3;
+										padding-bottom: 30px;
+										.main__cart-subtitle {
+											@include font(#000, 15px, 500, 120%, normal);
+											text-align: center;
+										}
+										.main__cart-title {
+											width: 100%;
+											@include font(#000, 18px, 600, normal, normal);
+											margin-top: 10px;
+											padding-bottom: 15px;
+											text-align: center;
+										}
+
+									}
+									.cart__rigth {
+										width: 100%;
+										position: static;
+										display: flex;
+										justify-content: center;
+										margin-top: 15px;
+										padding-left: 0px;
+										img {
+											width: 180px;
+											height: 180px;
+										}
+									}
+								}
+							}
+						}
+					}
+
+
+					.popup__progress {
+						height: 36px;
+					}
+
+					.popup__title {
+						font-size: 24px;
+					}
+
+					.popup__progress {
+						margin-bottom: 15px;
+					}
+
+					.popup__question {
+						font-size: 20px;
+					}
+
+
+					.popup__answer-container {
+						.popup__answer-block {
+							&__label {
+								font-size: 16px;
+							}
+						}
+
+
+					}
+				}
 			}
 		}
 		// Course Selection Start
@@ -4202,6 +4278,57 @@
 			
 		}
 		// Сourse End
+
+
+
+		// Course Selection Start
+		.course-selection {
+			&__popup-overlay {
+				.course-selection__popup {
+					width: 100%;
+					height: 100%;
+
+					padding: 10% 30px;
+
+					.popup__title {
+						font-size: 24px;
+					}
+
+					.popup__progress {
+						height: 36px;
+						margin-bottom: 25px;
+					}
+
+					.popup__question {
+						font-size: 18px;
+					}
+
+
+					.popup__answer-container {
+						.popup__answer-block {
+							&__label {
+								font-size: 15px;
+							}
+						}
+					}
+
+					.checkbox-container {
+						padding-left: 25px;
+					}
+					.checkbox-container .checkmark:before {
+						height: 16px;
+						width: 16px;
+						left: -25px;
+					}
+					.checkbox-container .checkmark:after{
+						left: -17px;
+						width: 4px;
+						height: 8px;
+					}
+				}
+			}
+		}
+		// Course Selection End
 
 
 
