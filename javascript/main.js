@@ -1088,6 +1088,39 @@ updatePlaceholderInCerteficte($("#userAge"), "Введіть скільки ва
 
 
 
+// Gallery End 
+
+// let owlFirst = $('.owl-carousel-third').owlCarousel({
+//   items: 4,
+//   loop: true,
+//   center: true,
+//   margin: 80,
+//   autoWidth: true,
+//   autoplay: true,
+//   autoplayTimeout: 2000,
+//   autoplayHoverPause: true,
+//   responsiveClass:true,
+//   dots: false,
+//   responsive: {
+//     600: {
+//       margin: 40,
+//     },
+//     600: {
+//       margin: 60,
+//     },
+//     1400: {
+//       margin: 80,
+//     },
+//     2000: {
+//       margin: 180,
+//     },
+//   }
+// })
+
+// Gallery End 
+
+
+
 // Reviews Start
 
 let swiper = new Swiper(".reviews", {
@@ -1111,14 +1144,14 @@ setupVideoControls($("#reviewSlide5 .reviews__video-play-btn"), $("#reviewSlide5
 
 // Team Start 
 
-let owlSecond = $('.owl-carousel-first').owlCarousel({
+let owlFirst = $('.owl-carousel-first').owlCarousel({
     items: 4,
     loop: true,
     center: true,
     margin: 80,
     autoWidth: true,
     autoplay: true,
-    autoplayTimeout: 2000,
+    autoplayTimeout: 2500,
     autoplayHoverPause: true,
     responsiveClass:true,
     dots: false,
@@ -1144,7 +1177,7 @@ let owlSecond = $('.owl-carousel-first').owlCarousel({
 
 // Partners Start 
 
-let owlThird = $('.owl-carousel-second').owlCarousel({
+let owlSecond = $('.owl-carousel-second').owlCarousel({
   items: 4,
   loop: true,
   center: true,

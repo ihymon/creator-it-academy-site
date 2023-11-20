@@ -1591,6 +1591,26 @@ body {
           text-align: center;
           font-variant: normal; }
 
+.gallery {
+  margin-bottom: 120px;
+  width: 100%;
+  height: auto; }
+  .gallery__title {
+    margin-bottom: 50px;
+    text-align: center; }
+  .gallery__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: unset;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 20px; }
+    .gallery__container .gallery__photo {
+      border-radius: 5px;
+      width: 500px;
+      height: 340px; }
+
 .reviews {
   margin-bottom: 140px;
   width: 100%;
@@ -2679,6 +2699,9 @@ body {
       font-size: 5.5vw; }
     .wrap .certificate__content .certificate__display-course {
       max-width: 80%; }
+  .wrap .gallery__container .gallery__photo {
+    width: 440px;
+    height: 300px; }
   .wrap .reviews__content .reviews__text-content .reviews__description {
     max-width: 100%; }
   .wrap .reviews__content .reviews__video {
@@ -3049,6 +3072,9 @@ body {
           font-size: 3.5vw; }
       .wrap .certificate__content .certificate__display-title {
         font-size: 6vw; }
+  .wrap .gallery__container .gallery__photo {
+    width: 380px;
+    height: 240px; }
   .wrap .reviews__title {
     padding: 0 30px; }
   .wrap .reviews__content {
@@ -3240,6 +3266,9 @@ body {
           max-width: 90%; }
           .wrap .certificate__content .certificate__display-course span {
             font-size: 13px; }
+  .wrap .gallery__container .gallery__photo {
+    width: 260px;
+    height: 180px; }
   .wrap .reviews__content {
     margin-top: 40px; }
     .wrap .reviews__content .reviews__text-content .reviews__description {
