@@ -186,6 +186,11 @@ function startConfetti() {
       });
   });
 
+  $("#telegramLink").click(() => {
+    window.open('https://t.me/creator_it_academy_help', '_blank');
+  
+  });
+
 
   $(".about-us--scroll").click(function() {
     $('html, body').animate({
