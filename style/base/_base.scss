@@ -2,7 +2,13 @@
 
 body {
 	background-color: $grey-color;
-
+::-moz-selection { 
+		background-color: rgba($color: #ffffff, $alpha: 0.1);
+	  }
+	  
+	  ::selection {
+		background-color: rgba($color: #ffffff, $alpha: 0.1);
+	  }
 	&._active {
 		overflow: hidden;
 	}

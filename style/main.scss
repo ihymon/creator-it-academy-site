@@ -1859,12 +1859,21 @@
 		text-align: right;
 	}
 
-	&__description {
-		padding: 0 200px;
-		margin-bottom: 70px;
+	&__description  {
+		&-paragraph {
+			padding: 0 200px;
+			margin-bottom: 20px;
+			text-align: center;
+			@include font(#FFF, 24px, 300, normal, 0);	
+			span {
+				color: $main-color;
+			}
+		}
+		&-margin {
+			margin-bottom: 50px;
+		}
+	}
 
-		text-align: center;
-		@include font(#FFF, 24px, 300, normal, 0);	}
 
 	&__photo {
 		margin-bottom: 70px;
