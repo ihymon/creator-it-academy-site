@@ -2184,7 +2184,7 @@ input[type=number] {
       .footer__content .footer__list .footer__btn {
         margin-top: 35px;
         width: 234px;
-        height: 48px;
+        height: 46px;
         transition: 0.5s;
         font-family: 'Montserrat', sans-serif;
         font-style: normal;
@@ -2939,8 +2939,8 @@ input[type=number] {
     display: flex;
     flex-direction: column; }
   .wrap .benefits__button {
-    width: 80%;
-    height: 70px;
+    width: 330px;
+    height: 80px;
     font-size: 20px; }
   .wrap .course {
     padding: 0 30px; }
@@ -3041,8 +3041,8 @@ input[type=number] {
       height: auto;
       width: 100%; }
     .wrap .course-selection__btn {
-      width: 80%;
-      height: 70px;
+      width: 330px;
+      height: 80px;
       font-size: 20px; }
     .wrap .course-selection__popup-overlay .course-selection__popup._result .course-selection__popup__description {
       font-size: 16px; }
@@ -3156,8 +3156,8 @@ input[type=number] {
       width: 380px;
       height: 240px; }
     .wrap .gallery__btn {
-      width: 80%;
-      height: 70px;
+      width: 330px;
+      height: 80px;
       font-size: 20px; }
   .wrap .reviews__title {
     padding: 0 30px; }
@@ -3295,6 +3295,17 @@ input[type=number] {
       .wrap .about-us__video .about-us__video-mask .about-us__video__play-btn--main {
         width: 18vw;
         height: 18vw; }
+  .wrap .benefits__button-wrapper {
+    width: 100%;
+    padding: 0 30px; }
+    .wrap .benefits__button-wrapper .benefits__button {
+      width: 100%;
+      height: 60px; }
+  .wrap .course__button {
+    width: 100%; }
+  .wrap .course-selection__btn {
+    width: 100%;
+    height: 60px; }
   .wrap .course-selection__popup-overlay .course-selection__popup {
     width: 100%;
     height: 100%;
@@ -3358,6 +3369,8 @@ input[type=number] {
     width: 260px;
     height: 180px; }
   .wrap .gallery__btn {
+    width: 100%;
+    height: 60px;
     column-gap: 10px;
     font-size: 18px; }
     .wrap .gallery__btn svg {

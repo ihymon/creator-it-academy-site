@@ -2360,7 +2360,7 @@
 			.footer__btn {
 				margin-top: 35px;
 				width: 234px;
-				height: 48px;
+				height: 46px;
 				transition: 0.5s;
 				@include font(#FFF, 16px, 600, normal, 0);
 			}
@@ -3834,8 +3834,8 @@
 			  flex-direction: column;
 			}
 			&__button {
-			  width: 80%;
-			  height: 70px;
+			  width: 330px;
+			  height: 80px;
 			  font-size: 20px;
 			}
 		  }
@@ -3982,8 +3982,8 @@
 			}
 
 			&__btn {
-				width: 80%;
-				height: 70px;
+				width: 330px;
+				height: 80px;
 				font-size: 20px;
 			}
 			
@@ -4157,8 +4157,8 @@
 			}
 
 			&__btn {
-				width: 80%;
-				height: 70px;
+				width: 330px;
+				height: 80px;
 				font-size: 20px;
 			}
 		}
@@ -4450,7 +4450,15 @@
 
 		// Benefits Start
 		.benefits {
+			&__button-wrapper {
+				width: 100%;
+				padding: 0 30px;
 
+				.benefits__button {
+					width: 100%;
+					height: 60px;
+				}
+			}
 		}
 		// Benefits End
 
@@ -4458,7 +4466,9 @@
 
 		// Сourse Start
 		.course {
-			
+			&__button {
+				width: 100%;
+			}
 		}
 		// Сourse End
 
@@ -4466,6 +4476,11 @@
 
 		// Course Selection Start
 		.course-selection {
+			&__btn {
+				width: 100%;
+				height: 60px;
+			}
+
 			&__popup-overlay {
 				.course-selection__popup {
 					width: 100%;
@@ -4599,6 +4614,8 @@
 			}
 
 			&__btn {
+				width: 100%;
+				height: 60px;
 				column-gap: 10px;
 				font-size: 18px;
 
