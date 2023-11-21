@@ -1654,10 +1654,12 @@
 
 // Gallery Start
 .gallery {
+	padding: 0 200px;
 	margin-bottom: 120px;
 	width: 100%;
 	height: auto;
-
+	@include display-center(center, center);
+	flex-direction: column;
 
 	&__title {
 		margin-bottom: 50px;
@@ -1665,16 +1667,37 @@
 	}
 
 	&__container {
+		margin-bottom: 50px;
 		@include display-center(center, center);
-		flex-direction: unset;
 		flex-wrap: wrap;
 		column-gap: 20px;
 		row-gap: 20px;
 
 		.gallery__photo {
 			border-radius: 5px;
-			width: 500px;
-			height: 340px;
+			width: 350px;
+			height: 234px;
+			cursor: pointer;
+
+			&._fullscreen-view {
+				width: 100%;
+			}
+		}
+	}
+
+	&__btn {
+		width: 360px;
+		height: 80px;
+		@include display-center(center, center);
+		column-gap: 20px;
+		@include font(#FFF, 24px, 700, normal, 0);
+		transition: .5s;
+
+		&:hover {
+			& svg path {
+				transition: .5s;
+				fill: $main-color;
+			}
 		}
 	}
 }
@@ -2481,6 +2504,14 @@
 			}
 		}
 		// Certificate End
+
+
+
+		// Gallery Start
+		.gallery {
+			padding: 0 100px;
+		}
+		// Gallery End
 
 
 

@@ -1,7 +1,7 @@
 
 // Loader Start
-// $(".loader").show();
-// $("body").addClass("wrap-hidden");
+$(".loader").show();
+$("body").addClass("wrap-hidden");
 
 const loader = () => {
   setTimeout(() => {
@@ -1149,7 +1149,12 @@ $("#getCertificateBtn").click(() => {
 });
 // Certificate End 
 
-
+// Gallery Start
+// $("#").find($(".gallery__photo"))
+$(".gallery__photo").click((event) => {
+  $(event.currentTarget).addClass("_fullscreen-view");
+});
+// Gallery End
 
 // Reviews Start
 
