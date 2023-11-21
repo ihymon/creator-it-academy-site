@@ -1900,18 +1900,29 @@
 .team {
 	margin-bottom: 140px;
 
-	&__title {
+	&__box {
 		padding: 0 200px;
+	}
+	
+	&__title {
 		margin-bottom: 35px;
 		text-align: right;
 	}
 
-	&__description {
-		padding: 0 200px;
-		margin-bottom: 70px;
+	&__description  {
+		&-paragraph {
+			margin-bottom: 20px;
+			text-align: center;
+			@include font(#FFF, 24px, 300, normal, 0);	
+			span {
+				color: $main-color;
+			}
+		}
+		&-margin {
+			margin-bottom: 50px;
+		}
+	}
 
-		text-align: center;
-		@include font(#FFF, 24px, 300, normal, 0);	}
 
 	&__photo {
 		margin-bottom: 70px;
@@ -2545,6 +2556,10 @@
 
 		// Team Start
 		.team {
+			&__box {
+				padding: 0 100px;
+			}
+
 			&__title {
 				padding: 0 100px;
 			}
@@ -3074,6 +3089,11 @@
 
 		// Team Start
 		.team {
+
+			&__box {
+				padding: 0 60px;
+			}
+
 			&__title {
 				padding: 0 60px;
 			}
@@ -4189,6 +4209,10 @@
 
 		// Team Start
 		.team {
+			&__box {
+				padding: 0 30px;
+			}
+
 			&__title {
 				padding: 0 30px;
 			}

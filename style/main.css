@@ -31,6 +31,10 @@ ul li {
 
 body {
   background-color: #262534; }
+  body ::-moz-selection {
+    background-color: rgba(255, 255, 255, 0.1); }
+  body ::selection {
+    background-color: rgba(255, 255, 255, 0.1); }
   body._active {
     overflow: hidden; }
 
@@ -1796,13 +1800,13 @@ input[type=number] {
 
 .team {
   margin-bottom: 140px; }
+  .team__box {
+    padding: 0 200px; }
   .team__title {
-    padding: 0 200px;
     margin-bottom: 35px;
     text-align: right; }
-  .team__description {
-    padding: 0 200px;
-    margin-bottom: 70px;
+  .team__description-paragraph {
+    margin-bottom: 20px;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
@@ -1811,6 +1815,10 @@ input[type=number] {
     line-height: normal;
     letter-spacing: 0;
     color: #FFF; }
+    .team__description-paragraph span {
+      color: #F5A006; }
+  .team__description-margin {
+    margin-bottom: 50px; }
   .team__photo {
     margin-bottom: 70px;
     width: 100%; }
@@ -2271,6 +2279,8 @@ input[type=number] {
       padding: 0 100px; }
     .wrap .reviews__content {
       padding: 0 100px; }
+    .wrap .team__box {
+      padding: 0 100px; }
     .wrap .team__title {
       padding: 0 100px; }
     .wrap .team__description {
@@ -2521,6 +2531,8 @@ input[type=number] {
     .wrap .reviews__content .reviews__video {
       width: 360px;
       height: 360px; }
+  .wrap .team__box {
+    padding: 0 60px; }
   .wrap .team__title {
     padding: 0 60px; }
   .wrap .team__description {
@@ -3164,6 +3176,8 @@ input[type=number] {
       .wrap .reviews__content .reviews__video-play-btn-icon {
         width: 100px;
         height: 100px; }
+  .wrap .team__box {
+    padding: 0 30px; }
   .wrap .team__title {
     padding: 0 30px; }
   .wrap .team__description {
