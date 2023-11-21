@@ -2780,7 +2780,8 @@ input[type=number] {
   .wrap .gallery__popup .gallery__photo {
     width: 80%; }
   .wrap .reviews__content .reviews__text-content .reviews__description {
-    max-width: 100%; }
+    max-width: 100%;
+    height: 180px; }
   .wrap .reviews__content .reviews__video {
     width: 360px;
     height: 360px; }
@@ -3040,7 +3041,7 @@ input[type=number] {
       height: auto;
       width: 100%; }
     .wrap .course-selection__btn {
-      width: 100%;
+      width: 80%;
       height: 70px;
       font-size: 20px; }
     .wrap .course-selection__popup-overlay .course-selection__popup._result .course-selection__popup__description {
@@ -3155,7 +3156,7 @@ input[type=number] {
       width: 380px;
       height: 240px; }
     .wrap .gallery__btn {
-      width: 100%;
+      width: 80%;
       height: 70px;
       font-size: 20px; }
   .wrap .reviews__title {

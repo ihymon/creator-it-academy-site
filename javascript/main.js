@@ -992,7 +992,6 @@ $("#courseSelectionNextBtn").click(() => {
 });
 
 
-
 const courseSelectionCheckboxes = document.querySelectorAll('.popup__answer-block__input');
 
 courseSelectionCheckboxes.forEach(checkbox => {
@@ -1156,10 +1155,8 @@ $("#getCertificateBtn").click(() => {
 
 $(".gallery__photo").click((event) => {
   const imagePath = $(event.currentTarget).attr('src');
-  // $(event.currentTarget).addClass("_fullscreen-view");
   console.log(imagePath);
 
-  // $("#galleryPopup gallery__photo").show(300);
   $("#galleryPopup").append(`
     <img src="${imagePath}" alt="Фото" class="gallery__photo">
   `);
