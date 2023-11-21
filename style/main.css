@@ -1780,12 +1780,12 @@ input[type=number] {
 
 .team {
   margin-bottom: 140px; }
+  .team__box {
+    padding: 0 200px; }
   .team__title {
-    padding: 0 200px;
     margin-bottom: 35px;
     text-align: right; }
   .team__description-paragraph {
-    padding: 0 200px;
     margin-bottom: 20px;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
@@ -2259,6 +2259,8 @@ input[type=number] {
       padding: 0 100px; }
     .wrap .reviews__content {
       padding: 0 100px; }
+    .wrap .team__box {
+      padding: 0 100px; }
     .wrap .team__title {
       padding: 0 100px; }
     .wrap .team__description {
@@ -2502,6 +2504,8 @@ input[type=number] {
     .wrap .reviews__content .reviews__video {
       width: 360px;
       height: 360px; }
+  .wrap .team__box {
+    padding: 0 60px; }
   .wrap .team__title {
     padding: 0 60px; }
   .wrap .team__description {
@@ -3137,6 +3141,8 @@ input[type=number] {
       .wrap .reviews__content .reviews__video-play-btn-icon {
         width: 100px;
         height: 100px; }
+  .wrap .team__box {
+    padding: 0 30px; }
   .wrap .team__title {
     padding: 0 30px; }
   .wrap .team__description {
