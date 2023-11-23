@@ -769,7 +769,7 @@ $("#courseSelectionNextBtn").click(() => {
       $("#courseSelectionQuestion").text("Як ви відчуваєте себе при розв'язанні складних завдань?");
       $(".popup__answer-block__label--1").text("а) Відчуваю себе комфортно і насолоджуюсь вирішенням головоломок.");
       $(".popup__answer-block__label--2").text("б) Знаходжу радість в конструюванні різних об'єктів і механізмів.");
-      $(".popup__answer-block__label--3").text("в) Предпочитаю створювати і програмувати різні ігрові сценарії.");
+      $(".popup__answer-block__label--3").text("в) Віддаю перевагу створювати і програмувати різні ігрові сценарії.");
       break;
       
     case 3:
@@ -825,7 +825,7 @@ $("#courseSelectionNextBtn").click(() => {
       break;
   }
 
-  if(currentPopupProgress >= 7) {
+  if(currentPopupProgress >= 7) { 
     switch (selectedCheckboxes[0]) {
       case 'courseSelectionAnswer1':
         age = [6, 7, 8, 9, 10];
