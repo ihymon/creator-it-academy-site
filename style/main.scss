@@ -4391,8 +4391,50 @@
 				z-index: -1;
 			}
 			&__header {
+			min-height: 10vh;
+				&-left {
+					.logo {
+						width: 80px;
+						height: 39px;
+					}
+				}
+
 				&-rigth--open {
 					padding-top: 45%;
+				}
+
+				.home__header-box--burger {
+					display: block;
+					width: 35px;
+					height: 35px;
+					flex-shrink: 0;
+					@include display-center (space-around, center);
+					flex-direction: column;
+					cursor: pointer;
+					overflow: hidden;
+
+	
+				}
+	
+				.home__header-box--burger-open {
+					.burger__line--1 {
+						transform: rotate(-45deg) translate(-10px, 13px);
+						
+						transition: 0.4s;
+
+					}
+	
+					.burger__line--2 {
+						margin-right: 100px;
+						transition: 0.4s;
+						opacity: 0.1;
+					}
+	
+					.burger__line--3 {
+						transform: rotate(45deg) translate(-3px, -8px);
+						transition: 0.4s;
+
+					}
 				}
 			}
 			&__main {
