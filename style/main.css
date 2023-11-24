@@ -3271,8 +3271,34 @@ input[type=number] {
     height: 300vh;
     position: absolute;
     z-index: -1; }
-  .wrap .home__header-rigth--open {
-    padding-top: 45%; }
+  .wrap .home__header {
+    min-height: 10vh; }
+    .wrap .home__header-left .logo {
+      width: 80px;
+      height: 39px; }
+    .wrap .home__header-rigth--open {
+      padding-top: 45%; }
+    .wrap .home__header .home__header-box--burger {
+      display: block;
+      width: 35px;
+      height: 35px;
+      flex-shrink: 0;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: column;
+      cursor: pointer;
+      overflow: hidden; }
+    .wrap .home__header .home__header-box--burger-open .burger__line--1 {
+      transform: rotate(-45deg) translate(-10px, 13px);
+      transition: 0.4s; }
+    .wrap .home__header .home__header-box--burger-open .burger__line--2 {
+      margin-right: 100px;
+      transition: 0.4s;
+      opacity: 0.1; }
+    .wrap .home__header .home__header-box--burger-open .burger__line--3 {
+      transform: rotate(45deg) translate(-3px, -8px);
+      transition: 0.4s; }
   .wrap .home__main-content .home__title {
     width: 100%; }
   .wrap .home__main-content .home__button {

@@ -136,18 +136,53 @@ $("#courseButton").click(() => {
 let gifNumberControl;
 
 
+$('#my-form').submit(async function (e) {
+  e.preventDefault();
+  let data = new FormData(this);
 
-$("#giftButton").click(() => {
   let giftNumber = $("#giftNumber").val();
   let giftName = $("#giftName").val();
 
   let isPhoneNumberValid = validatePhoneNumber(giftNumber, $("#giftNumberTitle"), "Неправильний номер телефону", "Номер телефону");
   let isNameValid = validateInput(giftName, $("#giftNameTitle"), "Введіть конкретне імя", "Імя");
 
+
   if (isPhoneNumberValid && isNameValid) {
     console.log("All inputs are valid");
+      
+  try {
+    const response = await fetch('https://formspree.io/f/mleyyeor', {
+        method: 'POST',
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+    });
+
+    const responseData = await response.json();
+
+    if (response.ok) {
+        console.log("Form submitted successfully");
+        $(this)[0].reset();
+        setTimeout(() => {
+          $(".gift__popup-container").removeClass("_active");
+          $("body").removeClass("_active");
+        }, 500);
+      
+        $(".gift__popup").removeClass("_active");
+    } else {
+        console.log("Form submission failed");
+        if (Object.hasOwnProperty.call(responseData, 'errors')) {
+            console.log("Error:", responseData.errors);
+        }
+    }
+    } catch (error) {
+        console.error('Error submitting form:', error);
+    }
   }
+
 });
+
 
 
 $("#giftClose").click(() => {
