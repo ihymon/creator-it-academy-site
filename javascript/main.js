@@ -656,20 +656,28 @@ $(".filter__cart-box").click(function() {
 function ageControl() {
   const $ageInput = $("#age1");
   $ageInput.on("input", function() {
-    const inputValue = $ageInput.val();
+    let inputValue = $ageInput.val();
     
+    if (inputValue > maxAge) {
+      console.log("hehe")
+      inputValue = 18;
+
+    }
     $(".my-checkbox").prop('checked', false);
     $("#allType").prop('checked', true);
     fetchCourse('', '', '', '', inputValue);
     resetValue();
     $('#course__search').val("");
-    if (inputValue > maxAge || inputValue < minAge) {
+    if (inputValue < minAge) {
       $("#ageTitle").text('Курс не знайдено');
       $("#ageTitle").css("color", '#D95A5A');
     } else {
       $("#ageTitle").text('Вік');
       $("#ageTitle").css("color", '#fff');
     }
+
+
+
     $(this).val($(this).val().replace(/[^0-9]/g, ''));
   
     if ($(this).val().indexOf('e') !== -1) {
@@ -678,12 +686,15 @@ function ageControl() {
   });
 }
 ageControl();
+
+
 let originalFromValue; 
 let originalToValue;  
 let $fromSlider;    
 let $toSlider;        
 let $fromInput;       
 let $toInput;      
+
 function resetValue() {
   originalFromValue = minPrice;
   $fromSlider.val(originalFromValue);
@@ -691,6 +702,7 @@ function resetValue() {
   $fromInput.val(originalFromValue);
   $toInput.val(originalToValue);
 }
+
 function controlRange(id) {
   $fromSlider = $(`#fromSlider${id}`);
   $toSlider = $(`#toSlider${id}`);
@@ -701,9 +713,9 @@ function controlRange(id) {
   let fromValue = originalFromValue;
   let toValue = originalToValue;
   $fromSlider.on("input", function () {
+
   fromValue = parseInt($fromSlider.val());
   toValue = parseInt($toSlider.val());
-  
   $(".my-checkbox").prop('checked', false);
   $("#allType").prop('checked', true);
   if (fromValue >= toValue) {
@@ -716,6 +728,7 @@ function controlRange(id) {
   $('#course__search').val("");
   $("#age1").val(minAge);
   });
+
   $toSlider.on("input", function () {
     fromValue = parseInt($fromSlider.val());
     toValue = parseInt($toSlider.val());
@@ -740,6 +753,7 @@ function controlRange(id) {
     $('#course__search').val("");
     $("#age1").val(minAge);
   });
+
   $fromInput.on("input", function () {
     const fromValue = parseInt($fromInput.val());
     const toValue = parseInt($toInput.val());
@@ -755,6 +769,7 @@ function controlRange(id) {
     $('#course__search').val("");
     $("#age1").val(minAge);
   });
+
   $toInput.on("change", function () {
     const fromValue = parseInt($fromInput.val());
     const toValue = parseInt($toInput.val());
