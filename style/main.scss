@@ -694,21 +694,15 @@
 		}
 
 		&-photo {
-			.home__photo {
-				padding: 0 100px;
-				position: absolute;
-				left: 0px;
-				top: 0;
-			}
-
-			#homePhotoContainer {
-				width: 100vw;
-				height: 100vh;
+			// #homePhotoContainer {
+			// 	width: 100vw;
+			// 	height: 100vh;
 			
-				display: flex;
-				align-items: center;
-				justify-content: end;
-			}
+			// 	display: flex;
+			// 	align-items: center;
+			// 	justify-content: end;
+			// 	z-index: 0;
+			// }
 			
 		}
 	}

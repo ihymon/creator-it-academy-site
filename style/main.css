@@ -762,17 +762,6 @@ input[type=number] {
           .wrap .home__main-content .home__button:hover {
             color: #F5A006;
             transition: 0.5s; }
-      .wrap .home__main-photo .home__photo {
-        padding: 0 100px;
-        position: absolute;
-        left: 0px;
-        top: 0; }
-      .wrap .home__main-photo #homePhotoContainer {
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: end; }
   .wrap .about-us {
     height: 100%;
     text-align: center;
