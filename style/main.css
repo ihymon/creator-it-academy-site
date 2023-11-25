@@ -469,9 +469,6 @@ input[type=number] {
     .wrap .gift__popup-container .gift__popup {
       position: relative;
       padding: 30px;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
       width: 400px;
       height: 600px;
       border-radius: 5px;
@@ -3261,7 +3258,7 @@ input[type=number] {
       min-height: 100px;
       background-size: contain; }
     .wrap .gift__popup-container .gift__popup__title {
-      margin-bottom: 20%; }
+      margin-bottom: 10%; }
     .wrap .gift__popup-container .gift__popup__group-content .gift__popup__group-input {
       font-size: 14px; }
       .wrap .gift__popup-container .gift__popup__group-content .gift__popup__group-input::placeholder {
