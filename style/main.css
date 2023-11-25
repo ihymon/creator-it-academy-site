@@ -2834,7 +2834,7 @@ input[type=number] {
   .wrap .footer__copyright {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
     column-gap: 100px;
     row-gap: 20px; } }
 @media screen and (max-width: 600px) {

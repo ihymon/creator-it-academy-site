@@ -1381,4 +1381,10 @@ $(".home--scroll").click(function() {
   }, 1000);
   resetBurger();
 });
+
+
+const currentDate = new Date();
+const currentYear = currentDate.getFullYear();
+$("#copyrightYear").text(currentYear)
+
 // Footer End 
