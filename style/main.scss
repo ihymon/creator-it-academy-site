@@ -537,6 +537,7 @@
 
 // Gift End
 
+
 // Home Start 
 .home {
 	width: 100%;
@@ -694,12 +695,21 @@
 
 		&-photo {
 			.home__photo {
-				width: 530px;
-				height: 440px;
-				@include display-center(flex-end, center);
-				background-image: url(../img/home/home__picture.svg);
-				background-size: cover;
+				padding: 0 100px;
+				position: absolute;
+				left: 0px;
+				top: 0;
 			}
+
+			#homePhotoContainer {
+				width: 100vw;
+				height: 100vh;
+			
+				display: flex;
+				align-items: center;
+				justify-content: end;
+			}
+			
 		}
 	}
 

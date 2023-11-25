@@ -763,13 +763,16 @@ input[type=number] {
             color: #F5A006;
             transition: 0.5s; }
       .wrap .home__main-photo .home__photo {
-        width: 530px;
-        height: 440px;
+        padding: 0 100px;
+        position: absolute;
+        left: 0px;
+        top: 0; }
+      .wrap .home__main-photo #homePhotoContainer {
+        width: 100vw;
+        height: 100vh;
         display: flex;
-        justify-content: flex-end;
         align-items: center;
-        background-image: url(../img/home/home__picture.svg);
-        background-size: cover; }
+        justify-content: end; }
   .wrap .about-us {
     height: 100%;
     text-align: center;

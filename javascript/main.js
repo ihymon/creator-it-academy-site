@@ -244,6 +244,19 @@ function startConfetti() {
 // Home Page Start
     AOS.init();
 
+    const homePhoto = document.querySelectorAll('.home__photo-display');
+    const homePhotoContainer = document.getElementById('homePhotoContainer');
+
+    homePhotoContainer.addEventListener('mousemove', (e) => {
+      const xAxis = (window.innerWidth / 2 - e.pageX) / 35;
+      const yAxis = (window.innerHeight / 2 - e.pageY) / 35;
+
+      homePhoto.forEach((svg) => {
+        svg.style.transform = `translate(${xAxis}px, ${yAxis}px)`;
+      });
+    });
+
+    
     const resetBurger = () => {
       $("#burger").removeClass("home__header-box--burger-open");
       $(".home__header-rigth").removeClass("home__header-rigth--open");
