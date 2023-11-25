@@ -1832,6 +1832,7 @@
 			@include font(#FFF, 24px, 300, normal, 0);	
 			span {
 				color: $main-color;
+				font-weight: 500;
 			}
 		}
 		&-margin {

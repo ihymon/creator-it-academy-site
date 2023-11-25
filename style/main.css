@@ -1771,7 +1771,8 @@ input[type=number] {
     letter-spacing: 0;
     color: #FFF; }
     .team__description-paragraph span {
-      color: #F5A006; }
+      color: #F5A006;
+      font-weight: 500; }
   .team__description-margin {
     margin-bottom: 50px; }
   .team__photo {
