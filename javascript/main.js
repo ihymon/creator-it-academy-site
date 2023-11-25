@@ -1127,10 +1127,10 @@ function chartAnimation(chartId, animatedNumberId, fromValue, toValue, time,data
   observer.observe(targetElement);
 }
 
-chartAnimation('myChart1', 'animatedNumber', 600, 800, 1000, 70, 30);
-chartAnimation('myChart2', 'animatedNumber2', 0, 20, 1000, 90, 10);
-chartAnimation('myChart3', 'animatedNumber3', 0, 4, 1000, 75, 25);
-chartAnimation('myChart4', 'animatedNumber4', 0, 10, 1000, 55, 45);
+chartAnimation('myChart1', 'animatedNumber', 600, 800, 1000, 100, 0);
+chartAnimation('myChart2', 'animatedNumber2', 0, 10, 1000, 100, 0);
+chartAnimation('myChart3', 'animatedNumber3', 0, 4, 1000, 100, 0);
+chartAnimation('myChart4', 'animatedNumber4', 0, 6, 1000, 100, 0);
 
 function animateValue(id, start, end, duration) {
   const element = document.getElementById(id);
