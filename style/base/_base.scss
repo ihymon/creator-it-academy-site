@@ -102,6 +102,9 @@ input[type=number] {
 	}
 }
 
+.orange-selection::selection {
+	background-color: rgba($color: $main-color, $alpha: 0.1);
+}
 
 // Course Card
 .main__cart {

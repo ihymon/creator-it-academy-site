@@ -103,6 +103,9 @@ input[type=number] {
     color: #F5A006;
     transition: 0.5s; }
 
+.orange-selection::selection {
+  background-color: rgba(245, 160, 6, 0.1); }
+
 .main__cart {
   width: 450px;
   height: 297px;
@@ -641,7 +644,7 @@ input[type=number] {
       background-position: center;
       background-repeat: no-repeat;
       position: absolute;
-      z-index: 0; }
+      z-index: -1; }
     .wrap .home__header {
       width: 100%;
       min-height: 15vh;
@@ -778,8 +781,7 @@ input[type=number] {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    background-color: #262534; }
+    flex-direction: column; }
     .wrap .about-us__title {
       margin-bottom: 15px; }
     .wrap .about-us__subtitle {

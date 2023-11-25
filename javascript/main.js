@@ -1217,6 +1217,7 @@ let swiper = new Swiper(".reviews", {
       nextEl: ".reviews__control-next",
       prevEl: ".reviews__control-prev",
   },
+  simulateTouch: false,
 });
 
 setupVideoControls($("#reviewSlide1 .reviews__video-play-btn"), $("#reviewSlide1 .reviews__video-user"), $("#reviewSlide1 .reviews__video-poster"), $("#reviewSlide1 .reviews__video"), ".reviews__video-play", ".reviews__video-pause", false);
