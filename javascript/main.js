@@ -542,12 +542,15 @@ function fetchCourse(nameCourseFilter, subtitleFilter, minPriceFilter, maxPriceF
                         </svg>
                         <p>Вік дітей: <span>${minNum}-${maxNum}</span> років</p>
                   </div>
+
               </div>
   
               <div class="cart__rigth">
                   <img src=${courses[i].img} alt="hello">
               </div>
           </div>
+
+          <button class="main__cart-button main__cart-link">Переглянути</button>
       </div>
           `));
           courseFound = true;

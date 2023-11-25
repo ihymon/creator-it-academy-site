@@ -108,7 +108,7 @@ input[type=number] {
 
 .main__cart {
   width: 450px;
-  height: 297px;
+  height: 330px;
   border-radius: 5px;
   background: #3F3D56;
   padding: 25px 0 25px 25px;
@@ -132,6 +132,10 @@ input[type=number] {
     padding: 0 15px;
     height: 36px;
     background-color: #F5A006; }
+  .main__cart-link {
+    margin-top: 30px;
+    padding: 0 15px;
+    height: 36px; }
   .main__cart-box {
     position: relative;
     display: flex;
