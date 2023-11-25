@@ -248,15 +248,15 @@ function startConfetti() {
     const homePhotoContainer = document.getElementById('homePhotoContainer');
 
     homePhotoContainer.addEventListener('mousemove', (e) => {
-      const xAxis = (window.innerWidth / 2 - e.pageX) / 35;
-      const yAxis = (window.innerHeight / 2 - e.pageY) / 35;
+      const xAxis = (window.innerWidth / 2 - e.pageX) / 20;
+      const yAxis = (window.innerHeight / 2 - e.pageY) / 20;
 
       homePhoto.forEach((svg) => {
         svg.style.transform = `translate(${xAxis}px, ${yAxis}px)`;
       });
     });
 
-    
+
     const resetBurger = () => {
       $("#burger").removeClass("home__header-box--burger-open");
       $(".home__header-rigth").removeClass("home__header-rigth--open");
