@@ -100,7 +100,7 @@ input[type=number] {
   .btn--orange:hover {
     background-color: transparent;
     border: 1px solid #F5A006;
-    color: #F5A006;
+    color: #F5A006 !important;
     transition: 0.5s; }
 
 .orange-selection::selection {
@@ -1339,58 +1339,24 @@ input[type=number] {
       .course-selection__popup-overlay .course-selection__popup .popup__result {
         display: none; }
       .course-selection__popup-overlay .course-selection__popup .checkbox-container {
-        display: inline-block;
-        position: relative;
-        padding-left: 55px;
-        cursor: pointer;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        line-height: 16px; }
+        padding-left: 55px; }
       .course-selection__popup-overlay .course-selection__popup .checkbox-container input {
         position: relative;
-        opacity: 0;
-        cursor: pointer;
         height: 0.1px;
-        width: 0.1px;
-        z-index: 2; }
-      .course-selection__popup-overlay .course-selection__popup .checkbox-container .checkmark {
-        position: relative;
-        cursor: pointer; }
+        width: 0.1px; }
       .course-selection__popup-overlay .course-selection__popup .checkbox-container .checkmark:before {
-        content: '';
-        position: absolute;
         height: 42px;
         width: 42px;
         left: -78px;
-        background-color: transparent;
-        border: 1px solid #F5A006;
-        border-radius: 2px;
         top: 50%;
         transform: translateY(-50%); }
-      .course-selection__popup-overlay .course-selection__popup .checkbox-container:hover input ~ .checkmark:before {
-        background-color: #ffffff;
-        border-color: rgba(0, 0, 0, 0.3); }
-      .course-selection__popup-overlay .course-selection__popup .checkbox-container input:checked ~ .checkmark:before {
-        background-color: #fff;
-        border-color: #fff; }
       .course-selection__popup-overlay .course-selection__popup .checkbox-container .checkmark:after {
-        content: "";
-        position: absolute;
         left: -68px;
         width: 24px;
         height: 16px;
-        top: auto;
-        border: solid #F5A006;
-        border-width: 0 2px 2px 0;
-        -webkit-transform: rotate(90deg) scaleX(0);
-        -ms-transform: rotate(90deg) scaleX(0);
-        transform: rotate(90deg) scaleX(0);
-        transition: 350ms; }
+        top: auto; }
       .course-selection__popup-overlay .course-selection__popup .checkbox-container input:checked ~ .checkmark:after {
         top: 50%;
-        opacity: 1;
         -webkit-transform: rotate(-45deg) scaleX(-1) translate(-35%, -55%);
         -ms-transform: rotate(-45deg) scaleX(-1) translate(-35%, -55%);
         transform: rotate(-45deg) scaleX(-1) translate(-35%, -55%); }
@@ -1699,10 +1665,7 @@ input[type=number] {
       font-size: 24px;
       line-height: normal;
       letter-spacing: 0;
-      color: #FFF;
-      /* Track */
-      /* Handle */
-      /* Handle on hover */ }
+      color: #FFF; }
       .reviews__content .reviews__text-content .reviews__description::-webkit-scrollbar {
         width: 8px;
         height: 8px;
@@ -1948,62 +1911,6 @@ input[type=number] {
       .map .filter__cart-box2::-webkit-scrollbar-thumb {
         background: #F5A006;
         border-radius: 5px; }
-      .map .filter__cart-box2 .checkbox-container {
-        display: inline-block;
-        position: relative;
-        padding-left: 25px;
-        cursor: pointer;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        line-height: 16px; }
-      .map .filter__cart-box2 .checkbox-container input {
-        position: absolute;
-        opacity: 0;
-        cursor: pointer;
-        height: 100%;
-        width: 100%;
-        left: 0;
-        top: 0;
-        z-index: 2; }
-      .map .filter__cart-box2 .checkbox-container .checkmark {
-        position: relative;
-        cursor: pointer; }
-      .map .filter__cart-box2 .checkbox-container .checkmark:before {
-        content: '';
-        position: absolute;
-        height: 16px;
-        width: 16px;
-        top: 0;
-        left: -25px;
-        background-color: transparent;
-        border: 1px solid #F5A006;
-        border-radius: 2px; }
-      .map .filter__cart-box2 .checkbox-container:hover input ~ .checkmark:before {
-        background-color: #ffffff;
-        border-color: rgba(0, 0, 0, 0.3); }
-      .map .filter__cart-box2 .checkbox-container input:checked ~ .checkmark:before {
-        background-color: #fff;
-        border-color: #fff; }
-      .map .filter__cart-box2 .checkbox-container .checkmark:after {
-        content: "";
-        position: absolute;
-        left: -18.9px;
-        top: 1.9px;
-        width: 4px;
-        height: 8px;
-        border: solid #F5A006;
-        border-width: 0 2px 2px 0;
-        -webkit-transform: rotate(90deg) scale(0);
-        -ms-transform: rotate(90deg) scale(0);
-        transform: rotate(90deg) scale(0);
-        transition: 350ms; }
-      .map .filter__cart-box2 .checkbox-container input:checked ~ .checkmark:after {
-        opacity: 1;
-        -webkit-transform: rotate(45deg) scale(1);
-        -ms-transform: rotate(45deg) scale(1);
-        transform: rotate(45deg) scale(1); }
       .map .filter__cart-box2 span {
         margin-left: 5px;
         font-family: 'Montserrat', sans-serif;
@@ -3237,10 +3144,6 @@ input[type=number] {
     .wrap .footer__copyright-text {
       font-size: 20px; } }
 @media screen and (max-width: 450px) {
-  .wrap .home__main-photo .home__photo {
-    width: 70vw;
-    height: 60vw; }
-
   .wrap .gift__popup-container .gift__popup {
     width: 100%;
     height: 100vh;
@@ -3298,6 +3201,9 @@ input[type=number] {
     font-size: 20px; }
   .wrap .home__main-content .home__button-small {
     width: 100%; }
+  .wrap .home__main-photo .home__photo {
+    width: 70vw;
+    height: 60vw; }
   .wrap .about-us__subtitle {
     font-size: 18px; }
   .wrap .about-us__video {

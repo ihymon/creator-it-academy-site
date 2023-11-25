@@ -88,7 +88,6 @@ input[type=number] {
 }
 
 
-
 .btn--orange {
 	border-radius: 5px;
 	background: $main-color;
@@ -97,7 +96,7 @@ input[type=number] {
 	&:hover {
 		background-color: transparent;
 		border: 1px solid $main-color;
-		color: $main-color;
+		color: $main-color !important;
 		transition: 0.5s;
 	}
 }
@@ -105,6 +104,7 @@ input[type=number] {
 .orange-selection::selection {
 	background-color: rgba($color: $main-color, $alpha: 0.1);
 }
+
 
 // Course Card
 .main__cart {
@@ -202,7 +202,6 @@ input[type=number] {
 	}
 }
 
-
 .main__cart-blue {
 	.main__cart-button {
 		background-color: $blue-color;
@@ -240,6 +239,8 @@ input[type=number] {
 }
 
 
+
+
 // Checkbox Style
 .checkbox-container {
 	display: inline-block;
@@ -251,8 +252,8 @@ input[type=number] {
 	-ms-user-select: none;
 	user-select: none;
 	line-height: 16px;
-  }
-  .checkbox-container input {
+}
+.checkbox-container input {
 	position: absolute;
 	opacity: 0;
 	cursor: pointer;
@@ -261,12 +262,12 @@ input[type=number] {
 	left: 0;
 	top: 0;
 	z-index: 2;
-  }
-  .checkbox-container .checkmark{
+}
+.checkbox-container .checkmark{
 	position: relative;
 	cursor: pointer;
-  }
-  .checkbox-container .checkmark:before {
+}
+.checkbox-container .checkmark:before {
 	content: '';
 	position: absolute;
 	height: 16px;
@@ -276,16 +277,16 @@ input[type=number] {
 	background-color: transparent;
 	border: 1px solid $main-color;
 	border-radius: 2px;
-  }
-  .checkbox-container:hover input~.checkmark:before {
+}
+.checkbox-container:hover input~.checkmark:before {
 	background-color: #ffffff;
 	border-color: rgba(0, 0, 0, 0.3);
-  }
-  .checkbox-container input:checked~.checkmark:before {
+}
+.checkbox-container input:checked~.checkmark:before {
 	background-color: #fff;
 	border-color: #fff;
-  }
-  .checkbox-container .checkmark:after{
+}
+.checkbox-container .checkmark:after{
 	content: "";
 	position: absolute;
 	left: -18.9px;
@@ -298,10 +299,10 @@ input[type=number] {
 	-ms-transform: rotate(90deg) scale(0);
 	transform: rotate(90deg) scale(0);
 	transition: 350ms;
-  }
-  .checkbox-container input:checked~.checkmark:after {
+}
+.checkbox-container input:checked~.checkmark:after {
 	opacity: 1;
 	-webkit-transform: rotate(45deg) scale(1);
 	-ms-transform: rotate(45deg) scale(1);
 	transform: rotate(45deg) scale(1);
-  }
+}
