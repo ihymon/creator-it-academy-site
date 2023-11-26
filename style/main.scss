@@ -1856,9 +1856,11 @@
 		display: flex;
 
 		&-member {
+			padding: 0 10px;
 			width: 294px;
 			height: 434px;
 			@include display-center (end, center);
+			border-radius: 5px;
 			flex-direction: column;
 
 			background-position: center;
@@ -1866,20 +1868,22 @@
 			background-repeat: no-repeat;
 
 
-
 			&-name {
 				@include font($grey-color, 32px, 600, normal, 0);
 			}
 
 			&-position {
+				padding: 0 20px;
+				text-align: center;
 				margin-bottom: 20px;
 				@include font($grey-color, 20px, 300, normal, 0);
+				background-color: rgba(255, 255, 255, 0.5);
+				border-radius: 5px;
 			}
 		}
 
-
 		&-social-media {
-			margin-bottom: 35px;
+			margin-bottom: 20px;
 		}
 
 		
@@ -1888,8 +1892,8 @@
 			background-image: url(../img/team/team-members/member-1.webp);
 		}
 
-		.member-2 {
-			background-image: url(../img/team/team-members/member-2.webp);
+		.diana {
+			background-image: url(../img/team/team-members/diana.jpg);
 		}
 
 		.yura-kunec {
@@ -1900,8 +1904,8 @@
 			background-image: url(../img/team/team-members/sophia-kunec.webp);
 		}
 		
-		.member-3 {
-			background-image: url(../img/team/team-members/member-3.webp);
+		.elizaveta {
+			background-image: url(../img/team/team-members/elizaveta.jpg);
 		}
 	}
 }
@@ -3377,18 +3381,18 @@
 					&-name {
 						font-size: 28px;
 					}
+
+					&-position {
+						margin-bottom: 15px;
+					}
+				}
+				
+				&-social-media {
+					margin-bottom: 15px;
 				}
 			}
 		}
 		// Team End
-
-
-
-		// Partners Start
-		.partners {
-
-		}
-		// Partners End
 
 
 
@@ -3424,12 +3428,6 @@
 		}
 
 		//  Question Finish
-
-		// Map Start
-		.map {
-
-		}
-		// Map End
 
 
 
@@ -4033,10 +4031,6 @@
 					&-name {
 						font-size: 24px;
 					}
-				}
-
-				&-social-media {
-					margin-bottom: 20px;
 				}
 			}
 		}

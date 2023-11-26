@@ -1788,11 +1788,13 @@ input[type=number] {
   .team__row {
     display: flex; }
     .team__row-member {
+      padding: 0 10px;
       width: 294px;
       height: 434px;
       display: flex;
       justify-content: end;
       align-items: center;
+      border-radius: 5px;
       flex-direction: column;
       background-position: center;
       background-size: cover;
@@ -1806,6 +1808,8 @@ input[type=number] {
         letter-spacing: 0;
         color: #262534; }
       .team__row-member-position {
+        padding: 0 20px;
+        text-align: center;
         margin-bottom: 20px;
         font-family: 'Montserrat', sans-serif;
         font-style: normal;
@@ -1813,19 +1817,21 @@ input[type=number] {
         font-size: 20px;
         line-height: normal;
         letter-spacing: 0;
-        color: #262534; }
+        color: #262534;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 5px; }
     .team__row-social-media {
-      margin-bottom: 35px; }
+      margin-bottom: 20px; }
     .team__row .member-1 {
       background-image: url(../img/team/team-members/member-1.webp); }
-    .team__row .member-2 {
-      background-image: url(../img/team/team-members/member-2.webp); }
+    .team__row .diana {
+      background-image: url(../img/team/team-members/diana.jpg); }
     .team__row .yura-kunec {
       background-image: url(../img/team/team-members/yura-kunec.webp); }
     .team__row .sophia-kunec {
       background-image: url(../img/team/team-members/sophia-kunec.webp); }
-    .team__row .member-3 {
-      background-image: url(../img/team/team-members/member-3.webp); }
+    .team__row .elizaveta {
+      background-image: url(../img/team/team-members/elizaveta.jpg); }
 
 .partners {
   margin-bottom: 180px; }
@@ -2702,6 +2708,10 @@ input[type=number] {
       height: 360px; }
       .wrap .team__row-member-name {
         font-size: 28px; }
+      .wrap .team__row-member-position {
+        margin-bottom: 15px; }
+    .wrap .team__row-social-media {
+      margin-bottom: 15px; }
   .wrap .question__title {
     padding-bottom: 20px; }
   .wrap .question__cart-title {
@@ -3095,8 +3105,6 @@ input[type=number] {
     height: 343px; }
     .wrap .team__row-member-name {
       font-size: 24px; }
-  .wrap .team__row-social-media {
-    margin-bottom: 20px; }
   .wrap .partners-logo {
     max-width: 420px; }
   .wrap .question {
