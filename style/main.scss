@@ -1868,28 +1868,32 @@
 			background-repeat: no-repeat;
 
 
-			&-name {
-				@include font($grey-color, 32px, 600, normal, 0);
-			}
-
-			&-position {
-				padding: 0 20px;
-				text-align: center;
-				margin-bottom: 20px;
-				@include font($grey-color, 20px, 300, normal, 0);
-				background-color: rgba(255, 255, 255, 0.5);
+			&__info {
+				padding: 5px 0;
+				margin-bottom: 10px;
+				width: 100%;
+				background-color: $main-color;
 				border-radius: 5px;
+				text-align: center;
+				opacity: .8;
+
+				&-name {
+					margin-bottom: 5px;
+					@include font(#fff, 24px, 600, normal, 0);
+				}
+	
+				&-position {
+					padding: 0 10px;
+					text-align: center;
+					@include font(#fff, 16px, 200, normal, 0);
+					border-radius: 5px;
+				}
 			}
 		}
 
-		&-social-media {
-			margin-bottom: 20px;
-		}
 
-		
-
-		.member-1 {
-			background-image: url(../img/team/team-members/member-1.webp);
+		.vitalik {
+			background-image: url(../img/team/team-members/vitalik.jpg);
 		}
 
 		.diana {
@@ -3377,18 +3381,6 @@
 				&-member {
 					width: 242px;
 					height: 360px;
-
-					&-name {
-						font-size: 28px;
-					}
-
-					&-position {
-						margin-bottom: 15px;
-					}
-				}
-				
-				&-social-media {
-					margin-bottom: 15px;
 				}
 			}
 		}
@@ -4027,10 +4019,6 @@
 				&-member {
 					width: 230px;
 					height: 343px;
-
-					&-name {
-						font-size: 24px;
-					}
 				}
 			}
 		}
