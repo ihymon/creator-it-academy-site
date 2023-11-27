@@ -32,6 +32,8 @@ ul li {
 body {
   background-color: #262534;
   cursor: url("../../img/main/cursor.svg"), auto; }
+  body .cursor-default {
+    cursor: default; }
   body ::-moz-selection {
     background-color: rgba(255, 255, 255, 0.1); }
   body ::selection {
