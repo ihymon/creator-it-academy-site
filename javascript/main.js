@@ -522,8 +522,7 @@ function fetchCourse(nameCourseFilter, subtitleFilter, minPriceFilter, maxPriceF
           const minNum = Math.min(...courses[i].age || []);
           const maxNum = Math.max(...courses[i].age || []);
           
-          
-
+          // <button class="main__cart-button main__cart-link">Переглянути</button>
           $(".course__box-main").append($(`
           <div class="main__cart main__cart-${courses[i].type}">
           <button class="main__cart-button">${courses[i].subtitle}</button>
@@ -553,11 +552,14 @@ function fetchCourse(nameCourseFilter, subtitleFilter, minPriceFilter, maxPriceF
                   <img src=${courses[i].img} alt="hello">
               </div>
           </div>
-
-          <button class="main__cart-button main__cart-link">Переглянути</button>
       </div>
           `));
+
+          if (courses[i].nameCourse === "Веб Програмування") {
+            $(".main__cart-title:contains('Веб Програмування')").parent().append('<button class="main__cart-button main__cart-link">Переглянути</button>');
+          }
           courseFound = true;
+
         } 
       }
           
@@ -1369,10 +1371,7 @@ fetch('./api/city.json')
     .then(response => response.json())
     .then(courses => {
 
-
       $("#city__location").html(`${courses[0].location} -<a  href="tel:+380${courses[0].phone}">${courses[0].phone}</a>`);
-
-
 
       for (let i = 0; i< courses.length; i++) {
 
@@ -1383,6 +1382,7 @@ fetch('./api/city.json')
           <span>${courses[i].name}</span>
       </div> `)
       }
+
       let linkLocation;
       linkLocation = courses[0].herf;
       $(".my-checkbox--map").click(function() {
