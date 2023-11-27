@@ -46,6 +46,22 @@
     <!-- Loader Finish -->
 
 
+    <!-- Popup Start -->
+    <div class="popupMessage">
+        <div class="popupMessage__container">
+            <div class="popupMessage__container-left">
+                <div class="popupMessage__container-logo">
+                    <div class="message__icon"></div>
+                </div>
+            </div>
+
+            <div class="popupMessage__container-right">
+                <p class="message__title">Creator</p>
+                <p class="message__description">Дякуємо, ваші дані збережено &#128512;</p>
+            </div>
+        </div>
+    </div>
+    <!-- Popup Finish -->
 
 
 
@@ -601,33 +617,34 @@
             </h2>
         
             <div class="certificate__content">
-                <div class="certificate__form" data-aos="fade-right" data-aos-once="true">
+
+                <form  id="my-form2" method="POST" class="certificate__form" data-aos="fade-right" data-aos-once="true">
                     <div class="certificate__form-group">
                         <span class="certificate__form-group-title" id="userNameTitle">Імя</span>
-                        <input class="certificate__form-group-input" id="userName" placeholder="Введіть ваше імя та прізвище" type="name" maxlength="30">
+                        <input class="certificate__form-group-input" id="userName" placeholder="Введіть ваше імя та прізвище" type="name" name="name" maxlength="30">
                     </div>
         
                     <div class="certificate__form-group">
                         <span class="certificate__form-group-title" id="userPhoneNumberTitle">Номер телефону</span>
-                        <input class="certificate__form-group-input" id="userPhoneNumber" placeholder="Введіть ваш номер телефону"  type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
+                        <input class="certificate__form-group-input" id="userPhoneNumber" placeholder="Введіть ваш номер телефону"  type="tel" name="phone" required />
                     </div>
         
                     <div class="certificate__form-group">
                         <span class="certificate__form-group-title" id="userAgeTitle">Вік</span>
-                        <input class="certificate__form-group-input" id="userAge" placeholder="Введіть скільки вам років" type="number" pattern="[0-9]*" />
+                        <input class="certificate__form-group-input" id="userAge" name="age" placeholder="Введіть скільки вам років" type="number" pattern="[0-9]*" />
                     </div>
 
                     <div class="certificate__form-group">
                         <span class="certificate__form-group-title">Курс</span>
-                        <select class="certificate__form-group--select certificate__form-group-input" id="userCourse" placeholder="Введіть назву курсу">
+                        <select class="certificate__form-group--select certificate__form-group-input" name="course" id="userCourse" placeholder="Введіть назву курсу">
                             
                         </select>
                     </div>
 
-                    <button class="certificate__form-btn btn--orange" id="getCertificateBtn">
+                    <button type="submit" class="certificate__form-btn btn--orange" id="getCertificateBtn">
                         Отримати сертифікат
                     </button>
-                </div>
+                </form>
         
                 <div class="certificate__display" data-aos="fade-left" data-aos-once="true">
                     <div class="certificate__display-logo">

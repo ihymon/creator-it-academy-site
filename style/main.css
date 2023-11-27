@@ -461,6 +461,62 @@ input[type=number] {
     width: 298px;
     height: 105px;
     flex-shrink: 0; }
+  .wrap .popupMessage {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: -100%;
+    z-index: 14;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    transition: 0.7s; }
+    .wrap .popupMessage__container {
+      width: 500px;
+      height: 100px;
+      border-radius: 40px;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.7) 1.28%, rgba(255, 255, 255, 0.8) 100%);
+      z-index: 14;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 0 20px;
+      transition: 0.7s; }
+      .wrap .popupMessage__container-left .popupMessage__container-logo {
+        width: 80px;
+        height: 80px;
+        background-color: #262534;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        .wrap .popupMessage__container-left .popupMessage__container-logo .message__icon {
+          width: 50px;
+          height: 25px;
+          background-image: url(../img/home/logo.svg);
+          background-size: cover; }
+      .wrap .popupMessage__container-right {
+        margin-left: 20px; }
+        .wrap .popupMessage__container-right .message__title {
+          font-family: 'Montserrat', sans-serif;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 24px;
+          line-height: normal;
+          letter-spacing: normal;
+          color: #2F2E41; }
+        .wrap .popupMessage__container-right .message__description {
+          font-family: 'Montserrat', sans-serif;
+          font-style: normal;
+          font-weight: 300;
+          font-size: 20px;
+          line-height: normal;
+          letter-spacing: normal;
+          color: #2F2E41; }
+  .wrap .popupMessage__active {
+    position: fixed;
+    top: 15%;
+    transition: 0.7s; }
   .wrap .gift {
     transition: .5s; }
     .wrap .gift__popup-container {
@@ -2480,6 +2536,10 @@ input[type=number] {
   .wrap .footer {
     padding: 50px 60px; } }
 @media screen and (max-width: 1000px) {
+  .wrap .popupMessage__container {
+    width: 80%;
+    height: 100px;
+    border-radius: 30px; }
   .wrap .gift-wrapper {
     bottom: 30px; }
     .wrap .gift-wrapper .gift-icon {
@@ -2779,6 +2839,36 @@ input[type=number] {
     opacity: 1;
     margin-top: 50px; }
 
+  .wrap .popupMessage {
+    padding: 0 30px; }
+    .wrap .popupMessage__container {
+      width: 100%;
+      height: 100px;
+      border-radius: 30px; }
+      .wrap .popupMessage__container-left .popupMessage__container-logo {
+        width: 70px;
+        height: 70px; }
+        .wrap .popupMessage__container-left .popupMessage__container-logo .message__icon {
+          width: 50px;
+          height: 25px; }
+      .wrap .popupMessage__container-right {
+        margin-left: 15px; }
+        .wrap .popupMessage__container-right .message__title {
+          font-family: 'Montserrat', sans-serif;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 22px;
+          line-height: normal;
+          letter-spacing: normal;
+          color: #2F2E41; }
+        .wrap .popupMessage__container-right .message__description {
+          font-family: 'Montserrat', sans-serif;
+          font-style: normal;
+          font-weight: 300;
+          font-size: 18px;
+          line-height: normal;
+          letter-spacing: normal;
+          color: #2F2E41; }
   .wrap .gift-wrapper {
     right: 30px; }
     .wrap .gift-wrapper .gift-icon {

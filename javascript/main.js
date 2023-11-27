@@ -174,6 +174,7 @@ $("#giftIcon").click(() => {
 
 $("#courseButton").click(() => {
   openPopup();
+
 });
 
 $("#footerBtn").click(() => {
@@ -215,6 +216,13 @@ $('#my-form').submit(async function (e) {
           $(".gift__popup-container").removeClass("_active");
           $("body").removeClass("_active");
         }, 500);
+
+        setTimeout(() => {
+          $(".popupMessage").addClass("popupMessage__active");
+          setTimeout(() => {
+            $(".popupMessage").removeClass("popupMessage__active");
+          }, 3000);
+        }, 700);
       
         $(".gift__popup").removeClass("_active");
     } else {
@@ -235,7 +243,7 @@ $("#giftClose").click(() => {
     $("body").removeClass("_active");
   }, 500);
 
-  $(".gift__popup").removeClass("_active");
+
 })
 // Gift End
 
@@ -1226,7 +1234,15 @@ updatePlaceholderInCerteficte($("#userPhoneNumber"), "Введіть ваш но
 updatePlaceholderInCerteficte($("#userAge"), "Введіть скільки вам років", "Ваш вік");
 
 
-$("#getCertificateBtn").click(() => {
+
+
+
+
+$('#my-form2').submit(async function (e) {
+  e.preventDefault();
+  let data = new FormData(this);
+
+  console.log("ee")
   let userPhoneNumber = $("#userPhoneNumber").val();
   let userName = $("#userName").val();
   let userAge = $("#userAge").val();
@@ -1235,10 +1251,61 @@ $("#getCertificateBtn").click(() => {
   let isNameValid = validateInput(userName, $("#userNameTitle"), "Введіть конкретне імя", "Імя");
   let isAgeValid = validateInput(userAge, $("#userAgeTitle"), "Введіть скільки вам зараз років", "Вік");
 
-  if (isPhoneNumberValid && isNameValid && isAgeValid && $("#giftName").val() !== "") {
+  if (isPhoneNumberValid && isNameValid && isAgeValid) {
     console.log("All inputs are valid");
+
+  try {
+    const response = await fetch('https://formspree.io/f/mwkddbee', {
+        method: 'POST',
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+    });
+
+    const responseData = await response.json();
+
+    if (response.ok) {
+        console.log("Form submitted successfully");
+        $(this)[0].reset();
+
+        setTimeout(() => {
+          $(".popupMessage").addClass("popupMessage__active");
+          setTimeout(() => {
+            $(".popupMessage").removeClass("popupMessage__active");
+          }, 3000);
+        }, 700);
+      
+        $(".gift__popup").removeClass("_active");
+    } else {
+        console.log("Form submission failed");
+        if (Object.hasOwnProperty.call(responseData, 'errors')) {
+            console.log("Error:", responseData.errors);
+        }
+    }
+    } catch (error) {
+        console.error('Error submitting form:', error);
+    }
   }
 });
+
+
+// $("#getCertificateBtn").click(() => {
+//   let userPhoneNumber = $("#userPhoneNumber").val();
+//   let userName = $("#userName").val();
+//   let userAge = $("#userAge").val();
+
+//   let isPhoneNumberValid = validatePhoneNumber(userPhoneNumber, $("#userPhoneNumberTitle"), "Неправильний номер телефону", "Номер телефону");
+//   let isNameValid = validateInput(userName, $("#userNameTitle"), "Введіть конкретне імя", "Імя");
+//   let isAgeValid = validateInput(userAge, $("#userAgeTitle"), "Введіть скільки вам зараз років", "Вік");
+
+//   if (isPhoneNumberValid && isNameValid && isAgeValid && $("#giftName").val() !== "") {
+//     console.log("All inputs are valid");
+
+    
+
+//   }
+// });
 // Certificate End 
 
 

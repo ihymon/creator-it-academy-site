@@ -328,6 +328,69 @@
 // popup From Finish 
 
 
+// Popup Start 
+.popupMessage {
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: -100%;
+	z-index: 14;
+	@include display-center(center, flex-start);
+	transition: 0.7s;
+
+	&__container {
+		width: 500px;
+		height: 100px;
+		border-radius: 40px;
+		background: linear-gradient(90deg, rgba(255, 255, 255, 0.7) 1.28%, rgba(255, 255, 255, 0.8) 100%);
+		z-index: 14;
+		@include display-center(flex-start, center);
+		padding: 0 20px;
+		transition: 0.7s;
+
+
+		&-left {
+			.popupMessage__container-logo {
+				width: 80px;
+				height: 80px;
+				background-color: $grey-color;
+				border-radius: 50%;
+				@include display-center(center, center);
+				.message__icon {
+					width: 50px;
+					height: 25px;
+					background-image: url(../img/home/logo.svg);
+					background-size: cover;
+				}
+			}
+			
+		}
+
+		&-right {
+			margin-left: 20px;
+			.message__title {
+				@include font($dark-color, 24px, 700, normal, normal);
+
+			}
+			.message__description {
+				@include font($dark-color, 20px, 300, normal, normal);
+
+			}
+		}
+
+
+	}
+}
+
+.popupMessage__active {
+	position: fixed;
+	top: 15%;
+	transition: 0.7s;
+}
+
+
+// Popup Finish 
+
 // Gift Start 
 .gift {
 	transition: .5s;
@@ -2986,6 +3049,21 @@
 @media screen and (max-width: 1000px) {	
 	.wrap {
 		
+
+		// popupMessage Start
+
+		
+		.popupMessage {
+
+			&__container {
+				width: 80%;
+				height: 100px;
+				border-radius: 30px;
+			}
+		}
+		// popupMessage Finish
+
+
 		// Gift Start
 		.gift {
 			&-wrapper {
@@ -3505,6 +3583,47 @@
 
 
 	.wrap {
+
+	// popupMessage Start
+
+		
+	.popupMessage {
+		padding: 0 30px;
+		&__container {
+			width: 100%;
+			height: 100px;
+			border-radius: 30px;
+
+			&-left {
+				.popupMessage__container-logo {
+					width: 70px;
+					height: 70px;
+					.message__icon {
+						width: 50px;
+						height: 25px;
+					}
+				}
+				
+			}
+
+			&-right {
+				margin-left: 15px;
+				.message__title {
+					@include font($dark-color, 22px, 700, normal, normal);
+
+				}
+				.message__description {
+					@include font($dark-color, 18px, 300, normal, normal);
+
+				}
+			}
+
+
+		}
+	}
+	// popupMessage Finish
+
+
 		// Gift Start
 		.gift {
 			&-wrapper {
