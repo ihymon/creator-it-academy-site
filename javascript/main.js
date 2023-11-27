@@ -221,7 +221,7 @@ $('#my-form').submit(async function (e) {
           $(".popupMessage").addClass("popupMessage__active");
           setTimeout(() => {
             $(".popupMessage").removeClass("popupMessage__active");
-          }, 3000);
+          }, 4000);
         }, 700);
       
         $(".gift__popup").removeClass("_active");
@@ -1273,7 +1273,7 @@ $('#my-form2').submit(async function (e) {
           $(".popupMessage").addClass("popupMessage__active");
           setTimeout(() => {
             $(".popupMessage").removeClass("popupMessage__active");
-          }, 3000);
+          }, 4000);
         }, 700);
       
         $(".gift__popup").removeClass("_active");
