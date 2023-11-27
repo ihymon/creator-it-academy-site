@@ -455,6 +455,10 @@ input[type=number] {
     fill: white; } }
     .wrap .loader .svg-elem-17 {
       animation: animate-svg-fill-17 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 2.4s both; }
+  .wrap .popupform {
+    width: 298px;
+    height: 105px;
+    flex-shrink: 0; }
   .wrap .gift {
     transition: .5s; }
     .wrap .gift__popup-container {
