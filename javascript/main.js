@@ -1365,9 +1365,13 @@ fetch('./api/city.json')
     .then(response => response.json())
     .then(courses => {
 
-      $("#city__location").text(courses[0].location);
+
+      $("#city__location").html(`${courses[0].location} -<a  href="tel:+380${courses[0].phone}">${courses[0].phone}</a>`);
+
+
 
       for (let i = 0; i< courses.length; i++) {
+
         $("#allCity").append(`
           <div  class="checkbox-container">
           <input id=${courses[i].id} class="my-checkbox my-checkbox--map" type="checkbox" ${courses[i].type} name="remember-checkbox">
@@ -1376,8 +1380,8 @@ fetch('./api/city.json')
       </div> `)
       }
       let linkLocation;
+      linkLocation = courses[0].herf;
       $(".my-checkbox--map").click(function() {
-
         $(".my-checkbox--map").prop('checked', false);
         $(this).prop('checked', true);
         if ($(this).is(":checked")) {
@@ -1386,15 +1390,14 @@ fetch('./api/city.json')
 
            linkLocation = selectedCourse.herf;
            $("#city__location").text(selectedCourse.location);
-      }
+           
+           $("#city__location").html(`${selectedCourse.location} -<a  href="tel:+380${selectedCourse.phone}">${selectedCourse.phone}</a>`);
+
+          }
       });
 
       $("#opneLocation").click(function () {
-        if (linkLocation) {
           window.open(linkLocation, '_blank');
-        } else {
-          alert("Please select a city before opening the location.");
-        }
       });
 })
 // Map End 
