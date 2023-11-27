@@ -2199,16 +2199,30 @@
 				margin-bottom: 10px;
 				@include font(#FFF, 32px, 600, normal, 0);
 			}
+			
 
 			.footer__link {
 				@include font(#FFF, 20px, 500, normal, 0);
 				transition: .4s;
 
+				&--contact {
+					display: flex;
+					align-items: center;
+					column-gap: 10px;
+					transition: .4s;
+				}
+
 				&:hover {
 					color: $main-color;
 					transition: .4s;
+
+					.footer__link--contact-icon path {
+						transition: .4s;
+						stroke: $main-color;
+					}
 				}
 			}
+
 
 			.footer__btn {
 				margin-top: 35px;
