@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -30,7 +30,8 @@ ul li {
   list-style: none; }
 
 body {
-  background-color: #262534; }
+  background-color: #262534;
+  cursor: url("../../img/main/cursor.svg"), auto; }
   body ::-moz-selection {
     background-color: rgba(255, 255, 255, 0.1); }
   body ::selection {
@@ -1792,44 +1793,55 @@ input[type=number] {
   .team__row {
     display: flex; }
     .team__row-member {
+      padding: 0 10px;
       width: 294px;
       height: 434px;
       display: flex;
       justify-content: end;
       align-items: center;
+      border-radius: 5px;
       flex-direction: column;
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat; }
-      .team__row-member-name {
-        font-family: 'Montserrat', sans-serif;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 32px;
-        line-height: normal;
-        letter-spacing: 0;
-        color: #262534; }
-      .team__row-member-position {
-        margin-bottom: 20px;
-        font-family: 'Montserrat', sans-serif;
-        font-style: normal;
-        font-weight: 300;
-        font-size: 20px;
-        line-height: normal;
-        letter-spacing: 0;
-        color: #262534; }
-    .team__row-social-media {
-      margin-bottom: 35px; }
-    .team__row .member-1 {
-      background-image: url(../img/team/team-members/member-1.webp); }
-    .team__row .member-2 {
-      background-image: url(../img/team/team-members/member-2.webp); }
+      .team__row-member__info {
+        padding: 5px 0;
+        margin-bottom: 10px;
+        width: 100%;
+        background-color: #F5A006;
+        border-radius: 5px;
+        text-align: center;
+        opacity: .8; }
+        .team__row-member__info-name {
+          margin-bottom: 5px;
+          font-family: 'Montserrat', sans-serif;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 24px;
+          line-height: normal;
+          letter-spacing: 0;
+          color: #fff; }
+        .team__row-member__info-position {
+          padding: 0 10px;
+          text-align: center;
+          font-family: 'Montserrat', sans-serif;
+          font-style: normal;
+          font-weight: 200;
+          font-size: 16px;
+          line-height: normal;
+          letter-spacing: 0;
+          color: #fff;
+          border-radius: 5px; }
+    .team__row .vitalik {
+      background-image: url(../img/team/team-members/vitalik.jpg); }
+    .team__row .diana {
+      background-image: url(../img/team/team-members/diana.jpg); }
     .team__row .yura-kunec {
       background-image: url(../img/team/team-members/yura-kunec.webp); }
     .team__row .sophia-kunec {
       background-image: url(../img/team/team-members/sophia-kunec.webp); }
-    .team__row .member-3 {
-      background-image: url(../img/team/team-members/member-3.webp); }
+    .team__row .elizaveta {
+      background-image: url(../img/team/team-members/elizaveta.jpg); }
 
 .partners {
   margin-bottom: 180px; }
@@ -2086,9 +2098,17 @@ input[type=number] {
         letter-spacing: 0;
         color: #FFF;
         transition: .4s; }
+        .footer__content .footer__list .footer__link--contact {
+          display: flex;
+          align-items: center;
+          column-gap: 10px;
+          transition: .4s; }
         .footer__content .footer__list .footer__link:hover {
           color: #F5A006;
           transition: .4s; }
+          .footer__content .footer__list .footer__link:hover .footer__link--contact-icon path {
+            transition: .4s;
+            stroke: #F5A006; }
       .footer__content .footer__list .footer__btn {
         margin-top: 35px;
         width: 234px;
@@ -2704,8 +2724,6 @@ input[type=number] {
     .wrap .team__row-member {
       width: 242px;
       height: 360px; }
-      .wrap .team__row-member-name {
-        font-size: 28px; }
   .wrap .question__title {
     padding-bottom: 20px; }
   .wrap .question__cart-title {
@@ -3097,10 +3115,6 @@ input[type=number] {
   .wrap .team__row-member {
     width: 230px;
     height: 343px; }
-    .wrap .team__row-member-name {
-      font-size: 24px; }
-  .wrap .team__row-social-media {
-    margin-bottom: 20px; }
   .wrap .partners-logo {
     max-width: 420px; }
   .wrap .question {

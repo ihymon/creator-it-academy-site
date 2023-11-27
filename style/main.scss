@@ -1868,9 +1868,11 @@
 		display: flex;
 
 		&-member {
+			padding: 0 10px;
 			width: 294px;
 			height: 434px;
 			@include display-center (end, center);
+			border-radius: 5px;
 			flex-direction: column;
 
 			background-position: center;
@@ -1878,30 +1880,36 @@
 			background-repeat: no-repeat;
 
 
+			&__info {
+				padding: 5px 0;
+				margin-bottom: 10px;
+				width: 100%;
+				background-color: $main-color;
+				border-radius: 5px;
+				text-align: center;
+				opacity: .8;
 
-			&-name {
-				@include font($grey-color, 32px, 600, normal, 0);
+				&-name {
+					margin-bottom: 5px;
+					@include font(#fff, 24px, 600, normal, 0);
+				}
+	
+				&-position {
+					padding: 0 10px;
+					text-align: center;
+					@include font(#fff, 16px, 200, normal, 0);
+					border-radius: 5px;
+				}
 			}
-
-			&-position {
-				margin-bottom: 20px;
-				@include font($grey-color, 20px, 300, normal, 0);
-			}
 		}
 
 
-		&-social-media {
-			margin-bottom: 35px;
+		.vitalik {
+			background-image: url(../img/team/team-members/vitalik.jpg);
 		}
 
-		
-
-		.member-1 {
-			background-image: url(../img/team/team-members/member-1.webp);
-		}
-
-		.member-2 {
-			background-image: url(../img/team/team-members/member-2.webp);
+		.diana {
+			background-image: url(../img/team/team-members/diana.jpg);
 		}
 
 		.yura-kunec {
@@ -1912,8 +1920,8 @@
 			background-image: url(../img/team/team-members/sophia-kunec.webp);
 		}
 		
-		.member-3 {
-			background-image: url(../img/team/team-members/member-3.webp);
+		.elizaveta {
+			background-image: url(../img/team/team-members/elizaveta.jpg);
 		}
 	}
 }
@@ -2203,16 +2211,30 @@
 				margin-bottom: 10px;
 				@include font(#FFF, 32px, 600, normal, 0);
 			}
+			
 
 			.footer__link {
 				@include font(#FFF, 20px, 500, normal, 0);
 				transition: .4s;
 
+				&--contact {
+					display: flex;
+					align-items: center;
+					column-gap: 10px;
+					transition: .4s;
+				}
+
 				&:hover {
 					color: $main-color;
 					transition: .4s;
+
+					.footer__link--contact-icon path {
+						transition: .4s;
+						stroke: $main-color;
+					}
 				}
 			}
+
 
 			.footer__btn {
 				margin-top: 35px;
@@ -3385,22 +3407,10 @@
 				&-member {
 					width: 242px;
 					height: 360px;
-
-					&-name {
-						font-size: 28px;
-					}
 				}
 			}
 		}
 		// Team End
-
-
-
-		// Partners Start
-		.partners {
-
-		}
-		// Partners End
 
 
 
@@ -3436,12 +3446,6 @@
 		}
 
 		//  Question Finish
-
-		// Map Start
-		.map {
-
-		}
-		// Map End
 
 
 
@@ -4041,14 +4045,6 @@
 				&-member {
 					width: 230px;
 					height: 343px;
-
-					&-name {
-						font-size: 24px;
-					}
-				}
-
-				&-social-media {
-					margin-bottom: 20px;
 				}
 			}
 		}

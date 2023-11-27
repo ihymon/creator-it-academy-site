@@ -2,6 +2,8 @@
 
 body {
 	background-color: $grey-color;
+	cursor: url('../../img/main/cursor.svg'), auto;
+
 ::-moz-selection { 
 		background-color: rgba($color: #ffffff, $alpha: 0.1);
 	  }
