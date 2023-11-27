@@ -1869,8 +1869,10 @@ input[type=number] {
   justify-content: center;
   align-items: flex-start;
   flex-direction: column; }
+  .map a {
+    color: #F5A006; }
   .map .filter__cart {
-    width: 338px;
+    width: 360px;
     height: auto;
     flex-shrink: 0;
     padding: 16px 20px 35px 20px;
@@ -1951,7 +1953,7 @@ input[type=number] {
         position: relative;
         top: 1px; }
   .map .filter__cart2 {
-    width: 338px;
+    width: 360px;
     height: auto;
     flex-shrink: 0;
     padding: 20px;
@@ -1961,8 +1963,7 @@ input[type=number] {
     .map .filter__cart2-box {
       display: flex;
       justify-content: flex-start;
-      align-items: center;
-      display: flex; }
+      align-items: center; }
     .map .filter__cart2-title {
       font-family: 'Montserrat', sans-serif;
       font-style: normal;

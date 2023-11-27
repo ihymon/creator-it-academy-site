@@ -1963,9 +1963,14 @@
 	background-size: cover;
 	@include display-center (center, flex-start);
 	flex-direction: column;
+	a {
+		color: $main-color;
+	}
+	
+	
 
 	.filter__cart {
-		width: 338px;
+		width: 360px;
 		height: auto;
 		flex-shrink: 0;
 		padding: 16px 20px 35px 20px;
@@ -2059,7 +2064,7 @@
 	}
 
 	.filter__cart2 {
-		width: 338px;
+		width: 360px;
 		height: auto;
 		flex-shrink: 0;
 		padding: 20px;
@@ -2069,7 +2074,6 @@
 		
 		&-box {
 			@include display-center (flex-start, center);
-			display: flex
 			
 		}
 		&-title {
