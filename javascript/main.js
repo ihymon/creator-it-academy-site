@@ -176,6 +176,10 @@ $("#courseButton").click(() => {
   openPopup();
 });
 
+$("#footerBtn").click(() => {
+  openPopup();
+})
+
 let gifNumberControl;
 
 
@@ -1410,10 +1414,10 @@ $(window).scroll(function() {
 
   let footerPosition = footer.offset().top; 
   let windowHeight = $(window).height();
-  if (footerPosition < windowHeight + $(window).scrollTop()) {
-      $(".gift").hide(300);
+  if (footerPosition + 10 < windowHeight + $(window).scrollTop()) {
+      $(".gift-wrapper").addClass("_hide");
   } else {
-    $(".gift").show(300);
+    $(".gift-wrapper").removeClass("_hide");
   }
 });
 

@@ -323,8 +323,6 @@
 	width: 298px;
 	height: 105px;
 	flex-shrink: 0;
-
-	
 }
 
 // popup From Finish 
@@ -332,6 +330,9 @@
 
 // Gift Start 
 .gift {
+	transition: .5s;
+
+
 	&__popup-container {
 		position: fixed;
 		width: 100%;
@@ -498,6 +499,12 @@
 
 		transition: .4s;
 		z-index: 5;
+
+
+		&._hide {
+			transition: .2	s;
+			transform: scale(0);
+		}
 
 
 		.gift-icon {
@@ -2215,7 +2222,7 @@
 				margin-bottom: 10px;
 				@include font(#FFF, 32px, 600, normal, 0);
 			}
-			
+
 
 			.footer__link {
 				@include font(#FFF, 20px, 500, normal, 0);
