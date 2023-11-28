@@ -199,7 +199,7 @@ $('#my-form').submit(async function (e) {
     console.log("All inputs are valid");
       
   try {
-    const response = await fetch('https://formspree.io/f/mleyyeor', {
+    const response = await fetch('https://formspree.io/f/xqkvvbbq', {
         method: 'POST',
         body: data,
         headers: {

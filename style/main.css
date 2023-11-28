@@ -515,7 +515,7 @@ input[type=number] {
           color: #2F2E41; }
   .wrap .popupMessage__active {
     position: fixed;
-    top: 15%;
+    top: 23%;
     transition: 0.7s; }
   .wrap .gift {
     transition: .5s; }
@@ -609,6 +609,7 @@ input[type=number] {
           .wrap .gift__popup-container .gift__popup__group-content .gift__popup__group--select {
             -webkit-appearance: none;
             -moz-appearance: none;
+            appearance: none;
             background-image: url(../img/main/select-arrow-bottom.svg);
             background-repeat: no-repeat;
             background-size: 24px;

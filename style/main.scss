@@ -384,7 +384,7 @@
 
 .popupMessage__active {
 	position: fixed;
-	top: 15%;
+	top: 23%;
 	transition: 0.7s;
 }
 
@@ -494,6 +494,7 @@
 					&--select {
 						-webkit-appearance: none;
 						-moz-appearance: none;
+						appearance: none;
 						background-image: url(../img/main/select-arrow-bottom.svg);
 						background-repeat: no-repeat;
 						background-size: 24px;  
@@ -4695,8 +4696,6 @@
 		.gift {
 			&__popup-container {
 				overflow: auto;
-				.gift__popup {
-				}
 			}
 		}
 		// Gift End
