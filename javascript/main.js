@@ -296,7 +296,6 @@ $(".home--scroll").click(function() {
 
 
 // Home Page Start
-    AOS.init();
 
     const homePhoto = document.querySelectorAll('.home__photo-display');
     const homePhotoContainer = document.getElementById('homePhotoContainer');
