@@ -2824,7 +2824,16 @@ input[type=number] {
     column-gap: 180px;
     justify-content: center; }
     .wrap .footer__content .footer__list {
-      text-align: center; }
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .wrap .footer__content .footer__list .footer__link {
+        text-align: center; }
+        .wrap .footer__content .footer__list .footer__link--contact {
+          display: flex;
+          justify-content: center;
+          align-items: center; }
   .wrap .footer__copyright {
     display: flex;
     justify-content: center;

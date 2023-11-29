@@ -3052,8 +3052,6 @@
 		
 
 		// popupMessage Start
-
-		
 		.popupMessage {
 
 			&__container {
@@ -3083,8 +3081,8 @@
 		}
 		// Gift End
 
-		// Home start adaptation
 
+		// Home start adaptation
 		.home {
 			padding: 0 60px;
 		&__bg {
@@ -3547,6 +3545,15 @@
 
 				.footer__list {
 					text-align: center;
+					@include display-center(center, center);
+
+					.footer__link {
+						text-align: center;
+
+						&--contact {
+							@include display-center(center, center);
+						}
+					}
 				}
 			}
 			
