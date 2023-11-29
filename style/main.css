@@ -3469,6 +3469,13 @@ input[type=number] {
     color: #fff;
     margin-top: 25px;
     display: none; }
+  .wrap .footer__content .footer__list-title {
+    font-size: 24px;
+    margin-bottom: 0px; }
+  .wrap .footer__content .footer__list .footer__link {
+    font-size: 15px; }
+    .wrap .footer__content .footer__list .footer__link--contact {
+      column-gap: 5px; }
   .wrap .footer__copyright-text {
     text-align: center;
     font-size: 18px; } }
