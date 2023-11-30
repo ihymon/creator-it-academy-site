@@ -1,6 +1,6 @@
 
 // Loader Start
-$(".loader").show();
+// $(".loader").show();
 $("body").addClass("wrap-hidden");
 
 const loader = () => {
