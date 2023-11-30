@@ -44,6 +44,7 @@
 	animation-name: loader;
 	animation-duration: 4.8s;
 	animation-iteration-count: 1;
+	display: none;
 
 	svg {
 		animation-name: svgloader;

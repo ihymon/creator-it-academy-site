@@ -318,7 +318,8 @@ input[type=number] {
     align-items: center;
     animation-name: loader;
     animation-duration: 4.8s;
-    animation-iteration-count: 1; }
+    animation-iteration-count: 1;
+    display: none; }
     .wrap .loader svg {
       animation-name: svgloader;
       animation-duration: 4s;
