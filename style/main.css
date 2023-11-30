@@ -2016,11 +2016,19 @@ input[type=number] {
     padding: 20px;
     border-radius: 5px;
     background-color: #3F3D56;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px; }
     .map .filter__cart2-box {
       display: flex;
       justify-content: flex-start;
       align-items: center; }
+    .map .filter__cart2-box2 {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-bottom: 10px; }
     .map .filter__cart2-title {
       font-family: 'Montserrat', sans-serif;
       font-style: normal;
@@ -2038,6 +2046,9 @@ input[type=number] {
       width: 280px; }
     .map .filter__cart2 .filter__cart2--city {
       background-image: url(../img/map/Buildings.svg);
+      background-size: cover; }
+    .map .filter__cart2 .filter__cart2--phone {
+      background-image: url(../img/main/phone.svg);
       background-size: cover; }
     .map .filter__cart2 .filter__cart2--location {
       background-image: url(../img/map/Location.svg); }
@@ -3002,7 +3013,10 @@ input[type=number] {
         left: 25px; }
       .wrap .course__box-main .main__cart:nth-child(9) .cart__rigth img {
         position: relative;
-        left: 30px; }
+        left: 20px; }
+      .wrap .course__box-main .main__cart:nth-child(10) .cart__rigth img {
+        position: relative;
+        left: 35px; }
       .wrap .course__box-main .main__cart-button {
         width: 100%; }
       .wrap .course__box-main .main__cart-box {

@@ -6,7 +6,7 @@ $("body").addClass("wrap-hidden");
 const loader = () => {
   setTimeout(() => {
     $("body").removeClass("wrap-hidden");
-  }, 5000)
+  }, 4000)
 }
 
 loader();
@@ -1437,7 +1437,8 @@ fetch('./api/city.json')
     .then(response => response.json())
     .then(courses => {
 
-      $("#city__location").html(`${courses[0].location} -<a  href="tel:+380${courses[0].phone}">${courses[0].phone}</a>`);
+      $("#city__location").html(`${courses[0].location}</a>`);
+      $("#phote__location").html(`<a  href="tel:+380${courses[0].phone}">${courses[0].phone}</a>`);
 
       for (let i = 0; i< courses.length; i++) {
 
@@ -1461,8 +1462,8 @@ fetch('./api/city.json')
            linkLocation = selectedCourse.herf;
            $("#city__location").text(selectedCourse.location);
            
-           $("#city__location").html(`${selectedCourse.location} -<a  href="tel:+380${selectedCourse.phone}">${selectedCourse.phone}</a>`);
-
+           $("#city__location").html(`${selectedCourse.location}</a>`);
+           $("#phote__location").html(`<a  href="tel:+380${selectedCourse.phone}">${courses[0].phone}</a>`);
           }
       });
 

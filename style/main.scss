@@ -2135,11 +2135,20 @@
 		border-radius: 5px;
 		background-color: $dark-secondary-color;
 		margin-bottom: 20px;
+		display: flex;
+		flex-direction: column;
+		row-gap: 10px;
 		
 		&-box {
 			@include display-center (flex-start, center);
 			
 		}
+		&-box2 {
+			@include display-center (flex-start, center);
+			margin-bottom: 10px;
+			
+		}
+
 		&-title {
 			@include font(#fff, 20px, 300, normal, normal);
 			margin-left: 15px;
@@ -2156,6 +2165,10 @@
 
 		.filter__cart2--city {
 			background-image: url(../img/map/Buildings.svg);
+			background-size: cover;
+		}
+		.filter__cart2--phone {
+			background-image: url(../img/main/phone.svg);
 			background-size: cover;
 		}
 		.filter__cart2--location {
@@ -3863,7 +3876,15 @@
 							.cart__rigth {
 								img {
 									position: relative;
-									left: 30px;
+									left: 20px;
+								}
+							}
+						}
+						&:nth-child(10) {
+							.cart__rigth {
+								img {
+									position: relative;
+									left: 35px;
 								}
 							}
 						}
