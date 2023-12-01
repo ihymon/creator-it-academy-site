@@ -3323,7 +3323,7 @@ input[type=number] {
     z-index: -1; }
   .wrap .home__header {
     min-height: 10vh;
-    z-index: 11; }
+    z-index: 9999 !important; }
     .wrap .home__header-left .logo {
       width: 80px;
       height: 39px; }

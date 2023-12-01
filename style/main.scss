@@ -4364,7 +4364,7 @@
 			}
 			&__header {
 				min-height: 10vh;
-				z-index: 11;
+				z-index: 9999 !important;
 
 				&-left {
 					.logo {
