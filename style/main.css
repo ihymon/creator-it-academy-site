@@ -312,7 +312,7 @@ input[type=number] {
     background-color: #262534;
     left: 0%;
     top: 0%;
-    z-index: 10;
+    z-index: 105;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -3323,7 +3323,7 @@ input[type=number] {
     z-index: -1; }
   .wrap .home__header {
     min-height: 10vh;
-    z-index: 9999 !important; }
+    z-index: 100 !important; }
     .wrap .home__header-left .logo {
       width: 80px;
       height: 39px; }
