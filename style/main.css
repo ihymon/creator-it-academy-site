@@ -3510,6 +3510,8 @@ input[type=number] {
     overflow: auto; }
   .wrap .home {
     max-height: 200vh; }
+    .wrap .home__header-rigth--open {
+      padding-top: 25%; }
     .wrap .home__main {
       margin-top: 45px; } }
 @media screen and (max-height: 500px) {
