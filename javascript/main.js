@@ -1463,7 +1463,8 @@ fetch('./api/city.json')
            $("#city__location").text(selectedCourse.location);
            
            $("#city__location").html(`${selectedCourse.location}</a>`);
-           $("#phote__location").html(`<a  href="tel:+380${selectedCourse.phone}">${courses[0].phone}</a>`);
+           console.log(selectedCourse.phone)
+           $("#phote__location").html(`<a  href="tel:+380${selectedCourse.phone}">${selectedCourse.phone}</a>`);
           }
       });
 
