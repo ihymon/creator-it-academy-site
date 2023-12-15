@@ -856,17 +856,26 @@ input[type=number] {
     align-items: center;
     flex-direction: column; }
     .wrap .about-us__title {
-      margin-bottom: 15px; }
-    .wrap .about-us__subtitle {
-      margin: 0 auto 80px auto;
-      max-width: 880px;
-      font-family: 'Montserrat', sans-serif;
-      font-style: normal;
-      font-weight: 300;
-      font-size: 24px;
-      line-height: 124.4%;
-      letter-spacing: 0.6px;
-      color: #FFF; }
+      margin-bottom: 35px; }
+    .wrap .about-us__description-container {
+      margin-bottom: 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      flex-direction: column;
+      flex-wrap: wrap;
+      row-gap: 20px; }
+      .wrap .about-us__description-container .about-us__description {
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: normal;
+        letter-spacing: 0.6px;
+        color: #fff; }
+        .wrap .about-us__description-container .about-us__description--main {
+          color: #F5A006; }
     .wrap .about-us__video {
       display: flex;
       justify-content: center;
@@ -2969,9 +2978,6 @@ input[type=number] {
           opacity: 1; }
   .wrap .about-us {
     padding: 0 30px; }
-    .wrap .about-us__subtitle {
-      font-size: 20px;
-      letter-spacing: 0; }
     .wrap .about-us__video {
       row-gap: 30px; }
       .wrap .about-us__video-left {
@@ -3361,8 +3367,6 @@ input[type=number] {
   .wrap .home__main-photo .home__photo {
     width: 70vw;
     height: 60vw; }
-  .wrap .about-us__subtitle {
-    font-size: 18px; }
   .wrap .about-us__video {
     row-gap: 30px; }
     .wrap .about-us__video-left {

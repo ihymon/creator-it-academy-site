@@ -803,14 +803,31 @@
 	
 
     &__title {
-        margin-bottom: 15px;    
+        margin-bottom: 35px;    
     }
 
-    &__subtitle {    
-        margin: 0 auto 80px auto;
-        max-width: 880px;
-        @include font(#FFF, 24px, 300,  124.4%, 0.6px);
-    }
+    // &__description {    
+    //     margin: 0 auto 80px auto;
+    //     max-width: 880px;
+    //     @include font(#FFF, 24px, 300,  124.4%, 0.6px);
+    // }
+
+	&__description-container {
+		margin-bottom: 50px;
+		@include display-center(space-between, start);
+		flex-direction: column;
+		flex-wrap: wrap;
+		row-gap: 20px;
+
+		.about-us__description {
+			text-align: center;
+			@include font(#fff, 24px, 400, normal, 0.6px);
+
+			&--main {
+				color: $main-color;
+			}
+		}
+	}
 
     &__video {
         @include display-center (center, center);
@@ -3773,10 +3790,10 @@
 		.about-us {
 			padding: 0 30px;
 
-			&__subtitle {
-				font-size: 20px;
-				letter-spacing: 0;
-			}
+			// &__description {
+			// 	font-size: 20px;
+			// 	letter-spacing: 0;
+			// }
 
 			&__video {
 				row-gap: 30px;
@@ -4434,9 +4451,9 @@
 
 		// About Us Start
 		.about-us {
-			&__subtitle {
-				font-size: 18px;
-			}
+			// &__description {
+			// 	font-size: 18px;
+			// }
 
 			&__video {
 				row-gap: 30px;
