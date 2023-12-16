@@ -3956,6 +3956,18 @@
 									padding-bottom: 15px;
 									text-align: center;
 								}
+								.main__cart-sociable {
+					
+									.main__cart-duration {
+										width: 60%;
+										text-align: center;
+									}
+									
+								}
+
+								.main__cart-sociable2 {
+									@include display-center (center, flex-start);
+								}
 								
 							}
 							.cart__rigth {
@@ -4506,6 +4518,24 @@
 		.course {
 			&__button {
 				width: 100%;
+			}
+			&__box {
+				&-main {
+					.main__cart {
+						&-box {
+							.cart__left {
+								.main__cart-sociable {
+									margin-top: 10px;
+									.main__cart-duration {
+										width: 85%;
+										text-align: center;
+									}
+									
+								}
+							}
+						}
+					}
+				}			
 			}
 		}
 		// Сourse End

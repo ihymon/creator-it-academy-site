@@ -111,7 +111,7 @@ input[type=number] {
 
 .main__cart {
   width: 450px;
-  height: 330px;
+  height: 370px;
   border-radius: 5px;
   background: #3F3D56;
   padding: 25px 0 25px 25px;
@@ -136,7 +136,7 @@ input[type=number] {
     height: 36px;
     background-color: #F5A006; }
   .main__cart-link {
-    margin-top: 30px;
+    margin-top: 20px;
     padding: 0 15px;
     height: 36px; }
   .main__cart-box {
@@ -179,6 +179,8 @@ input[type=number] {
           line-height: normal;
           letter-spacing: normal;
           color: #FFF; }
+        .main__cart-box .cart__left .main__cart-sociable .main__cart-duration {
+          width: 60%; }
     .main__cart-box .cart__rigth {
       width: 200px;
       height: 100%;
@@ -3088,6 +3090,13 @@ input[type=number] {
             margin-top: 10px;
             padding-bottom: 15px;
             text-align: center; }
+          .wrap .course__box-main .main__cart-box .cart__left .main__cart-sociable .main__cart-duration {
+            width: 60%;
+            text-align: center; }
+          .wrap .course__box-main .main__cart-box .cart__left .main__cart-sociable2 {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; }
         .wrap .course__box-main .main__cart-box .cart__rigth {
           width: 100%;
           position: static;
@@ -3389,6 +3398,11 @@ input[type=number] {
       height: 60px; }
   .wrap .course__button {
     width: 100%; }
+  .wrap .course__box-main .main__cart-box .cart__left .main__cart-sociable {
+    margin-top: 10px; }
+    .wrap .course__box-main .main__cart-box .cart__left .main__cart-sociable .main__cart-duration {
+      width: 85%;
+      text-align: center; }
   .wrap .course-selection__btn {
     width: 100%;
     height: 60px; }
