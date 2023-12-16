@@ -4292,6 +4292,7 @@
 
 		// Map Start
 		.map {
+			height: 800px;
 			padding: 0 30px;
 			@include display-center (center, center);
 			flex-direction: column;
