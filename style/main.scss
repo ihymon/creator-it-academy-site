@@ -406,6 +406,7 @@
 
 // Popup Finish 
 
+
 // Gift Start 
 .gift {
 	transition: .5s;
@@ -629,6 +630,29 @@
 	100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 // Gift End
+
+
+// Gift Popup Start 
+// #nh-modalWrapper {
+// 	background: transparent;
+// 	background-color: transparent;
+// }
+
+// #nh-form {
+// 	background: transparent;
+// 	background-color: transparent;
+// }
+
+// .gift-popup__form {
+// 	background: transparent;
+// 	background-color: transparent;
+// }
+
+// .modal {
+// 	background: transparent;
+// 	background-color: transparent;
+// }
+// Gift Popup End 
 
 
 
@@ -956,6 +980,25 @@
 }
 // About Us End
 
+.gift-popup__form {
+	background: transparent;
+	background-color: transparent;
+}
+
+.modal {
+	background: transparent;
+	background-color: transparent;
+}
+
+#nh-modalWrapper {
+	background: transparent;
+	background-color: transparent;
+}
+
+#nh-form {
+	background: transparent;
+	background-color: transparent;
+}
 
 
 // Benefits Start
