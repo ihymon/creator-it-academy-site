@@ -2221,12 +2221,14 @@ input[type=number] {
           align-items: center;
           column-gap: 10px;
           transition: .4s; }
+          .footer__content .footer__list .footer__link--contact-icon path {
+            transition: .4s; }
         .footer__content .footer__list .footer__link:hover {
           color: #F5A006;
           transition: .4s; }
           .footer__content .footer__list .footer__link:hover .footer__link--contact-icon path {
             transition: .4s;
-            stroke: #F5A006; }
+            fill: #F5A006; }
       .footer__content .footer__list .footer__btn {
         margin-top: 35px;
         width: 234px;
