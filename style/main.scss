@@ -2173,9 +2173,13 @@
 			overflow-y: auto;
 			display: flex;
 			flex-direction: column;
-			gap: 10px;
+			gap: 5px;
 			padding-bottom: 5px;
 
+
+			.checkbox-container {
+				margin: 5px 0;
+			}
 			&::-webkit-scrollbar {
 				width: 10px;
 				border-radius: 5px;

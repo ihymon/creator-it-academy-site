@@ -2026,8 +2026,10 @@ input[type=number] {
       overflow-y: auto;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 5px;
       padding-bottom: 5px; }
+      .map .filter__cart-box2 .checkbox-container {
+        margin: 5px 0; }
       .map .filter__cart-box2::-webkit-scrollbar {
         width: 10px;
         border-radius: 5px; }
