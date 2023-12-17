@@ -2208,7 +2208,7 @@
 
 	.filter__cart2 {
 		width: 360px;
-		height: auto;
+		height: 200px;
 		flex-shrink: 0;
 		padding: 20px;
 		border-radius: 5px;
@@ -2253,6 +2253,10 @@
 		.filter__cart2--location {
 			background-image: url(../img/map/Location.svg);
 		}
+	}
+
+	.filter__cart3 {
+		height: auto;
 	}
 
 	.filter__button {

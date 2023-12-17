@@ -2051,7 +2051,7 @@ input[type=number] {
         top: 1px; }
   .map .filter__cart2 {
     width: 360px;
-    height: auto;
+    height: 200px;
     flex-shrink: 0;
     padding: 20px;
     border-radius: 5px;
@@ -2092,6 +2092,8 @@ input[type=number] {
       background-size: cover; }
     .map .filter__cart2 .filter__cart2--location {
       background-image: url(../img/map/Location.svg); }
+  .map .filter__cart3 {
+    height: auto; }
   .map .filter__button {
     cursor: pointer;
     transition: 0.5s;
