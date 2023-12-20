@@ -40,6 +40,9 @@ body {
     background-color: rgba(255, 255, 255, 0.1); }
   body._active {
     overflow: hidden; }
+  body._gift-active {
+    overflow: hidden;
+    cursor: default; }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -917,7 +920,8 @@ input[type=number] {
           border-radius: 50%;
           background-color: #fff;
           z-index: 3;
-          cursor: pointer; }
+          cursor: pointer;
+          opacity: 0.8; }
           .wrap .about-us__video .about-us__video-mask .about-us__video__play-btn .about-us__video--icon-small {
             width: 50px;
             height: 50px; }

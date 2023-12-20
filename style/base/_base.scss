@@ -18,6 +18,11 @@ body {
 	&._active {
 		overflow: hidden;
 	}
+
+	&._gift-active {
+		overflow: hidden;
+		cursor: default;
+	}
 }
 
 input::-webkit-outer-spin-button,

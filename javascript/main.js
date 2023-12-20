@@ -174,6 +174,11 @@ function openPopup () {
 
   nhform('container', $('#form-container'));
   nhform('show', true);
+  $("body").addClass("_gift-active");
+
+  $('.nh-close').click(() => {
+    $("body").removeClass("_gift-active");
+  })
 }
 
 $("#giftIcon").click(() => {
@@ -188,6 +193,16 @@ $("#courseButton").click(() => {
 $("#footerBtn").click(() => {
   openPopup();
 })
+
+
+$("#nh-modalWrapper").click(() => {
+    alert("Closed");
+    $("body").removeClass("_gift-active");
+})
+
+
+
+
 
 let gifNumberControl;
 
@@ -245,12 +260,14 @@ let gifNumberControl;
 //   }
 // });
 
-$("#giftClose").click(() => {
-  setTimeout(() => {
-    $(".gift__popup-container").removeClass("_active");
-    $("body").removeClass("_active");
-  }, 500);
-})
+// $("#giftClose").click(() => {
+//   setTimeout(() => {
+//     $(".gift__popup-container").removeClass("_active");
+//     $("body").removeClass("_active");
+//   }, 500);
+// })
+
+
 
 
 
