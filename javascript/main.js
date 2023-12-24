@@ -597,7 +597,7 @@ function fetchCourse(nameCourseFilter, subtitleFilter, minPriceFilter, maxPriceF
           `));
 
           if (courses[i].nameCourse === "Веб Програмування") {
-            $(".main__cart-title:contains('Веб Програмування')").parent().append('<button class="main__cart-button main__cart-link">Переглянути</button>');
+            $(".main__cart-title:contains('Веб Програмування')").parent().append('<a href="./pages/waitingPage/waitingPage.html" class="main__cart-button main__cart-link">Переглянути</a>');
           }
           courseFound = true;
 

@@ -131,7 +131,7 @@ input[type=number] {
 	&-button {
 		@include font(#fff, 16px, 600, 120%, normal);
 		@include display-center (center, center);
-		width: auto;
+		// width: auto;
 		border: none;
 		border-radius: 4px;
 		padding: 0 15px;
@@ -142,8 +142,8 @@ input[type=number] {
 
 	&-link {
 		margin-top: 20px;
-		padding: 0 15px;
 		height: 36px;
+		width: 150px;
 	}
 
 	&-box {

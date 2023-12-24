@@ -1,0 +1,524 @@
+// Base
+@import "../../../style/base/reset";
+@import "../../../style/base/variables";
+@import "../../../style/base/mixin";
+@import "../../../style/base/base";
+
+.overlay {
+    position: absolute;
+
+    width: 100%;
+    height: 100vh;
+
+    background: rgba(38, 37, 52, 0.80);
+    backdrop-filter: blur(25px);
+    z-index: 9;
+    @include display-center(center, center);
+    flex-direction: column;
+
+
+    &__text {
+        margin-bottom: 50px;
+        @include font(#fff, 32px, 500, normal, normal);
+        max-width: 80%;
+        text-align: center;
+    }
+
+    .return__btn {
+        width: 250px;
+        height: 60px;
+        border-radius: 5px;
+        @include font(#fff, 24px, 500, normal, normal);
+        @include display-center(center, center);
+        transition: .5s;
+    }
+}
+
+.wrap {
+    width: 100%;
+	min-height: auto;
+	overflow: hidden;
+
+
+    // Loader Start
+    .loader {
+        width: 100%;
+        height: 0vh;
+        position: fixed;
+        background-color: $grey-color;
+        left: 0%;
+        top: 0%;
+        z-index: 105;
+        @include display-center (center, center);
+        animation-name: loader;
+        animation-duration: 4.8s;
+        animation-iteration-count: 1;
+
+        svg {
+            animation-name: svgloader;
+            animation-duration: 4s;
+            animation-iteration-count: 1;
+            opacity: 0;
+            position: relative;
+            bottom: 20vh;
+
+            @keyframes svgloader {
+                0% {
+                    opacity: 1;
+                    position: relative;
+                    bottom: 0px;
+                }
+                70% {
+                    opacity: 1;
+                    position: relative;
+                    bottom: 0px;
+                }
+                99% {
+                    position: relative;
+                    bottom: 0px;
+                }
+                100% {
+                    opacity: 0;
+                    position: relative;
+                    bottom: 20vh;
+                }
+            }
+        }
+
+        @keyframes loader {
+            0% {
+                height: 100vh;
+
+            }
+            70% {
+                height: 100vh;
+
+            }
+            100% {
+                height: 0vh;
+
+            }
+        }
+
+        @keyframes animate-svg-fill-1 {
+            0% {
+            fill: transparent;
+            }
+        
+            100% {
+            fill: rgb(245, 160, 6);
+            }
+        }
+        
+        .svg-elem-1 {
+            animation: animate-svg-fill-1 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s both;
+        }
+    
+    @keyframes animate-svg-fill-2 {
+        0% {
+        fill: transparent;
+        }
+    
+        100% {
+        fill: rgb(255, 255, 255);
+        }
+    }
+    
+    .svg-elem-2 {
+        animation: animate-svg-fill-2 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9s both;
+    }
+    
+    @keyframes animate-svg-fill-3 {
+        0% {
+        fill: transparent;
+        }
+    
+        100% {
+        fill: rgb(255, 255, 255);
+        }
+    }
+    
+    .svg-elem-3 {
+        animation: animate-svg-fill-3 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1s both;
+    }
+    
+    @keyframes animate-svg-fill-4 {
+        0% {
+        fill: transparent;
+        }
+    
+        100% {
+        fill: rgb(255, 255, 255);
+        }
+    }
+    
+    .svg-elem-4 {
+        animation: animate-svg-fill-4 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1.1s both;
+    }
+    
+    @keyframes animate-svg-fill-5 {
+        0% {
+        fill: transparent;
+        }
+    
+        100% {
+        fill: rgb(255, 255, 255);
+        }
+    }
+    
+    .svg-elem-5 {
+        animation: animate-svg-fill-5 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1.2000000000000002s both;
+    }
+    
+    @keyframes animate-svg-fill-6 {
+        0% {
+        fill: transparent;
+        }
+    
+        100% {
+        fill: rgb(255, 255, 255);
+        }
+    }
+    
+    .svg-elem-6 {
+        animation: animate-svg-fill-6 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1.3s both;
+    }
+    
+    @keyframes animate-svg-fill-7 {
+        0% {
+        fill: transparent;
+        }
+    
+        100% {
+        fill: rgb(255, 255, 255);
+        }
+    }
+    
+    .svg-elem-7 {
+        animation: animate-svg-fill-7 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1.4000000000000001s both;
+    }
+    
+    @keyframes animate-svg-fill-8 {
+        0% {
+        fill: transparent;
+        }
+    
+        100% {
+        fill: rgb(255, 255, 255);
+        }
+    }
+    
+    .svg-elem-8 {
+        animation: animate-svg-fill-8 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1.5s both;
+    }
+    
+    @keyframes animate-svg-fill-9 {
+        0% {
+        fill: transparent;
+        }
+    
+        100% {
+        fill: rgb(255, 255, 255);
+        }
+    }
+    
+    .svg-elem-9 {
+        animation: animate-svg-fill-9 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1.6s both;
+    }
+    
+    @keyframes animate-svg-fill-10 {
+        0% {
+        fill: transparent;
+        }
+    
+        100% {
+        fill: rgb(255, 255, 255);
+        }
+    }
+    
+    .svg-elem-10 {
+        animation: animate-svg-fill-10 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1.7000000000000002s both;
+    }
+    
+    @keyframes animate-svg-fill-11 {
+        0% {
+        fill: transparent;
+        }
+    
+        100% {
+        fill: rgb(255, 255, 255);
+        }
+    }
+    
+    .svg-elem-11 {
+        animation: animate-svg-fill-11 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1.8s both;
+    }
+    
+    @keyframes animate-svg-fill-12 {
+        0% {
+        fill: transparent;
+        }
+    
+        100% {
+        fill: rgb(255, 255, 255);
+        }
+    }
+    
+    .svg-elem-12 {
+        animation: animate-svg-fill-12 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1.9000000000000001s both;
+    }
+    
+    @keyframes animate-svg-fill-13 {
+        0% {
+        fill: transparent;
+        }
+    
+        100% {
+        fill: rgb(255, 255, 255);
+        }
+    }
+    
+    .svg-elem-13 {
+        animation: animate-svg-fill-13 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 2s both;
+    }
+    
+    @keyframes animate-svg-fill-14 {
+        0% {
+        fill: transparent;
+        }
+    
+        100% {
+        fill: rgb(255, 255, 255);
+        }
+    }
+    
+    .svg-elem-14 {
+        animation: animate-svg-fill-14 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 2.1s both;
+    }
+    
+    @keyframes animate-svg-fill-15 {
+        0% {
+        fill: transparent;
+        }
+    
+        100% {
+        fill: rgb(255, 255, 255);
+        }
+    }
+    
+    .svg-elem-15 {
+        animation: animate-svg-fill-15 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 2.2s both;
+    }
+    
+    @keyframes animate-svg-fill-16 {
+        0% {
+        fill: transparent;
+        }
+    
+        100% {
+        fill: rgb(255, 255, 255);
+        }
+    }
+    
+    .svg-elem-16 {
+        animation: animate-svg-fill-16 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 2.3s both;
+    }
+    
+    @keyframes animate-svg-fill-17 {
+        0% {
+        fill: transparent;
+        }
+    
+        100% {
+        fill: rgb(255, 255, 255);
+        }
+    }
+    
+    .svg-elem-17 {
+        animation: animate-svg-fill-17 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 2.4000000000000004s both;
+    }
+    
+    }
+    // Loader Finish
+
+
+
+    // Home Start 
+    .home {
+        width: 100%;
+        height: 100%;
+        padding: 0 200px;
+        @include display-center(center, center);
+        flex-direction: column;
+        position: relative;
+        // overflow-x: hidden;
+
+
+        &__bg {
+            width: 200%;
+            height: 300%;	
+            // background-image: url(../img/home/home__background.svg);
+            background-image: url(../../../img/home/home__background.svg);
+
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: absolute;
+            z-index: -1;
+        }
+
+        &__header {
+            width: 100%;
+            min-height: 15vh;
+            @include display-center(space-between, center);
+            z-index: 1;
+            position: fixed;
+            top: 0%;
+            padding: 0 200px;
+            z-index: 5;
+            transition: 1s;
+
+            &-left {
+                .logo {
+                    width: 127px;
+                    height: 62px;
+                    // background-image: url(../img/home/logo.svg);
+                    background-image: url(../../../img/home/logo.svg);
+                    background-size: cover;
+                }
+            }
+
+            &-rigth {
+                @include display-center(space-between, center);
+
+                .header__nav {
+                    margin-right: 70px;
+                    display: flex;
+                    column-gap: 25px; 
+                    a {
+                        position: relative;
+                        cursor: pointer;
+                        @include font(#fff, 20px, 300, normal, normal);
+                    }	
+
+                    a:before {
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        height: 2px;
+                        left: 0px;
+                        bottom: -5px;
+                        background: #FFF;
+                        opacity: 0.1;
+                        transition: all 0.3s;
+                    }
+
+                    a:hover:before {
+                        height: 130%;
+                        opacity: 0.3;
+                    }
+                }
+
+
+                .home__button-small {
+                    width: 280px;
+                    height: 46px;
+
+                    border: none;
+                    border-radius: 5px;
+                    background: $main-color;
+
+                    @include display-center(center, center);
+                    @include font(#fff, 16px, 600, normal, normal);
+                    transition: 0.5s;
+                    gap: 10px;
+
+                    .home__telegram {
+                        &-color {
+                            fill: white;
+                            transition: 0.5s;
+                        }
+                    }
+
+                    &:hover {
+                        background-color: transparent;
+                        border: 1px solid $main-color;
+                        color: $main-color;
+                        transition: 0.5s;
+                        .home__telegram {
+                            &-color {
+                                fill: $main-color;
+                                transition: 0.5s;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .home__header-box--burger {
+                display: none;
+            }
+        }
+
+        &__header-scroll {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid $main-color;
+            transition: 1s;
+        }
+
+        
+        &__main {
+            width: 100%;
+            min-height: 100vh;
+            @include display-center(space-between, center);
+            z-index: 1;
+
+            &-content {
+                padding-right: 20px;
+
+
+                .home__title {
+                    width: 480px;
+                    @include font(#fff, 64px, 700, normal, normal);
+
+                    span {
+                        color: $main-color;
+                    }
+                }
+                .home__button {
+                    width: 460px;
+                    height: 100px;
+                    @include font(#fff, 24px, 600, normal, normal);
+                    transition: 0.5s;
+                    margin-top: 50px;
+                    transition: 0.5s;
+
+                    &:hover {
+                        color: $main-color;
+                        transition: 0.5s;
+                    }
+                }
+            }
+        }
+    }
+    // Home End 
+}
+
+
+
+@media screen and (max-width: 700px) {
+    .overlay {
+        &__text {
+            margin-bottom: 40px;
+            font-size: 24px;
+            max-width: 90%;
+        }
+    
+        .return__btn {
+            width: 220px;
+            height: 50px;
+            font-size: 20px;
+        }
+    }
+}
