@@ -5,7 +5,7 @@ $("body").addClass("wrap-hidden");
 
 const loader = () => {
   setTimeout(() => {
-    $("body").removeClass("wrap-hidden");
+    // $("body").removeClass("wrap-hidden");
   }, 4000)
 }
 
