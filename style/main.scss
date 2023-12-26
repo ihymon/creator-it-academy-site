@@ -783,6 +783,7 @@
 		min-height: 85vh;
 		@include display-center(space-between, center);
 		z-index: 1;
+		padding-top: 10vh;
 
 		&-content {
 			padding-right: 20px;
@@ -4861,6 +4862,20 @@
 		}
 		// Footer End
   	}
+}
+
+@media screen and (max-height: 900px) {
+	.home {
+
+		&__main {
+			&-photo {
+				.home__photo {
+					width: 550px !important;
+					height: 550px !important;
+				}
+			}
+		}
+	  }
 }
 
 @media screen and (max-height: 800px) {

@@ -820,7 +820,8 @@ input[type=number] {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 1; }
+      z-index: 1;
+      padding-top: 10vh; }
       .wrap .home__main-content {
         padding-right: 20px; }
         .wrap .home__main-content .home__title {
@@ -3552,6 +3553,10 @@ input[type=number] {
   .wrap .footer__copyright-text {
     text-align: center;
     font-size: 18px; } }
+@media screen and (max-height: 900px) {
+  .home__main-photo .home__photo {
+    width: 550px !important;
+    height: 550px !important; } }
 @media screen and (max-height: 800px) {
   .wrap .gift__popup-container {
     overflow: auto; }
