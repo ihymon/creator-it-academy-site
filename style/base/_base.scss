@@ -227,6 +227,9 @@ input[type=number] {
 	.main__cart-button {
 		background-color: $blue-color;
 	}
+	.main__cart-link {
+		background-color: $main-color;
+	}
 	.icon__socibale {
 		fill: $blue-color;
 	}
@@ -236,6 +239,10 @@ input[type=number] {
 	.main__cart-button {
 		background-color: $main-color;
 	}
+	.main__cart-link {
+		background-color: $main-color;
+	}
+
 	.icon__socibale {
 		fill: $main-color;
 	}
@@ -245,6 +252,9 @@ input[type=number] {
 	.main__cart-button {
 		background-color: $purple-color;
 	}
+	.main__cart-link {
+		background-color: $main-color;
+	}
 	.icon__socibale {
 		fill: $purple-color;
 	}
@@ -253,6 +263,9 @@ input[type=number] {
 .main__cart-green {
 	.main__cart-button {
 		background-color: $green-color;
+	}
+	.main__cart-link {
+		background-color: $main-color;
 	}
 	.icon__socibale {
 		fill: $green-color;

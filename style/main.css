@@ -209,21 +209,29 @@ input[type=number] {
 
 .main__cart-blue .main__cart-button {
   background-color: #6EACCF; }
+.main__cart-blue .main__cart-link {
+  background-color: #F5A006; }
 .main__cart-blue .icon__socibale {
   fill: #6EACCF; }
 
 .main__cart-programing .main__cart-button {
+  background-color: #F5A006; }
+.main__cart-programing .main__cart-link {
   background-color: #F5A006; }
 .main__cart-programing .icon__socibale {
   fill: #F5A006; }
 
 .main__cart-rare .main__cart-button {
   background-color: #9D6ECF; }
+.main__cart-rare .main__cart-link {
+  background-color: #F5A006; }
 .main__cart-rare .icon__socibale {
   fill: #9D6ECF; }
 
 .main__cart-green .main__cart-button {
   background-color: #00C874; }
+.main__cart-green .main__cart-link {
+  background-color: #F5A006; }
 .main__cart-green .icon__socibale {
   fill: #00C874; }
 

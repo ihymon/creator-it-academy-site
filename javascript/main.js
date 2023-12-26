@@ -556,6 +556,7 @@ function fetchCourse(nameCourseFilter, subtitleFilter, minPriceFilter, maxPriceF
           const maxNum = Math.max(...courses[i].age || []);
           
           // <button class="main__cart-button main__cart-link">Переглянути</button>
+          
           $(".course__box-main").append($(`
           <div class="main__cart main__cart-${courses[i].type}">
           <button class="main__cart-button">${courses[i].subtitle}</button>
@@ -596,14 +597,16 @@ function fetchCourse(nameCourseFilter, subtitleFilter, minPriceFilter, maxPriceF
       </div>
           `));
 
-          if (courses[i].nameCourse === "Веб Програмування") {
-            $(".main__cart-title:contains('Веб Програмування')").parent().append('<a href="./pages/waitingPage/waitingPage.html" class="main__cart-button main__cart-link">Переглянути</a>');
-          }
+          
           courseFound = true;
 
         } 
       }
           
+      if (courseFound) {
+        $(".main__cart-title").parent().append('<a href="./pages/waitingPage/waitingPage.html" class="main__cart-button main__cart-link">Переглянути</a>');
+       }
+
       if (!courseFound) {
         console.log("Course not found.");
               
