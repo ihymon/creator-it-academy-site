@@ -810,6 +810,13 @@
 				}
 			}
 		}
+
+		&-photo {
+			.home__photo {
+				width: 110%;
+				height: 110%;
+			}
+		}
 	}
 }
 // Home End 
@@ -2491,8 +2498,8 @@
 				}
 				&-photo {
 					.home__photo {
-						width: 500px;
-						height: 400px;
+						width: 550px;
+						height: 550px;
 					}
 				}
 			}
@@ -2684,7 +2691,7 @@
 				&-photo {
 					.home__photo {
 						width: 450px;
-						height: 350px;
+						height: 450px;
 					}
 				}
 			}
@@ -3000,8 +3007,8 @@
 				}
 				&-photo {
 					.home__photo {
-						width: 400px;
-						height: 300px;
+						width: 350px;
+						height: 350px;
 					}
 				}
 			}
@@ -3311,7 +3318,7 @@
 					z-index: -1;
  
 					.home__photo {
-						width: 500px;
+						width: 450px;
 						height: 450px;
 						opacity: 0.3;
 					}
