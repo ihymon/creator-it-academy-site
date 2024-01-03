@@ -25,6 +25,23 @@ body {
 	}
 }
 
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+	background: $grey-color;
+}
+  
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: $main-color;
+}
+  
+
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
 -webkit-appearance: none;
@@ -339,4 +356,11 @@ input[type=number] {
 	-webkit-transform: rotate(45deg) scale(1);
 	-ms-transform: rotate(45deg) scale(1);
 	transform: rotate(45deg) scale(1);
+}
+
+
+@media screen and (max-width: 600px) {
+	.secondary-title {
+		font-size: 36px;
+	}
 }
