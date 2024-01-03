@@ -604,7 +604,7 @@ function fetchCourse(nameCourseFilter, subtitleFilter, minPriceFilter, maxPriceF
       }
           
       if (courseFound) {
-        $(".main__cart-title").parent().append('<a href="./pages/waitingPage/waitingPage.html" class="main__cart-button main__cart-link">Переглянути</a>');
+        $(".main__cart-title").parent().append('<a href="./courses/waitingPage/waitingPage.html" class="main__cart-button main__cart-link">Переглянути</a>');
        }
 
       if (!courseFound) {
