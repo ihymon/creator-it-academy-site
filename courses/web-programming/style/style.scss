@@ -4,7 +4,184 @@
 @import "../../../style/base/mixin";
 @import "../../../style/base/base";
 
+.wrap {
+	width: 100%;
+	min-height: 100vh;
+	overflow-x: hidden;
+}
 
+
+// Home Start 
+.home {
+	width: 100%;
+	height: 100%;
+	padding: 0 200px;
+	@include display-center(center, center);
+	flex-direction: column;
+	position: relative;
+    margin-bottom: 140px;
+
+
+	&__bg {
+		width: 200%;
+		height: 300%;	
+		background-image: url(../../../img/home/home__background.svg);
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+		position: absolute;
+		z-index: -1;
+	}
+
+	&__header {
+		width: 100%;
+		min-height: 15vh;
+		@include display-center(space-between, center);
+		z-index: 1;
+		position: fixed;
+		top: 0%;
+		padding: 0 200px;
+		z-index: 5;
+		transition: 1s;
+
+		&-left {
+			.logo {
+				width: 127px;
+				height: 62px;
+				background-image: url(../../../img/home/logo.svg);
+				background-size: cover;
+			}
+		}
+
+		&-rigth {
+			@include display-center(space-between, center);
+
+			.header__nav {
+				margin-right: 70px;
+				display: flex;
+				column-gap: 25px; 
+				a {
+					position: relative;
+					cursor: pointer;
+					@include font(#fff, 20px, 300, normal, normal);
+				}	
+
+				a:before {
+					content: '';
+					position: absolute;
+					width: 100%;
+					height: 2px;
+					left: 0px;
+					bottom: -5px;
+					background: #FFF;
+					opacity: 0.1;
+					transition: all 0.3s;
+				}
+
+				a:hover:before {
+					height: 130%;
+					opacity: 0.3;
+				}
+			}
+
+
+			.home__button-small {
+				width: 280px;
+				height: 46px;
+
+				border: none;
+				border-radius: 5px;
+				background: $main-color;
+
+				@include display-center(center, center);
+				@include font(#fff, 16px, 600, normal, normal);
+				transition: 0.5s;
+				gap: 10px;
+
+				.home__telegram {
+					&-color {
+						fill: white;
+						transition: 0.5s;
+					}
+				}
+
+				&:hover {
+					background-color: transparent;
+					border: 1px solid $main-color;
+					color: $main-color;
+					transition: 0.5s;
+					.home__telegram {
+						&-color {
+							fill: $main-color;
+							transition: 0.5s;
+						}
+					}
+				}
+			}
+		}
+
+		.home__header-box--burger {
+			display: none;
+		}
+	}
+
+	&__header-scroll {
+		background: rgba(0, 0, 0, 0.3);
+		backdrop-filter: blur(5px);
+		border-bottom: 1px solid $main-color;
+		transition: 1s;
+	}
+
+	
+	&__main {
+		width: 100%;
+		min-height: 85vh;
+		@include display-center(space-between, center);
+		z-index: 1;
+		padding-top: 10vh;
+
+		&-content {
+			padding-right: 20px;
+
+
+			.home__title {
+				width: 480px;
+				@include font(#fff, 64px, 700, normal, normal);
+
+				span {
+					color: $main-color;
+				}
+			}
+
+			.home__description {
+				@include font(#fff, 32px, 400, normal, normal);
+				margin-top: 25px;
+			}
+
+			.home__button {
+				width: 460px;
+				height: 100px;
+ 				@include font(#fff, 24px, 600, normal, normal);
+				transition: 0.5s;
+				margin-top: 50px;
+				transition: 0.5s;
+
+				&:hover {
+					color: $main-color;
+					transition: 0.5s;
+				}
+			}
+		}
+
+		&-photo {
+			.home__photo {
+				width: 110%;
+				height: 110%;
+			}
+		}
+	}
+}
+// Home End 
 
 .about-us {
     margin-bottom: 140px;
@@ -145,6 +322,33 @@
 
 
 @media screen and (max-width: 1800px) {
+    // Home Page Start
+    .home {
+        padding: 0 100px;
+        &__header {
+            padding: 0 100px;
+        }
+
+        &__main {
+            &-content {
+                .home__title {
+                    font-size: 48px;
+                }
+                .home__button {
+                    width: 400px;
+                    height: 80px;
+                }
+            }
+            &-photo {
+                .home__photo {
+                    width: 550px;
+                    height: 550px;
+                }
+            }
+        }
+      }
+    // Home Page End
+
     // About Us End
     .about-us {
         padding: 0 100px;
@@ -154,6 +358,47 @@
 
 
 @media screen and (max-width: 1400px) {
+
+    	// Home Start
+		.home {
+			&__header {
+				&-left {
+					.logo {
+						width: 120px;
+						height: 58.5px;
+						
+					}
+				}
+
+				&-rigth {
+					.header__nav {
+						margin-right: 40px;
+						display: flex;
+						column-gap: 20px; 
+						a {
+							font-size: 18px;
+						}	
+					}
+				}
+			}
+				
+			&__main {
+				&-content {
+					.home__button {
+						width: 380px;
+						height: 75px;
+					}
+				}
+				&-photo {
+					.home__photo {
+						width: 450px;
+						height: 450px;
+					}
+				}
+			}
+		}
+		// Home End
+
     		// About Us Start
 		.about-us {
 			&__video {
@@ -225,6 +470,51 @@
 
 
 @media screen and (max-width: 1200px) {
+
+    // Home Start
+    .home {
+        padding: 0 60px;
+        &__header {
+        padding: 0 60px;
+            &-rigth {
+
+                .header__nav {
+                    margin-right: 30px;
+                    display: flex;
+                    column-gap: 20px; 
+                    a {
+                        font-size: 18px;
+                    }	
+                }
+                .home__button-small {
+                    width: 230px;
+                    height: 35px;
+                    p {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+            
+        &__main {
+            &-content {
+                padding-right: 50px;
+                .home__button {
+                    width: 380px;
+                    height: 75px;
+                }
+    
+            }
+            &-photo {
+                .home__photo {
+                    width: 400px !important;
+                    height: 400px !important;
+                }
+            }
+        }
+    }
+    // Home End
+
     // About Us Start
     .about-us {
         padding: 0 60px;
@@ -234,6 +524,169 @@
 
 
 @media screen and (max-width: 1000px) {
+
+    		// Home start adaptation
+		.home {
+			padding: 0 60px;
+		&__bg {
+			width: 200%;
+			height: 280%;
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+			position: absolute;
+		}
+			&__header {
+				z-index: 4;
+
+				&-rigth {
+					display: none;
+				}
+
+				&-rigth--open {
+					width: 100%;
+					max-height: 100vh;
+					display: block;
+					@include display-center (center, center);
+					flex-direction: column;
+					position: absolute;
+					left: 0%;
+					top: 0%;
+					padding-top: 20%;
+
+					.header__nav{
+						z-index: 3;
+						@include display-center (center, center);
+						flex-direction: column;
+						gap: 20px;
+						margin-right: 0px !important;
+						margin-top: 30px;
+						animation-name: popup;
+						animation-duration: 1s;
+						animation-iteration-count: 1;
+	
+						@keyframes popup {
+							0% {
+								opacity: 0;
+								position: relative;
+								bottom: 50px;
+							}
+							50% {
+								opacity: 0;
+							}
+							100% {
+								opacity: 1;
+								position: relative;
+								bottom: 0px;
+							}
+						}
+						a {
+							font-size: 24px !important;
+						}
+
+					}
+					.home__button-small {
+						z-index: 4;
+						margin-top: 50px;
+						animation-name: popup;
+						animation-duration: 1s;
+						animation-iteration-count: 1;
+					}
+				}
+
+				.home__header-box--burger {
+					display: block;
+					width: 45px;
+					height: 45px;
+					flex-shrink: 0;
+					@include display-center (space-around, center);
+					flex-direction: column;
+					cursor: pointer;
+					overflow: hidden;
+					.burger__line {
+						width: 100%;
+						height: 3px;
+						border-radius: 20px;
+						background-color: #fff;
+						transition: 0.4s;
+					}
+	
+				}
+	
+				.home__header-box--burger-open {
+					.burger__line--1 {
+						transform: rotate(-45deg) translate(-10px, 13px);
+						
+						transition: 0.4s;
+
+					}
+	
+					.burger__line--2 {
+						margin-right: 100px;
+						transition: 0.4s;
+						opacity: 0.1;
+					}
+	
+					.burger__line--3 {
+						transform: rotate(45deg) translate(-8px, -11px);
+						transition: 0.4s;
+
+					}
+				}
+			}
+				
+			&__main {
+				@include display-center (center, center);
+				&-content {
+					width: 100%;
+					padding-right: 0px;
+ 					@include display-center (center, center);
+					flex-direction: column;
+
+					.home__title {
+						text-align: center;
+					}
+					
+					.home__description {
+						@include font(#fff, 28px, 400, normal, normal);
+						text-align: center;
+					}
+
+		
+				}
+				&-photo {
+					position: absolute;
+					z-index: -1;
+ 
+					.home__photo {
+						width: 450px;
+						height: 450px;
+						opacity: 0.3;
+					}
+				}
+			}
+
+			&__popup {
+				width: 100%;
+				height: 0%;
+				position: fixed;
+				background-color: $grey-color;
+				left: 0%;
+				top: 0%;
+				z-index: 4;
+				transition: 1s;
+				overflow-y: auto;
+			}
+
+			&__popup-open {
+				width: 100%;
+				height: 100%;	
+				transition: 1s;
+			}
+
+		}
+		// Home finish adaptation
+
 		// About Us Start
 		.about-us {
 			&__video {
@@ -267,6 +720,99 @@
 
 
 @media screen and (max-width: 600px) {
+
+    .home__main-photo {
+        .home__photo {
+            width: 330px;
+            height: 300px;
+            opacity: 1;
+            margin-top: 50px;
+        }
+    }
+
+    // Home Start
+    .home {
+        padding: 0 30px;
+		margin-bottom: 140px;
+        &__bg {
+            width: 300%;
+            height: 380%;	
+            position: absolute;
+            z-index: -1;
+        }
+    
+        &__header {
+        padding: 0 30px;
+            &-rigth--open {
+                padding-top: 35%;
+                
+                .header__nav{
+                    gap: 35px;
+                    a {
+                        font-size: 28px !important;
+
+                    }
+                    a:before {
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        height: 0px;
+                        left: 0px;
+                        bottom: -5px;
+                        background: #FFF;
+                        opacity: 0.1;
+                        transition: all 0.3s;
+                    }
+    
+                    a:hover:before {
+                        height: 0%;
+                        opacity: 0.3;
+                    }
+                }
+                .home__button-small {
+                    width: 280px;
+                    height: 60px;
+                }
+            }
+        }
+        &__main {
+            flex-direction: column;
+			justify-content: flex-start;
+            position: relative;
+            top: 100px;
+            &-content {
+                width: auto;
+                height: auto;
+                .home__title {
+                    width: 100%;
+                    font-size: 30px;
+                }
+                .home__button {
+                    width: 330px;
+                    height: 80px;
+                    
+                }
+                .home__button-small {
+                    display: none;
+                }
+    
+            }
+            .home__main-photo {
+                width: auto;
+                height: auto;
+                position: static;
+                &-photo {
+                    width: 400px;
+                    position: static;
+                    z-index: 1;
+                    opacity: 1;
+
+                }
+            }
+        }
+    }
+    // Home End
+
     // About Us Start
 		.about-us {
 			padding: 0 30px;
@@ -298,6 +844,84 @@
 
 
 @media screen and (max-width: 450px) {
+
+    // Home Start
+    .home {
+		margin-bottom: 200px;
+        &__bg {
+            width: 300vw;
+            height: 300vh;	
+            position: absolute;
+            z-index: -1;
+        }
+        &__header {
+            min-height: 10vh;
+            z-index: 100 !important;
+
+            &-left {
+                .logo {
+                    width: 80px;
+                    height: 39px;
+                }
+            }
+
+            &-rigth--open {
+                padding-top: 45%;
+            }
+
+            .home__header-box--burger {
+                display: block;
+                width: 35px;
+                height: 35px;
+                flex-shrink: 0;
+                @include display-center (space-around, center);
+                flex-direction: column;
+                cursor: pointer;
+                overflow: hidden;
+            }
+
+            .home__header-box--burger-open {
+                .burger__line--1 {
+                    transform: rotate(-45deg) translate(-10px, 13px);
+                    transition: 0.4s;
+                }
+
+                .burger__line--2 {
+                    margin-right: 100px;
+                    transition: 0.4s;
+                    opacity: 0.1;
+                }
+
+                .burger__line--3 {
+                    transform: rotate(45deg) translate(-3px, -8px);
+                    transition: 0.4s;
+                }
+            }
+        }
+        &__main {
+            &-content {
+                .home__title {
+                    width: 100%;
+                }
+                .home__button {
+                    width: 100%;
+                    height: 60px;
+                    font-size: 20px;
+                }
+                .home__button-small {
+                    width: 100%;
+                }
+            }
+            &-photo {
+                .home__photo {
+                    width: 85vw !important;
+                    height: 80vw !important;
+                }
+            }
+        }
+    }
+    // Home End
+
     // About Us Start
     .about-us {
         &__video {
@@ -323,4 +947,83 @@
         }
     }
     // About Us End
+}
+
+
+@media screen and (max-height: 900px) {
+	.home {
+
+		&__main {
+			&-photo {
+				.home__photo {
+					width: 550px;
+					height: 550px;
+				}
+			}
+		}
+	  }
+}
+
+@media screen and (max-height: 800px) {
+		// Home Start
+		.home {
+			max-height: 200vh;
+			&__header-rigth--open {
+				padding-top: 25%;
+			}
+			&__main {
+				margin-top: 45px;
+
+			}
+		}
+		// Home End
+}
+
+@media screen and (max-height: 500px) {
+	// Home Start
+    .home {
+        &__header {
+            height: 20vh;
+
+            .logo {
+                width: 82px;
+                height: 40px;
+            }
+            &-rigth--open {
+                overflow-y: auto;
+                padding-top: 20%;
+                padding-bottom: 5%;
+
+                .header__nav{
+                    z-index: 3;
+                    @include display-center (center, center);
+                    flex-direction: column;
+                    gap: 20px;
+                    margin-right: 0px !important;
+                    margin-top: 30px;
+                    a {
+                        font-size: 24px !important;
+                    }
+
+                }
+                .home__button-small {
+                    width: 300px;
+                    z-index: 3;
+                    margin-top: 50px;
+                    padding: 20px;
+                    @include display-center (center, center);
+
+                }
+            }
+        }
+
+        &__popup-open {
+            width: 100%;
+            height: 130%;	
+            transition: 1s;
+        }
+    }
+	// Home End
+  
+
 }

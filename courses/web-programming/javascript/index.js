@@ -18,6 +18,56 @@ function toggleFavicon() {
 
 
 
+// Home Page Start
+
+const homePhoto = document.querySelectorAll('.home__photo-display');
+const homePhotoContainer = document.getElementById('homePhotoContainer');
+
+homePhotoContainer.addEventListener('mousemove', (e) => {
+  const xAxis = (window.innerWidth / 2 - e.pageX) / 30;
+  const yAxis = (window.innerHeight / 2 - e.pageY) / 30;
+
+  homePhoto.forEach((svg) => {
+    svg.style.transform = `translate(${xAxis}px, ${yAxis}px)`;
+  });
+});
+
+
+const resetBurger = () => {
+  $("#burger").removeClass("home__header-box--burger-open");
+  $(".home__header-rigth").removeClass("home__header-rigth--open");
+  $(".home__popup").removeClass("home__popup-open");
+  $("body").removeClass("wrap-hidden");
+}
+
+$("#burger").click(function() {
+    console.log("Button clicked");
+    $("#burger").toggleClass("home__header-box--burger-open");
+    $(".home__header-rigth").toggleClass("home__header-rigth--open");
+    $(".home__popup").toggleClass("home__popup-open");
+    $("body").toggleClass("wrap-hidden");
+
+
+});
+$(document).ready(function() {
+  $(window).scroll(function() {
+      let header = $("#header");
+
+      if ($(this).scrollTop() > 100) {
+          header.addClass("home__header-scroll");
+      } else {
+          header.removeClass("home__header-scroll");
+      }
+  });
+});
+
+$("#telegramLink").click(() => {
+window.open('https://t.me/creator_it_academy_help', '_blank');
+});
+// Home Page Finish
+
+
+
 // About Us Start 
 let currentPlayingVideo = null;
 

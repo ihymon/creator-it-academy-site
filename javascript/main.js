@@ -207,74 +207,6 @@ $("#nh-modalWrapper").click(() => {
 let gifNumberControl;
 
 
-// $('#my-form').submit(async function (e) {
-//   e.preventDefault();
-//   let data = new FormData(this);
-
-//   let giftNumber = $("#giftNumber").val();
-//   let giftName = $("#giftName").val();
-
-//   let isPhoneNumberValid = validatePhoneNumber(giftNumber, $("#giftNumberTitle"), "Неправильний номер телефону", "Номер телефону");
-//   let isNameValid = validateInput(giftName, $("#giftNameTitle"), "Введіть конкретне імя", "Імя");
-
-
-//   if (isPhoneNumberValid && isNameValid) {
-//     console.log("All inputs are valid");
-      
-//   try {
-//     const response = await fetch('https://formspree.io/f/xyyqqpyk', {
-//         method: 'POST',
-//         body: data,
-//         headers: {
-//             'Accept': 'application/json'
-//         }
-//     });
-
-//     const responseData = await response.json();
-
-//     if (response.ok) {
-//         console.log("Form submitted successfully");
-//         $(this)[0].reset();
-//         setTimeout(() => {
-//           $(".gift__popup-container").removeClass("_active");
-//           $("body").removeClass("_active");
-//         }, 500);
-
-//         setTimeout(() => {
-//           $(".popupMessage").addClass("popupMessage__active");
-//           setTimeout(() => {
-//             $(".popupMessage").removeClass("popupMessage__active");
-//           }, 4000);
-//         }, 700);
-      
-//         $(".gift__popup").removeClass("_active");
-//     } else {
-//         console.log("Form submission failed");
-//         if (Object.hasOwnProperty.call(responseData, 'errors')) {
-//             console.log("Error:", responseData.errors);
-//         }
-//     }
-//     } catch (error) {
-//         console.error('Error submitting form:', error);
-//     }
-//   }
-// });
-
-// $("#giftClose").click(() => {
-//   setTimeout(() => {
-//     $(".gift__popup-container").removeClass("_active");
-//     $("body").removeClass("_active");
-//   }, 500);
-// })
-
-
-
-
-
-// Gift End
-
-
-
 // Scroll To Section
 $(".about-us--scroll").click(function() {
   $('html, body').animate({
@@ -327,8 +259,8 @@ $(".home--scroll").click(function() {
     const homePhotoContainer = document.getElementById('homePhotoContainer');
 
     homePhotoContainer.addEventListener('mousemove', (e) => {
-      const xAxis = (window.innerWidth / 2 - e.pageX) / 20;
-      const yAxis = (window.innerHeight / 2 - e.pageY) / 20;
+      const xAxis = (window.innerWidth / 2 - e.pageX) / 30;
+      const yAxis = (window.innerHeight / 2 - e.pageY) / 30;
 
       homePhoto.forEach((svg) => {
         svg.style.transform = `translate(${xAxis}px, ${yAxis}px)`;
