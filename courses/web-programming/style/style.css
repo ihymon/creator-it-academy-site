@@ -828,6 +828,9 @@ input[type=number] {
       .about-us__video .about-us__video-mask .about-us__video__play-btn--main {
         width: 13vw;
         height: 13vw; } }
+@media screen and (max-width: 700px) {
+  .about-us__course-info__box {
+    width: 100%; } }
 @media screen and (max-width: 600px) {
   .home__main-photo .home__photo {
     width: 330px;
@@ -954,6 +957,9 @@ input[type=number] {
       width: 85vw !important;
       height: 80vw !important; }
 
+  .about-us__course-info__box {
+    height: 60px;
+    justify-content: start; }
   .about-us__video {
     row-gap: 30px; }
     .about-us__video .about-us__video-mask .about-us__video__play-btn {

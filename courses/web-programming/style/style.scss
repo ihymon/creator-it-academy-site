@@ -719,6 +719,18 @@
 }
 
 
+@media screen and (max-width: 700px) {
+	.about-us {
+		&__course-info {
+			&__box {
+				width: 100%;
+			}
+		}
+	}
+}
+
+
+
 @media screen and (max-width: 600px) {
 
     .home__main-photo {
@@ -924,9 +936,16 @@
 
     // About Us Start
     .about-us {
+		&__course-info {
+			&__box {
+				height: 60px;
+				justify-content: start;
+			}
+		}
+
+
         &__video {
             row-gap: 30px;
-
             .about-us__video-mask {
                 .about-us__video__play-btn {
                     width: 65px;

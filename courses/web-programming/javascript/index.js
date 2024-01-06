@@ -176,14 +176,30 @@ function stopAllVideo() {
     }
     clearTimeout(videoPlayTimerID);
 
-    $("#video1").pause();
-    $("#video2").pause();
-    $("#video3").pause();
-    $("#video4").pause();
     $("#mainVideo").pause();
-    $("#reviewSlide1").pause();
-    $("#reviewSlide2").pause();
 }
 
 setupVideoControls($("#mainVideoPlayBtn"), $("#mainVideo"), $("#mainPoster"), $("#mainVideoMask"), ".about-us__video__play-icon", ".about-us__video__pause-icon", false);
+
+
+fetch('./../../api/course.json')
+    .then(response => response.json())
+    .then(courses => {
+        console.log(courses);
+
+        for(let el of courses) {
+            const minNumber = Math.min(...el.age);
+            const maxNumber = Math.max(...el.age);
+
+            if(el.id == 4) {
+                $("#courseAge").text(`${minNumber}-${maxNumber}`);
+                $("#coursePrice").text(el.price);
+                $("#courseFrequency").text(el.frequency);
+                $("#courseDuration").text(el.duration);
+            }
+        }
+    })
+
+// $("#courseAge").text()
+
 // About Us end
