@@ -544,6 +544,14 @@
         padding: 0 100px;
     }
     // About Us End
+
+
+	// Projects End
+	.projects {
+		padding: 0 100px;
+	}
+	// Projects End
+
 }
 
 
@@ -760,6 +768,13 @@
         padding: 0 60px;
     }
     // About Us End
+
+
+	// Projects End
+	.projects {
+		padding: 0 60px;
+	}
+	// Projects End
 }
 
 
@@ -1005,7 +1020,7 @@
 
 
 @media screen and (max-width: 700px) {
-	// Projects Start
+	// About Us Start
 	.about-us {
 		&__course-info {
 			&__box {
@@ -1013,7 +1028,7 @@
 			}
 		}
 	}
-	// Projects End
+	// About Us End
 
 
 	// Projects Start
@@ -1171,6 +1186,27 @@
 		padding: 0 30px;
 	}
 	// Module End
+
+
+	// Projects Start
+	.projects {
+		padding: 0 30px;
+
+		&__container {
+			.projects__box {
+				.project__video iframe {
+					width: 380px;
+					height: 214px;
+				}
+			}
+		}
+
+		&__btn {
+			width: 330px;
+			font-size: 20px;
+		}
+	}
+	// Projects End
 }
 
 
@@ -1328,6 +1364,37 @@
 		}
 	}
 	// Mudule End
+
+
+	// Projects Start
+	.projects {
+
+		&__container {
+			.projects__box {
+				.project__video {
+					width: 100%;
+
+					& iframe {
+						width: 100%;
+						height: 100%;
+					}
+				}
+			}
+		}
+
+		&__btn {
+			width: 100%;
+			height: 60px;
+			font-size: 18px;
+			column-gap: 10px;
+
+			& svg {
+				width: 34px;
+				height: 34px;
+			}
+		}
+	}
+	// Projects End
 }
 
 
