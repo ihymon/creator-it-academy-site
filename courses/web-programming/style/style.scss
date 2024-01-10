@@ -322,7 +322,56 @@
 }
 // About Us End 
 
+// Module Start 
+.module {
+	width: 100%;
+	margin-bottom: 140px;
+	padding: 0 200px;
+	&__title {
+		text-align: center
+	}
+	&__description {
+		@include font(#fff, 24px, 400, normal, normal);
+		margin-top: 25px;
+		text-align: center;
+	}
 
+	&__carts {
+		margin-top: 80px;
+	}
+
+	&__cart {
+		width: 100%;
+		margin: 30px 0;
+		&-subTitle {
+			@include font($main-color, 24px, 500, normal, normal);
+			margin-bottom: 10px;
+		}
+		&-contatiner {
+			width: 100%;
+			height: auto;
+			padding: 40px 60px;
+			background-color: $dark-color;
+			@include display-center (center, flex-start);
+			flex-direction: column;
+
+			.module__box {
+				@include display-center (flex-start, center);
+				gap: 15px;
+
+				&-title {
+					@include font(#fff, 32px, 600, normal, normal);
+				}
+			}
+			
+			.module__cart-description {
+				@include font(#fff, 24px, 500, normal, normal);
+				margin-top: 25px;
+			}
+		}
+	}
+}
+// Module End
 
 // Projects Start 
 .projects {
@@ -418,6 +467,7 @@
 
 
 @media screen and (max-width: 2000px) {
+
 	// Projects Start 
 	.projects {
 		&__container {
@@ -482,6 +532,12 @@
         }
       }
     // Home Page End
+
+	// Module Start 
+	.module {
+		padding: 0 100px;
+	}
+	// Module End
 
     // About Us End
     .about-us {
@@ -673,6 +729,31 @@
     }
     // Home End
 
+	// Module Start
+	.module {
+		padding: 0 60px;
+		&__description {
+			@include font(#fff, 20px, 400, normal, normal);
+		}
+	
+		&__cart {
+			&-subTitle {
+				@include font($main-color, 20px, 500, normal, normal);
+			}
+	
+			&-contatiner {
+				padding: 30px 50px;
+				.module__box {
+						@include font(#fff, 28px, 600, normal, normal);
+				}
+	
+				.module__cart-description {
+					@include font(#fff, 20px, 500, normal, normal);
+				}
+			}
+		}
+	}
+	// Mudule End
 
     // About Us Start
     .about-us {
@@ -1084,6 +1165,12 @@
 		}
 	}
 	// About Us End
+
+	// Module Start 
+	.module {
+		padding: 0 30px;
+	}
+	// Module End
 }
 
 
@@ -1199,6 +1286,48 @@
         }
     }
     // About Us End
+
+	// Module Start
+	.module {
+		&__description {
+			@include font(#fff, 18px, 400, normal, normal);
+		}
+		&__cart {
+			&-subTitle {
+				@include font($main-color, 18px, 500, normal, normal);
+			}
+	
+			&-contatiner {
+				padding: 20px 10px;
+				@include display-center (flex-start, center);
+				flex-direction: column;
+				
+				.module__box {
+					@include display-center (flex-start, center);
+
+					flex-direction: column;
+
+					&-img {
+						& svg {
+							width: 50px;
+						}
+					}
+					&-title {
+						width: 100%;
+						@include font(#fff, 20px, 600, normal, normal);
+						text-align: center;
+					}
+				}
+	
+				.module__cart-description {
+					@include font(#fff, 16px, 500, normal, normal);
+					text-align: center;
+
+				}
+			}
+		}
+	}
+	// Mudule End
 }
 
 
