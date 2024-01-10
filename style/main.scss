@@ -1929,38 +1929,6 @@
 			}
 		}
 	}
-
-
-	&__control {
-		@include display-center (center, center);
-		display: flex;
-		column-gap: 42px;
-
-		&-prev, &-next {
-			@include display-center (center, center);
-			width: 46px;
-			height: 46px;
-			border-radius: 5px;
-			background-color: $main-color;
-			cursor: pointer;
-			z-index: 2;
-			transition: .4s;
-
-			&:hover {
-				filter: brightness(0.7);
-				transition: .4s;
-			}
-		}
-
-
-		&-next {
-			.reviews__control-arrow  {
-				&--next {
-					transform: rotate(180deg);
-				}
-			}
-		}
-	}
 }
 // Reviews End
 

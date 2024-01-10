@@ -185,8 +185,6 @@ setupVideoControls($("#mainVideoPlayBtn"), $("#mainVideo"), $("#mainPoster"), $(
 fetch('./../../api/course.json')
     .then(response => response.json())
     .then(courses => {
-        console.log(courses);
-
         for(let el of courses) {
             const minNumber = Math.min(...el.age);
             const maxNumber = Math.max(...el.age);
@@ -199,7 +197,20 @@ fetch('./../../api/course.json')
             }
         }
     })
+// About Us End
 
-// $("#courseAge").text()
 
-// About Us end
+
+// Team Start
+let swiper = new Swiper(".team", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    navigation: {
+        nextEl: ".team__control-next",
+        prevEl: ".team__control-prev",
+    },
+    simulateTouch: false,
+  });
+// Team End
+
