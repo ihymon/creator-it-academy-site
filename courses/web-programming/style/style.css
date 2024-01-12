@@ -682,6 +682,172 @@ input[type=number] {
         color: #fff;
         margin-top: 25px; }
 
+.student {
+  width: 100%;
+  padding: 0 200px;
+  margin-bottom: 140px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column; }
+  .student__title {
+    text-align: center; }
+  .student__filter {
+    width: 274px;
+    height: 60px;
+    border-radius: 5px;
+    background: #F5A006;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px; }
+    .student__filter-button {
+      width: 120px;
+      height: 42px;
+      border: none;
+      background-color: transparent;
+      border-radius: 5px;
+      font-family: 'Montserrat', sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #262534;
+      transition: 0.4s; }
+    .student__filter-active {
+      background-color: #fff;
+      transition: 0.4s; }
+  .student__box {
+    width: 100%;
+    margin-top: 35px;
+    cursor: pointer; }
+  .student__btn {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+    height: 80px;
+    width: 360px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: normal;
+    letter-spacing: 0.8px;
+    color: #fff;
+    margin-top: 80px; }
+    .student__btn:hover svg {
+      transition: 0.5s; }
+      .student__btn:hover svg path {
+        transition: 0.5s;
+        stroke: #F5A006; }
+  .student__card {
+    width: 100%;
+    margin-top: 25px;
+    display: flex; }
+    .student__card-number {
+      width: 100px;
+      font-family: 'Montserrat', sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 56px;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #F5A006; }
+    .student__card-box {
+      width: 100%;
+      height: 140px;
+      background-color: #3F3D56;
+      margin-left: 25px;
+      border-radius: 5px;
+      overflow: hidden; }
+      .student__card-box .card__item {
+        width: 100%;
+        height: 140px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 25px; }
+        .student__card-box .card__item-left {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center; }
+          .student__card-box .card__item-left--img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #2F2E41;
+            background-size: cover; }
+          .student__card-box .card__item-left--text {
+            margin-left: 25px; }
+            .student__card-box .card__item-left--text .card__title {
+              font-family: 'Montserrat', sans-serif;
+              font-style: normal;
+              font-weight: 600;
+              font-size: 36px;
+              line-height: normal;
+              letter-spacing: normal;
+              color: #fff; }
+            .student__card-box .card__item-left--text a {
+              color: #F5A006; }
+            .student__card-box .card__item-left--text .card__link {
+              font-family: 'Montserrat', sans-serif;
+              font-style: normal;
+              font-weight: 600;
+              font-size: 20px;
+              line-height: normal;
+              letter-spacing: normal;
+              color: #F5A006; }
+            .student__card-box .card__item-left--text .card__duration {
+              font-family: 'Montserrat', sans-serif;
+              font-style: normal;
+              font-weight: 400;
+              font-size: 20px;
+              line-height: normal;
+              letter-spacing: normal;
+              color: #fff;
+              margin-top: 5px; }
+        .student__card-box .card__item-right {
+          width: auto;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+          .student__card-box .card__item-right svg {
+            width: 50px;
+            cursor: pointer;
+            transform: rotate(180deg);
+            transition: 0.5s; }
+      .student__card-box .card__container {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        padding: 25px 25px;
+        gap: 10px; }
+        .student__card-box .card__container-button {
+          width: auto;
+          padding: 13px 25px;
+          border: none;
+          border-radius: 5px;
+          background: #2F2E41;
+          font-family: 'Montserrat', sans-serif;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: normal;
+          letter-spacing: normal;
+          color: #fff;
+          cursor: auto; }
+    .student__card-box--open .card__item-right svg {
+      transform: rotate(0deg);
+      transition: 0.5s; }
+
 .projects {
   max-width: 2000px;
   padding: 0 200px;
@@ -740,8 +906,8 @@ input[type=number] {
   .projects__btn {
     text-align: center;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     column-gap: 20px;
     height: 80px;
     width: 360px;
@@ -963,6 +1129,9 @@ input[type=number] {
   .module {
     padding: 0 100px; }
 
+  .student {
+    padding: 0 100px; }
+
   .about-us {
     padding: 0 100px; }
 
@@ -1113,6 +1282,9 @@ input[type=number] {
         color: #fff; }
 
   .about-us {
+    padding: 0 60px; }
+
+  .student {
     padding: 0 60px; }
 
   .projects {
@@ -1274,6 +1446,28 @@ input[type=number] {
         width: 13vw;
         height: 13vw; }
 
+  .student__card-number {
+    width: 70px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #F5A006; }
+  .student__card-box {
+    height: 140px;
+    margin-left: 0px; }
+    .student__card-box .card__item-left--img {
+      width: 80px;
+      height: 80px; }
+    .student__card-box .card__item-left--text {
+      margin-left: 20px; }
+      .student__card-box .card__item-left--text .card__title {
+        font-size: 32px; }
+    .student__card-box .card__item-right svg {
+      width: 40px; }
+
   .projects__title {
     text-align: center; }
   .projects__container .projects__box {
@@ -1343,6 +1537,39 @@ input[type=number] {
 @media screen and (max-width: 700px) {
   .about-us__course-info__box {
     width: 100%; }
+
+  .student__card {
+    flex-direction: column; }
+    .student__card-number {
+      width: auto;
+      font-family: 'Montserrat', sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #F5A006;
+      margin-bottom: 5px; }
+    .student__card-box {
+      height: 230px;
+      margin-left: 0px; }
+      .student__card-box .card__item {
+        height: 230px; }
+        .student__card-box .card__item-left {
+          flex-direction: column;
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start; }
+          .student__card-box .card__item-left--img {
+            width: 80px;
+            height: 80px; }
+          .student__card-box .card__item-left--text {
+            margin-left: 0px; }
+            .student__card-box .card__item-left--text .card__title {
+              font-size: 28px;
+              margin: 5px 0; }
+        .student__card-box .card__item-right svg {
+          width: 40px; }
 
   .projects__container .projects__box .project__video iframe {
     width: 420px;
@@ -1432,6 +1659,43 @@ input[type=number] {
 
   .module {
     padding: 0 30px; }
+
+  .student {
+    padding: 0 30px; }
+    .student__card-number {
+      width: 100%;
+      text-align: center; }
+    .student__card-box {
+      height: 300px; }
+      .student__card-box .card__item {
+        width: 100%;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 15px 15px; }
+        .student__card-box .card__item-left {
+          width: 100%;
+          flex-direction: column;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center; }
+          .student__card-box .card__item-left--img {
+            width: 60px;
+            height: 60px; }
+          .student__card-box .card__item-left--text {
+            text-align: center; }
+        .student__card-box .card__item-right {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+      .student__card-box .card__container {
+        padding: 15px 15px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start; }
 
   .projects {
     padding: 0 30px; }

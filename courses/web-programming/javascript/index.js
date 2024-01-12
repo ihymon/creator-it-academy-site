@@ -199,6 +199,156 @@ fetch('./../../api/course.json')
     })
 // About Us End
 
+// Student Start
+
+// Student Start
+
+
+let courseShow = 5;
+let showAllCourse = false;
+let courseLength;
+
+let pathJson = './../../api/students.json';
+
+
+$(".student__btn").click(function() {
+    courseShow = 8;
+});
+
+
+$("#oldStudent").click(function() {
+    pathJson = './../../api/oldStudents.json';
+    $(".student__filter-button").removeClass("student__filter-active");
+    $(this).addClass("student__filter-active");
+    fetchAndDisplayCourses();
+
+});
+
+$("#allStudent").click(function() {
+    pathJson = './../../api/students.json';
+    $(".student__filter-button").removeClass("student__filter-active");
+    $(this).addClass("student__filter-active");
+    fetchAndDisplayCourses();
+
+});
+
+
+function fetchAndDisplayCourses() {
+    fetch(pathJson)
+        .then(response => response.json())
+        .then(courses => {
+            courseLength = courses.length;
+
+            console.log(courses);
+
+            // Clear existing content in student__box
+            $(".student__box").empty();
+
+            for (let i = 0; i < (showAllCourse ? courseLength : Math.min(5, courseLength)); i++) {
+                let el = courses[i];
+
+                $(".student__box").append(`
+                <div class="student__card">
+                <p class="student__card-number">#${el.number}</p>
+                <div class="student__card-box">
+                    <div class="card__item">
+                        <div class="card__item-left">
+                        <div class="card__item-left--img" style="background-image: url('./img/student${el.number}.png');">
+    
+    
+                            </div>
+    
+                            <div class="card__item-left--text">
+                                <p class="card__title">${el.name}</p>
+                                <p class="card__link"><a target="_blank" href="${el.portfolio}">${el.portfolio}</a> / <a target="_blank" href="${el.github}">${el.github}</a> </p>
+                                
+                                <p class="card__duration">З Креейтором ${el.duration}</p>
+                            </div>
+                        </div>
+    
+                        <div class="card__item-right">
+                            <svg class="card__item-arrow" xmlns="http://www.w3.org/2000/svg" width="66" height="76" viewBox="0 0 66 76" fill="none">
+                                <g clip-path="url(#clip0_964_2006)">
+                                  <path d="M36.2367 15.5601C34.3999 13.7149 31.417 13.7149 29.5802 15.5601L1.36733 43.9036C-0.469444 45.7489 -0.469444 48.7456 1.36733 50.5909C3.20411 52.4362 6.18703 52.4362 8.0238 50.5909L32.9158 25.5837L57.8077 50.5761C59.6445 52.4214 62.6274 52.4214 64.4642 50.5761C66.301 48.7309 66.301 45.7341 64.4642 43.8888L36.2514 15.5454L36.2367 15.5601Z" fill="white"/>
+                                </g>
+                                <defs>
+                                  <clipPath id="clip0_964_2006">
+                                    <rect width="65.83" height="75.5826" fill="white" transform="matrix(-1 0 0 -1 65.8301 75.5825)"/>
+                                  </clipPath>
+                                </defs>
+                              </svg>
+                        </div>
+                    </div>
+    
+                    <div class="card__container">
+                     ${el.skills.map(skill => `<button class="card__container-button">${skill}</button>`).join('')}
+                    </div>
+    
+                </div>
+    
+            </div>
+                `)
+            }
+
+            
+        $(".student__card-box").click(function() {
+            let cardParent = $(this);
+            var windowWidth = $(window).width();
+            let numberHeigth = (windowWidth < 600) ? 300 : (windowWidth < 700) ? 230 : 140;
+
+            if (cardParent.is(":animated")) {
+                return;
+            }
+
+   
+
+        
+            cardParent.toggleClass("student__card-box--open");
+        
+            let targetHeight;
+            if (cardParent.hasClass("student__card-box--open")) {
+                cardParent.css("height", "auto");
+                targetHeight = cardParent.height();
+                cardParent.css("height", `${numberHeigth}px`);
+        
+            } else { 
+                cardParent.css("height", `${numberHeigth}px`);
+                targetHeight = cardParent.height();
+                cardParent.css("height", "auto");
+        
+            }
+
+
+        
+            cardParent.animate({ height: targetHeight }, 400);
+        });
+        
+
+
+        });
+}
+
+// Initial fetch and display
+fetchAndDisplayCourses();
+
+
+$(".student__btn").click(function() {
+    showAllCourse = !showAllCourse;
+
+    if (showAllCourse == true) {
+        $(this).text("Заховати");
+    }else {
+        $(this).text("Показати більше");
+        student.scrollIntoView({
+			block: "start",
+			inline: "nearest",
+			behavior: "smooth"
+		});
+    }
+    fetchAndDisplayCourses();
+
+});
+// Student End
 
 
 // Team Start

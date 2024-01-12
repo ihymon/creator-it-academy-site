@@ -1,0 +1,102 @@
+[
+	{
+		"id": 0,
+		"name": "Міша Кларов",
+		"portfolio": "micha.portfolio.com",
+		"github": "micha.github.io",
+		"duration": "більше 5 місяців",
+		"skills": [
+			"React", "Javascript", "Git", "Gulp", "Node.js"
+		],
+		"number": 1
+	},
+	{
+		"id": 1,
+		"name": "Іля Дар",
+		"portfolio": "ila.portfolio.com",
+		"github": "ila.github.io",
+		"duration": "більше 2 років",
+		"skills": [
+			"React", "Javascript"
+		],
+		"number": 2
+	},
+	{
+		"id": 2,
+		"name": "Яна Вушува",
+		"portfolio": "yana.portfolio.com",
+		"github": "yana.github.io",
+		"duration": "більше 5 місяців",
+		"skills": [
+			"React", "Javascript", "Git", "Gulp", "Node.js", "C+", "C++", "C+++", "C++++"
+		],
+		"number": 3
+	},
+	{
+		"id": 3,
+		"name": "Денис Гриб",
+		"portfolio": "denis.portfolio.com",
+		"github": "denis.github.io",
+		"duration": "більше 8 місяців",
+		"skills": [
+			"React", "Javascript", "Git", "Gulp", "Node.js"
+		],
+		"number": 4
+	},
+	{
+		"id": 4,
+		"name": "Міша Кларов",
+		"portfolio": "micha.portfolio.com",
+		"github": "micha.portfolio.com",
+		"duration": "більше 3 місяців",
+		"skills": [
+			"React", "Javascript", "Git", "Gulp", "Node.js"
+		],
+		"number": 5
+	},
+	{
+		"id": 5,
+		"name": "Міша Кларов",
+		"portfolio": "micha.portfolio.com",
+		"github": "micha.portfolio.com",
+		"duration": "більше 2 роки та 4 місяці",
+		"skills": [
+			"React", "Javascript", "Git", "Gulp", "Node.js"
+		],
+		"number": 6
+	},
+	{
+		"id": 6,
+		"name": "Міша Кларов",
+		"portfolio": "micha.portfolio.com",
+		"github": "micha.portfolio.com",
+		"duration": "більше 2 місяців",
+		"skills": [
+			"React", "Javascript", "Git", "Gulp", "Node.js"
+		],
+		"number": 7
+	},
+	{
+		"id": 7,
+		"name": "Міша Кларов",
+		"portfolio": "micha.portfolio.com",
+		"github": "micha.portfolio.com",
+		"duration": "більше 8 місяців",
+		"skills": [
+			"React", "Javascript", "Git", "Gulp", "Node.js"
+		],
+		"number": 8
+	},
+	{
+		"id": 8,
+		"name": "Міша Кларов",
+		"portfolio": "micha.portfolio.com",
+		"github": "micha.portfolio.com",
+		"duration": "більше 9 місяців",
+		"skills": [
+			"React", "Javascript", "Git", "Gulp", "Node.js"
+		],
+		"number": 9
+	}
+
+]
