@@ -568,11 +568,11 @@
 	background-color: $dark-color;
 	width: 100%;
 
+
 	&__content {
 		padding-bottom: 175px;
 		display: flex;
 		justify-content: space-between;
-		border-bottom: 4px solid $main-color;
 		flex-wrap: wrap;
 		column-gap: 60px;
 		row-gap: 80px;
@@ -632,8 +632,29 @@
 	}
 
 
+	&__return-link {
+		margin: 0 auto;
+		@include font(#fff, 20px, 400, normal, 0);
+		text-align: center;
+
+		& a {
+			padding-bottom: 5px;
+			@include font(#fff, 20px, 400, normal, 0);
+			border-bottom: 1px solid $main-color;
+			transition: .5s;
+
+			&:hover {
+				transition: .5s;
+				color: $main-color;
+			}
+		}
+	}
+
+
 	&__copyright {
-		margin-top: 25px;
+		margin-top: 35px;
+		padding-top: 25px;
+		border-top: 4px solid $main-color;
 		@include display-center (space-between, center);
 
 		&-text {

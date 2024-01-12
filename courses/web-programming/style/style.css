@@ -850,7 +850,6 @@ input[type=number] {
     padding-bottom: 175px;
     display: flex;
     justify-content: space-between;
-    border-bottom: 4px solid #F5A006;
     flex-wrap: wrap;
     column-gap: 60px;
     row-gap: 80px; }
@@ -910,8 +909,34 @@ input[type=number] {
         line-height: normal;
         letter-spacing: 0;
         color: #FFF; }
+  .footer__return-link {
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: normal;
+    letter-spacing: 0;
+    color: #fff;
+    text-align: center; }
+    .footer__return-link a {
+      padding-bottom: 5px;
+      font-family: 'Montserrat', sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: normal;
+      letter-spacing: 0;
+      color: #fff;
+      border-bottom: 1px solid #F5A006;
+      transition: .5s; }
+      .footer__return-link a:hover {
+        transition: .5s;
+        color: #F5A006; }
   .footer__copyright {
-    margin-top: 25px;
+    margin-top: 35px;
+    padding-top: 25px;
+    border-top: 4px solid #F5A006;
     display: flex;
     justify-content: space-between;
     align-items: center; }
