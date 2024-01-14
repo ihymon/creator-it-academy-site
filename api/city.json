@@ -62,5 +62,13 @@
 			"phone": "(067)358-40-84",
 			"type": "",
 			"herf": "https://maps.app.goo.gl/7p6ePhJ3HstyVg1D9"
+		},
+		{
+			"id": "city9",
+			"name": "м. Калуш",
+			"location": "м.Калуш, пр. Лесі Українки 28, ТЦ Едем",
+			"phone": "(067)554-38-06",
+			"type": "",
+			"herf": "https://maps.app.goo.gl/UoDpEqZPGm66P1cD7"
 		}
 	]
