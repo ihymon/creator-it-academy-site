@@ -4364,6 +4364,8 @@
 		.gift {
 			z-index: 101;
 			&__popup-container {
+				z-index: 101;
+
 				.gift__popup {
 					width: 100%;
 					height: 100vh;
@@ -4836,7 +4838,21 @@
 		// Gift Start
 		.gift {
 			&__popup-container {
-				overflow: auto;
+				overflow-y: auto;
+				overflow-x: hidden;
+				justify-content: center;
+				align-items: center;
+				height: 700px;
+
+				.gift__popup {
+					position: absolute;
+					top: 0%;
+					display: flex;
+					flex-direction: column;
+					overflow-y: auto;
+					overflow-x: hidden;
+					height: 100vh;
+				}
 			}
 		}
 		// Gift End
