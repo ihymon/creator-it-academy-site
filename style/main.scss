@@ -4842,16 +4842,16 @@
 				overflow-x: hidden;
 				justify-content: center;
 				align-items: center;
-				height: 700px;
+				height: 100vh;
 
 				.gift__popup {
-					position: absolute;
-					top: 0%;
+					// position: absolute;
+					// top: 0%;
 					display: flex;
 					flex-direction: column;
 					overflow-y: auto;
 					overflow-x: hidden;
-					height: 100vh;
+					// height: 100vh;
 				}
 			}
 		}
@@ -4874,6 +4874,31 @@
 	}
 }
 
+
+@media screen and (max-height: 600px)  {
+	.wrap {
+		// Gift Start
+		.gift {
+			&__popup-container {
+				overflow-y: auto;
+				overflow-x: hidden;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+
+				.gift__popup {
+					position: absolute;
+					top: 0%;
+					display: flex;
+					flex-direction: column;
+					overflow-y: auto;
+					overflow-x: hidden;
+					// height: 100vh;
+				}
+			}
+		}
+	}
+}
 
 @media screen and (max-height: 500px) {
 	// Home Start
