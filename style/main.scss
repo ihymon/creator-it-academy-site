@@ -398,7 +398,6 @@
 .gift {
 	transition: .5s;
 
-
 	&__popup-container {
 		position: fixed;
 		width: 100%;
@@ -4363,6 +4362,7 @@
 	.wrap {
 		// Gift Start
 		.gift {
+			z-index: 101;
 			&__popup-container {
 				.gift__popup {
 					width: 100%;

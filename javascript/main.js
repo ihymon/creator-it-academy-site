@@ -158,27 +158,14 @@ function startConfetti() {
 // Gift Start
 appendOptionToSelect($("#gifrCourseSelect"));
 
-function nhform() {
-  (nhform.data || (nhform.data = [])).push(arguments);
-}
-
-
 function openPopup () {
   startConfetti();
-  // $(".gift__popup-container").addClass("_active");
-  // $("body").addClass("_active");
+  $(".gift__popup-container").addClass("_active");
+  $("body").addClass("_active");
 
-  // setTimeout(() => {
-  //   $(".gift__popup").addClass("_active");
-  // }, 10);
-
-  nhform('container', $('#form-container'));
-  nhform('show', true);
-  $("body").addClass("_gift-active");
-
-  $('.nh-close').click(() => {
-    $("body").removeClass("_gift-active");
-  })
+  setTimeout(() => {
+    $(".gift__popup").addClass("_active");
+  }, 10);
 }
 
 $("#giftIcon").click(() => {
@@ -194,17 +181,76 @@ $("#footerBtn").click(() => {
   openPopup();
 })
 
-
-$("#nh-modalWrapper").click(() => {
-    alert("Closed");
-    $("body").removeClass("_gift-active");
-})
-
-
-
-
-
 let gifNumberControl;
+
+
+$('#my-form').submit(async function (e) {
+  e.preventDefault();
+  let data = new FormData(this);
+
+  let giftNumber = $("#giftNumber").val();
+  let giftName = $("#giftName").val();
+
+  let isPhoneNumberValid = validatePhoneNumber(giftNumber, $("#giftNumberTitle"), "Неправильний номер телефону", "Номер телефону");
+  let isNameValid = validateInput(giftName, $("#giftNameTitle"), "Введіть конкретне імя", "Імя");
+
+
+  if (isPhoneNumberValid && isNameValid) {
+    console.log("All inputs are valid");
+      
+  try {
+    const response = await fetch('https://formspree.io/f/xyyqqpyk', {
+        method: 'POST',
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+    });
+
+    const responseData = await response.json();
+
+    if (response.ok) {
+        console.log("Form submitted successfully");
+        $(this)[0].reset();
+        setTimeout(() => {
+          $(".gift__popup-container").removeClass("_active");
+          $("body").removeClass("_active");
+        }, 500);
+
+        setTimeout(() => {
+          $(".popupMessage").addClass("popupMessage__active");
+          setTimeout(() => {
+            $(".popupMessage").removeClass("popupMessage__active");
+          }, 4000);
+        }, 700);
+      
+        $(".gift__popup").removeClass("_active");
+    } else {
+        console.log("Form submission failed");
+        if (Object.hasOwnProperty.call(responseData, 'errors')) {
+            console.log("Error:", responseData.errors);
+        }
+    }
+    } catch (error) {
+        console.error('Error submitting form:', error);
+    }
+  }
+});
+
+$("#giftClose").click(() => {
+  $(".gift__popup").removeClass("_active");
+
+  setTimeout(() => {
+    $(".gift__popup-container").removeClass("_active");
+    $("body").removeClass("_active");
+  }, 500);
+
+
+})
+// Gift End
+
+
+
 
 
 // Scroll To Section
