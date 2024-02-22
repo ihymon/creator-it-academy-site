@@ -132,6 +132,7 @@ input[type=number] {
 		z-index: 2;
 		transition: .4s;
 
+
 		&:hover {
 			filter: brightness(0.7);
 			transition: .4s;
@@ -140,11 +141,7 @@ input[type=number] {
 
 
 	&-next {
-		.team__control-arrow  {
-			&--next {
-				transform: rotate(180deg);
-			}
-		}
+		transform: rotate(180deg);
 	}
 }
 
