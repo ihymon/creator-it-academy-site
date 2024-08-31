@@ -185,56 +185,84 @@ let gifNumberControl;
 
 
 $('#my-form').submit(async function (e) {
-  e.preventDefault();
-  let data = new FormData(this);
+    e.preventDefault();
+    let data = new FormData(this);
+    let body = JSON.stringify({
+        name: data.get('name'),
+        course: data.get("course"),
+        phoneNumber: data.get("number"),
+        city: data.get("city"),
+    })
 
-  let giftNumber = $("#giftNumber").val();
-  let giftName = $("#giftName").val();
+    let giftNumber = $("#giftNumber").val();
+    let giftName = $("#giftName").val();
 
-  let isPhoneNumberValid = validatePhoneNumber(giftNumber, $("#giftNumberTitle"), "Неправильний номер телефону", "Номер телефону");
-  let isNameValid = validateInput(giftName, $("#giftNameTitle"), "Введіть конкретне імя", "Імя");
+    let isPhoneNumberValid = validatePhoneNumber(giftNumber, $("#giftNumberTitle"), "Неправильний номер телефону", "Номер телефону");
+    let isNameValid = validateInput(giftName, $("#giftNameTitle"), "Введіть конкретне імя", "Імя");
 
 
-  if (isPhoneNumberValid && isNameValid) {
-    console.log("All inputs are valid");
-      
-  try {
-    const response = await fetch('https://formspree.io/f/xyyqqpyk', {
-        method: 'POST',
-        body: data,
-        headers: {
-            'Accept': 'application/json'
-        }
-    });
+    if (isPhoneNumberValid && isNameValid) {
+        console.log("All inputs are valid");
 
-    const responseData = await response.json();
+        try {
+            const response = await fetch('https://creator-platform.onrender.com/api/leads/lead-from-website', {
+                method: 'POST',
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: body,
+            });
 
-    if (response.ok) {
-        console.log("Form submitted successfully");
-        $(this)[0].reset();
-        setTimeout(() => {
-          $(".gift__popup-container").removeClass("_active");
-          $("body").removeClass("_active");
-        }, 500);
+            const responseData = await response.json();
 
-        setTimeout(() => {
-          $(".popupMessage").addClass("popupMessage__active");
-          setTimeout(() => {
-            $(".popupMessage").removeClass("popupMessage__active");
-          }, 4000);
-        }, 700);
-      
-        $(".gift__popup").removeClass("_active");
-    } else {
-        console.log("Form submission failed");
-        if (Object.hasOwnProperty.call(responseData, 'errors')) {
-            console.log("Error:", responseData.errors);
+            let statusCode = Number(responseData.status.slice(0, 3))
+
+            let successAction = () => {
+                $(this)[0].reset();
+                setTimeout(() => {
+                    $(".gift__popup-container").removeClass("_active");
+                    $("body").removeClass("_active");
+                }, 500);
+
+                setTimeout(() => {
+                    $(".popupMessage").addClass("popupMessage__active");
+                    $(".popupMessage").addClass("popupMessage__active");
+                    setTimeout(() => {
+                        $(".popupMessage").removeClass("popupMessage__active");
+                    }, 4000);
+                }, 700);
+
+                $(".gift__popup").removeClass("_active");
+            }
+
+            switch (statusCode) {
+                case 200:
+                    console.log("Form submitted successfully");
+                    successAction()
+                    break;
+                case 400:
+                    if (/possible/gi.test(responseData.status.toLowerCase())) {
+                        let titleElement = $("#giftNumberTitle")
+                        titleElement.text("Неможливий номер телефону. Введіть дійсний номер");
+                        titleElement.css("color", "#FF3737");
+                    } else {
+                        console.log("Problems with fields. Some are required", responseData.status)
+                    }
+                    break;
+                case 409:
+                    console.log("Already exist")
+                    successAction()
+                    break;
+                case 500:
+                    console.log("Internal server error", responseData.status)
+                    break;
+                default:
+                    break;
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
         }
     }
-    } catch (error) {
-        console.error('Error submitting form:', error);
-    }
-  }
 });
 
 $("#giftClose").click(() => {
@@ -359,7 +387,7 @@ function setupVideoControls(playBtn, video, poster, videoMask, playIcon, pauseIc
     playBtn.click(() => {
         clearTimeout(videoPlayTimerID);
         if (currentPlayingVideo && currentPlayingVideo !== video[0]) {
-            clearTimeout(videoPlayTimerID); 
+            clearTimeout(videoPlayTimerID);
             currentPlayingVideo.pause();
         }
 
@@ -508,13 +536,13 @@ function appendCourseCard(course, container) {
 
 
 
-// Course Start 
+// Course Start
 let age;
 let allCourse = false;
 let courseLength;
 
 function fetchCourse(nameCourseFilter, subtitleFilter, minPriceFilter, maxPriceFilter, ageValue) {
-  
+
   fetch('./api/course.json')
     .then(response => response.json())
     .then(courses => {
@@ -527,14 +555,14 @@ function fetchCourse(nameCourseFilter, subtitleFilter, minPriceFilter, maxPriceF
           (!ageValue || (ageValue >= Math.min(...course.age || []) && ageValue <= Math.max(...course.age || [])));
       });
       for (let i = 0; i < courses.length; i++) {
-     
+
         if ((!nameCourseFilter || courses[i].nameCourse.toLowerCase().includes(nameCourseFilter)) && (!subtitleFilter || courses[i].subtitle === subtitleFilter))
          {
           const minNum = Math.min(...courses[i].age || []);
           const maxNum = Math.max(...courses[i].age || []);
-          
+
           // <button class="main__cart-button main__cart-link">Переглянути</button>
-          
+
           $(".course__box-main").append($(`
           <div class="main__cart main__cart-${courses[i].type}">
           <button class="main__cart-button">${courses[i].subtitle}</button>
@@ -575,19 +603,19 @@ function fetchCourse(nameCourseFilter, subtitleFilter, minPriceFilter, maxPriceF
       </div>
           `));
 
-          
+
           courseFound = true;
 
-        } 
+        }
       }
-          
+
       if (courseFound) {
         $(".main__cart-title").parent().append('<a href="./courses/waitingPage/waitingPage.html" class="main__cart-button main__cart-link">Переглянути</a>');
        }
 
       if (!courseFound) {
         console.log("Course not found.");
-              
+
       $(".course__box-main").append($(`<p class="error__course">Курс не було знайдено</p>`))
       }
     })
@@ -688,7 +716,7 @@ function ageControl() {
   const $ageInput = $("#age1");
   $ageInput.on("input", function() {
     let inputValue = $ageInput.val();
-    
+
     if (inputValue > maxAge) {
       console.log("hehe")
       inputValue = 18;
@@ -710,7 +738,7 @@ function ageControl() {
 
 
     $(this).val($(this).val().replace(/[^0-9]/g, ''));
-  
+
     if ($(this).val().indexOf('e') !== -1) {
         $(this).val($(this).val().replace('e', ''));
     }
@@ -719,12 +747,12 @@ function ageControl() {
 ageControl();
 
 
-let originalFromValue; 
-let originalToValue;  
-let $fromSlider;    
-let $toSlider;        
-let $fromInput;       
-let $toInput;      
+let originalFromValue;
+let originalToValue;
+let $fromSlider;
+let $toSlider;
+let $fromInput;
+let $toInput;
 
 function resetValue() {
   originalFromValue = minPrice;
@@ -770,7 +798,7 @@ function controlRange(id) {
       $("#priceTitle").text('Ціна (грн)');
       $("#priceTitle").css("color", '#fff');
     }
-    
+
     $(".my-checkbox").prop('checked', false);
     $("#allType").prop('checked', true);
     if (toValue <= fromValue) {
@@ -779,7 +807,7 @@ function controlRange(id) {
     } else {
         $toInput.val(toValue);
     }
-    
+
     fetchCourse('', '', fromValue, toValue);
     $('#course__search').val("");
     $("#age1").val(minAge);
@@ -804,7 +832,7 @@ function controlRange(id) {
   $toInput.on("change", function () {
     const fromValue = parseInt($fromInput.val());
     const toValue = parseInt($toInput.val());
-    
+
     $(".my-checkbox").prop('checked', false);
     $("#allType").prop('checked', true);
     if (toValue <= fromValue) {
@@ -831,7 +859,7 @@ function resetCheckbox() {
 }
 
 $("#courseSelectionOpenBtn").click(() => {
-  
+
   $(".course-selection__popup-overlay").addClass("_active");
   $("body").addClass("_active");
 
@@ -897,7 +925,7 @@ $("#courseSelectionNextBtn").click(() => {
       $(".popup__answer-block__label--2").text("б) Знаходжу радість в конструюванні різних об'єктів і механізмів.");
       $(".popup__answer-block__label--3").text("в) Віддаю перевагу створювати і програмувати різні ігрові сценарії.");
       break;
-      
+
     case 3:
       $("#courseSelectionSlide").text(currentPopupProgress);
 
@@ -909,7 +937,7 @@ $("#courseSelectionNextBtn").click(() => {
       $(".popup__answer-block__label--2").text("б) Зацікавлений у взаємодії з механізмами, навіть якщо деякі деталі важко помітити.");
       $(".popup__answer-block__label--3").text("в) Спроможний створити ігровий сценарій, об'єднуючи декілька деталей разом. ");
       break;
-      
+
     case 4:
       $("#courseSelectionSlide").text(currentPopupProgress);
 
@@ -951,7 +979,7 @@ $("#courseSelectionNextBtn").click(() => {
       break;
   }
 
-  if(currentPopupProgress >= 7) { 
+  if(currentPopupProgress >= 7) {
     switch (selectedCheckboxes[0]) {
       case 'courseSelectionAnswer1':
         age = [6, 7, 8, 9, 10];
@@ -963,7 +991,7 @@ $("#courseSelectionNextBtn").click(() => {
         age = [14, 15, 16, 17, 18];
         break;
     }
-  
+
     switch (selectedCheckboxes[1]) {
       case "courseSelectionAnswer1":
         scratchProgrammingCount++;
@@ -978,7 +1006,7 @@ $("#courseSelectionNextBtn").click(() => {
         webProgrammingCount++;
         break;
     }
-  
+
     switch (selectedCheckboxes[2]) {
       case "courseSelectionAnswer1":
         pythonProgrammingCount++;
@@ -993,7 +1021,7 @@ $("#courseSelectionNextBtn").click(() => {
         scratchProgrammingCount++;
         break;
     }
-  
+
     switch (selectedCheckboxes[3]) {
       case "courseSelectionAnswer1":
         pythonProgrammingCount++;
@@ -1008,7 +1036,7 @@ $("#courseSelectionNextBtn").click(() => {
         scratchProgrammingCount++;
         break;
     }
-  
+
     switch (selectedCheckboxes[4]) {
       case "courseSelectionAnswer1":
         pythonProgrammingCount++;
@@ -1023,7 +1051,7 @@ $("#courseSelectionNextBtn").click(() => {
         tynkerProgrammingCount++;
         break;
     }
-  
+
     switch (selectedCheckboxes[5]) {
       case "courseSelectionAnswer1":
         pythonProgrammingCount++;
@@ -1056,9 +1084,9 @@ $("#courseSelectionNextBtn").click(() => {
     let filteredCourses = allCourses.filter(course => course.age.some(ageGroup => age.includes(ageGroup)));
     filteredCourses.sort((a, b) => b.count - a.count);
     let recommendedCourses = filteredCourses.slice(0, 3);
-    
+
     // console.log(recommendedCourses);
-    
+
     startConfetti();
     $(".popup__title").text("Вітаю з проходженням вікторини");
     $(".course-selection__popup__description").show(300);
@@ -1112,7 +1140,7 @@ $("#courseSelectionNextBtn").click(() => {
         }
         // console.log(courses);
     })
-    
+
   }
 });
 
@@ -1134,7 +1162,7 @@ courseSelectionCheckboxes.forEach(checkbox => {
 
 
 
-// Benefits Start 
+// Benefits Start
 function chartAnimation(chartId, animatedNumberId, fromValue, toValue, time,data1, data2) {
   const ctx = document.getElementById(chartId);
   const targetElement = document.querySelector(`#${chartId}`);
@@ -1195,11 +1223,11 @@ function animateValue(id, start, end, duration) {
 
   update();
 }
-// Benefits End 
+// Benefits End
 
 
 
-// Certificate Start 
+// Certificate Start
 $("#userName").on("input", () => {
     if($("#userName").val() == "") {
         $("#outputUserName").text("Ваше імя");
@@ -1223,7 +1251,7 @@ $("#userCourse").on("input", () => {
 
 $("#userAge").on("input", () => {
     $("#userAge").val($("#userAge").val().replace(/[^0-9]/g, ''));
-    
+
     if ($("#userAge").val().indexOf('e') !== -1) {
         $("#userAge").val($("#userAge").val().replace('e', ''));
     }
@@ -1289,7 +1317,7 @@ $('#my-form2').submit(async function (e) {
             $(".popupMessage").removeClass("popupMessage__active");
           }, 4000);
         }, 700);
-      
+
         $(".gift__popup").removeClass("_active");
     } else {
         console.log("Form submission failed");
@@ -1316,7 +1344,7 @@ $('#my-form2').submit(async function (e) {
 //   if (isPhoneNumberValid && isNameValid && isAgeValid && $("#giftName").val() !== "") {
 //     console.log("All inputs are valid");
 
-    
+
 
 //   }
 // });
@@ -1365,7 +1393,7 @@ setupVideoControls($("#reviewSlide5 .reviews__video-play-btn"), $("#reviewSlide5
 
 
 
-// Team Start 
+// Team Start
 let owlFirst = $('.owl-carousel-first').owlCarousel({
     items: 4,
     loop: true,
@@ -1396,7 +1424,7 @@ let owlFirst = $('.owl-carousel-first').owlCarousel({
 
 
 
-// Partners Start 
+// Partners Start
 
 let owlSecond = $('.owl-carousel-second').owlCarousel({
   items: 4,
@@ -1431,7 +1459,7 @@ let owlSecond = $('.owl-carousel-second').owlCarousel({
 //  Question Start
 $(".question__cart").click(function() {
   let thisDescription = $(this).find(".question__cart-description");
-  
+
   $(".question__cart").not(this).removeClass("question__cart-open");
   $(".question__cart-description").not(thisDescription).hide(0);
 
@@ -1447,7 +1475,7 @@ $(".question__cart").click(function() {
 
 
 
-// Map Start 
+// Map Start
 fetch('./api/city.json')
     .then(response => response.json())
     .then(courses => {
@@ -1476,7 +1504,7 @@ fetch('./api/city.json')
 
            linkLocation = selectedCourse.herf;
            $("#city__location").text(selectedCourse.location);
-           
+
            $("#city__location").html(`${selectedCourse.location}</a>`);
            console.log(selectedCourse.phone)
            $("#phote__location").html(`<a  href="tel:+380${selectedCourse.phone}">${selectedCourse.phone}</a>`);
@@ -1491,11 +1519,11 @@ fetch('./api/city.json')
 
 
 
-// Footer Start 
+// Footer Start
 $(window).scroll(function() {
   let footer = $('.footer');
 
-  let footerPosition = footer.offset().top; 
+  let footerPosition = footer.offset().top;
   let windowHeight = $(window).height();
   if (footerPosition + 10 < windowHeight + $(window).scrollTop()) {
       $(".gift-wrapper").addClass("_hide");
