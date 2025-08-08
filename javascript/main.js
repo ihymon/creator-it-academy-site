@@ -163,111 +163,78 @@ let gifNumberControl;
 $('#my-form').submit(async function (e) {
     e.preventDefault();
     let data = new FormData(this);
-
-    let body = {
-        name: data.get('name'),
-        course: data.get("course"),
-        phoneNumber: data.get("number"),
-        city: data.get("city"),
-    };
+    let body = JSON.stringify({
+        name: data.get('name'), course: data.get("course"), phoneNumber: data.get("number"), city: data.get("city"),
+    })
 
     let giftNumber = $("#giftNumber").val();
     let giftName = $("#giftName").val();
 
-    let isPhoneNumberValid = validatePhoneNumber(
-        giftNumber,
-        $("#giftNumberTitle"),
-        "Неправильний номер телефону",
-        "Номер телефону"
-    );
-    let isNameValid = validateInput(
-        giftName,
-        $("#giftNameTitle"),
-        "Введіть конкретне імя",
-        "Імя"
-    );
+    let isPhoneNumberValid = validatePhoneNumber(giftNumber, $("#giftNumberTitle"), "Неправильний номер телефону", "Номер телефону");
+    let isNameValid = validateInput(giftName, $("#giftNameTitle"), "Введіть конкретне імя", "Імя");
+
 
     if (isPhoneNumberValid && isNameValid) {
-        console.log("✅ Усі поля пройшли валідацію");
-        console.log("📦 Дані для відправки:", body);
+        console.log("All inputs are valid");
 
         try {
-            console.log("🚀 Відправка даних у Creator Platform та KeyCRM...");
+            const response = await fetch('https://creator-platform.onrender.com/api/leads/lead-from-website', {
+                method: 'POST', headers: {
+                    "Content-type": "application/json"
+                }, body: body,
+            });
 
-            const creatorPlatformRequest = fetch(
-                'https://creator-platform.onrender.com/api/leads/lead-from-website',
-                {
-                    method: 'POST',
-                    headers: { "Content-type": "application/json" },
-                    body: JSON.stringify(body),
-                }
-            );
+            const responseData = await response.json();
 
-            const keyCRMRequest = fetch(
-                'https://openapi.keycrm.app/v1/pipelines/cards',
-                {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json',
-                        'Cache-Control': 'no-cache',
-                        'Pragma': 'no-cache',
-                        'Authorization': `Yzk3MmI4NmYzYzdjYjA0M2M1ODc5ODM3YjgxY2UyMmM5OGU4OTRiZQ`
-                    },
-                    body: JSON.stringify({
-                        title: `Нова заявка: ${body.name}`,
-                        custom_fields: [
-                            { field_id: 'phone', value: body.phoneNumber },
-                            { field_id: 'course', value: body.course },
-                            { field_id: 'city', value: body.city }
-                        ]
-                    }),
-                }
-            );
+            let statusCode = Number(responseData.status.slice(0, 3))
 
-            const [creatorResponse, keyCRMResponse] = await Promise.all([
-                creatorPlatformRequest,
-                keyCRMRequest
-            ]);
+            let successAction = () => {
+                $(this)[0].reset();
+                setTimeout(() => {
+                    $(".gift__popup-container").removeClass("_active");
+                    $("body").removeClass("_active");
+                }, 500);
 
-            console.log("📨 Запит до Creator Platform виконано. Статус:", creatorResponse.status);
-            console.log("📨 Запит до KeyCRM виконано. Статус:", keyCRMResponse.status);
+                setTimeout(() => {
+                    $(".popupMessage").addClass("popupMessage__active");
+                    $(".popupMessage").addClass("popupMessage__active");
+                    setTimeout(() => {
+                        $(".popupMessage").removeClass("popupMessage__active");
+                    }, 4000);
+                }, 700);
 
-            const creatorData = await creatorResponse.json();
-            const keyCRMData = await keyCRMResponse.json();
-
-            console.log('✅ Відповідь Creator Platform:', creatorData);
-            console.log('✅ Відповідь KeyCRM:', keyCRMData);
-
-            // Якщо обидва запити успішні (код 200-299)
-            if (creatorResponse.ok && keyCRMResponse.ok) {
-                console.log("🎉 Дані успішно доставлені у обидві системи");
-            } else {
-                console.warn("⚠️ Один із запитів повернув помилку");
+                $(".gift__popup").removeClass("_active");
             }
 
-            // Логіка успіху
-            $(this)[0].reset();
-            setTimeout(() => {
-                $(".gift__popup-container").removeClass("_active");
-                $("body").removeClass("_active");
-            }, 500);
-
-            setTimeout(() => {
-                $(".popupMessage").addClass("popupMessage__active");
-                setTimeout(() => {
-                    $(".popupMessage").removeClass("popupMessage__active");
-                }, 4000);
-            }, 700);
-
-            $(".gift__popup").removeClass("_active");
-
+            switch (statusCode) {
+                case 200:
+                    console.log("Form submitted successfully");
+                    successAction()
+                    break;
+                case 400:
+                    if (/possible/gi.test(responseData.status.toLowerCase())) {
+                        let titleElement = $("#giftNumberTitle")
+                        titleElement.text("Неможливий номер телефону. Введіть дійсний номер");
+                        titleElement.css("color", "#FF3737");
+                    } else {
+                        console.log("Problems with fields. Some are required", responseData.status)
+                    }
+                    break;
+                case 409:
+                    console.log("Already exist")
+                    successAction()
+                    break;
+                case 500:
+                    console.log("Internal server error", responseData.status)
+                    break;
+                default:
+                    break;
+            }
         } catch (error) {
-            console.error('❌ Помилка відправки даних:', error);
+            console.error('Error submitting form:', error);
         }
     }
 });
-
 
 $("#giftClose").click(() => {
     $(".gift__popup").removeClass("_active");
