@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap">
 <style>
-/* Layout: чорна шапка → герой із «прогресом проходження» → рівні екскурсії та титри → публічне відео → секретний рівень (фото для батьків) → поділитися → запрошення для шкіл. Одна світла тема у стилі академії: чорний, білий, помаранчевий. */
+/* Layout: чорна шапка → герой із «прогресом проходження» → рівні екскурсії та титри → публічне відео → відкритий фотоальбом → поділитися → запрошення для шкіл. Одна світла тема у стилі академії: чорний, білий, помаранчевий. */
 :root {
   --black: #000000;
   --ink: #141414;
@@ -335,7 +335,7 @@ footer img { height: 38px; width: auto; display: block; }
 .w100 { width: 100%; }
 @media (prefers-reduced-motion: reduce) { .btn-orange:active { transform: none; } }
 
-/* 4-Б: екскурсія як гра з рівнями — індикатор проходження, картки рівнів, «титри», секретний рівень для батьків */
+/* 4-Б: екскурсія як гра з рівнями — індикатор проходження, картки рівнів, «титри», відкритий фотоальбом */
 .hero h1 .lvl { display: inline-block; background: var(--orange); color: var(--paper); border-radius: 12px; padding: 0 12px; margin-right: 6px; }
 .xp { margin-top: 22px; max-width: 460px; }
 .xp-top { display: flex; justify-content: space-between; font-size: 13px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: #e9e6df; }
@@ -387,20 +387,26 @@ footer img { height: 38px; width: auto; display: block; }
 .moments time { font-variant-numeric: tabular-nums; font-weight: 800; color: var(--orange-deep); }
 @media (max-width: 720px) { .trailer .inner { grid-template-columns: 1fr; } .trailer video { max-width: 360px; margin: 0 auto; } }
 
-/* секретний рівень */
-.secret { padding-block: 30px 10px; scroll-margin-top: 70px; }
-.album.open { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.secret .sub { margin: 0 0 14px; color: var(--muted); }
-.album { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
-.shot { position: relative; margin: 0; overflow: hidden; border-radius: 18px; background: #222; aspect-ratio: 3 / 4; }
-.shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.shot.locked { cursor: pointer; }
-.shot .lock { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; padding: 12px; background: rgba(0, 0, 0, 0.35); color: var(--paper); font-weight: 800; text-align: center; }
-.shot .lock span { font-size: 28px; }
-.shot .lock small { font-size: 12px; font-weight: 700; opacity: 0.85; }
-.shot.more { display: flex; align-items: center; justify-content: center; background: var(--black); }
-.shot.more .lock { background: transparent; }
-@media (max-width: 560px) { .album { grid-template-columns: 1fr 1fr; } .shot.more { aspect-ratio: auto; grid-column: 1 / -1; min-height: 110px; } }
+/* фотоальбом із переглядом */
+.album-sec { padding-block: 30px 10px; }
+.album-sec .head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+.album-sec h2 { margin: 0; font-size: 26px; font-weight: 900; }
+.album-sec h2::before { content: '/ '; color: var(--orange); }
+.album-sec .count { color: var(--muted); font-weight: 600; font-size: 15px; }
+.photos { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.photos button { position: relative; padding: 0; border: 0; border-radius: 16px; overflow: hidden; background: #222; aspect-ratio: 3 / 4; cursor: zoom-in; }
+.photos button.wide { grid-column: span 2; aspect-ratio: auto; }
+.photos img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s; }
+.photos button:hover img { transform: scale(1.04); }
+@media (max-width: 720px) { .photos { grid-template-columns: repeat(2, minmax(0, 1fr)); } .photos button.wide { aspect-ratio: 4 / 3; } }
+@media (prefers-reduced-motion: reduce) { .photos img { transition: none; } }
+
+.viewer { position: fixed; inset: 0; z-index: 40; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 16px; background: rgba(0, 0, 0, 0.92); }
+.viewer img { max-width: 100%; max-height: calc(100vh - 110px); border-radius: 12px; object-fit: contain; }
+.viewer .bar { display: flex; align-items: center; gap: 10px; color: var(--paper); font-weight: 700; font-size: 14px; }
+.viewer button { width: 44px; height: 44px; border: 0; border-radius: 12px; background: rgba(255, 255, 255, 0.14); color: var(--paper); font-size: 20px; cursor: pointer; }
+.viewer .x { position: absolute; top: max(12px, env(safe-area-inset-top, 0px)); right: 12px; }
+.viewer a { color: var(--orange); }
 </style>
 </head>
 <body>
@@ -516,33 +522,43 @@ footer img { height: 38px; width: auto; display: block; }
     </div>
   </section>
 
-  <section class="secret gutter" id="album">
+  <section class="album-sec gutter" id="album">
     <div class="inner">
-      <h2>Секретний рівень: фотоальбом</h2>
-      <p class="sub" id="mediaCount">Фото з екскурсії відкриваються лише батькам учнів 4-Б класу.</p>
-      <div class="album">
-        <figure class="shot locked" role="button" tabindex="0" aria-label="Фото — доступ для батьків" data-full="assets/4b-robots.jpg" data-alt="Учні 4-Б класу програмують роботів LEGO WeDo на ігровому полі">
-          <img src="assets/4b-robots-locked.jpg" alt="">
-          <div class="lock"><span>🔒</span>Для батьків</div>
-        </figure>
-        <figure class="shot locked" role="button" tabindex="0" aria-label="Фото — доступ для батьків" data-full="assets/4b-coding.jpg" data-alt="Учні 4-Б класу за компʼютерами в аудиторії Creator IT Academy">
-          <img src="assets/4b-coding-locked.jpg" alt="">
-          <div class="lock"><span>🔒</span>Для батьків</div>
-        </figure>
-        <figure class="shot more locked" role="button" tabindex="0" aria-label="Повний фотоальбом — доступ для батьків">
-          <div class="lock"><span>📸</span>Повний альбом<small>надішлемо у Viber або Telegram</small></div>
-        </figure>
+      <div class="head">
+        <h2>Бонусний рівень: фотоальбом</h2>
+        <span class="count">30 фото · натисніть, щоб відкрити</span>
       </div>
-      <div class="open-note" id="openNote" hidden>
-        <b>✅ Секретний рівень відкрито</b>
-        <p id="openNoteText">Повний фотоальбом надішлемо у Viber або Telegram протягом дня.</p>
-      </div>
-      <div class="parents" id="parentsBox">
-        <div>
-          <h3>Ваша дитина з 4-Б?</h3>
-          <p>Вкажіть номер телефону, і фото відкриються одразу, а повний альбом ми надішлемо у Viber або Telegram.</p>
-        </div>
-        <button class="btn btn-orange" type="button" id="openParents">🔓 Відкрити фото</button>
+      <div class="photos" id="photos">
+        <button type="button" class="wide" data-full="assets/4b-class.jpg" aria-label="Відкрити фото: Учні 4-Б класу біля лабіринту для роботів"><img src="assets/4b-class-thumb.jpg" alt="Учні 4-Б класу біля лабіринту для роботів" loading="lazy"></button>
+        <button type="button" data-full="assets/4b-01.jpg" aria-label="Відкрити фото: Учні програмують роботів LEGO WeDo на ігровому полі"><img src="assets/4b-01-thumb.jpg" alt="Учні програмують роботів LEGO WeDo на ігровому полі" loading="lazy"></button>
+        <button type="button" data-full="assets/4b-02.jpg" aria-label="Відкрити фото: Учні за ноутбуком біля поля з роботами WeDo"><img src="assets/4b-02-thumb.jpg" alt="Учні за ноутбуком біля поля з роботами WeDo" loading="lazy"></button>
+        <button type="button" data-full="assets/4b-03.jpg" aria-label="Відкрити фото: Учні запускають роботів WeDo"><img src="assets/4b-03-thumb.jpg" alt="Учні запускають роботів WeDo" loading="lazy"></button>
+        <button type="button" data-full="assets/4b-04.jpg" aria-label="Відкрити фото: Учні стежать за роботами на ігровому полі"><img src="assets/4b-04-thumb.jpg" alt="Учні стежать за роботами на ігровому полі" loading="lazy"></button>
+        <button type="button" data-full="assets/4b-05.jpg" aria-label="Відкрити фото: Учні розглядають робота біля траси"><img src="assets/4b-05-thumb.jpg" alt="Учні розглядають робота біля траси" loading="lazy"></button>
+        <button type="button" data-full="assets/4b-06.jpg" aria-label="Відкрити фото: Учні разом збирають робота"><img src="assets/4b-06-thumb.jpg" alt="Учні разом збирають робота" loading="lazy"></button>
+        <button type="button" data-full="assets/4b-07.jpg" aria-label="Відкрити фото: Учні з викладачкою біля траси з роботами"><img src="assets/4b-07-thumb.jpg" alt="Учні з викладачкою біля траси з роботами" loading="lazy"></button>
+        <button type="button" data-full="assets/4b-08.jpg" aria-label="Відкрити фото: Викладачка показує учням робота"><img src="assets/4b-08-thumb.jpg" alt="Викладачка показує учням робота" loading="lazy"></button>
+        <button type="button" data-full="assets/4b-09.jpg" aria-label="Відкрити фото: Учні з викладачкою біля лабіринту для роботів"><img src="assets/4b-09-thumb.jpg" alt="Учні з викладачкою біля лабіринту для роботів" loading="lazy"></button>
+        <button type="button" data-full="assets/4b-10.jpg" aria-label="Відкрити фото: Учень тримає робота з датчиками"><img src="assets/4b-10-thumb.jpg" alt="Учень тримає робота з датчиками" loading="lazy"></button>
+        <button type="button" data-full="assets/4b-11.jpg" aria-label="Відкрити фото: Учениці біля траси з деревʼяним будиночком"><img src="assets/4b-11-thumb.jpg" alt="Учениці біля траси з деревʼяним будиночком" loading="lazy"></button>
+        <button type="button" data-full="assets/4b-12.jpg" aria-label="Відкрити фото: Учениці запускають робота біля будиночка"><img src="assets/4b-12-thumb.jpg" alt="Учениці запускають робота біля будиночка" loading="lazy"></button>
+        <button type="button" data-full="assets/4b-13.jpg" aria-label="Відкрити фото: Учень розглядає робота"><img src="assets/4b-13-thumb.jpg" alt="Учень розглядає робота" loading="lazy"></button>
+        <button type="button" data-full="assets/4b-14.jpg" aria-label="Відкрити фото: Учениця за ноутбуком біля логотипа Creator"><img src="assets/4b-14-thumb.jpg" alt="Учениця за ноутбуком біля логотипа Creator" loading="lazy"></button>
+        <button type="button" data-full="assets/4b-15.jpg" aria-label="Відкрити фото: Учень роздивляється деталь робота"><img src="assets/4b-15-thumb.jpg" alt="Учень роздивляється деталь робота" loading="lazy"></button>
+        <button type="button" data-full="assets/4b-16.jpg" aria-label="Відкрити фото: Учні біля траси з будиночком"><img src="assets/4b-16-thumb.jpg" alt="Учні біля траси з будиночком" loading="lazy"></button>
+        <button type="button" data-full="assets/4b-17.jpg" aria-label="Відкрити фото: Учениці працюють з роботами біля будиночка"><img src="assets/4b-17-thumb.jpg" alt="Учениці працюють з роботами біля будиночка" loading="lazy"></button>
+        <button type="button" data-full="assets/4b-18.jpg" aria-label="Відкрити фото: Учень запускає робота біля будиночка"><img src="assets/4b-18-thumb.jpg" alt="Учень запускає робота біля будиночка" loading="lazy"></button>
+        <button type="button" data-full="assets/4b-19.jpg" aria-label="Відкрити фото: Учні за компʼютерами"><img src="assets/4b-19-thumb.jpg" alt="Учні за компʼютерами" loading="lazy"></button>
+        <button type="button" data-full="assets/4b-20.jpg" aria-label="Відкрити фото: Учні за ноутбуками в аудиторії"><img src="assets/4b-20-thumb.jpg" alt="Учні за ноутбуками в аудиторії" loading="lazy"></button>
+        <button type="button" data-full="assets/4b-21.jpg" aria-label="Відкрити фото: Аудиторія Creator IT Academy під час екскурсії 4-Б"><img src="assets/4b-21-thumb.jpg" alt="Аудиторія Creator IT Academy під час екскурсії 4-Б" loading="lazy"></button>
+        <button type="button" data-full="assets/4b-22.jpg" aria-label="Відкрити фото: Учениці керують роботом"><img src="assets/4b-22-thumb.jpg" alt="Учениці керують роботом" loading="lazy"></button>
+        <button type="button" data-full="assets/4b-23.jpg" aria-label="Відкрити фото: Учні з викладачкою біля траси"><img src="assets/4b-23-thumb.jpg" alt="Учні з викладачкою біля траси" loading="lazy"></button>
+        <button type="button" data-full="assets/4b-24.jpg" aria-label="Відкрити фото: Учні біля будиночка з роботом"><img src="assets/4b-24-thumb.jpg" alt="Учні біля будиночка з роботом" loading="lazy"></button>
+        <button type="button" data-full="assets/4b-25.jpg" aria-label="Відкрити фото: Будиночок світиться, поруч учні з роботом"><img src="assets/4b-25-thumb.jpg" alt="Будиночок світиться, поруч учні з роботом" loading="lazy"></button>
+        <button type="button" data-full="assets/4b-26.jpg" aria-label="Відкрити фото: Учениці біля лабіринту з роботом"><img src="assets/4b-26-thumb.jpg" alt="Учениці біля лабіринту з роботом" loading="lazy"></button>
+        <button type="button" data-full="assets/4b-27.jpg" aria-label="Відкрити фото: Учень за компʼютером"><img src="assets/4b-27-thumb.jpg" alt="Учень за компʼютером" loading="lazy"></button>
+        <button type="button" data-full="assets/4b-28.jpg" aria-label="Відкрити фото: Учениці з викладачкою за ноутбуком"><img src="assets/4b-28-thumb.jpg" alt="Учениці з викладачкою за ноутбуком" loading="lazy"></button>
+        <button type="button" data-full="assets/4b-29.jpg" aria-label="Відкрити фото: Учениця з роботом у лабіринті"><img src="assets/4b-29-thumb.jpg" alt="Учениця з роботом у лабіринті" loading="lazy"></button>
       </div>
     </div>
   </section>
@@ -569,14 +585,14 @@ footer img { height: 38px; width: auto; display: block; }
       <div class="card">
         <div>
           <h2>Ваш клас — наступний гравець?</h2>
-          <p>Вже двоє класів Новояворівської початкової школи пройшли Creator на всі рівні. Запишіть свій: дрони, роботи й датчики за одну безкоштовну зустріч.</p>
+          <p>Вже три класи Новояворівської початкової школи пройшли Creator на всі рівні. Запишіть свій: дрони, роботи й датчики за одну безкоштовну зустріч.</p>
           <button class="btn btn-dark" type="button" id="openSchool">Записати клас</button>
         </div>
         <ul>
           <li>🚁 Симулятор дронів</li>
           <li>🤖 Роботи й лабіринт</li>
           <li>🧩 Перша власна гра</li>
-          <li>🎁 Фотоальбом для батьків</li>
+          <li>📸 Фото й відео для всього класу</li>
         </ul>
       </div>
     </div>
@@ -596,27 +612,11 @@ footer img { height: 38px; width: auto; display: block; }
 
 <div class="proto">Прототип сторінки</div>
 
-<!-- Батьки: контакт для фотоальбому -->
-<div class="modal" id="parentsModal" hidden role="dialog" aria-modal="true" aria-labelledby="parentsTitle">
-  <div class="sheet">
-    <button class="close" type="button" data-close aria-label="Закрити">×</button>
-    <form id="parentsForm" novalidate>
-      <h3 id="parentsTitle">Секретний рівень для батьків</h3>
-      <p class="note">Фото відкриті лише батькам учнів 4-Б класу. Вкажіть номер телефону: фото на сторінці відкриються одразу, а повний альбом надішлемо у Viber або Telegram.</p>
-      <label class="field">Ваш номер телефону
-        <input id="phone" type="tel" inputmode="tel" autocomplete="tel" value="+380">
-      </label>
-      <p class="error" id="parentsError" hidden></p>
-      <button class="btn btn-orange w100" type="submit" id="parentsSubmit">Відкрити фото</button>
-      <p class="fine">Натискаючи кнопку, ви погоджуєтесь, що Creator IT Academy використає номер, щоб надіслати фото і розповісти про навчання.</p>
-    </form>
-    <div class="done" id="parentsDone" hidden>
-      <div class="big-emoji">📸</div>
-      <h3>Дякуємо!</h3>
-      <p class="note" id="parentsDoneText">Повний фотоальбом надішлемо протягом дня.</p>
-      <button class="btn btn-orange" type="button" id="seeAlbum">Дивитися фото</button>
-    </div>
-  </div>
+<!-- Перегляд фото -->
+<div class="viewer" id="viewer" hidden role="dialog" aria-modal="true" aria-label="Перегляд фото">
+  <button class="x" type="button" id="viewerClose" aria-label="Закрити">×</button>
+  <img id="viewerImg" alt="">
+  <div class="bar"><button type="button" id="viewerPrev" aria-label="Попереднє фото">‹</button><span id="viewerCount"></span><button type="button" id="viewerNext" aria-label="Наступне фото">›</button><a id="viewerDl" download>Завантажити</a></div>
 </div>
 
 <!-- Instagram: готовий текст поста -->
@@ -666,9 +666,7 @@ footer img { height: 38px; width: auto; display: block; }
   const PAGE_URL = 'https://creator-it-academy.com/news/4b-novoyavorivska-shkola/';
   const TITLE = '4-Б клас Новояворівської початкової школи пройшов Creator IT Academy на всі рівні';
   const NEWS = 'Екскурсія 4-Б класу';
-  const SCHOOL = 'Новояворівська початкова школа, 4-Б, кл. керівник Твердохліб Л. І.';
-  const UNLOCK_KEY = 'creator-news-4b-parents';
-  document.querySelector('.proto').hidden = ON_SITE;
+    document.querySelector('.proto').hidden = ON_SITE;
 
   // Власна аналітика: події йдуть на платформу, щоденний звіт о 21:00 у бот команди
   const STATS = 'https://creator-platform.onrender.com/api/page-stats/track';
@@ -732,7 +730,7 @@ footer img { height: 38px; width: auto; display: block; }
     '',
     'Дякуємо класній керівниці Любові Іванівні Твердохліб і вчительці інформатики Наталії Зенонівні! 🙏',
     '',
-    'Відео з екскурсії — за посиланням у профілі, а фотоальбом відкривається батькам учнів 📸',
+    'Відео і всі фото з екскурсії — за посиланням у профілі 📸',
     PAGE_URL,
     '',
     '#CreatorITAcademy #Новояворівськ #робототехніка #дрони #Arduino #ITдлядітей',
@@ -769,13 +767,7 @@ footer img { height: 38px; width: auto; display: block; }
   document.querySelectorAll('.modal').forEach((m) => m.addEventListener('click', (e) => { if (e.target === m) closeAll(); }));
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAll(); });
 
-  $('openParents').addEventListener('click', () => open('parentsModal'));
-  document.querySelectorAll('.shot.locked').forEach((t) => {
-    t.addEventListener('click', () => t.classList.contains('locked') && open('parentsModal'));
-    t.addEventListener('keydown', (e) => { if (t.classList.contains('locked') && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); open('parentsModal'); } });
-  });
   $('openIg').addEventListener('click', () => open('igModal'));
-  $('seeAlbum').addEventListener('click', () => { closeAll(); $('album').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
   document.querySelectorAll('.seek').forEach((b) => b.addEventListener('click', () => {
     const v = $('video');
     const go = () => { v.currentTime = Number(b.dataset.t); v.play().catch(() => {}); };
@@ -786,48 +778,40 @@ footer img { height: 38px; width: auto; display: block; }
   $('openSchool').addEventListener('click', () => open('schoolModal'));
 
   const formatPhone = (v) => `+380${v.replace(/\D/g, '').replace(/^380/, '').replace(/^0/, '').slice(0, 9)}`;
-  ['phone', 'schoolPhone'].forEach((id) => $(id).addEventListener('input', (e) => { e.target.value = formatPhone(e.target.value); }));
+  ['schoolPhone'].forEach((id) => $(id).addEventListener('input', (e) => { e.target.value = formatPhone(e.target.value); }));
 
   const showError = (id, text) => { $(id).textContent = text; $(id).hidden = !text; };
 
-  // Після номера телефону: знімаємо замки з фото (памʼятаємо на цьому пристрої)
-  const unlock = (note) => {
-    document.querySelectorAll('.shot.locked').forEach((t) => {
-      t.classList.remove('locked');
-      t.removeAttribute('role');
-      t.removeAttribute('tabindex');
-      t.removeAttribute('aria-label');
-      const img = t.querySelector('img');
-      if (img && t.dataset.full) { img.src = t.dataset.full; img.alt = t.dataset.alt || ''; }
-      if (t.classList.contains('more')) t.hidden = true;
-      t.querySelector('.lock')?.remove();
-    });
-    document.querySelector('.album').classList.add('open');
-    $('parentsBox').hidden = true;
-    $('openNote').hidden = false;
-    $('mediaCount').textContent = 'Секретний рівень відкрито: фото для батьків учнів 4-Б.';
-    if (note) $('openNoteText').textContent = note;
+  // Перегляд фото: стрілки, свайп, Esc
+  const shots = [...document.querySelectorAll('#photos button')];
+  let cur = 0;
+  const show = (i) => {
+    cur = (i + shots.length) % shots.length;
+    const b = shots[cur];
+    $('viewerImg').src = b.dataset.full;
+    $('viewerImg').alt = b.querySelector('img').alt;
+    $('viewerDl').href = b.dataset.full;
+    $('viewerCount').textContent = `${cur + 1} / ${shots.length}`;
   };
-  try { if (localStorage.getItem(UNLOCK_KEY)) unlock(); } catch {}
-
-  $('parentsForm').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const phone = $('phone').value;
-    if (!/^\+380\d{9}$/.test(phone)) return showError('parentsError', 'Вкажіть номер у форматі +380 і 9 цифр.');
-    showError('parentsError', '');
-    $('parentsSubmit').disabled = true;
-    $('parentsSubmit').textContent = 'Надсилаємо…';
-    const r = await send({ phone, type: 'parents-media', school: SCHOOL });
-    $('parentsSubmit').disabled = false;
-    $('parentsSubmit').textContent = 'Відкрити фото';
-    if (!r.ok) return showError('parentsError', r.error);
-    try { localStorage.setItem(UNLOCK_KEY, '1'); } catch {}
-    const note = `Повний фотоальбом надішлемо на ${phone} у Viber або Telegram протягом дня.`;
-    $('parentsDoneText').textContent = note + (r.demo ? ' (Прототип: заявка не надсилалась.)' : '');
-    $('parentsForm').hidden = true;
-    $('parentsDone').hidden = false;
-    unlock(note);
-    stat('parents');
+  const closeViewer = () => { $('viewer').hidden = true; shots[cur]?.focus(); };
+  shots.forEach((b, i) => b.addEventListener('click', () => { show(i); $('viewer').hidden = false; $('viewerClose').focus(); }));
+  $('viewerPrev').addEventListener('click', () => show(cur - 1));
+  $('viewerNext').addEventListener('click', () => show(cur + 1));
+  $('viewerClose').addEventListener('click', closeViewer);
+  $('viewer').addEventListener('click', (e) => { if (e.target === $('viewer')) closeViewer(); });
+  document.addEventListener('keydown', (e) => {
+    if ($('viewer').hidden) return;
+    if (e.key === 'Escape') closeViewer();
+    if (e.key === 'ArrowLeft') show(cur - 1);
+    if (e.key === 'ArrowRight') show(cur + 1);
+  });
+  let touchX = null;
+  $('viewer').addEventListener('touchstart', (e) => { touchX = e.touches[0].clientX; }, { passive: true });
+  $('viewer').addEventListener('touchend', (e) => {
+    if (touchX === null) return;
+    const dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 40) show(cur + (dx < 0 ? 1 : -1));
+    touchX = null;
   });
 
   $('schoolForm').addEventListener('submit', async (e) => {
