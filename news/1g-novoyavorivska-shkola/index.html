@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap">
 <style>
-/* Layout: чорна шапка → герой із показниками → картки «вперше» і подяка → відкритий фотоальбом із переглядом → поділитися → запрошення для шкіл. Одна світла тема у стилі академії: чорний, білий, помаранчевий. */
+/* Layout: чорна шапка → герой із показниками → картки «вперше» і подяка → публічне відео → відкритий фотоальбом із переглядом → поділитися → запрошення для шкіл. Одна світла тема у стилі академії: чорний, білий, помаранчевий. */
 :root {
   --black: #000000;
   --ink: #141414;
@@ -422,7 +422,7 @@ footer img { height: 38px; width: auto; display: block; }
         <p class="lead">Першокласники Новояворівської початкової школи завітали до Creator IT Academy — і за одну зустріч встигли багато чого зробити вперше в житті: зібрати робота, написати програму й провести його через лабіринт.</p>
         <ul class="stats" aria-label="Екскурсія в цифрах">
           <li><b>6</b><span>перших разів</span></li>
-          <li><b>1-Г</b><span>клас першокласників</span></li>
+          <li><b>45 с</b><span>відео з екскурсії</span></li>
           <li><b>44</b><span>фото для всіх</span></li>
         </ul>
       </div>
@@ -474,6 +474,28 @@ footer img { height: 38px; width: auto; display: block; }
           <div class="t-card"><span class="t-role">Класна керівниця 1-Г</span><b>Наталія Іванівна Брус</b></div>
         </div>
         <p class="fin">Дякуємо Наталії Іванівні, що привела своїх першокласників і разом із ними пройшла всі шість «вперше». А дітям — за щирі емоції та сміливість пробувати нове. Чекаємо знову!</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="trailer gutter" id="trailer">
+    <div class="inner">
+      <video id="video" controls playsinline preload="metadata" poster="assets/1g-poster.jpg" aria-label="Відео з екскурсії 1-Г класу">
+        <source src="assets/1g-excursion.mp4" type="video/mp4">
+      </video>
+      <div>
+        <span class="tag-public">Відкрито для всіх</span>
+        <h2>Відео з екскурсії</h2>
+        <p>45 секунд перших разів: роботи, програми, лабіринт і розумний будиночок. Натисніть на момент, щоб перейти до нього.</p>
+        <ul class="moments">
+          <li><time>0:06</time><button class="seek" type="button" data-t="6">Пробуємо нове</button></li>
+          <li><time>0:09</time><button class="seek" type="button" data-t="9">Роботи LEGO WeDo</button></li>
+          <li><time>0:15</time><button class="seek" type="button" data-t="15">Перша програма</button></li>
+          <li><time>0:24</time><button class="seek" type="button" data-t="24">Керуємо роботами</button></li>
+          <li><time>0:30</time><button class="seek" type="button" data-t="30">Розумний будиночок</button></li>
+          <li><time>0:33</time><button class="seek" type="button" data-t="33">Лабіринт</button></li>
+          <li><time>0:42</time><button class="seek" type="button" data-t="42">Фінальне фото</button></li>
+        </ul>
       </div>
     </div>
   </section>
@@ -700,7 +722,7 @@ footer img { height: 38px; width: auto; display: block; }
     '',
     'Дякуємо класній керівниці Наталії Іванівні Брус! 🙏',
     '',
-    'Усі фото — за посиланням у профілі 📸',
+    'Відео й усі фото — за посиланням у профілі 📸',
     PAGE_URL,
     '',
     '#CreatorITAcademy #Новояворівськ #робототехніка #LEGOWeDo #ITдлядітей',
@@ -738,6 +760,13 @@ footer img { height: 38px; width: auto; display: block; }
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAll(); });
 
   $('openIg').addEventListener('click', () => open('igModal'));
+  document.querySelectorAll('.seek').forEach((b) => b.addEventListener('click', () => {
+    const v = $('video');
+    const go = () => { v.currentTime = Number(b.dataset.t); v.play().catch(() => {}); };
+    if (v.readyState >= 1) go(); else { v.addEventListener('loadedmetadata', go, { once: true }); v.load(); }
+    if (v.getBoundingClientRect().top < 0) v.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }));
+  $('video').addEventListener('play', () => stat('video'), { once: true });
   $('openSchool').addEventListener('click', () => open('schoolModal'));
 
   const formatPhone = (v) => `+380${v.replace(/\D/g, '').replace(/^380/, '').replace(/^0/, '').slice(0, 9)}`;
